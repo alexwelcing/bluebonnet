@@ -11,7 +11,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/culvert-throat__2317-2326.jpg",
-          "caption": "Culvert Throat: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "Inside the culvert throat. Highway noise comes through the concrete in long swells.",
           "wrongness": "",
           "hotspots": [
             {
@@ -66,7 +66,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/culvert-throat__2326-2335.jpg",
-          "caption": "Culvert Throat: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The concrete seams bend toward the locked minutes. Every step reads as downhill.",
           "wrongness": "concrete seams bend toward the locked minutes",
           "hotspots": [
             {
@@ -141,7 +141,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/culvert-dripline__2317-2326.jpg",
-          "caption": "Dripline: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "A dripline stitches the dark, steady as a metronome.",
           "wrongness": "",
           "hotspots": [
             {
@@ -220,7 +220,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/culvert-dripline__2326-2335.jpg",
-          "caption": "Dripline: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The drips smear upward through the frame. The sound of them still falls.",
           "wrongness": "drips fall upward in the tape smear",
           "hotspots": [
             {
@@ -319,7 +319,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/culvert-pipe__2317-2326.jpg",
-          "caption": "Knock Pipe: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "An iron service pipe runs the wall, cold enough to fog the lens. The radio static gathers against it.",
           "wrongness": "",
           "hotspots": [
             {
@@ -416,7 +416,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/culvert-pipe__2326-2335.jpg",
-          "caption": "Knock Pipe: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The pipe sits closer to the camera than it did. Nothing on the audio track moved.",
           "wrongness": "the pipe has shifted closer to the camera without sound",
           "hotspots": [
             {
@@ -533,7 +533,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/culvert-echo-chamber__2317-2326.jpg",
-          "caption": "Echo Chamber: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The chamber rounds out beneath the median. Every sound comes back one count late.",
           "wrongness": "",
           "hotspots": [
             {
@@ -593,7 +593,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/culvert-echo-chamber__2326-2335.jpg",
-          "caption": "Echo Chamber: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The pooled water reflects bluebonnets instead of concrete.",
           "wrongness": "the pooled water reflects the field instead of concrete",
           "hotspots": [
             {
@@ -673,7 +673,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/recorder-nest__2317-2326.jpg",
-          "caption": "Recorder Nest: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "A handheld recorder sits dry on a ledge of caliche, set down carefully, like someone meant to come back.",
           "wrongness": "",
           "hotspots": [
             {
@@ -770,7 +770,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/recorder-nest__2326-2335.jpg",
-          "caption": "Recorder Nest: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The recorder counter window glows in the dark. The deck reads the number the lens refuses.",
           "wrongness": "the recorder window glows without readable marks",
           "hotspots": [
             {
@@ -887,7 +887,7 @@
       "temporalStates": {
         "23:17-23:26": {
           "still": "stills/act3/missing-minutes-gate__2317-2326.jpg",
-          "caption": "Missing Minutes Gate: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The far end of the culvert ends in a dark the lamp will not cross. The tape counter stutters at 23:26.",
           "wrongness": "",
           "hotspots": [
             {
@@ -989,7 +989,7 @@
         },
         "23:26-23:35": {
           "still": "stills/act3/missing-minutes-gate__2326-2335.jpg",
-          "caption": "Missing Minutes Gate: under-highway clean plate with all text rendered by the deck overlay.",
+          "caption": "The nine minutes press against the exit like a dark wall with a seam in it.",
           "wrongness": "the locked nine minutes press against the exit like a dark wall",
           "hotspots": [
             {

@@ -10,7 +10,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-threshold__2308-2317.jpg",
-          "caption": "Field Threshold: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The bluebonnets open around a flattened path. The cruiser light bar still flickers somewhere behind the lens.",
           "wrongness": "",
           "hotspots": [
             {
@@ -65,7 +65,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-threshold__2317-2326.jpg",
-          "caption": "Field Threshold: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The same path, narrower now. The petals lean back toward the highway as if listening for it.",
           "wrongness": "petals lean back toward the highway and the path behind narrows",
           "hotspots": [
             {
@@ -140,7 +140,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-left-row__2308-2317.jpg",
-          "caption": "Left Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The left row runs in even ranks. Wind moves through it without a sound on the track.",
           "wrongness": "",
           "hotspots": [
             {
@@ -219,7 +219,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-left-row__2317-2326.jpg",
-          "caption": "Left Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The left row has bent into an angle as deliberate as a clock hand. No footprints anywhere near it.",
           "wrongness": "the row bends into a clock-hand angle that was not there",
           "hotspots": [
             {
@@ -318,7 +318,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-right-row__2308-2317.jpg",
-          "caption": "Right Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The right row stands taller, crowding the path. Something came through here before the camera did.",
           "wrongness": "",
           "hotspots": [
             {
@@ -397,7 +397,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-right-row__2317-2326.jpg",
-          "caption": "Right Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The flowers crowd into a second hand-angle, paired with the left row. The field is keeping time.",
           "wrongness": "the flowers crowd into a second clock-hand angle",
           "hotspots": [
             {
@@ -496,7 +496,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-clock-two__2308-2317.jpg",
-          "caption": "Bloom Clock Two: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "Two lobes of blue divide this clearing. They look planted. Nothing out here was planted.",
           "wrongness": "",
           "hotspots": [
             {
@@ -558,7 +558,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-clock-two__2317-2326.jpg",
-          "caption": "Bloom Clock Two: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The two lobes have rotated toward the road, a timepiece worked by nothing.",
           "wrongness": "the two lobes rotate toward the road like a timepiece",
           "hotspots": [
             {
@@ -640,7 +640,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-clock-seven__2308-2317.jpg",
-          "caption": "Bloom Clock Seven: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "A diagonal trail cuts the bloom, seven paces long, ending at nothing.",
           "wrongness": "",
           "hotspots": [
             {
@@ -702,7 +702,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-clock-seven__2317-2326.jpg",
-          "caption": "Bloom Clock Seven: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The diagonal trail sits three feet from where the tape last left it. No footprints in between.",
           "wrongness": "the diagonal trail has moved three feet without footprints",
           "hotspots": [
             {
@@ -784,7 +784,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-clock-one__2308-2317.jpg",
-          "caption": "Bloom Clock One: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "A single column of bluebonnets stands apart from the rest, straight as a fence post.",
           "wrongness": "",
           "hotspots": [
             {
@@ -870,7 +870,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-clock-one__2317-2326.jpg",
-          "caption": "Bloom Clock One: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The column doubles in the tape shadow, holds for a frame, then settles back to one.",
           "wrongness": "the single column doubles in the tape shadow then settles",
           "hotspots": [
             {
@@ -976,7 +976,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-clock-three__2308-2317.jpg",
-          "caption": "Bloom Clock Three: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "Three crescents of bloom curl around a bare patch of caliche.",
           "wrongness": "",
           "hotspots": [
             {
@@ -1062,7 +1062,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-clock-three__2317-2326.jpg",
-          "caption": "Bloom Clock Three: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The crescents have turned to face inward, toward a gate the camera has not found yet.",
           "wrongness": "the crescents face inward toward an unseen gate",
           "hotspots": [
             {
@@ -1168,7 +1168,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-gate__2308-2317.jpg",
-          "caption": "Field Gate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "A wire field gate, chained shut. The padlock wants four digits.",
           "wrongness": "",
           "hotspots": [
             {
@@ -1268,7 +1268,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-gate__2317-2326.jpg",
-          "caption": "Field Gate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The gate stands closer than the field should allow. The padlock hangs level with the lens.",
           "wrongness": "the gate is closer and the padlock hangs at eye level",
           "hotspots": [
             {
@@ -1388,7 +1388,7 @@
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/field-tally__2308-2317.jpg",
-          "caption": "Gate Tally Plate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "A weathered tally board nailed to a post, ranch fashion. The marks read like a count of something.",
           "wrongness": "",
           "hotspots": [
             {
@@ -1448,7 +1448,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/field-tally__2317-2326.jpg",
-          "caption": "Gate Tally Plate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The board has tilted toward the padlock, the way a sign tilts toward whoever it is for.",
           "wrongness": "the blank board tilts toward the padlock",
           "hotspots": [
             {
@@ -1521,14 +1521,14 @@
     },
     {
       "id": "act2-culvert-stub",
-      "title": "Culvert Approach Stub",
+      "title": "Culvert Approach",
       "still": "stills/act2/act2-culvert-stub__2308-2317.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
         "23:08-23:17": {
           "still": "stills/act2/act2-culvert-stub__2308-2317.jpg",
-          "caption": "Culvert Approach Stub: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The flowers part toward a concrete culvert mouth under the highway. The dark inside it does not match the dusk.",
           "wrongness": "",
           "hotspots": [
             {
@@ -1588,7 +1588,7 @@
         },
         "23:17-23:26": {
           "still": "stills/act2/act2-culvert-stub__2317-2326.jpg",
-          "caption": "Culvert Approach Stub: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "caption": "The culvert mouth breathes black through the flowers. The tape hiss drops a register.",
           "wrongness": "the culvert mouth breathes black through the flowers",
           "hotspots": [
             {
