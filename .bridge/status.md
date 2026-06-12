@@ -231,3 +231,26 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T04:54:49+00:00 — Exhibit scan trigger fix
+
+Changed:
+- Rewired document hotspot exhibit opening so the trigger receives the full hotspot and derives the scanned-paper body from the manifest-owned journal/caption text.
+- Replaced hardcoded exhibit innerHTML with DOM-created title/body nodes so the overlay paper is always populated before being shown.
+- Added DOM regression assertions that flyer and dispatch hotspots open a visible exhibit overlay containing the expected rendered document text (`LENA ORTIZ`, `88.7`, `DISPATCH 23:17`, `reset tape to 23:17`).
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ and deployed production Netlify.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 7 files, 19 tests.
+- `npm run build` passed, including whole-shotlist A1 lint.
+- Production 200 checks passed for index, current JS/CSS bundles, and Act I flyer still.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Next:
+- Director re-check flyer and dispatch exhibit overlays in production.
+
+Blockers:
+- None.

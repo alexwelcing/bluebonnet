@@ -175,7 +175,7 @@ function activateHotspot(hotspot: HotspotDefinition) {
     showCaption(hotspot.caption);
   }
   if (hotspot.exhibit) {
-    openExhibit(hotspot.exhibit);
+    openExhibit(hotspot);
   }
 }
 
@@ -293,14 +293,24 @@ function diegeticOverlay(nodeId: string): string {
   return '';
 }
 
-function openExhibit(kind: 'flyer' | 'dispatch' | 'recorder') {
-  const exhibits = {
-    flyer: '<h2>MISSING: LENA ORTIZ</h2><p class="photocopy">CALL 88.7 FM AFTER SUNDOWN</p><p>Last seen near FM 1187 mile marker 271. If found, do not enter the bluebonnets.</p>',
-    dispatch: '<h2>THERMAL DISPATCH PRINTOUT</h2><pre>23:17  REYES, D.\nRESET TAPE TO 23:17\nDO NOT ENTER THE BLUEBONNETS YET.</pre>',
-    recorder: '<h2>HANDHELD RECORDER COUNTER</h2><pre>COUNTER: 23:26\nLOCKED SPAN PRESENT // DECK HARD-STOP ACTIVE</pre>',
-  };
-  exhibitPaper.className = `exhibit-paper exhibit-${kind}`;
-  exhibitPaper.innerHTML = exhibits[kind];
+function openExhibit(hotspot: HotspotDefinition) {
+  if (!hotspot.exhibit) return;
+  const sourceText = hotspot.journal?.text ?? hotspot.caption ?? hotspot.label;
+  const title = document.createElement('h2');
+  const body = document.createElement(hotspot.exhibit === 'dispatch' || hotspot.exhibit === 'recorder' ? 'pre' : 'p');
+  exhibitPaper.className = `exhibit-paper exhibit-${hotspot.exhibit}`;
+  if (hotspot.exhibit === 'flyer') {
+    title.textContent = 'MISSING: LENA ORTIZ';
+    body.className = 'photocopy';
+    body.textContent = sourceText.includes('88.7') ? sourceText : `${sourceText} 88.7 FM AFTER SUNDOWN.`;
+  } else if (hotspot.exhibit === 'dispatch') {
+    title.textContent = 'THERMAL DISPATCH PRINTOUT';
+    body.textContent = sourceText;
+  } else {
+    title.textContent = 'HANDHELD RECORDER COUNTER';
+    body.textContent = sourceText;
+  }
+  exhibitPaper.replaceChildren(title, body);
   exhibitScan.hidden = false;
 }
 
