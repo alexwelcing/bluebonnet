@@ -46,3 +46,16 @@ RECORD path:
 - Save snapshot automatically recorded `currentNodeId: ending-record` and `flags[ending:record] = true`.
 
 Result: PASS for distinct ending states, final composited frames/overlays, ending-specific audio assets served live, and save-state ending recording.
+
+
+## 2026-06-12T06:06:45.860570+00:00 — B3 audio live smoke test
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2ba1bab50464a63b710131
+
+Checks:
+- Loaded live site and clicked from CRUISER INTERIOR to PATROL RADIO; node transition remained responsive and no browser JS errors were reported.
+- Verified live HTTP 200 for upgraded audio assets: cruiser-idle.wav, field-wind.wav, culvert-rumble.wav, radio-static.wav, ending-record-overwrite.wav.
+- Verified runtime volume control remained present at 0.7.
+
+Result: PASS for deployed richer ambient loops, per-node mix metadata, and runtime smoke test.

@@ -306,3 +306,29 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T06:06:45.860982+00:00 — B3 audio upgrade
+
+Changed:
+- Rebuilt cruiser, field, culvert, and radio ambient WAV beds as richer seamless 4-second loops in assets/audio/ and public/audio/.
+- Added per-node audioMix ambient levels to every node with an ambientAudio bed across Acts I-IV.
+- Extended the audio mixer to track per-node ambientLevel separately from master volume and clamp mix levels.
+- Main runtime now applies each node's audioMix ambient level when setting the active bed.
+- Added B3 audio content tests covering per-node mix metadata.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended the B3 live smoke test transcript to .bridge/playthrough.md.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 9 files, 26 tests.
+- `npm run lint:shotlist` passed: 56 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, upgraded cruiser/field/culvert/radio audio, and ending-record audio.
+- Browser live smoke test passed at https://bluebonnet-tape.netlify.app after deploy 6a2ba1bab50464a63b710131 with no JS errors after a node/audio-bed transition.
+
+Next:
+- Continue with B4 EXHIBIT ART PASS: flyer photocopy styling and dispatch dot-matrix perforated-edge styling while keeping text runtime-rendered.
+
+Blockers:
+- None.

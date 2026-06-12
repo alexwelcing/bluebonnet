@@ -185,7 +185,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "cruiser-exterior",
@@ -353,7 +356,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "mile-marker-271",
@@ -531,7 +537,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "flyer-ditch",
@@ -664,7 +673,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "patrol-radio",
@@ -874,7 +886,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/radio-static.wav"
+      "ambientAudio": "audio/radio-static.wav",
+      "audioMix": {
+        "ambient": 0.66
+      }
     },
     {
       "id": "dispatch-printer",
@@ -1012,7 +1027,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "roadside-shrine",
@@ -1142,7 +1160,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     },
     {
       "id": "culvert-mouth",
@@ -1273,7 +1294,10 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav"
+      "ambientAudio": "audio/cruiser-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
     }
   ]
 }

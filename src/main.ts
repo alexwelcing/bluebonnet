@@ -120,7 +120,8 @@ function render() {
   timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
-  audio.setAmbient(getNode(graph, snapshot.currentNodeId).ambientAudio);
+  const node = getNode(graph, snapshot.currentNodeId);
+  audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
   compositor.setIntensity(snapshot.vhsIntensity);
 
   journalList.replaceChildren(

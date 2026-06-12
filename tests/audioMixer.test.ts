@@ -25,4 +25,16 @@ describe('audio mixer', () => {
     expect(mixer.snapshot().volume).toBe(1);
     expect(mixer.snapshot().cues).toContainEqual({ source: 'audio/jog-detent-clunk.wav', caption: 'TIMESEEK detent clunk.' });
   });
+
+  it('tracks per-node ambient mix levels independently from master volume', () => {
+    const mixer = createAudioMixer();
+    mixer.setVolume(0.8);
+    mixer.setAmbient('audio/field-wind.wav', 0.42);
+
+    expect(mixer.snapshot()).toMatchObject({ current: 'audio/field-wind.wav', volume: 0.8, ambientLevel: 0.42 });
+
+    mixer.setAmbient('audio/radio-static.wav', 1.5);
+    expect(mixer.snapshot()).toMatchObject({ current: 'audio/radio-static.wav', previous: 'audio/field-wind.wav', ambientLevel: 1 });
+  });
+
 });

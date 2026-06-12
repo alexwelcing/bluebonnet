@@ -59,6 +59,10 @@ export interface SceneNode {
   still: string;
   ambientAudio?: string;
   threatAudio?: string;
+  audioMix?: {
+    ambient: number;
+    threat?: number;
+  };
   caption?: string;
   hotspots: HotspotDefinition[];
   temporalStates?: Partial<Record<TimeWindow, TemporalNodeState>>;
