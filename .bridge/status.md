@@ -69,3 +69,21 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T03:12:03+00:00 — Netlify production deploy
+
+Changed:
+- Created and linked Netlify site bluebonnet-tape (site id ca0f7331-a8a8-4d46-a18c-4353e88c4d42).
+- Added `.netlify/` to `.gitignore` so local Netlify link metadata stays out of the repo.
+- Ran a fresh production build and deployed `dist/` to Netlify production.
+- Verified live URL and runtime assets return HTTP 200:
+  - https://bluebonnet-tape.netlify.app/
+  - https://bluebonnet-tape.netlify.app/assets/index-BI_B93dl.js
+  - https://bluebonnet-tape.netlify.app/assets/index-D7lY2kSK.css
+  - https://bluebonnet-tape.netlify.app/stills/dashcam-test-01.png
+
+Next:
+- Continue playtesting the production URL and bridge preview as content expands.
+
+Blockers:
+- None.
