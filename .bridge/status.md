@@ -112,7 +112,18 @@ Verification:
 
 Next:
 - Playtest Milestone 1 end-to-end and tune hotspot polygons/clue copy if needed.
-- Push local commit 0279f50 once GitHub auth/transport stops timing out.
 
 Blockers:
-- GitHub push did not complete: `GIT_TERMINAL_PROMPT=0 git push origin main` timed out after 60s twice with no active git process left afterward; token-based HTTPS fallback failed with authentication error. Local commit is 0279f50.
+- None. GitHub push landed after using the normal remote with `GIT_TERMINAL_PROMPT=0` and a 360s timeout; origin/main confirmed at d2429cd.
+
+## 2026-06-12T03:43:33+00:00 — Milestone 1 push confirmation
+
+Changed:
+- Pushed Milestone 1 commit d2429cd to origin/main using the default codespace askpass helper path with `GIT_TERMINAL_PROMPT=0` and a 360s timeout.
+- Confirmed `git ls-remote --heads origin main` reports d2429cd, matching local HEAD.
+
+Next:
+- Continue production and bridge playtesting of Act I vertical slice.
+
+Blockers:
+- None.
