@@ -32,3 +32,15 @@ Next:
 
 Blockers:
 - None. Verification passed: npm run typecheck, npm test, npm run build.
+
+## 2026-06-12T02:58:34+00:00 — Bridge preview base path fix
+
+Changed:
+- Set Vite base to './' so built JS/CSS asset URLs resolve under both Netlify root and the /preview/ bridge subpath.
+- Converted test scene still paths to relative asset URLs for the same bridge subpath compatibility.
+
+Next:
+- Playtest /workspaces/bluebonnet/.bridge/preview/ through the bridge port.
+
+Blockers:
+- None. Verification passed: npm run typecheck, npm test, npm run build; .bridge/preview refreshed from dist.

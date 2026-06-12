@@ -6,3 +6,7 @@
 - Hotspots use percentage-based polygon coordinates so still images can scale responsively.
 - Save snapshots use localStorage key bluebonnet.engine.snapshot.v1.
 - VHS effects are CSS/canvas layers with a user-adjustable intensity value stored in engine state.
+
+## 2026-06-12T02:58:34+00:00 — Relative Vite asset base
+- Vite base is './' so emitted JS/CSS asset URLs are relative; this supports both Netlify root deploys and bridge preview under /preview/.
+- Scene still paths in content manifests should also stay relative (for example assets/test/...) so preview subpath playtests do not request root-relative media.

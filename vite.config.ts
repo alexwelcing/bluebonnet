@@ -15,6 +15,7 @@ function copyTestAssets() {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [copyTestAssets()],
   test: {
     environment: 'jsdom',
