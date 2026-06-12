@@ -44,6 +44,10 @@ export interface HotspotDefinition {
   puzzleAction?: PuzzleAction;
   discoverTimecode?: TimeWindow;
   shimmerThreshold?: number;
+  /** Text prompt for the segmentation pipeline (tools/segmentClues.mjs). */
+  cluePrompt?: string;
+  /** Set by the pipeline when polygon is a model-derived clue silhouette. */
+  clueHighlight?: boolean;
 }
 
 export interface TemporalNodeState {

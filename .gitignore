@@ -9,3 +9,6 @@ dist/
 # Production logs that are already tracked (status.md, decisions.md,
 # backlog.md, playthrough.md, AUTONOMOUS_DIRECTIVE.md) remain tracked.
 .bridge/
+
+# Generation candidates (working files, curated picks land in assets/<act>/)
+assets/candidates/

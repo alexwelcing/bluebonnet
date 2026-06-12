@@ -6,631 +6,1204 @@
       "nodeId": "wagon-interior",
       "window": "20:08-20:17",
       "filename": "wagon-interior__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, inside the idling DPS cruiser, cracked vinyl seat, blank paper sheet on passenger floor, radio stack dark, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, inside an idling 1990s station wagon cluttered with spiral notebooks, paper coffee cups and a folded county map, laminated pass hanging from the sun visor, blank paper sheet on passenger floor, radio stack dark, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187271,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49e/VZqunjJjNGlYJDCSWf516_v2HqIYM9.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0467/CbFwXzkV3AXM3NCVKX0sG_oZW3DNqN.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0466/bZM6gyHpYASELkAZ9k77H_Y41sCxNp.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0467/DkFih-EyDm9ZpTZHgUkpB_zRRCh9JU.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0467/CbFwXzkV3AXM3NCVKX0sG_oZW3DNqN.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "amber 20:08 light, flat Texas horizon, journalist clutter with blank flyer plate on seat; c1 too blue/suburban, c2 reads Pacific NW",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "wagon-interior",
       "window": "20:17-20:26",
       "filename": "wagon-interior__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, inside the idling DPS cruiser, cracked vinyl seat, blank paper sheet on passenger floor, radio stack dark, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, inside an idling 1990s station wagon cluttered with spiral notebooks, paper coffee cups and a folded county map, laminated pass hanging from the sun visor, blank paper sheet on passenger floor, radio stack dark, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187288,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df499/NAjATXwJ6NdYsoz9Pjbg6_ybbEjbcU.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0467/6UuFoikZSYBiIIOq8WFmh_43ZZUh9i.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0467/6UuFoikZSYBiIIOq8WFmh_43ZZUh9i.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0467/4DJbYpWvtdgmJqD5zLF93_wSketbsX.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0467/FSIm_RZt32jpkbk33VFle_K3yCm196.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "blue-violet 20:17 palette, cabin continuity with 2008 pick, distant car appears up the shoulder; c1 rejected for A1 text burn-in, c2 cabin discontinuity",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
     },
     {
       "nodeId": "wagon-exterior",
       "window": "20:08-20:17",
       "filename": "wagon-exterior__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, open cruiser doors on FM 1187 shoulder, bluebonnets blooming hard against asphalt, no trooper visible, clean empty roadside plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, both doors of a dusty 1990s station wagon open on a rural Texas highway shoulder, amber hazard lights glowing, bluebonnets blooming hard against asphalt, no trooper visible, clean empty roadside plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187305,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df499/a28reODoFMlINTZ-Knt91_XlGR5hcs.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0468/-w6IKPsvdz3qD92-zD-Kq_dJFtDMcp.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0467/d9VG2MjAp9tWi8uRK1ayf_zlO7EZE5.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0468/gOBoEcoISX2Hd5ISvu2EA_qtT3TvNg.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0468/-w6IKPsvdz3qD92-zD-Kq_dJFtDMcp.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "clean plate, open doors with hazards, bluebonnet shoulder, distant headlights; c0 and c1 rejected for hallucinated readable burn-in text (A1)",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
     },
     {
       "nodeId": "wagon-exterior",
       "window": "20:17-20:26",
       "filename": "wagon-exterior__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, open cruiser doors on FM 1187 shoulder, bluebonnets blooming hard against asphalt, no trooper visible, clean empty roadside plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, both doors of a dusty 1990s station wagon open on a rural Texas highway shoulder, amber hazard lights glowing, bluebonnets blooming hard against asphalt, no trooper visible, clean empty roadside plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187322,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49a/Z3zZjIFJbQF7Ce9zcJyPO_MVHNI6gi.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0468/xXYirvvH6QAGPAxpSvICC_PU1X57OC.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0468/xXYirvvH6QAGPAxpSvICC_PU1X57OC.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0468/f1qLq1TeiK3VfMOPcX2vC_YhpIB8J0.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0468/7V1UQN0mOMTXrnfGZtHkr_RiRnd5rg.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "flowers brush the tires per wrongness rule, distant car closer with headlights; c1 rejected for A1 text burn and composite artifacts, c2 weaker wrongness",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "mile-marker-271",
       "window": "20:08-20:17",
       "filename": "mile-marker-271__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, blank metal roadside marker post beside bluebonnets, reflective plate without readable numerals, empty highway behind, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, blank metal roadside marker post beside bluebonnets, reflective plate without readable numerals, empty highway behind, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187339,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a1/pfW8OErLF-0ftUut2NwMw_aq1havfl.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0469/4Fuoj2uv9lSVM3UVs1xpt_UVjJkvtW.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0469/kN-W6dw4FYWj7pRHn8OZs_imRKgnMl.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0469/4Fuoj2uv9lSVM3UVs1xpt_UVjJkvtW.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0469/HXvNdeNbeplfiLG6cmiuP_ByVWuLma.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "blank plate catches last rose light per caption, bluebonnets at base; c1 plate too dark for the reflection clue, c2 sun still up",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "mile-marker-271",
       "window": "20:17-20:26",
       "filename": "mile-marker-271__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, blank metal roadside marker post beside bluebonnets, reflective plate without readable numerals, empty highway behind, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, blank metal roadside marker post beside bluebonnets, reflective plate without readable numerals, empty highway behind, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187356,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49c/gxkrMDf2tuzr2_SyYES6o_oymA1ilU.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0469/-xXut_WjdJl8K9R-F6RcK_HHYFaeze.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0469/-xXut_WjdJl8K9R-F6RcK_HHYFaeze.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0469/0Hjodk_VbtJ4_CIntcNwo_pLCWNdAM.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0469/vadCHRTxXdvwFF_huYTpl_ayNjeNVj.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "pole leans toward the field per wrongness rule, violet 20:17 palette, approaching car; c0 marker stands straight, c2 split-frame artifact",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "flyer-ditch",
       "window": "20:08-20:17",
       "filename": "flyer-ditch__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, blank paper sheet pinned in roadside grass, damp ditch flowers, clean document plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, blank paper sheet pinned in roadside grass, damp ditch flowers, clean document plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187373,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a2/lkz7yidVE59scQMiygbMY_7CpHbxzp.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e046a/YizAaiW1eA5AilMbPzfbx_O9cVTATk.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e046a/YizAaiW1eA5AilMbPzfbx_O9cVTATk.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e046a/hQ-66pEjV0rffQVZmOFqd_Ggx4LOZB.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e046a/2Z4D4GUFuamRv3XXyOGuM_bkbpXWXZ.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "blank flyer in damp ditch grass, amber dusk; c1 rejected for visible person breaking empty-world canon, c2 rejected for A1 text burns",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
     },
     {
       "nodeId": "flyer-ditch",
       "window": "20:17-20:26",
       "filename": "flyer-ditch__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, blank paper sheet pinned in roadside grass, damp ditch flowers, clean document plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, blank paper sheet pinned in roadside grass, damp ditch flowers, clean document plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187390,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49d/MWa58_JU-ODQQcmFxVs2L_z1iL0EKB.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e046a/2I73OqAVvI6leimdKB3s7_bjlaOdDj.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e046a/LKXmTBsw04IsQ6ZQ5Sym5_uIwgiJa2.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e046a/eu2zjucMN3zndqTmVfyhO_0X0CrUbq.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e046a/2I73OqAVvI6leimdKB3s7_bjlaOdDj.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "dry ditch per wrongness (water gone), flyer unnaturally upright, distant car present; c0/c1 rejected for A1 text burns",
+        "rejected": [
+          "c1",
+          "c0"
+        ]
+      }
     },
     {
       "nodeId": "scanner-radio",
       "window": "20:08-20:17",
       "filename": "scanner-radio__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close view of Texas DPS patrol radio and frequency dial with blank dark display, inside cruiser at dusk, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
-      "seed": 1187407,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, close view of a 1990s handheld police scanner clipped under a car dashboard beside an FM radio tuning dial with blank dark display, inside station wagon at dusk, clean plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty vehicle, no people, no hands, no body parts",
+      "seed": 1187414,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49e/KqGhgG56GS1Zx-jW1nUCk_wrGkX5uk.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0488/vcQzHM0YeXur-5zeTd-gj_pDsPsGvW.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0488/vcQzHM0YeXur-5zeTd-gj_pDsPsGvW.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0488/UTREUCWpXvt5dQJ9UQ1oH_D5VjInHY.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0488/hHx_yO0KaSrkAD61PVAai_9ItFgUE0.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "scanner clipped under dash, displays dark per caption, drab dusk; c1 brighter and busier, c2 green tint off-palette",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "scanner-radio",
       "window": "20:17-20:26",
       "filename": "scanner-radio__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close view of Texas DPS patrol radio and frequency dial with blank dark display, inside cruiser at dusk, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
-      "seed": 1187424,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, close view of a 1990s handheld police scanner clipped under a car dashboard beside an FM radio tuning dial with blank dark display, inside station wagon at dusk, clean plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty vehicle, no people, no hands, no body parts",
+      "seed": 1187431,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df49f/iMlDiQkt7ITvvb2Qz-Cjy_HnfzsTqN.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0488/sO6XACikf84Zu6brB2k2b_YJk6SNf5.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0488/rG-krNrlaSY27Tkz9S4Tp_iQuTdkfT.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0488/sO6XACikf84Zu6brB2k2b_YJk6SNf5.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0489/IvfET_d9URGW5BGGjn1Oj_gYlEor78.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "cabin continuity, deepened twilight, distant car beyond glass; c0 daisies intrude implausibly, c2 too dark/busy",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "tipline-printer",
       "window": "20:08-20:17",
       "filename": "tipline-printer__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, thermal printer with blank curling paper strip, dim cruiser cabin, clean document plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
-      "seed": 1187441,
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, small thermal receipt printer wired under a car dashboard with blank curling paper strip, dim station wagon cabin, clean document plate for runtime compositing, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty vehicle, no people, no hands, no body parts",
+      "seed": 1187448,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a0/ZZwK6u6QG3SMj2jebDBwu_zZcY4hMq.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0489/wlcNApJ4715vOMs5Tiza9_8B2jfAWq.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0489/1PECQ2MuJO70rheAbObJU_47vdrDfx.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e048a/LlUlsB3yfug5PkDyWeSAI_b50WCuUW.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0489/wlcNApJ4715vOMs5Tiza9_8B2jfAWq.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "prominent blank strip ideal for clue segmentation, visible DIY wiring, amber dusk; c0/c2 weaker strip visibility",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "tipline-printer",
       "window": "20:17-20:26",
       "filename": "tipline-printer__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, thermal printer with blank curling paper strip, dim cruiser cabin, clean document plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
-      "seed": 1187458,
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, small thermal receipt printer wired under a car dashboard with blank curling paper strip, dim station wagon cabin, clean document plate for runtime compositing, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty vehicle, no people, no hands, no body parts",
+      "seed": 1187465,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a0/rJvEq93kUtln2dTh9Y9XA_4n9eFoh8.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e048a/t3DZ0_3AS3MTC3FaWyZZj_BnIMfw8x.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e048a/15vqXdAe2JnXoWQO8yuVB_mmV9hP8P.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e048a/t3DZ0_3AS3MTC3FaWyZZj_BnIMfw8x.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e048a/qT6V-SaCB0ibUrAPI8abe_Czp7jPl0.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "dash-mount continuity, clean strip for composited tip text, car parked across road per wrongness; c1 printer moved to seat, c2 strip print too close to readable (A1 risk)",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "roadside-shrine",
       "window": "20:08-20:17",
       "filename": "roadside-shrine__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, roadside shrine of plastic flowers and a rosary, blank photograph shape face-down, bluebonnets pressing inward, clean plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, roadside shrine of plastic flowers and a rosary, blank photograph shape face-down, bluebonnets pressing inward, clean plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187475,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a2/E5TzcUG0kMKYSNDkTzpYv_lDSGtjfd.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e046d/wFN-w-UjNAVDmx8TXSjqA_QmFGJ84Y.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e046d/hU8KZTx_gUwZKXGR1LJFC_DPix7imc.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e046d/T97_dC_x0Y5kkqCwl1h1n_w1OeNx2u.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e046d/wFN-w-UjNAVDmx8TXSjqA_QmFGJ84Y.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "blank face-down photo enacts scratched-face canon, rosary and last light; c0 rejected for intact readable face, c2 for A1 burn",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "roadside-shrine",
       "window": "20:17-20:26",
       "filename": "roadside-shrine__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, roadside shrine of plastic flowers and a rosary, blank photograph shape face-down, bluebonnets pressing inward, clean plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
-      "seed": 1187492,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, roadside shrine where fresh bluebonnets have replaced the plastic flowers, every bloom turned to face the same direction, a rosary on a small wooden cross, blank photograph shape face-down, bluebonnets pressing inward, clean plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
+      "seed": 1187505,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a8/Mtj0Tw7f2y2dBFGvGRfUK_Fi4lLDtz.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0499/LIV0OzK2hGM86znjacMfX_4jeuSW2f.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0499/LIV0OzK2hGM86znjacMfX_4jeuSW2f.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0499/mcWoie0tN05L6i5akWLGw_auSrge3s.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0499/wj_xzNPhPL3bPIb5fRV52_jyCOYQSw.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "bluebonnets replaced plastic flowers per wrongness, blank card, car parked motionless across road; c0 car motion-blurred violating never-seen-moving, c2 weak motif",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "culvert-mouth",
       "window": "20:08-20:17",
       "filename": "culvert-mouth__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant cruiser lights, clean plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant hazard lights, clean plate, dusk amber over blue-violet shoulder, before the wrongness fully wakes, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187509,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a3/fs1UCVp0Hg0WgVGtNgSC3_sw7a9nei.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0474/Wsst7Gy00bTtsvpMttFl-_5WPwx183.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e046e/14UQEOuEQec3tOb44qblX_s7wijX0Z.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0474/Wsst7Gy00bTtsvpMttFl-_5WPwx183.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e046f/RG0fLYlhX0uw4mcqkq8E1_waewxjZn.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "flowers form hard border at concrete per caption, eerie taillights inside the dark; c0 rejected for A1 burn, c2 weaker dread",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "nodeId": "culvert-mouth",
       "window": "20:17-20:26",
       "filename": "culvert-mouth__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant cruiser lights, clean plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant hazard lights, clean plate, later dusk blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 1187526,
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "act": "act1",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a3/V4wW0qo1rkunSd8pNVwfT_yJJIlgAm.png"
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0475/7xh-rz7KLmcwtUWTia4Uh_4cyD7v0U.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e046f/bjWhIGdIrwQsK1FfL4gkZ_rkpltgEl.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0475/7xh-rz7KLmcwtUWTia4Uh_4cyD7v0U.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e046f/wtqi-kF-Gd6A8UjSL4ma1_VkcsqRXW.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "darker mouth, deeper dusk, dash vantage; c0 faint A1 burn top-left, c2 A1 burn bottom",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-threshold",
       "window": "20:08-20:17",
       "filename": "field-threshold__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, first steps into shoulder-high bluebonnets, cruiser lights receding behind clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220000,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, first steps into shoulder-high bluebonnets, hazard lights receding behind clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220003,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df434/w7WBInnJKz2GYPwKJO--0_yqDwDA63.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04db/XMGzTo0mjBeZjKmaQd0gN_7JK6G3LL.jpg",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e04db/XMGzTo0mjBeZjKmaQd0gN_7JK6G3LL.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04dc/PhBwspu4B0IkmRYtjHlnL_tGyFOGtx.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04db/UZVmpZFbc805om1t92F00_J1F3qWnz.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "clean amber field, distant paired headlights on horizon; c0 ambiguous foreground blob, c1 leg and motion blur",
+        "rejected": [
+          "c1",
+          "c0"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-threshold",
       "window": "20:17-20:26",
       "filename": "field-threshold__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, first steps into shoulder-high bluebonnets, cruiser lights receding behind clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220011,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, first steps into shoulder-high bluebonnets, hazard lights receding behind clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220014,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df434/qVtw2dBkyfVdTUAmJ6P2J_rl4pGuMl.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04dc/XwplmrQcA1ZnVjqxoZj2J_tH0g6A8S.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04dc/A4AD7CzuvEvq6Cbka8SCL_iHOGvD3u.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04dc/XwplmrQcA1ZnVjqxoZj2J_tH0g6A8S.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04d6/L65XdFfaXjQ2wavwfe6TY_KIkPROtj.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "car advanced onto the field path per wrongness, plausible geography; c0 invented structure, c1 horizon artifacts",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-left-row",
       "window": "20:08-20:17",
       "filename": "field-left-row__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, left-hand row of bluebonnets forming a shallow corridor, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220037,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, left-hand row of bluebonnets forming a shallow corridor, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220040,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df435/D09MpUbIaMMuyrx91oNlu_QbAPWEHl.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04d7/drLXWjKR3RU4N7_sJHMnc_ASUMFBSB.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04dc/IJKVHGSxVapamC3CsNk29_BmOYonej.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04d7/drLXWjKR3RU4N7_sJHMnc_ASUMFBSB.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04d7/wo0lNm8Ea_QPkHjIQWVBF_z5hMndU4.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "even ranks to the horizon per caption, amber-violet dusk; c0 mixed species dilute the bluebonnets, c2 scrubby",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-left-row",
       "window": "20:17-20:26",
       "filename": "field-left-row__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, left-hand row of bluebonnets forming a shallow corridor, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220048,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, left-hand row of bluebonnets forming a shallow corridor, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220051,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df430/lDOvnyfJlnaseOEmsPNjt_AUaNMl7L.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04dc/qDCUZajRxF7CP6WoWy-es_fdQaSPyE.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04dd/0PiOhmOG4E8eKQZSJ3YZ2_dsgXM8cp.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04dc/qDCUZajRxF7CP6WoWy-es_fdQaSPyE.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04dd/X-oEFNGasrszEJ7zRaJuk_pecWCugi.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "row bends into clock-hand angle per wrongness; c0/c2 straight rows, sky paleness acceptable under compositor grade",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-right-row",
       "window": "20:08-20:17",
       "filename": "field-right-row__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, right-hand row of bluebonnets under amber dusk, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220074,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, right-hand row of bluebonnets under amber dusk, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220077,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df431/FkcpWgIPj9S1EzdIEPWE3_a8ePqJ6F.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04de/GqPfFJaFIuJoyxK9LoI7P_3a7OePEn.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04dd/bQoCpQ8gJGydvLhpuBX_R_p3Ch998V.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04de/GqPfFJaFIuJoyxK9LoI7P_3a7OePEn.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04dd/EEgWKNOFjre4X0zSdWsNA_EGhDWbP2.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "taller blooms crowding the path edge per caption, low sun; c0 too sparse, c1 isolated clump not a row",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-right-row",
       "window": "20:17-20:26",
       "filename": "field-right-row__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, right-hand row of bluebonnets under amber dusk, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220085,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, right-hand row of bluebonnets under amber dusk, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220088,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df432/SPtkH5SK3ArlN3M_oKtRU_DaczJdms.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04de/Z8Fwflvgza9FjWk2vo8rO_0LIhzUgJ.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04de/Z8Fwflvgza9FjWk2vo8rO_0LIhzUgJ.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04d8/wDkFXezn1wev02brPF75O_by3BHCuR.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04de/tG5eiy5F-Kkbbczcuc9lc_gFoJ67nw.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "row sweeps a clear second hand-angle toward a lone cross-pole; c0 too dim to read the angle, c2 corner only implies it",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-two",
       "window": "20:08-20:17",
       "filename": "field-clock-two__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, circular bloom cluster with two dense lobes and open center, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220111,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, two dense rounded patches of blue bluebonnet wildflowers side by side in a grassy clearing with an open gap between them, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220119,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df432/iIig-EiW4rwsNtN8IyX9P_mwQ7K7Fa.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0505/Fp9o1oUHhgRLE41D50WiG_FXdPrt8R.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0505/Fp9o1oUHhgRLE41D50WiG_FXdPrt8R.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0505/q6x27eil2g1pBw9W7MeXi_sW9oj7Kj.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0504/MtGppa43QF7wySdCYSifI_62OV9oqa.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "twin bluebonnet lobes with open gap, amber dusk; c1 reads midday, c2 weaker palette",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-two",
       "window": "20:17-20:26",
       "filename": "field-clock-two__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, circular bloom cluster with two dense lobes and open center, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220122,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, two dense rounded patches of blue bluebonnet wildflowers side by side in a grassy clearing with an open gap between them, both patches leaning toward the same direction, deep blue-violet civil twilight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220130,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df433/77Rsa6aQ2MBxY-fmtzDfo_7GHaXsT7.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0505/XazkbX9zZ8pJgXl_LYOAS_Cs3jR045.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0504/xvZ73y-p5xIqgzQLGszVE_aC71ysJY.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0505/XazkbX9zZ8pJgXl_LYOAS_Cs3jR045.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0504/UljpqUB5maLdGsaoNrTZO_WnrJVOgQ.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "deep twilight, lobes lean one direction per wrongness; c0 daylight sky wrong window, c2 heavy glitch banding",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-seven",
       "window": "20:08-20:17",
       "filename": "field-clock-seven__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, bloom cluster shaped like a seven-step diagonal trail, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220148,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, a diagonal trail of seven distinct clumps of blue bluebonnet wildflowers stepping across a grassy clearing, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220156,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df434/cFL5yIYg2CUl5yHQo8sxM_UNSfpu5B.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0506/SyX-HSuIppPsiOf48Hj7l_gZbbPbvS.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0506/SyX-HSuIppPsiOf48Hj7l_gZbbPbvS.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e050b/-wG3qlCG9LYoAXrTjY3h-_K0zwmCeQ.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0506/EYxQIbhUtG8z1BrHVA9EF_iYsDB0RO.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "distinct countable stepped clumps on a diagonal, dusk treeline; c1 hazy steps, c2 too dark to count",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-seven",
       "window": "20:17-20:26",
       "filename": "field-clock-seven__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, bloom cluster shaped like a seven-step diagonal trail, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220159,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, a diagonal trail of seven distinct clumps of blue bluebonnet wildflowers stepping across a grassy clearing, the trail sitting offset from its flattened imprint in the grass, deep blue-violet civil twilight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220167,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df435/PdBv2RsIAciGONG1aeNSf_fpf1pbNV.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0506/rFgdat4ZGtL75DenPvSvJ_gROIvbI7.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0506/7qF4MFMK8ALyKbfyjg-6i_AuEC0BSz.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0506/rFgdat4ZGtL75DenPvSvJ_gROIvbI7.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0506/BGSOu5Aj6GyobY0r_osLm_mqp3P8rz.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "clumps offset beside their flattened imprints per wrongness, twilight; c0 lacks imprints, c2 brighter and treads read vehicular",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-one",
       "window": "20:08-20:17",
       "filename": "field-clock-one__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, single tall bloom column isolated in a patch of dark leaves, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220185,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, one single tall column-shaped clump of blue bluebonnet wildflowers standing alone in short dark grass, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220193,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df435/vUk_KFdcjTJD83EdmROSr_TmkV1w1T.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0507/bY6Xw_wJNi_8X-n6ofwnS_f4XnYUvq.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0507/bY6Xw_wJNi_8X-n6ofwnS_f4XnYUvq.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0507/7P0iw4TFZG5s0YF1WYwQ1_1Tndxrgn.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0507/cQgobsTL8L7uS3xQ0ATfb_Efv8hsgB.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "lone column prominent against amber horizon band; c1 column too small in frame, c2 washed sky",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-one",
       "window": "20:17-20:26",
       "filename": "field-clock-one__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, single tall bloom column isolated in a patch of dark leaves, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220196,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, one single tall column-shaped clump of blue bluebonnet wildflowers standing alone in short dark grass, a faint translucent double of the clump beside it, deep blue-violet civil twilight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220204,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df436/sBw3U0ujb9a1-p02xIn4M_PpJlW8Wz.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0507/d3ITHx7pG6MzY3qM-b5B-_XSEk2Pkf.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0507/d3ITHx7pG6MzY3qM-b5B-_XSEk2Pkf.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0507/-ypfcavv13kcvAcqjloD3_pQ0TbF6s.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0508/4yg8FdF_nIlUsMJmeorDf_qDB4pIvr.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "translucent double reads as tape-shadow artifact via scanline banding; c0 too subtle, c2 too pale",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-three",
       "window": "20:08-20:17",
       "filename": "field-clock-three__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, three crescent bloom clusters around flattened grass, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220222,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, three crescent-shaped arcs of blue bluebonnet wildflowers curling around a bare patch of pale caliche soil, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220230,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df437/fRFSq-Pm-6DAfg0XMvmJz_UmCU8rUY.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0508/upOfkDdaYmxb7lD_CDLv1_9cbyq2KQ.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0508/NqL_6vx1mll_jsg9RMiuJ_UAq8cUqv.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0508/RFWcE4O9HEJ3w1691yVC-_BPNGCtOk.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0508/upOfkDdaYmxb7lD_CDLv1_9cbyq2KQ.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "three readable crescent arcs around bare caliche, violet dusk; c0 cluttered center, c2 too many rings to count three",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-clock-three",
       "window": "20:17-20:26",
       "filename": "field-clock-three__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, three crescent bloom clusters around flattened grass, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220233,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, three crescent-shaped arcs of blue bluebonnet wildflowers curling around a bare patch of pale caliche soil, the crescents turned to face inward, deep blue-violet civil twilight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220241,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df43e/ngKvetjrKvgUDfYFCXoX6_2QzEkZyR.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0508/Q4DPog0UQ51fWmT43RKUN_75J3cM1O.jpg",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e0508/2Tfh5v05kc_ihmi8rbrew_ZQj5R8Qo.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0508/Q4DPog0UQ51fWmT43RKUN_75J3cM1O.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0509/SKIbmKbcQHPodRum04hDs_5q2y1lQA.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "crescents curl inward like grasping hands per wrongness, lens warp reads handheld; c1 closed ring loses the three-count, c2 murkier",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-gate",
       "window": "20:08-20:17",
       "filename": "field-gate__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, rusted cattle gate half swallowed by bluebonnets with blank clean padlock plate, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220259,
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, rusted cattle gate half swallowed by bluebonnets with blank clean padlock plate, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220262,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df438/uDTmgh0jAvE0pMWjpZzgH_hEC0AFBa.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04dd/XaJAt_lNvjGrmcu5-JV8T_FItBXAAJ.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04dd/XaJAt_lNvjGrmcu5-JV8T_FItBXAAJ.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04e3/CnHDJKn_16IuPn3m_kJP9_rVd37jzd.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04dd/NghuM-nUNxFGqL24j2aoM_j8FlhogB.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "padlock prominent and centered for clue segmentation, amber dusk; c1 padlock small under blank sign, c2 gate cornered and dark",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-gate",
       "window": "20:17-20:26",
       "filename": "field-gate__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, rusted cattle gate half swallowed by bluebonnets with blank clean padlock plate, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220270,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, rusted tube cattle gate looming close and filling the frame, one heavy steel padlock hanging at eye level in sharp focus on the chain, bluebonnets pressing through the bars, deep blue-violet civil twilight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no buildings",
+      "seed": 220284,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df439/nAvUlsJmnS227VH6P8ExK_LJ5BlunQ.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0517/X4RhAkUh9myIc14ve4unP_Ilj2dwih.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0517/X4RhAkUh9myIc14ve4unP_Ilj2dwih.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0517/6l6NtgP8i-pjpgMca1CL2_5n8zrrMh.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0519/0Kq1LwyHAD5ChW1UBOaBv_Rl3F5Jzu.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "eye-level padlock per wrongness, clean lock face for composited digits, violet twilight; c1 rust face too busy for overlay, c2 engraving-like marks risk A1",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-tally",
       "window": "20:08-20:17",
       "filename": "field-tally__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, weathered board beside the cattle gate with blank clean tally surface, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220296,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, weathered board beside the cattle gate with blank clean tally surface, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220299,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df43a/cMHL7PYN6RfVaFa1ALyaE_iNf6SHtl.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04e5/iSY8iLG7jdGmhaS9GzLXn_q1LG8Yde.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04de/HGdq55wuAMqXA33FDdXiA_t4jMdMLG.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04e5/iSY8iLG7jdGmhaS9GzLXn_q1LG8Yde.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04e4/nw5ljL05bUZuefEBHAD9g_zNHoAr2n.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "blank pale board catching last light, ideal surface for composited tally marks; c0 board too dark for overlay, c2 glitch banding",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "field-tally",
       "window": "20:17-20:26",
       "filename": "field-tally__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, weathered board beside the cattle gate with blank clean tally surface, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220307,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, weathered wooden notice board with blank pale panel nailed to a post beside a rusted cattle gate, the board tilted at a wrong angle toward the gate, flat Texas prairie horizon, bluebonnets in the grass, deep blue-violet civil twilight after sundown, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no buildings, no hills",
+      "seed": 220327,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df43b/QfcBlhRfVTNwIMVOLWNkc_v1GIMeR1.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0523/4h96f7UuYnMLkhGsqeK-3_yUqaVU8l.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0523/h4Ea8RDQ22FRzUUDX5FGb_XUKWShrU.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0523/DsF-G0pK8c5vyBHyadEEv_AtEXkIRy.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0523/4h96f7UuYnMLkhGsqeK-3_yUqaVU8l.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "board twisted toward the gate per wrongness, flat Texas twilight; c0 lean too subtle, c2 sunset band pulls window earlier",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "act2-culvert-stub",
       "window": "20:08-20:17",
       "filename": "act2-culvert-stub__2008-2017.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, flattened flowers opening toward the highway culvert darkness, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220333,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view while walking, flattened flowers opening toward the highway culvert darkness, clean empty field plate, dusk amber over blue-violet field, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, no children, no animals",
+      "seed": 220336,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df43b/HxwQ8HgGcXlL8t8jgCa3i_6EQbSOHS.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04e6/qTVdPKujp5juApa8MNEMu_kMsekr55.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04e5/7ls-0cYds3w4w8cL6ummB_RrgXF7pE.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04e0/4j3l38ExA4w_sSn0razM-_2oqJwK96.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04e6/qTVdPKujp5juApa8MNEMu_kMsekr55.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "box culvert matches act3 geometry, interior dark refuses the dusk per caption, offering-like flowers at the lip; c0 arch wrong scale, c1 storm clouds off-palette",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
     },
     {
       "act": "act2",
       "nodeId": "act2-culvert-stub",
       "window": "20:17-20:26",
       "filename": "act2-culvert-stub__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, flattened flowers opening toward the highway culvert darkness, clean empty field plate, later window, geography subtly rearranged, flowers nearer the unseen path, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
-      "seed": 220344,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, square concrete culvert mouth under a Texas highway embankment at deep blue-violet civil twilight, the opening an impossibly black void that seems to exhale darkness over the bluebonnets in the foreground, faint tracking distortion, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty landscape, no people, no figures, night falling",
+      "seed": 220370,
       "model": "fal-configured-image-generation",
-      "status": "generated",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df43c/Z4OswJXnIJO20u9Jc96l2_E1s26CKg.png"
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0541/VnGlwtUB9GY9xWYZwf05M_XSTAmnfH.jpg",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e0541/fIsgWBeVZAE46PE-IpbjZ_BU02mNdM.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0541/VnGlwtUB9GY9xWYZwf05M_XSTAmnfH.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0542/cN_8yKFrbQk9uNp3rp-tJ_4o0HYIEh.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "ink-void mouth against floodlit bluebonnets per caption, camcorder low-light bloom; c0 interior visible weakens the void, c1 blown sky band",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-throat",
       "window": "20:17-20:26",
       "filename": "culvert-throat__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330000,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/x9LeCoVen2pY_eKZ0MtnY_eX8L8aNf.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/x9LeCoVen2pY_eKZ0MtnY_eX8L8aNf.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04bb/yR74bsZUcpnkc0F1ZjGzc_EinFfQI7.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04bb/ELRmRKc_CuJGTmSwc6vqx_jVVgdSEb.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bb/YzhTcWSW9dKKoubp-5pc6_Rh33bD60.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-throat",
       "window": "20:26-20:35",
       "filename": "culvert-throat__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330011,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/P49jCxnUygYf9dEpzw9j3_C1Y85ocm.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/P49jCxnUygYf9dEpzw9j3_C1Y85ocm.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04bb/SRUOkZgQjwdBYEXkbPVGd_TqobGL1o.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bb/CYTR7YjBexLA_U5OmcxhH_qL2HzTls.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04bb/MPXk2yX71mSxTeGktgMqT_tHFMm0dG.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-dripline",
       "window": "20:17-20:26",
       "filename": "culvert-dripline__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330037,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/zakvFoFSDw0HsWpPxT_4r_BmkqpAq7.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/zakvFoFSDw0HsWpPxT_4r_BmkqpAq7.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04bc/vn9Sh5ac8ByB0q9J4rMqs_X8V08K2X.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04bc/NRID3JVz_rrM-8doMO7JF_irKPlp5r.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bc/YUEP5ppPFV7XHuFkIl7Ak_v6Cj9z5U.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-dripline",
       "window": "20:26-20:35",
       "filename": "culvert-dripline__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330048,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/3NiSLxVb9x9THmeDrw6W5_fx4eOASD.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/3NiSLxVb9x9THmeDrw6W5_fx4eOASD.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04bc/9_yCdrzRFSUVVF0Skmzgb_AqYfiRuC.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04bc/ATQShKDrn-hyh3HX15y3K_972u6t4w.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bc/Af_B1fkJKoXWnfhIvmms8_xWhxPmsb.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-pipe",
       "window": "20:17-20:26",
       "filename": "culvert-pipe__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330074,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ae/i0ti7Zp9CUov2rScOh8-7_HDng7zyH.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ae/i0ti7Zp9CUov2rScOh8-7_HDng7zyH.png",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e04bd/prFPlUFNYKntGx6yodvL8_MFXy6pev.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04bd/U0B109YV0n_xqA98BNIe7_nMleQevW.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04bd/21O6FQ01zwfZJEXHLqg6S_KIPZJ5nB.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-pipe",
       "window": "20:26-20:35",
       "filename": "culvert-pipe__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330085,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a9/VSUxpvfxRKFA53Dp12VOi_A9v3Xnx8.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a9/VSUxpvfxRKFA53Dp12VOi_A9v3Xnx8.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04bd/r5mpOmZdoB689yA3iAaab_SLXmO1BE.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04bd/vlYxPqCjqIpQh_tQaRgcc_3IsNM8tT.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bd/YeV41-pPuMvBq4coy1wYn_6VbU6ju0.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-echo-chamber",
       "window": "20:17-20:26",
       "filename": "culvert-echo-chamber__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, wide underpass chamber with pooled water and flower stems in cracks, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, wide underpass chamber with pooled water and flower stems in cracks, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330111,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4af/-67fVlHcQ3cWeMHwh-92M_DD8MjAAp.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4af/-67fVlHcQ3cWeMHwh-92M_DD8MjAAp.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04be/7UqqOLO-KHO0Mb2RpI7cf_QkzKdtWM.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04be/UWtm3Tu-MKgH3SufRvNZb_RABB9QH0.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04be/WOjQPMljrURlIxBFISBCK_vbiOPAJT.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "culvert-echo-chamber",
       "window": "20:26-20:35",
       "filename": "culvert-echo-chamber__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, wide underpass chamber with pooled water and flower stems in cracks, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, wide underpass chamber with pooled water and flower stems in cracks, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330122,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4aa/Jk754YaxKJt5BZTxoWI6G_P08AkEGy.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4aa/Jk754YaxKJt5BZTxoWI6G_P08AkEGy.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04be/471LkLycR9oSjQBST_z9q_SU4J94ir.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bf/0sdhO7Xevpsbc2ckAXHnv_sHev00nw.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04bf/6THD4174H6cmR2lHIPlyr_6dpt6MBk.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "recorder-nest",
       "window": "20:17-20:26",
       "filename": "recorder-nest__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330148,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4b1/EV9accUt2p_Mb8hIAAxP7_Jb3Fo2uK.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4b1/EV9accUt2p_Mb8hIAAxP7_Jb3Fo2uK.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04bf/dlZcgkZeQkYR7QRoAX5Fz_ApztW53J.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04bf/T8biMh7TV1whzqHeny92J_WBpAoi0B.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04bf/cZynjRurA_uyHiBDhlpUE_GOuWAb6Q.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "recorder-nest",
       "window": "20:26-20:35",
       "filename": "recorder-nest__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330159,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/6VIddOv72FBYZPc5R6vHM_iecxBSiB.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/6VIddOv72FBYZPc5R6vHM_iecxBSiB.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c5/9ygYcMQzHU11bAQLiqHya_7NnNKbm2.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c0/4HnlbQBjxF2Ba7mNTcP3D_o2hxVS4S.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c1/ZKR4DNw5pK58Iyoy_jaRJ_ZFyR64KI.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "missing-minutes-gate",
       "window": "20:17-20:26",
       "filename": "missing-minutes-gate__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330185,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/-3-goBZiX0V9oNRCfRlbS_ISd6aHkl.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/-3-goBZiX0V9oNRCfRlbS_ISd6aHkl.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04c0/A4MWk1QrHEFdHMLiKpiso_ZS1JtBcH.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c0/xH7Ti8QQv8OuhZECYZ4aR_RnFHRVCa.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c0/NMk6eBX0e_gwVH3EIpjbA_oErPsgpB.jpg"
+      }
     },
     {
       "act": "act3",
       "nodeId": "missing-minutes-gate",
       "window": "20:26-20:35",
       "filename": "missing-minutes-gate__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330196,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ad/UGDZShnzwty2xIEhudgYA_fQ3eibqu.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ad/UGDZShnzwty2xIEhudgYA_fQ3eibqu.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c0/Kc6Z3-0vNxXL0OCo1XQ0M_L7hpA4Vp.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c1/2c_IGk7yQxVgcEdRiEbX1_6p8Wy6Z0.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c1/AbGwd5BLXc91tgm3rGbxc_iZ2uKqPM.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "nine-field-threshold",
       "window": "20:26-20:35",
       "filename": "nine-field-threshold__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, locked nine minutes night field threshold, luminous bluebonnets glowing faint blue, highway shoulder swallowed by flowers, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, locked nine minutes night field threshold, luminous bluebonnets glowing faint blue, highway shoulder swallowed by flowers, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440000,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df588/n5hY7bpvPnh_HP4mikazs_nGMqIoEy.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df588/n5hY7bpvPnh_HP4mikazs_nGMqIoEy.png",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e04c3/LTudbvlHgLcrajNtp984F_QqRVX4YA.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c3/CcUvpdC8u5JHYOlDmP76d_TTnWtP4t.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c3/EXrfuDjzWueBvzYoyKuTP_fn2cW6lM.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "nine-flower-path",
       "window": "20:26-20:35",
       "filename": "nine-flower-path__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, path through luminous bluebonnets during the missing nine minutes, flowers standing too tall and too close, empty clean plate, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, path through luminous bluebonnets during the missing nine minutes, flowers standing too tall and too close, empty clean plate, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440011,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58e/7ZxMeE_6KKyDbK-sYtfVm_sOCzP62v.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58e/7ZxMeE_6KKyDbK-sYtfVm_sOCzP62v.png",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e04c3/ok4Q8rp-hrqkf5xAWPMZd_UcCbHRAK.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c3/sy7Oail9G1awNJLpiQHmJ_Jq2GfgVp.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c3/2fN489qEuAigNsI3qFH9z_NVxIhlKU.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "near-car",
       "window": "20:26-20:35",
       "filename": "near-car__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, abandoned car shape near the edge of a luminous bluebonnet field, headlights dark, no visible people, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, abandoned car shape near the edge of a luminous bluebonnet field, headlights dark, no visible people, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440022,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/VvwvtNfSEku_nzb10FVgA_E1fwrdKS.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/VvwvtNfSEku_nzb10FVgA_E1fwrdKS.png",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e04c4/s-DiUXegJjiovFxm00TGv_b7dtWTzr.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c4/l-RlZB4Uk4xY7Eah2siC3_vjiAJU8Q.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04ca/EHjr7MMmj4-zHyJQOY9ak_h4Xckf5R.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "luminous-shrine",
       "window": "20:26-20:35",
       "filename": "luminous-shrine__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close roadside shrine overtaken by luminous bluebonnets, blank photograph area and blank tape label surface, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, close roadside shrine overtaken by luminous bluebonnets, blank photograph area and blank tape label surface, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440033,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/3WHiMlY7l5TVcn0o8KYUQ_m9Gf0oYq.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/3WHiMlY7l5TVcn0o8KYUQ_m9Gf0oYq.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04c4/tRPT8Pbi-yScP4n2su8aC_1nnXxCZ5.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c4/Bs6CSNLkYg0Jb4fvdxitA_bu7KULB6.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c4/gEo1I72EG-X3OpHvtmUfL_1E5wNqVL.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "car-door",
       "window": "20:26-20:35",
       "filename": "car-door__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, bluebonnet field terminus during missing nine minutes, cruiser and car nearly nose to nose in impossible distance, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, bluebonnet field terminus during missing nine minutes, station wagon and car nearly nose to nose in impossible distance, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440044,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/fokg0kw5TLpTO3WFIZmIM_RHpjbJsF.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/fokg0kw5TLpTO3WFIZmIM_RHpjbJsF.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04c5/K9ROFWKwajTCi0tA9VuWm_JMU9kdgZ.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c5/vLURidetB9OxGS_WxIwvO_QfgxZKLM.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c5/RzrRuCvfh4RvjOEbg1q9M_b8Dne0o6.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "final-choice",
       "window": "20:26-20:35",
       "filename": "final-choice__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, final tape choice altar inside luminous bluebonnet field, blank VCR cassette surface and blank evidence tags, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, final tape choice altar inside luminous bluebonnet field, blank VCR cassette surface and blank evidence tags, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440055,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/SAJilIk5rGaFy7S0xAPSE_bKffVZmM.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/SAJilIk5rGaFy7S0xAPSE_bKffVZmM.png",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e04c5/lMXGIj1oAUq7xpIsete2K_8QkyQxCl.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c5/_J69D5qV8AsXaj-zh3iJG_gPb29ruO.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e04c6/E6bnPjrTkWzEAfES_hP6P_cW9CMKCH.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "ending-eject",
       "window": "20:26-20:35",
       "filename": "ending-eject__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, EJECT ending sealed evidence box on quiet CRT deck, bluebonnet glow fading outside black screen reflection, blank tape label and blank case tag for runtime compositing, analog horror restraint, muted blue-black colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, EJECT ending sealed evidence box on quiet CRT deck, bluebonnet glow fading outside black screen reflection, blank tape label and blank case tag for runtime compositing, analog horror restraint, muted blue-black colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440066,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df621/pDLMxK9j12EVBX5L7P_M2_6MBuOJbQ.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df621/pDLMxK9j12EVBX5L7P_M2_6MBuOJbQ.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c6/705ISvSnf-g2VYuERBYS7_8y0mvEP5.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c6/7Cfcdq4od71HBWIMUYCQS_0N18rDsE.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c6/zOp8zkP7Zcd8lFTqW3Ahp_XmMtUYXN.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "ending-record",
       "window": "20:26-20:35",
       "filename": "ending-record__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, RECORD ending overwritten tape view from inside the evidence deck, field and CRT reflections layered together, luminous bluebonnets pressing against glass, blank tape label for runtime compositing, analog horror, muted blue-black colors, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, RECORD ending overwritten tape view from inside the evidence deck, field and CRT reflections layered together, luminous bluebonnets pressing against glass, blank tape label for runtime compositing, analog horror, muted blue-black colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 440077,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df61c/n6ueL4pQPaKhl1vnc1l2l_lwx2vC8m.png"
+      "status": "regen-pending",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df61c/n6ueL4pQPaKhl1vnc1l2l_lwx2vC8m.png",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c6/8y951xz8HRkaMTqFlV7vc_wZaWZndP.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c6/9EKNs_ELr-ocmzs_o7hUM_cKEJjhDy.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c7/8WKRKJDY9HWVOagDTCADX_joDutF3W.jpg"
+      }
     },
     {
       "act": "act4",
       "nodeId": "nine-threshold-left",
       "window": "20:26-20:35",
       "filename": "nine-threshold-left__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, left-facing view from the culvert mouth into a luminous bluebonnet field at night, blue-black palette, faint car headlight glow off-frame, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, left-facing view from the culvert mouth into a luminous bluebonnet field at night, blue-black palette, faint car headlight glow off-frame, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 450101,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
+      "status": "regen-pending",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9dff99/2TY1QyXntETKMKQgs3O8o_dUl5r7Bu.png",
       "curation": {
         "selected": true,
         "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      },
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c7/tHyr0ecroMxJne8g28ig4_J6PFu0SK.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c7/iUCNimumaAU96DZJuRZqG_5IcKkpjf.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04cd/ehj9D4vHD8LcD0sOTo5kH_Iuhg7QhA.jpg"
       }
     },
     {
@@ -638,14 +1211,19 @@
       "nodeId": "nine-threshold-right",
       "window": "20:26-20:35",
       "filename": "nine-threshold-right__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, right-facing view from the culvert mouth across shoulder-high luminous bluebonnets at night, highway shoulder vanished behind flowers, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, right-facing view from the culvert mouth across shoulder-high luminous bluebonnets at night, highway shoulder vanished behind flowers, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 450102,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
+      "status": "regen-pending",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/NpvFJccjFm4HuoYagdqIF_ITUJpCIp.png",
       "curation": {
         "selected": true,
         "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      },
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c8/k1_uhLovTxw0OmdB9bC6r_T8KHF6EE.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04ce/2i1Xzi-dnO4C5RJmCoCLl_pcn0AooK.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04ce/w0U4uBPlB8mInYNxOIJ3z_jVmfCUHT.jpg"
       }
     },
     {
@@ -653,14 +1231,19 @@
       "nodeId": "nine-threshold-look-down",
       "window": "20:26-20:35",
       "filename": "nine-threshold-look-down__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, look-down view at boots disappearing into bluebonnets and dark soil near culvert threshold, analog horror, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, look-down view at boots disappearing into bluebonnets and dark soil near culvert threshold, analog horror, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 450103,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
+      "status": "regen-pending",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/e1jbsjOeqVmWPFvhmAohH_QifjmrSM.png",
       "curation": {
         "selected": true,
         "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      },
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04ce/CyMBGbOC-ABnCatWOoFOX_U3cPhi6Q.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c8/1FfPne4o4AjLCs05rrGyq_wjL8266o.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c8/Nr1sl96QsWSaxpYsUN6Al_j1cxgotd.jpg"
       }
     },
     {
@@ -668,14 +1251,19 @@
       "nodeId": "nine-culvert-detail",
       "window": "20:26-20:35",
       "filename": "nine-culvert-detail__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, close detail of wet concrete culvert lip with bluebonnet roots creeping over it, blank surfaces only, eerie night luminescence, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, close detail of wet concrete culvert lip with bluebonnet roots creeping over it, blank surfaces only, eerie night luminescence, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 450104,
       "model": "fal-configured-image-generation",
-      "status": "generated-clean",
+      "status": "regen-pending",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9b/7GzaKHU-oG-mIBcbrwqWP_ZmRZ4iYE.png",
       "curation": {
         "selected": true,
         "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      },
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e04c9/obzTNdziH7VDlOmTFZQcJ_Zmzq5hhR.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e04c9/vUraeVL_CrYhkrtYIZg5F_pi6BgyiZ.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e04c9/aS33ai1NFydb_wTmw9dVL_UGrlHUSb.jpg"
       }
     }
   ],

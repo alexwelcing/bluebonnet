@@ -46,3 +46,15 @@ export function clipPathWithinBounds(polygon: readonly Point[], bounds = polygon
   });
   return `polygon(${points.join(', ')})`;
 }
+
+// Same local-coordinate mapping as clipPathWithinBounds, but as SVG polygon
+// points in a 0-100 viewBox — used to draw the clue silhouette outline.
+export function svgPointsWithinBounds(polygon: readonly Point[], bounds = polygonBounds(polygon)): string {
+  return polygon
+    .map(([x, y]) => {
+      const localX = bounds.width === 0 ? 0 : ((x - bounds.minX) / bounds.width) * 100;
+      const localY = bounds.height === 0 ? 0 : ((y - bounds.minY) / bounds.height) * 100;
+      return `${localX.toFixed(2)},${localY.toFixed(2)}`;
+    })
+    .join(' ');
+}

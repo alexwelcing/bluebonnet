@@ -1,5 +1,5 @@
 import { createAudioMixer } from '../engine/audioMixer';
-import { clipPathWithinBounds, polygonBounds } from '../engine/hotspotGeometry';
+import { clipPathWithinBounds, polygonBounds, svgPointsWithinBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
 import { availableHotspots, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
@@ -215,17 +215,35 @@ function render() {
     ...availableHotspots(nodeState, snapshot).map((hotspot) => {
       const button = document.createElement('button');
       button.type = 'button';
-      button.className = 'hotspot';
+      button.className = hotspot.clueHighlight ? 'hotspot hotspot-clue' : 'hotspot';
       button.dataset.hotspotId = hotspot.id;
-      button.textContent = hotspot.label;
       button.title = hotspot.label;
       const bounds = polygonBounds(hotspot.polygon);
       button.style.left = `${bounds.minX}%`;
       button.style.top = `${bounds.minY}%`;
       button.style.width = `${bounds.width}%`;
       button.style.height = `${bounds.height}%`;
-      button.style.clipPath = clipPathWithinBounds(hotspot.polygon, bounds);
       button.style.setProperty('--assist-threshold', String(hotspot.shimmerThreshold ?? 0.55));
+      const label = document.createElement('span');
+      label.className = 'hotspot-label';
+      label.textContent = hotspot.label;
+      button.append(label);
+      if (hotspot.clueHighlight) {
+        // Segmented clue: the silhouette itself is the affordance. The SVG
+        // outline traces the object; the clip-path limits the hit area to it.
+        button.style.clipPath = clipPathWithinBounds(hotspot.polygon, bounds);
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'clue-outline');
+        svg.setAttribute('viewBox', '0 0 100 100');
+        svg.setAttribute('preserveAspectRatio', 'none');
+        svg.setAttribute('aria-hidden', 'true');
+        const shape = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        shape.setAttribute('points', svgPointsWithinBounds(hotspot.polygon, bounds));
+        svg.append(shape);
+        button.append(svg);
+      } else {
+        button.style.clipPath = clipPathWithinBounds(hotspot.polygon, bounds);
+      }
       button.addEventListener('click', () => activateHotspot(hotspot));
       return button;
     }),
