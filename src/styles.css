@@ -356,7 +356,10 @@ button, .save {
   display: grid;
   place-items: center;
   border: 5px solid rgba(20,18,14,0.82);
+  /* A head-and-shoulders shape almost lost in the photocopy halftone. */
   background:
+    radial-gradient(ellipse 28% 22% at 50% 32%, rgba(20,18,14,0.5), transparent 70%),
+    radial-gradient(ellipse 46% 30% at 50% 78%, rgba(20,18,14,0.42), transparent 72%),
     radial-gradient(circle, rgba(20,18,14,0.55) 0 1px, transparent 1px 4px),
     linear-gradient(135deg, rgba(20,18,14,0.18), rgba(20,18,14,0.02));
   color: rgba(20,18,14,0.72);

@@ -84,7 +84,7 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.caption')?.textContent).toContain('MISSING: LENA ORTIZ');
     expect(document.querySelector('.journal-list')?.textContent).toContain('MISSING: LENA ORTIZ');
     expectVisibleExhibitContaining('LENA ORTIZ', '88.7');
-    expect(document.querySelector('.exhibit-flyer .flyer-photo-block')?.textContent).toContain('PHOTO BLOCK');
+    expect(document.querySelector('.exhibit-flyer .flyer-photo-block')?.getAttribute('role')).toBe('img');
     expect(document.querySelectorAll('.exhibit-flyer .tear-off-tabs span')).toHaveLength(5);
     realPointerClick(button('RETURN TO DECK'));
 

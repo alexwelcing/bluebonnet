@@ -156,3 +156,6 @@ Result: PASS. The Act IV threshold now has lateral left/right views plus look-do
 
 ## 2026-06-13 — Full supervised playthrough (Claude), post-layout-rework, RECORD ending
 Boot → Act I (flyer → scanner 88.7 → tip line → 20:17 discovered, marker/side quests) → culvert mouth → field threshold → all four bloom clocks → tally → padlock 2713 (gate transition) → culvert throat (descent transition) → dripline → knock pipe (echo pattern + knocks) → echo chamber → recorder nest (20:26 discovered) → missing-minutes gate → DUB COMPARE engaged at the gate → seam crossing transition → Act IV threshold → left facing → flower path → near car → shrine → car door → final choice → RECORD ending (red-flood transition). 18 journal entries; ending flag persisted; every transition settled; zero console errors. Found+fixed during the run: the open deck drawer occluded right-side hotspots (picture now yields drawer width).
+
+## 2026-06-13 — Critic playthrough (Claude), 39 screenshots, EJECT route
+Fresh-player pass reviewing pacing, readability, continuity. Findings filed in .bridge/feedback.md (3 fixed same-session: mouse-navigation focus rectangle painted on the picture, "PHOTO BLOCK / HALFTONE COPY" jargon in the flyer exhibit, awkward act-boundary caption; 5 art/design items queued against the ~$27 reserve; 1 item flagged for human ears — audio seams/mix).

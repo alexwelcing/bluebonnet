@@ -1792,7 +1792,7 @@
                   "flag": "puzzle:dispatch-log"
                 }
               ],
-              "caption": "The tape has enough time to enter the field.",
+              "caption": "The counter clears 20:17. The field will accept the tape now.",
               "shimmerThreshold": 0.35
             }
           ],

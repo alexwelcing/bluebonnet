@@ -161,6 +161,10 @@ const exhibitPaper = app.querySelector<HTMLElement>('.exhibit-paper')!;
 const closeExhibit = app.querySelector<HTMLButtonElement>('.close-exhibit')!;
 const colophonPanel = app.querySelector<HTMLDivElement>('.colophon-panel')!;
 const closeColophon = app.querySelector<HTMLButtonElement>('.close-colophon')!;
+let lastInputWasKeyboard = false;
+document.addEventListener('keydown', () => { lastInputWasKeyboard = true; }, { capture: true });
+document.addEventListener('pointerdown', () => { lastInputWasKeyboard = false; }, { capture: true });
+
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
@@ -276,8 +280,10 @@ function render() {
     }),
   );
 
+  // Only restore focus for keyboard players: programmatic focus after a mouse
+  // click paints the focus affordance onto the picture (seen in playthrough).
   const focusedHotspotId =
-    document.activeElement instanceof HTMLElement && document.activeElement.classList.contains('hotspot')
+    lastInputWasKeyboard && document.activeElement instanceof HTMLElement && document.activeElement.classList.contains('hotspot')
       ? document.activeElement.dataset.hotspotId
       : undefined;
   hotspotLayer.replaceChildren(
@@ -731,7 +737,8 @@ function openExhibit(hotspot: HotspotDefinition) {
     title.textContent = 'MISSING: LENA ORTIZ';
     const photoBlock = document.createElement('div');
     photoBlock.className = 'flyer-photo-block';
-    photoBlock.textContent = 'PHOTO BLOCK / HALFTONE COPY';
+    photoBlock.setAttribute('role', 'img');
+    photoBlock.setAttribute('aria-label', 'Photocopied photograph, face lost in the halftone');
     const body = document.createElement('p');
     body.className = 'photocopy flyer-copy';
     body.textContent = sourceText.includes('88.7') ? sourceText : `${sourceText} 88.7 FM AFTER SUNDOWN.`;
