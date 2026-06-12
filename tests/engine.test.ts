@@ -9,7 +9,7 @@ const scene: SceneManifest = {
     {
       id: 'dashcam-shoulder',
       title: 'Shoulder',
-      still: 'assets/test/dashcam-test-01.png',
+      still: 'stills/dashcam-test-01.png',
       hotspots: [
         { id: 'forward', label: 'Walk toward mile marker', polygon: [[70, 35], [92, 35], [92, 68], [70, 68]], target: 'mile-marker' },
         { id: 'radio', label: 'Touch patrol radio', polygon: [[8, 68], [32, 68], [32, 94], [8, 94]], setFlag: 'radioTouched', target: 'dashcam-shoulder' },
@@ -18,7 +18,7 @@ const scene: SceneManifest = {
     {
       id: 'mile-marker',
       title: 'Mile Marker',
-      still: 'assets/test/dashcam-test-01.png',
+      still: 'stills/dashcam-test-01.png',
       hotspots: [
         { id: 'back', label: 'Return to cruiser', polygon: [[0, 0], [20, 0], [20, 100], [0, 100]], target: 'dashcam-shoulder' },
         { id: 'deeper', label: 'Follow the flattened flowers', polygon: [[75, 25], [100, 25], [100, 75], [75, 75]], target: 'field-edge' },
@@ -27,7 +27,7 @@ const scene: SceneManifest = {
     {
       id: 'field-edge',
       title: 'Field Edge',
-      still: 'assets/test/dashcam-test-01.png',
+      still: 'stills/dashcam-test-01.png',
       hotspots: [
         { id: 'back', label: 'Back to mile marker', polygon: [[0, 20], [25, 20], [25, 80], [0, 80]], target: 'mile-marker' },
       ],

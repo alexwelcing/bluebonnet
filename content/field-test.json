@@ -4,7 +4,7 @@
     {
       "id": "dashcam-shoulder",
       "title": "Dashcam: Highway Shoulder",
-      "still": "assets/test/dashcam-test-01.png",
+      "still": "stills/dashcam-test-01.png",
       "caption": "Recovered DPS dashcam. The idling engine is steady; something taps inside the radio speaker.",
       "hotspots": [
         {
@@ -34,7 +34,7 @@
     {
       "id": "mile-marker",
       "title": "Mile Marker 271",
-      "still": "assets/test/dashcam-test-01.png",
+      "still": "stills/dashcam-test-01.png",
       "caption": "The marker is too clean. Its reflective numbers bloom white in the VHS smear.",
       "hotspots": [
         {
@@ -54,7 +54,7 @@
     {
       "id": "field-edge",
       "title": "Edge of the Bluebonnets",
-      "still": "assets/test/dashcam-test-01.png",
+      "still": "stills/dashcam-test-01.png",
       "caption": "The flowers bend away from the highway like a wake. The tape timestamp is no longer moving correctly.",
       "hotspots": [
         {

@@ -44,3 +44,17 @@ Next:
 
 Blockers:
 - None. Verification passed: npm run typecheck, npm test, npm run build; .bridge/preview refreshed from dist.
+
+## 2026-06-12T03:02:09+00:00 — Runtime still asset fix
+
+Changed:
+- Copied the dashcam placeholder runtime still into public/stills/dashcam-test-01.png while keeping assets/test/dashcam-test-01.png as the generated master archive.
+- Updated content manifests and engine tests to reference stills/dashcam-test-01.png with a relative path.
+- Removed the custom Vite test-asset copy plugin; Vite now copies public/stills into dist/stills directly.
+- Rebuilt and refreshed /workspaces/bluebonnet/.bridge/preview/ from dist.
+
+Next:
+- Playtest the refreshed bridge preview and continue content expansion.
+
+Blockers:
+- None. Verification passed: npm run typecheck, npm test, npm run build; dist/stills/dashcam-test-01.png and .bridge/preview/stills/dashcam-test-01.png both exist.
