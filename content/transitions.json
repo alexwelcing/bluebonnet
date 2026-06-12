@@ -1,0 +1,38 @@
+{
+  "schema": "plate-to-plate transition clips (canon A7): first frame = origin plate, last frame = destination plate, keyed by window",
+  "transitions": [
+    {
+      "from": "wagon-interior",
+      "to": "wagon-exterior",
+      "window": "20:08-20:17",
+      "src": "video/transitions/wagon-interior__wagon-exterior__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the empty view glides weightlessly from inside the empty wagon out through the open door like a ghost, no one visible, the car completely empty, drifting outside and slowly rotating to face the wagon with both doors open among the bluebonnets, floating dolly move. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 2188,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e07d4/njTDpbzuxECrQxU_j4qu4_3d6396e32ece44d2a0a376e55ea6d5bb.mp4",
+      "curation": "s2188 ghost-glide clean; s1187 rejected for visible figure climbing out (empty-world)"
+    },
+    {
+      "from": "wagon-exterior",
+      "to": "mile-marker-271",
+      "window": "20:08-20:17",
+      "src": "video/transitions/wagon-exterior__mile-marker-271__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view drifts low along the highway shoulder past the parked wagon, gliding over the bluebonnets toward the reflective mile marker post catching the last rose light, settling close on the blank marker plate. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e07e1/8SmMM6BNt9FxU1vhqJ4Fv_27f081027a504bc8a4b0c94842a44c1d.mp4",
+      "curation": "first take clean: low glide along flowers, marker rises and settles to plate framing"
+    },
+    {
+      "from": "missing-minutes-gate",
+      "to": "nine-field-threshold",
+      "window": "20:26-20:35",
+      "src": "video/transitions/missing-minutes-gate__nine-field-threshold__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view pushes slowly into the thin vertical seam of pale light in the black wall, the seam widening and swallowing the frame in light, then opening out of a dark concrete culvert mouth onto an endless night field of faintly glowing bluebonnets. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e07ea/lwHt36_3xyL6-PV_NUerV_091cfdef68594f69b94f9a13344366c7.mp4",
+      "curation": "first take: seam swallows frame in white, resolves onto luminous field — the crossing-over beat"
+    }
+  ]
+}

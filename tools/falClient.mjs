@@ -13,6 +13,30 @@ function loadApiKey() {
 
 const API_KEY = loadApiKey();
 
+// Rough per-call cost estimates (USD) for the ledger; reconcile against the
+// fal dashboard periodically. Unknown models log 0 and a warning.
+const COST_ESTIMATES = {
+  'fal-ai/flux-2-pro': 0.03,
+  'fal-ai/flux-2-pro/edit': 0.04,
+  'fal-ai/sam-3/image': 0.01,
+  'fal-ai/veo3.1/first-last-frame-to-video': 1.3,
+};
+const LEDGER_PATH = new URL('./generation-ledger.json', import.meta.url);
+
+function appendLedger(modelId, ok) {
+  let ledger = { budgetUsd: 100, entries: [] };
+  try {
+    ledger = JSON.parse(fs.readFileSync(LEDGER_PATH, 'utf8'));
+  } catch {
+    // first write
+  }
+  const estimatedUsd = COST_ESTIMATES[modelId] ?? 0;
+  if (!(modelId in COST_ESTIMATES)) console.warn(`ledger: no cost estimate for ${modelId}`);
+  ledger.entries.push({ at: new Date().toISOString(), model: modelId, estimatedUsd, ok });
+  ledger.estimatedSpentUsd = Math.round(ledger.entries.reduce((sum, entry) => sum + entry.estimatedUsd, 0) * 100) / 100;
+  fs.writeFileSync(LEDGER_PATH, JSON.stringify(ledger, null, 2) + '\n');
+}
+
 export async function falRun(modelId, input, { retries = 3 } = {}) {
   let lastError;
   for (let attempt = 0; attempt < retries; attempt++) {
@@ -24,7 +48,10 @@ export async function falRun(modelId, input, { retries = 3 } = {}) {
       },
       body: JSON.stringify(input),
     });
-    if (response.ok) return response.json();
+    if (response.ok) {
+      appendLedger(modelId, true);
+      return response.json();
+    }
     lastError = `${response.status} ${await response.text().catch(() => '')}`.slice(0, 400);
     if (response.status >= 400 && response.status < 500 && response.status !== 429) break;
     await new Promise((resolve) => setTimeout(resolve, 2000 * (attempt + 1)));

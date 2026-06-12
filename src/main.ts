@@ -8,6 +8,7 @@ import { createStateMachine } from '../engine/stateMachine';
 import { createTimeSeek } from '../engine/timeseek';
 import type { HotspotDefinition, SceneManifest, TimeWindow } from '../engine/types';
 import { installVhsCompositor } from '../engine/vhsCompositor';
+import transitionManifest from '../content/transitions.json';
 import './styles.css';
 
 // Only the act manifests: shotlist.json and motionLoops.json are internal
@@ -279,22 +280,79 @@ function activateHotspot(hotspot: HotspotDefinition) {
 
   state.applyHotspot(hotspot);
   const target = resolveHotspotTarget(hotspot, state.snapshot());
-  if (target) {
-    state.setCurrentNode(target);
-    reseatWindowForNode(target);
-  }
-  if (hotspot.setFlag?.startsWith('ending:')) {
-    try {
-      saveSnapshot(state.snapshot());
-    } catch {
-      // storage full/unavailable — the ending still plays
+  const finishNavigation = () => {
+    if (target) {
+      state.setCurrentNode(target);
+      reseatWindowForNode(target);
     }
+    if (hotspot.setFlag?.startsWith('ending:')) {
+      try {
+        saveSnapshot(state.snapshot());
+      } catch {
+        // storage full/unavailable — the ending still plays
+      }
+    }
+    if (hotspot.caption) {
+      showCaption(hotspot.caption);
+    }
+    if (hotspot.exhibit) {
+      openExhibit(hotspot);
+    }
+  };
+  if (target && target !== state.snapshot().currentNodeId) {
+    playTransition(state.snapshot().currentNodeId, target, finishNavigation);
+  } else {
+    finishNavigation();
   }
-  if (hotspot.caption) {
-    showCaption(hotspot.caption);
+}
+
+// --- plate-to-plate transitions (canon A7) ----------------------------------
+const transitionIndex = new Map<string, string>(
+  (transitionManifest.transitions as { from: string; to: string; window: TimeWindow; src: string }[]).map(
+    (entry) => [`${entry.from}|${entry.to}|${entry.window}`, entry.src],
+  ),
+);
+let transitionActive = false;
+
+function playTransition(fromNodeId: string, toNodeId: string, finish: () => void) {
+  const src = transitionIndex.get(`${fromNodeId}|${toNodeId}|${state.snapshot().activeWindow}`);
+  const reducedMotion = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!src || reducedMotion || transitionActive) {
+    finish();
+    return;
   }
-  if (hotspot.exhibit) {
-    openExhibit(hotspot);
+  transitionActive = true;
+  const clip = document.createElement('video');
+  clip.className = 'transition-clip';
+  clip.src = src;
+  clip.muted = true;
+  clip.playsInline = true;
+  clip.setAttribute('aria-hidden', 'true');
+  let done = false;
+  const conclude = () => {
+    if (done) return;
+    done = true;
+    transitionActive = false;
+    finish();
+    // The destination plate is the clip's final frame; remove after the swap
+    // renders so there is no flash between them.
+    requestAnimationFrame(() => clip.remove());
+    clip.removeEventListener('ended', conclude);
+    stage.removeEventListener('pointerdown', conclude);
+    document.removeEventListener('keydown', concludeOnKey);
+  };
+  const concludeOnKey = () => conclude();
+  clip.addEventListener('ended', conclude);
+  // The move is skippable: any click or key lands the player immediately.
+  stage.addEventListener('pointerdown', conclude);
+  document.addEventListener('keydown', concludeOnKey);
+  // If the clip cannot play (missing file, decode error), fall through.
+  clip.addEventListener('error', conclude);
+  window.setTimeout(conclude, 8000); // hard ceiling — never trap the player
+  stage.append(clip);
+  const playResult = clip.play();
+  if (playResult && typeof playResult.catch === 'function') {
+    playResult.catch(() => conclude());
   }
 }
 

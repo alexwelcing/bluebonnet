@@ -163,6 +163,14 @@
               "target": "missing-minutes-gate",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-field-threshold__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-field-threshold__2026-2035.jpg"
+            }
           ]
         }
       },
@@ -412,6 +420,14 @@
               "target": "nine-field-threshold",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-flower-path__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-flower-path__2026-2035.jpg"
+            }
           ]
         }
       },
@@ -480,6 +496,14 @@
               ],
               "target": "nine-flower-path",
               "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/near-car__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/near-car__2026-2035.jpg"
             }
           ]
         }
@@ -857,6 +881,14 @@
               "target": "car-door",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/final-choice__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/final-choice__2026-2035.jpg"
+            }
           ]
         }
       },
@@ -1014,6 +1046,14 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the glowing red television screen",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/ending-record__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/ending-record__2026-2035.jpg"
             }
           ]
         }

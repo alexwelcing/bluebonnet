@@ -518,3 +518,23 @@ Next:
 
 Blockers:
 - fal balance exhausted (403 on generation). Top up at fal.ai/dashboard/billing, then continue the queue.
+
+## 2026-06-12T21:30:00+00:00 — Plate-anchored generation: hero loops complete + transitions live (Claude, supervising)
+
+Changed:
+- Canon A7 (plate-anchored generation): the curated plate is the unit of canon; loops, transitions, new views, and audio all derive from plates. Budget $100, metered per-call in tools/generation-ledger.json via falClient.
+- HERO LOOPS COMPLETE: 12 per-window loops live (wagon interior/exterior, field threshold/gate, culvert throat/dripline, recorder nest, act4 threshold/path/near-car/final-choice/ending-record), each supervised individually. Re-rolls: threshold taillight flare (car acting on a metronome), flower-path edge glyphs (A1), interior smoke plume. DESIGN DECISION: ending-eject ships deliberately static — containment is stillness; only the RECORD ending keeps running. Logged in motionLoops.json.
+- TRANSITIONS (new engine feature): plate-to-plate camera moves via Veo first/last-frame (first=origin plate, last=destination plate). Engine: content/transitions.json keyed from|to|window; clip plays over the stage under the tape chrome, navigation completes on end; skippable by click/key; prefers-reduced-motion and missing-clip edges hard-cut as before; 8s hard ceiling. tools/generateTransitions.mjs (gen/install with provenance).
+- Three golden-path transitions live: wagon-interior→wagon-exterior (re-rolled once: first take rendered a visible person climbing out), wagon-exterior→mile-marker-271, and missing-minutes-gate→nine-field-threshold — the seam floods the frame white and resolves onto the luminous field.
+
+Verification:
+- typecheck, 37 tests, lint, build green. Browser: transition defers navigation then lands; click-skip lands immediately; no-clip edges cut instantly; nine-minutes crossing plays and lands in act4 with its loop running; zero console errors.
+
+Spend: ~$22 estimated of $100 (ledger).
+
+Next (allocation guide in A7):
+- Density pass: new facings/zooms as FLUX.2 multi-reference edits of existing plates (~$10).
+- Transition coverage for remaining golden-path edges (~$20); loop backfill for secondary views (~$25); audio derivation pass (~$10); reserve.
+
+Blockers:
+- None.

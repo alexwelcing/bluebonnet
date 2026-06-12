@@ -62,6 +62,14 @@
               "target": "field-gate",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-throat__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-throat__2017-2026.jpg"
+            }
           ]
         },
         "20:26-20:35": {
@@ -208,6 +216,14 @@
               ],
               "target": "culvert-throat",
               "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-dripline__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-dripline__2017-2026.jpg"
             }
           ]
         },
@@ -990,6 +1006,14 @@
                   "flag": "puzzle:recorder-counter"
                 }
               ]
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/recorder-nest__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/recorder-nest__2026-2035.jpg"
             }
           ]
         }

@@ -24,75 +24,136 @@
       "sourceUrl": "https://v3b.fal.media/files/b/0a9e06bc/Vu10MhZBsdP02iiIMamoj_de2914c5fc5c43afa4e85ba46b845c0c.mp4",
       "curation": "hazards blink, wind-drifted open door settles home — physically motivated, kept deliberately",
       "status": "generated-clean-motion"
-    }
-  ],
-  "queue": [
+    },
     {
+      "id": "field-threshold__2008-2017",
       "act": "act2",
-      "nodeId": "field-threshold",
       "window": "20:08-20:17",
-      "motionPrompt": "the bluebonnet field swaying gently in waves of light wind, the paired distant headlights on the horizon flickering faintly, the sky unchanged"
+      "runtime": "video/act2/field-threshold__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the bluebonnet field swaying gently in waves of light wind, the paired distant headlights on the horizon flickering faintly, the sky unchanged. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0739/F5zTocwTV6WPdylQM7ID9_d495be42126245ad8367ffc8a1de890f.mp4",
+      "curation": "first take clean: field sways, horizon headlights flicker, sky steady",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "field-gate__2017-2026",
       "act": "act2",
-      "nodeId": "field-gate",
       "window": "20:17-20:26",
-      "motionPrompt": "the padlock swinging almost imperceptibly on the chain, bluebonnets pressing through the gate bars in light wind, twilight steady"
+      "runtime": "video/act2/field-gate__2017-2026.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the padlock swinging almost imperceptibly on the chain, bluebonnets pressing through the gate bars in light wind, twilight steady. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0744/uCB0OOc0aeqTXbG6BmwXI_b2175bd39a874f6a98b25a5be755406f.mp4",
+      "curation": "first take clean: padlock sways on chain, flowers stir, frame steady",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "culvert-throat__2017-2026",
       "act": "act3",
-      "nodeId": "culvert-throat",
       "window": "20:17-20:26",
-      "motionPrompt": "the flooded channel water rippling slowly, light swells moving across the wet surface toward the dark"
+      "runtime": "video/act3/culvert-throat__2017-2026.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the flooded channel water rippling slowly, light swells moving across the wet surface toward the dark, walls steady. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e074d/q3LzeBonEJpKN1wuDslsv_7df94a09479048da90937989e528f6c0.mp4",
+      "curation": "first take clean: water ripples, reflection wavers, structure steady",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "culvert-dripline__2017-2026",
       "act": "act3",
-      "nodeId": "culvert-dripline",
       "window": "20:17-20:26",
-      "motionPrompt": "water drips falling steadily from the ceiling, ripple rings expanding on the dark water, metronome rhythm"
+      "runtime": "video/act3/culvert-dripline__2017-2026.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: water drips falling steadily from the ceiling in a line, ripple rings expanding on the dark water below, metronome rhythm, walls and far opening steady. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0755/-ez71allVqfyHcTzkHxf6_6186bf8ac6464ba5b227555b5e9e8670.mp4",
+      "curation": "first take clean: drip strands and expanding rings, far mouth steady",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "recorder-nest__2026-2035",
       "act": "act3",
-      "nodeId": "recorder-nest",
       "window": "20:26-20:35",
-      "motionPrompt": "the recorder counter window glow pulsing faintly, dim glints moving on the wet mud around the caliche ledge"
+      "runtime": "video/act3/recorder-nest__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the small counter window on the cassette recorder glowing and pulsing faintly, dim glints shifting on the wet mud, the recorder and rock perfectly still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e075f/qM78pNRvOYZtrzUPqzQh__fbeb12b357c44ace91d505071bb25d84.mp4",
+      "curation": "first take clean: counter glow pulses, device and tunnel still",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "nine-field-threshold__2026-2035",
       "act": "act4",
-      "nodeId": "nine-field-threshold",
       "window": "20:26-20:35",
-      "motionPrompt": "the field luminescence breathing slowly brighter and dimmer, the two distant red taillights flickering, flowers swaying"
+      "runtime": "video/act4/nine-field-threshold__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the field luminescence breathing slowly brighter and dimmer, flowers swaying gently, the two distant red taillights staying as faint constant points that only barely shimmer, never flaring, never brightening, the culvert mouth dark and still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 2188,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0771/XHGqANVe7mHw0REMoMODd_01c60b429c0a4caabbfa75e52a4d6877.mp4",
+      "curation": "s2188: luminescence breathes, taillights constant; s1187 rejected for taillight flare reading as the car acting on a 6s metronome",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "nine-flower-path__2026-2035",
       "act": "act4",
-      "nodeId": "nine-flower-path",
       "window": "20:26-20:35",
-      "motionPrompt": "the shoulder-high bluebonnets swaying while leaning away from the dark end of the path, their glow pulsing gently"
+      "runtime": "video/act4/nine-flower-path__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the shoulder-high bluebonnets swaying while leaning away from the dark end of the path, their faint glow pulsing gently, the path and sky completely dark and empty, pure black frame edges, absolutely no marks or shapes at the top or bottom of frame. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 3189,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0784/a_RcPX7_2vMyCtTq4A9s0_8bd32afbe87540a0accc6c289a110b02.mp4",
+      "curation": "s3189 clean; s1187 rejected for transient glyph-like burn marks at frame edges (A1)",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "near-car__2026-2035",
       "act": "act4",
-      "nodeId": "near-car",
       "window": "20:26-20:35",
-      "motionPrompt": "the glow spilling from the car grille pulsing softly, surrounding flowers swaying in night wind, the car itself absolutely motionless"
+      "runtime": "video/act4/near-car__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the blue glow spilling from the car grille and dashboard pulsing softly, the surrounding flowers swaying in night wind, the car body, wheels and windshield absolutely motionless, frozen, parked dead still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e078d/zFFvEJ88Pmn3FnljfHQIA_3ccbf134aefd4cae88ce9d45fd5f268c.mp4",
+      "curation": "first take clean: glow pulses, flowers sway, car frozen — never seen moving holds",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "final-choice__2026-2035",
       "act": "act4",
-      "nodeId": "final-choice",
       "window": "20:26-20:35",
-      "motionPrompt": "the television static churning, its pale light flickering across the surrounding glowing bluebonnets, the deck steady"
+      "runtime": "video/act4/final-choice__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the television screen static churning and flickering, its pale light dancing across the surrounding glowing bluebonnets, the deck and buttons perfectly steady. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0796/f69ciDVTd0i6hTOnLpkcY_d1f82a9fab2443a8a9c1381b1e47ed1d.mp4",
+      "curation": "first take clean: static churns with rolling bands, deck steady",
+      "status": "generated-clean-motion"
     },
     {
+      "id": "ending-eject__2026-2035",
       "act": "act4",
-      "nodeId": "ending-eject",
       "window": "20:26-20:35",
-      "motionPrompt": "the dying screen glow flickering low, the room dim and breathing, the flowers in the foreground barely stirring"
+      "runtime": null,
+      "status": "deliberately-static",
+      "curation": "Two takes flared the dead screen back to life mid-loop. Decision: EJECT ending ships as a still frame BY DESIGN — containment is stillness; the RECORD ending loops because the tape keeps running. The endings are asymmetric on purpose."
     },
     {
+      "id": "ending-record__2026-2035",
       "act": "act4",
-      "nodeId": "ending-record",
       "window": "20:26-20:35",
-      "motionPrompt": "the red static churning violently on the screen, the record lamp steady, the glowing flowers below swaying toward the set"
+      "runtime": "video/act4/ending-record__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the red static churning violently on the screen, its red light pulsing across the room and the glowing flowers below, the record lamp a steady point, the player and furniture still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e07b5/0MOJQKk_obsAR9I1qpCBp_62a9009f71c74b1992b2dff9edf96c97.mp4",
+      "curation": "first take clean: red static churns, lamp steady, set still",
+      "status": "generated-clean-motion"
     }
   ],
-  "queueNote": "Run one at a time: node tools/generateLoops.mjs gen <act> <node> <window> \"<motionPrompt>\" — view the frame strip in /tmp/bluebonnet-loops/, re-roll with adjusted prompt if motion misbehaves (phantom events, camera drift, oversized motion), then install. Blocked 2026-06-12: fal balance exhausted."
+  "queue": [],
+  "queueNote": "Hero pass complete 2026-06-12. Backfill remaining views per A4 as plates gain dwell time."
 }

@@ -100,3 +100,18 @@ Hotspots stop being rectangles. Every clue hotspot's polygon is derived from mod
 
 ### Production order for the re-shoot
 Full re-shoot of all plates under the new universe (open budget): journalist wagon, scanner, tip-line printer, Mirasol establishment beats, corrected 20:0x light. 3-4 candidates per shot, curate hard, log picks in shotlist.json. Segmentation runs on each chosen plate before it ships.
+
+## Canon amendment A7 (director-delegated, 2026-06-12) — PLATE-ANCHORED GENERATION
+
+The curated plate is the unit of canon. Every other asset class derives from plates rather than from fresh prompts, so continuity is structural, not aspirational:
+
+- LOOPS: first frame = last frame = the plate (Veo first/last-frame). The world breathes; the seam is exact. One loop per node-window, base layer, normal blend.
+- TRANSITIONS: first frame = origin plate, last frame = destination plate. Navigation becomes a 2-4s camera move through the world instead of a hard cut (the Myst push). Skippable; absent = instant cut as today; prefers-reduced-motion always cuts.
+- NEW VIEWS (density, A4): generated as multi-reference edits of the location's existing plates (FLUX.2 edit), so new facings share geography, palette, and props with the canon view. The Marble/splat plan is retired in favor of this.
+- AUDIO: beds and foley derive from the loops they accompany (video-to-audio models) or are licensed; never a stinger.
+- CLUES: every clue hotspot is segmented from its plate (A6.1, shipping).
+
+Process law:
+- One asset at a time, evaluated by the supervisor before the next (no blind batches). Curation notes + rejects logged in provenance (shotlist.json / motionLoops.json / transitions.json).
+- Every generation call is metered: tools/falClient.mjs appends model, purpose, and estimated cost to tools/generation-ledger.json. Budget 2026-06-12: $100. Allocation guide: hero loops ~$15, golden-path transitions ~$25, density views ~$10, loop backfill ~$25, audio ~$10, reserve ~$15.
+- Rejection taxonomy (enforced): A1 text/burn-ins; figures/people (empty world); phantom events (uncaused changes); era violations; palette drift; camera drift (loops/transitions must hold the locked-off frame at both ends); the car must never be seen moving.

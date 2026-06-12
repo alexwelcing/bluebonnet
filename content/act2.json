@@ -61,6 +61,14 @@
               "target": "culvert-mouth",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-threshold__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-threshold__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -1818,6 +1826,14 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the padlock",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-gate__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-gate__2017-2026.jpg"
             }
           ]
         }
