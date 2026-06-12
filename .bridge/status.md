@@ -254,3 +254,29 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T05:40:12.351591+00:00 — B1 Act IV nine minutes
+
+Changed:
+- Built Act IV as six 23:26-23:35 night-field nodes: nine-field-threshold, nine-flower-path, near-car, luminous-shrine, car-door, final-choice.
+- Generated six A1 clean-plate Act IV stills; masters are in assets/act4/ and runtime copies are in public/stills/act4/.
+- Connected Act III recorder/field-gate completion to the Act IV gate and made 23:26-23:35 become a seekable final TIMESEEK detent once discovered.
+- Added final-choice EJECT/RECORD arming hotspots as the B1 climax handoff; full distinct endings remain B2.
+- Fixed a live self-playtest defect where the unlocked final detent still appeared under LOCKED; added DOM regression coverage.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended the live self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 8 files, 23 tests.
+- `npm run lint:shotlist` passed: 54 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, Act IV threshold/final stills, and field-wind audio.
+- Browser live self-playtest passed at https://bluebonnet-tape.netlify.app after deploy 6a2b9b510ce3e1e35b1897f4: jog wheel seated 23:26-23:35, Act IV route clicked through to FINAL CHOICE, composited shrine/final reflection text logged, EJECT arming worked.
+
+Next:
+- Continue with B2 ENDINGS: distinct EJECT and RECORD end states with final composited frames/audio and save-state recording which ending was seen.
+
+Blockers:
+- None.

@@ -529,6 +529,72 @@
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ad/UGDZShnzwty2xIEhudgYA_fQ3eibqu.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-field-threshold",
+      "window": "23:26-23:35",
+      "filename": "nine-field-threshold__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, locked nine minutes night field threshold, luminous bluebonnets glowing faint blue, highway shoulder swallowed by flowers, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440000,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df588/n5hY7bpvPnh_HP4mikazs_nGMqIoEy.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-flower-path",
+      "window": "23:26-23:35",
+      "filename": "nine-flower-path__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, path through luminous bluebonnets during the missing nine minutes, flowers standing too tall and too close, empty clean plate, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440011,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58e/7ZxMeE_6KKyDbK-sYtfVm_sOCzP62v.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "near-car",
+      "window": "23:26-23:35",
+      "filename": "near-car__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, abandoned car shape near the edge of a luminous bluebonnet field, headlights dark, no visible people, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440022,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/VvwvtNfSEku_nzb10FVgA_E1fwrdKS.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "luminous-shrine",
+      "window": "23:26-23:35",
+      "filename": "luminous-shrine__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close roadside shrine overtaken by luminous bluebonnets, blank photograph area and blank tape label surface, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440033,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/3WHiMlY7l5TVcn0o8KYUQ_m9Gf0oYq.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "car-door",
+      "window": "23:26-23:35",
+      "filename": "car-door__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, bluebonnet field terminus during missing nine minutes, cruiser and car nearly nose to nose in impossible distance, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440044,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/fokg0kw5TLpTO3WFIZmIM_RHpjbJsF.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "final-choice",
+      "window": "23:26-23:35",
+      "filename": "final-choice__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, final tape choice altar inside luminous bluebonnet field, blank VCR cassette surface and blank evidence tags, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters",
+      "seed": 440055,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/SAJilIk5rGaFy7S0xAPSE_bKffVZmM.png"
     }
   ],
   "a1Lint": {

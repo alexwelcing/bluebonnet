@@ -3,9 +3,12 @@ import act1 from '../content/act1.json';
 import { boundsOverlapAreaPercent, polygonAreaPercent, polygonBounds } from '../engine/hotspotGeometry';
 import type { SceneManifest } from '../engine/types';
 
-async function loadDeck() {
+async function loadDeck(savedSnapshot?: unknown) {
   vi.resetModules();
   localStorage.clear();
+  if (savedSnapshot) {
+    localStorage.setItem('bluebonnet.engine.snapshot.v1', JSON.stringify(savedSnapshot));
+  }
   document.body.innerHTML = '<main id="app"></main>';
   await import('../src/main');
 }
@@ -102,4 +105,23 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.wrongness')?.textContent).toContain('TAPE ANOMALY:');
     expect(document.querySelector('.tape-stage')?.classList.contains('seek-glitch')).toBe(true);
   });
+
+  it('does not list the final nine-minutes detent as locked once it is discovered', async () => {
+    await loadDeck({
+      currentNodeId: 'missing-minutes-gate',
+      flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
+      vhsIntensity: 0.72,
+      activeWindow: '23:26-23:35',
+      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
+      captionsEnabled: true,
+    });
+
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:08-23:17');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:26-23:35');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED: none');
+  });
+
 });

@@ -15,7 +15,7 @@ export interface TimeSeekController {
 export function createTimeSeek(graph: NodeGraph, activeWindow = graph.initialWindow, discovered: TimeWindow[] = []): TimeSeekController {
   let current = activeWindow;
   const discoveredSet = new Set<TimeWindow>([graph.initialWindow, activeWindow, ...discovered]);
-  const lockedSet = new Set<TimeWindow>(graph.lockedWindows);
+  const lockedSet = new Set<TimeWindow>(graph.lockedWindows.filter((window) => !discoveredSet.has(window)));
 
   return {
     seek(window: TimeWindow) {
@@ -29,9 +29,8 @@ export function createTimeSeek(graph: NodeGraph, activeWindow = graph.initialWin
       return { ok: true, activeWindow: current };
     },
     discover(window: TimeWindow) {
-      if (!lockedSet.has(window)) {
-        discoveredSet.add(window);
-      }
+      discoveredSet.add(window);
+      lockedSet.delete(window);
     },
     snapshot() {
       return { activeWindow: current, discoveredTimecodes: [...discoveredSet] };

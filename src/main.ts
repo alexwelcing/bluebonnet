@@ -116,7 +116,8 @@ function render() {
   timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} TX-DPS`;
   diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
   diegeticText.hidden = diegeticText.textContent === '';
-  timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${graph.lockedWindows.join(' / ')}`;
+  const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
+  timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(getNode(graph, snapshot.currentNodeId).ambientAudio);
@@ -265,7 +266,7 @@ function settleJogWheel() {
 
 function jogOptions() {
   const snapshot = state.snapshot();
-  return { ...defaultJogWheelOptions, discovered: snapshot.discoveredTimecodes, locked: graph.lockedWindows };
+  return { ...defaultJogWheelOptions, discovered: snapshot.discoveredTimecodes, locked: graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window)) };
 }
 
 function pointerAngle(event: PointerEvent): number {

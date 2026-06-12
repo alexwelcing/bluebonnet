@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 2,
+  "nodes": [
+    {
+      "id": "nine-field-threshold",
+      "title": "Nine Minutes Threshold",
+      "still": "stills/act4/nine-field-threshold__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-field-threshold__2326-2335.jpg",
+          "caption": "23:26-23:35: the culvert opens onto the night field. The bluebonnets give off their own light.",
+          "wrongness": "the missing minutes are seated; the shoulder is gone behind the flowers",
+          "hotspots": [
+            {
+              "id": "to-nine-flower-path",
+              "label": "Follow the luminous flower path",
+              "polygon": [[68, 25], [94, 25], [94, 75], [68, 75]],
+              "target": "nine-flower-path",
+              "caption": "The path accepts the jog wheel detent and pulls forward.",
+              "shimmerThreshold": 0.35
+            },
+            {
+              "id": "back-to-gate",
+              "label": "Back toward the culvert gate",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "missing-minutes-gate",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nine-flower-path",
+      "title": "Luminous Flower Path",
+      "still": "stills/act4/nine-flower-path__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-flower-path__2326-2335.jpg",
+          "caption": "23:26-23:35: the flowers stand shoulder-high and lean away from a car you still cannot see moving.",
+          "wrongness": "every bloom head tracks the unseen car instead of the camera",
+          "hotspots": [
+            {
+              "id": "to-near-car",
+              "label": "Move toward the car lights",
+              "polygon": [[70, 25], [94, 25], [94, 75], [70, 75]],
+              "target": "near-car",
+              "caption": "The car is nearer between frames, never during one.",
+              "shimmerThreshold": 0.35
+            },
+            {
+              "id": "to-nine-field-threshold",
+              "label": "Back to the field threshold",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "nine-field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "near-car",
+      "title": "The Near Car",
+      "still": "stills/act4/near-car__2326-2335.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/near-car__2326-2335.jpg",
+          "caption": "23:26-23:35: the car is finally near. Its dark windshield reflects the cruiser dashboard instead of the sky.",
+          "wrongness": "the distance collapsed without motion blur or engine sound",
+          "hotspots": [
+            {
+              "id": "to-luminous-shrine",
+              "label": "Check the shrine beside the car",
+              "polygon": [[30, 56], [62, 56], [62, 84], [30, 84]],
+              "target": "luminous-shrine",
+              "caption": "The shrine is fresh, wet, and older than the tape.",
+              "shimmerThreshold": 0.35
+            },
+            {
+              "id": "to-nine-flower-path",
+              "label": "Back down the flower path",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "nine-flower-path",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "luminous-shrine",
+      "title": "Luminous Shrine",
+      "still": "stills/act4/luminous-shrine__2326-2335.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/luminous-shrine__2326-2335.jpg",
+          "caption": "23:26-23:35: blank evidence tags hang from the shrine. The deck overlays only what the tape can prove.",
+          "wrongness": "the offering is both memorial and warning",
+          "hotspots": [
+            {
+              "id": "shrine-nine-note",
+              "label": "Log the composited shrine warning",
+              "polygon": [[34, 30], [66, 30], [66, 62], [34, 62]],
+              "target": "luminous-shrine",
+              "journal": {
+                "id": "nine-shrine-warning",
+                "text": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it."
+              },
+              "caption": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "to-car-door",
+              "label": "Approach the driver's door",
+              "polygon": [[72, 25], [94, 25], [94, 75], [72, 75]],
+              "target": "car-door",
+              "caption": "The driver's door is open exactly as the cruiser was.",
+              "shimmerThreshold": 0.35
+            },
+            {
+              "id": "to-near-car",
+              "label": "Back to the near car",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "near-car",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "car-door",
+      "title": "Car Door",
+      "still": "stills/act4/car-door__2326-2335.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/car-door__2326-2335.jpg",
+          "caption": "23:26-23:35: the driver's seat is empty. The dashcam reflection shows a hand reaching for the deck controls.",
+          "wrongness": "the car and cruiser share the same empty interior",
+          "hotspots": [
+            {
+              "id": "car-door-readout",
+              "label": "Log the final dash reflection",
+              "polygon": [[35, 28], [68, 28], [68, 62], [35, 62]],
+              "target": "car-door",
+              "journal": {
+                "id": "final-reflection",
+                "text": "FINAL DASH REFLECTION: the evidence deck is visible inside the missing car. Choose EJECT or RECORD."
+              },
+              "caption": "FINAL DASH REFLECTION: the evidence deck is visible inside the missing car. Choose EJECT or RECORD.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "to-final-choice",
+              "label": "Reach for the deck controls",
+              "polygon": [[72, 25], [94, 25], [94, 75], [72, 75]],
+              "target": "final-choice",
+              "caption": "The deck is waiting for the same two physical choices.",
+              "shimmerThreshold": 0.35
+            },
+            {
+              "id": "to-luminous-shrine",
+              "label": "Back to the shrine",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "luminous-shrine",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "final-choice",
+      "title": "Final Choice",
+      "still": "stills/act4/final-choice__2326-2335.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/final-choice__2326-2335.jpg",
+          "caption": "23:26-23:35: the tape has no more geography. Only the deck remains: EJECT to seal it, RECORD to overwrite it.",
+          "wrongness": "the missing minutes wait for an ending choice",
+          "hotspots": [
+            {
+              "id": "choose-eject",
+              "label": "EJECT — seal the tape",
+              "polygon": [[20, 58], [45, 58], [45, 86], [20, 86]],
+              "target": "final-choice",
+              "setFlag": "ending:eject",
+              "journal": {
+                "id": "ending-eject-armed",
+                "text": "ENDING CHOICE ARMED: EJECT will seal the tape with the missing minutes contained."
+              },
+              "caption": "ENDING CHOICE ARMED: EJECT will seal the tape with the missing minutes contained.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "choose-record",
+              "label": "RECORD — overwrite the evidence",
+              "polygon": [[55, 58], [82, 58], [82, 86], [55, 86]],
+              "target": "final-choice",
+              "setFlag": "ending:record",
+              "journal": {
+                "id": "ending-record-armed",
+                "text": "ENDING CHOICE ARMED: RECORD will overwrite the evidence with the viewer inside the tape."
+              },
+              "caption": "ENDING CHOICE ARMED: RECORD will overwrite the evidence with the viewer inside the tape.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "to-car-door",
+              "label": "Back from the deck controls",
+              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "target": "car-door",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

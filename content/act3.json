@@ -694,7 +694,7 @@
               "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
               "puzzleAction": "recorder-counter",
               "discoverTimecode": "23:26-23:35",
-              "setFlag": "recorder-counter",
+              "setFlag": "act4-gate",
               "shimmerThreshold": 0.25
             },
             {
@@ -722,7 +722,7 @@
               "shimmerThreshold": 0.5,
               "requires": [
                 {
-                  "flag": "recorder-counter"
+                  "flag": "puzzle:recorder-counter"
                 }
               ]
             }
@@ -791,7 +791,7 @@
               "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
               "puzzleAction": "recorder-counter",
               "discoverTimecode": "23:26-23:35",
-              "setFlag": "recorder-counter",
+              "setFlag": "act4-gate",
               "shimmerThreshold": 0.25
             },
             {
@@ -819,7 +819,7 @@
               "shimmerThreshold": 0.5,
               "requires": [
                 {
-                  "flag": "recorder-counter"
+                  "flag": "puzzle:recorder-counter"
                 }
               ]
             }
@@ -894,6 +894,46 @@
               ],
               "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
               "shimmerThreshold": 0.35
+            },
+            {
+              "id": "enter-nine-minutes",
+              "label": "Enter the seated nine minutes",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "requires": [
+                {
+                  "flag": "puzzle:field-gate"
+                },
+                {
+                  "flag": "puzzle:recorder-counter"
+                },
+                {
+                  "flag": "act4-gate"
+                }
+              ],
+              "journal": {
+                "id": "nine-minutes-open",
+                "text": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent."
+              },
+              "caption": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent.",
+              "shimmerThreshold": 0.25
             }
           ]
         },
@@ -956,6 +996,46 @@
               ],
               "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
               "shimmerThreshold": 0.35
+            },
+            {
+              "id": "enter-nine-minutes",
+              "label": "Enter the seated nine minutes",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "requires": [
+                {
+                  "flag": "puzzle:field-gate"
+                },
+                {
+                  "flag": "puzzle:recorder-counter"
+                },
+                {
+                  "flag": "act4-gate"
+                }
+              ],
+              "journal": {
+                "id": "nine-minutes-open",
+                "text": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent."
+              },
+              "caption": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent.",
+              "shimmerThreshold": 0.25
             }
           ]
         }
