@@ -1,0 +1,76 @@
+{
+  "startNodeId": "dashcam-shoulder",
+  "nodes": [
+    {
+      "id": "dashcam-shoulder",
+      "title": "Dashcam: Highway Shoulder",
+      "still": "/assets/test/dashcam-test-01.png",
+      "caption": "Recovered DPS dashcam. The idling engine is steady; something taps inside the radio speaker.",
+      "hotspots": [
+        {
+          "id": "forward-to-marker",
+          "label": "Walk toward the mile marker",
+          "polygon": [[70, 36], [95, 35], [96, 68], [71, 70]],
+          "target": "mile-marker"
+        },
+        {
+          "id": "radio-touch",
+          "label": "Touch the patrol radio",
+          "polygon": [[8, 68], [34, 67], [34, 95], [8, 95]],
+          "target": "dashcam-shoulder",
+          "setFlag": "radioTouched",
+          "caption": "A dead channel opens. Under the static: 'bluebonnets don't grow in tire tracks.'"
+        },
+        {
+          "id": "radio-after",
+          "label": "The radio is awake — follow the voice",
+          "polygon": [[38, 40], [62, 40], [62, 66], [38, 66]],
+          "target": "field-edge",
+          "requires": [{ "flag": "radioTouched" }],
+          "caption": "The radio light pulses in time with the tracking band. A new path is visible in the flowers."
+        }
+      ]
+    },
+    {
+      "id": "mile-marker",
+      "title": "Mile Marker 271",
+      "still": "/assets/test/dashcam-test-01.png",
+      "caption": "The marker is too clean. Its reflective numbers bloom white in the VHS smear.",
+      "hotspots": [
+        {
+          "id": "back-to-cruiser",
+          "label": "Return to the cruiser",
+          "polygon": [[0, 8], [24, 8], [24, 88], [0, 88]],
+          "target": "dashcam-shoulder"
+        },
+        {
+          "id": "deeper-to-field",
+          "label": "Follow the flattened bluebonnets",
+          "polygon": [[74, 22], [100, 24], [100, 78], [74, 80]],
+          "target": "field-edge"
+        }
+      ]
+    },
+    {
+      "id": "field-edge",
+      "title": "Edge of the Bluebonnets",
+      "still": "/assets/test/dashcam-test-01.png",
+      "caption": "The flowers bend away from the highway like a wake. The tape timestamp is no longer moving correctly.",
+      "hotspots": [
+        {
+          "id": "back-to-marker",
+          "label": "Back to the mile marker",
+          "polygon": [[0, 20], [28, 20], [28, 82], [0, 82]],
+          "target": "mile-marker"
+        },
+        {
+          "id": "return-after-radio",
+          "label": "Follow the radio static back to the cruiser",
+          "polygon": [[35, 62], [65, 62], [65, 94], [35, 94]],
+          "target": "dashcam-shoulder",
+          "requires": [{ "flag": "radioTouched" }]
+        }
+      ]
+    }
+  ]
+}
