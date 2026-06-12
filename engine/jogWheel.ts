@@ -43,7 +43,15 @@ export function createJogWheelState(window: TimeWindow = '23:08-23:17', options 
 
 export function dragJogWheel(state: JogWheelState, deltaAngle: number, deltaSeconds: number, options = defaultJogWheelOptions): JogWheelStepResult {
   const safeDelta = Math.max(1 / 120, deltaSeconds);
-  return stepJogWheel({ ...state, angle: state.angle + deltaAngle, velocity: deltaAngle / safeDelta, seatedWindow: undefined }, safeDelta, options);
+  // The pointer moves the wheel directly; velocity is stored only as release
+  // inertia. Integrating it again in the same frame would make the wheel
+  // outrun the finger almost 2:1.
+  const moved: JogWheelState = { ...state, angle: state.angle + deltaAngle, velocity: 0, seatedWindow: undefined };
+  const result = stepJogWheel(moved, safeDelta, options);
+  if (result.event === 'hard-stop') {
+    return result;
+  }
+  return { ...result, state: { ...result.state, velocity: deltaAngle / safeDelta } };
 }
 
 export function stepJogWheel(state: JogWheelState, deltaSeconds: number, options = defaultJogWheelOptions): JogWheelStepResult {
@@ -53,13 +61,30 @@ export function stepJogWheel(state: JogWheelState, deltaSeconds: number, options
   next.position = next.angle / (Math.PI * 1.5);
   next.strain = Math.max(0, next.strain * 0.78);
 
-  if (next.position >= options.hardStopPosition) {
+  const detentPositions = Object.values(options.windows);
+  const minPosition = Math.min(...detentPositions);
+  const maxPosition = Math.max(...detentPositions);
+  const hardStopLocked = options.locked.some((window) => options.windows[window] >= options.hardStopPosition);
+
+  if (hardStopLocked && next.position >= options.hardStopPosition) {
     next.position = options.hardStopPosition - 0.035;
     next.angle = next.position * Math.PI * 1.5;
     next.velocity = -Math.abs(next.velocity) * 0.55 - 0.8;
     next.seatedWindow = undefined;
     next.strain = 1;
     return { state: next, event: 'hard-stop' };
+  }
+
+  // Soft end stops: once the final window is unlocked the wheel no longer
+  // kicks back, but it cannot be wound past the tape either.
+  if (next.position > maxPosition + 0.05) {
+    next.position = maxPosition + 0.05;
+    next.angle = next.position * Math.PI * 1.5;
+    next.velocity = 0;
+  } else if (next.position < minPosition - 0.05) {
+    next.position = minPosition - 0.05;
+    next.angle = next.position * Math.PI * 1.5;
+    next.velocity = 0;
   }
 
   const detent = nearestDiscoveredDetent(next.position, options);

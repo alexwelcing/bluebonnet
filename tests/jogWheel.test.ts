@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
+import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel, type JogWheelState } from '../engine/jogWheel';
 import type { TimeWindow } from '../engine/types';
 
 const twoWindowOptions = { ...defaultJogWheelOptions, discovered: ['23:08-23:17', '23:17-23:26'] as TimeWindow[] };
@@ -34,5 +34,34 @@ describe('jog wheel physics', () => {
     const result = dragJogWheel(createJogWheelState(), Math.PI / 2, 0.1, twoWindowOptions);
     expect(result.state.velocity).toBeGreaterThan(0);
     expect(result.state.position).toBeGreaterThan(0);
+  });
+
+  it('moves the wheel exactly as far as the pointer drags it', () => {
+    const delta = Math.PI / 4;
+    const result = dragJogWheel(createJogWheelState(), delta, 0.1, twoWindowOptions);
+    // No double integration: the drag frame advances by the pointer delta only
+    // (detent magnetism aside), not delta plus another velocity step.
+    expect(result.state.position).toBeLessThanOrEqual(delta / (Math.PI * 1.5) + 0.001);
+  });
+
+  it('stops kicking back at the final detent once the nine minutes unlock', () => {
+    const unlockedOptions = {
+      ...defaultJogWheelOptions,
+      discovered: ['23:08-23:17', '23:17-23:26', '23:26-23:35'] as TimeWindow[],
+      locked: [] as TimeWindow[],
+    };
+    const start = { ...createJogWheelState('23:17-23:26', unlockedOptions), position: 1.98, angle: 1.98 * Math.PI * 1.5, velocity: 5, seatedWindow: undefined };
+    const result = stepJogWheel(start, 0.1, unlockedOptions);
+    expect(result.event).not.toBe('hard-stop');
+    // The wheel still cannot be wound past the end of the tape.
+    expect(result.state.position).toBeLessThanOrEqual(2.05);
+  });
+
+  it('cannot be wound below the start of the tape', () => {
+    let state: JogWheelState = { ...createJogWheelState(), velocity: -12, seatedWindow: undefined };
+    for (let index = 0; index < 30; index += 1) {
+      state = stepJogWheel(state, 1 / 30, twoWindowOptions).state;
+    }
+    expect(state.position).toBeGreaterThanOrEqual(-0.05);
   });
 });

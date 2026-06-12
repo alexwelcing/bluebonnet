@@ -9,16 +9,31 @@ export function saveSnapshot(snapshot: EngineSnapshot, storage: StorageLike = wi
 }
 
 export function loadSnapshot(storage: StorageLike = window.localStorage): EngineSnapshot | undefined {
-  const raw = storage.getItem(SAVE_KEY);
+  let raw: string | null;
+  try {
+    raw = storage.getItem(SAVE_KEY);
+  } catch {
+    return undefined;
+  }
   if (!raw) {
     return undefined;
   }
 
-  const parsed = JSON.parse(raw) as EngineSnapshot;
-  if (!parsed.currentNodeId || typeof parsed.flags !== 'object' || typeof parsed.vhsIntensity !== 'number') {
-    throw new Error('Stored Bluebonnet save is malformed.');
+  try {
+    const parsed = JSON.parse(raw) as EngineSnapshot;
+    if (!parsed || typeof parsed !== 'object' || !parsed.currentNodeId || typeof parsed.flags !== 'object' || typeof parsed.vhsIntensity !== 'number') {
+      throw new Error('Stored Bluebonnet save is malformed.');
+    }
+    return parsed;
+  } catch {
+    // A corrupted or outdated save must never brick the deck; discard it and boot fresh.
+    try {
+      storage.removeItem(SAVE_KEY);
+    } catch {
+      // storage unavailable — nothing to clean up
+    }
+    return undefined;
   }
-  return parsed;
 }
 
 export function clearSnapshot(storage: StorageLike = window.localStorage): void {

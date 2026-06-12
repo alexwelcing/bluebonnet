@@ -124,14 +124,19 @@ button, input { font: inherit; }
   position: absolute;
   inset: 0;
   opacity: 0;
-  background: rgba(125, 255, 174, calc(var(--vhs-intensity) * 0.22));
+  background: rgba(125, 255, 174, max(calc(var(--vhs-intensity) * 0.22), 0.08));
   outline: 1px dashed rgba(180, 255, 205, 0.7);
   transition: opacity calc(1200ms - var(--vhs-intensity) * 700ms) ease;
 }
 
-.hotspot:hover::after,
-.hotspot:focus-visible::after {
+.hotspot:hover::after {
   opacity: calc((var(--vhs-intensity) - var(--assist-threshold)) * 2.2);
+}
+
+/* Keyboard focus must stay perceptible even when TRACKING sits below the
+   shimmer-assist threshold. */
+.hotspot:focus-visible::after {
+  opacity: max(calc((var(--vhs-intensity) - var(--assist-threshold)) * 2.2), 0.45);
 }
 
 .scanlines {

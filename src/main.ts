@@ -1,19 +1,27 @@
 import { createAudioMixer } from '../engine/audioMixer';
 import { clipPathWithinBounds, polygonBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
-import { availableHotspots, getNode, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
+import { availableHotspots, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
-import { loadSnapshot, saveSnapshot } from '../engine/save';
+import { clearSnapshot, loadSnapshot, saveSnapshot } from '../engine/save';
 import { createStateMachine } from '../engine/stateMachine';
 import { createTimeSeek } from '../engine/timeseek';
 import type { HotspotDefinition, SceneManifest, TimeWindow } from '../engine/types';
 import { installVhsCompositor } from '../engine/vhsCompositor';
 import './styles.css';
 
-const manifestModules = import.meta.glob<SceneManifest>('../content/*.json', { eager: true, import: 'default' });
+// Only the act manifests: shotlist.json and motionLoops.json are internal
+// production data and must not ship in the public bundle.
+const manifestModules = import.meta.glob<SceneManifest>('../content/act*.json', { eager: true, import: 'default' });
 const manifests = Object.values(manifestModules).filter((manifest) => 'nodes' in manifest);
 const graph = loadNodeGraph(manifests);
-const initialSave = loadSnapshot();
+const storedSave = loadSnapshot();
+// A save pointing at a node that no longer exists (content rename between
+// deploys) must not brick the boot.
+const initialSave = storedSave && graph.nodes[storedSave.currentNodeId] ? storedSave : undefined;
+if (storedSave && !initialSave) {
+  clearSnapshot();
+}
 const state = createStateMachine(initialSave ?? { currentNodeId: graph.startNodeId, activeWindow: graph.initialWindow });
 for (const action of state.snapshot().completedPuzzles) {
   state.setFlag(`puzzle:${action}`);
@@ -91,8 +99,8 @@ app.innerHTML = `
     <div class="colophon-panel" hidden role="dialog" aria-modal="true" aria-label="Credits and colophon">
       <article class="colophon-card">
         <h2>BLUEBONNET // COLOPHON</h2>
-        <p>Built as a static found-footage node graph: clean plates, runtime DOM text, A1 clean plates, physical TIMESEEK, captions, and local evidence bookmarks.</p>
-        <p>No generated still is trusted to carry readable story text.</p>
+        <p>A found-footage mystery told in pre-rendered tape stills, breathing motion loops, and a physical TIMESEEK transport. Every word you can read on the tape is typeset by the deck itself — the production calls these A1 clean plates: no generated image is trusted to carry readable story text.</p>
+        <p>Captions, keyboard transport, and local evidence bookmarks are always available on the deck.</p>
       </article>
       <button class="close-colophon" type="button">RETURN TO DECK</button>
     </div>
@@ -126,28 +134,55 @@ const closeColophon = app.querySelector<HTMLButtonElement>('.close-colophon')!;
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
+let renderedMotionKey: string | undefined;
+let helpOverride: string | undefined;
+let helpOverrideTimer: number | undefined;
+
+// Transport messages (CLUNK, LOCKED kickback, TAPE JUMPS) must survive the
+// renders that state publishes trigger, or the player never sees them.
+function setTransportMessage(text: string) {
+  helpOverride = text;
+  timeseekHelp.textContent = text;
+  if (helpOverrideTimer !== undefined) {
+    window.clearTimeout(helpOverrideTimer);
+  }
+  helpOverrideTimer = window.setTimeout(() => {
+    helpOverride = undefined;
+    helpOverrideTimer = undefined;
+    render();
+  }, 4000);
+}
 
 function render() {
   const snapshot = state.snapshot();
   const nodeState = getNodeState(graph, snapshot.currentNodeId, snapshot.activeWindow);
   still.src = nodeState.still;
   const node = getNode(graph, snapshot.currentNodeId);
-  motionLayerStack.replaceChildren(
-    ...(node.motionLayers ?? []).map((layer) => {
-      const video = document.createElement('video');
-      video.className = 'motion-layer';
-      video.src = layer.src;
-      video.muted = true;
-      video.loop = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.dataset.blendMode = layer.blendMode ?? 'screen';
-      video.style.opacity = String(layer.opacity);
-      video.style.mixBlendMode = layer.blendMode ?? 'screen';
-      return video;
-    }),
-  );
-  title.textContent = snapshot.currentNodeId.replaceAll('-', ' ').toUpperCase();
+  // Rebuilding the <video> elements restarts the loops and flashes black, so
+  // only do it when the layer set actually changes (state publishes several
+  // times per click, and adjacent nodes often share the same act loop).
+  const motionKey = (node.motionLayers ?? [])
+    .map((layer) => `${layer.src}|${layer.opacity}|${layer.blendMode ?? 'screen'}`)
+    .join(',');
+  if (motionKey !== renderedMotionKey) {
+    renderedMotionKey = motionKey;
+    motionLayerStack.replaceChildren(
+      ...(node.motionLayers ?? []).map((layer) => {
+        const video = document.createElement('video');
+        video.className = 'motion-layer';
+        video.src = layer.src;
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.dataset.blendMode = layer.blendMode ?? 'screen';
+        video.style.opacity = String(layer.opacity);
+        video.style.mixBlendMode = layer.blendMode ?? 'screen';
+        return video;
+      }),
+    );
+  }
+  title.textContent = node.title.toUpperCase();
   caption.textContent = snapshot.captionsEnabled ? nodeState.caption : '';
   caption.hidden = !snapshot.captionsEnabled;
   wrongness.textContent = nodeState.wrongness ? `TAPE ANOMALY: ${nodeState.wrongness}` : 'TAPE ANOMALY: baseline window stable.';
@@ -157,7 +192,8 @@ function render() {
   diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
   diegeticText.hidden = diegeticText.textContent === '';
   const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
-  timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
+  timeseekHelp.textContent =
+    helpOverride ?? `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
@@ -171,6 +207,10 @@ function render() {
     }),
   );
 
+  const focusedHotspotId =
+    document.activeElement instanceof HTMLElement && document.activeElement.classList.contains('hotspot')
+      ? document.activeElement.dataset.hotspotId
+      : undefined;
   hotspotLayer.replaceChildren(
     ...availableHotspots(nodeState, snapshot).map((hotspot) => {
       const button = document.createElement('button');
@@ -190,6 +230,16 @@ function render() {
       return button;
     }),
   );
+  // replaceChildren destroys the focused button; without this, every keyboard
+  // activation dumps focus to <body> and tab order restarts from the top.
+  if (focusedHotspotId) {
+    const sameHotspot = hotspotLayer.querySelector<HTMLButtonElement>(`[data-hotspot-id="${cssEscape(focusedHotspotId)}"]`);
+    (sameHotspot ?? hotspotLayer.querySelector<HTMLButtonElement>('.hotspot'))?.focus();
+  }
+}
+
+function cssEscape(value: string): string {
+  return typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape(value) : value.replace(/"/g, '\\"');
 }
 
 function activateHotspot(hotspot: HotspotDefinition) {
@@ -211,9 +261,14 @@ function activateHotspot(hotspot: HotspotDefinition) {
   const target = resolveHotspotTarget(hotspot, state.snapshot());
   if (target) {
     state.setCurrentNode(target);
+    reseatWindowForNode(target);
   }
   if (hotspot.setFlag?.startsWith('ending:')) {
-    saveSnapshot(state.snapshot());
+    try {
+      saveSnapshot(state.snapshot());
+    } catch {
+      // storage full/unavailable — the ending still plays
+    }
   }
   if (hotspot.caption) {
     showCaption(hotspot.caption);
@@ -223,30 +278,79 @@ function activateHotspot(hotspot: HotspotDefinition) {
   }
 }
 
+function reseatWindowForNode(nodeId: string) {
+  // Walking into a place the tape never recorded in the current window (e.g.
+  // stepping into the nine minutes while seated at 23:17) jumps the tape to
+  // the nearest window that node defines, keeping the timestamp truthful.
+  const snapshot = state.snapshot();
+  const node = getNode(graph, nodeId);
+  const states = node.temporalStates;
+  if (!states || states[snapshot.activeWindow]) {
+    return;
+  }
+  const discoveredStates = Object.fromEntries(
+    Object.entries(states).filter(([window]) => snapshot.discoveredTimecodes.includes(window as TimeWindow)),
+  ) as typeof states;
+  const reseat = nearestDefinedWindow(discoveredStates, snapshot.activeWindow) ?? nearestDefinedWindow(states, snapshot.activeWindow);
+  if (!reseat) {
+    return;
+  }
+  state.setActiveWindow(reseat);
+  jogState = createJogWheelState(reseat, jogOptions());
+  setTransportMessage(`TAPE JUMPS: WORLD RE-SEATED TO ${reseat}`);
+}
+
 function showCaption(text: string) {
   if (state.snapshot().captionsEnabled) {
     caption.textContent = text;
   }
 }
 
+let modalReturnFocus: HTMLElement | undefined;
+
+function openModal(panel: HTMLElement, closeButton: HTMLButtonElement) {
+  modalReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : undefined;
+  panel.hidden = false;
+  closeButton.focus();
+}
+
+function closeModal(panel: HTMLElement) {
+  panel.hidden = true;
+  if (modalReturnFocus?.isConnected) {
+    modalReturnFocus.focus();
+  } else {
+    (hotspotLayer.querySelector<HTMLButtonElement>('.hotspot') ?? jogWheel).focus();
+  }
+  modalReturnFocus = undefined;
+}
+
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
 volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
-closeExhibit.addEventListener('click', () => {
-  exhibitScan.hidden = true;
-});
+closeExhibit.addEventListener('click', () => closeModal(exhibitScan));
 insertTape.addEventListener('click', () => {
   bootScreen.hidden = true;
+  // First user gesture: browsers allow audio from here on.
+  audio.unlock();
 });
-credits.addEventListener('click', () => {
-  colophonPanel.hidden = false;
-});
-closeColophon.addEventListener('click', () => {
-  colophonPanel.hidden = true;
+credits.addEventListener('click', () => openModal(colophonPanel, closeColophon));
+closeColophon.addEventListener('click', () => closeModal(colophonPanel));
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') {
+    return;
+  }
+  if (!exhibitScan.hidden) {
+    closeModal(exhibitScan);
+  } else if (!colophonPanel.hidden) {
+    closeModal(colophonPanel);
+  }
 });
 jogWheel.addEventListener('pointerdown', (event) => {
   jogWheel.setPointerCapture(event.pointerId);
   dragState = { angle: pointerAngle(event), time: event.timeStamp };
+});
+jogWheel.addEventListener('pointercancel', () => {
+  dragState = undefined;
 });
 jogWheel.addEventListener('pointermove', (event) => {
   if (!dragState) return;
@@ -260,7 +364,11 @@ jogWheel.addEventListener('pointermove', (event) => {
   render();
 });
 jogWheel.addEventListener('pointerup', (event) => {
-  jogWheel.releasePointerCapture(event.pointerId);
+  try {
+    jogWheel.releasePointerCapture(event.pointerId);
+  } catch {
+    // capture already lost
+  }
   dragState = undefined;
   settleJogWheel();
 });
@@ -279,8 +387,12 @@ jogWheel.addEventListener('keydown', (event) => {
   }
 });
 save.addEventListener('click', () => {
-  saveSnapshot(state.snapshot());
-  save.textContent = 'BOOKMARK SAVED';
+  try {
+    saveSnapshot(state.snapshot());
+    save.textContent = 'BOOKMARK SAVED';
+  } catch {
+    save.textContent = 'BOOKMARK FAILED — STORAGE UNAVAILABLE';
+  }
   window.setTimeout(() => {
     save.textContent = 'BOOKMARK TAPE STATE';
   }, 1200);
@@ -291,7 +403,7 @@ function seekWindow(requested: TimeWindow) {
   const timeseek = createTimeSeek(graph, snapshot.activeWindow, snapshot.discoveredTimecodes);
   const result = timeseek.seek(requested);
   if (!result.ok) {
-    timeseekHelp.textContent = result.reason ?? 'TIMESEEK rejected.';
+    setTransportMessage(result.reason ?? 'TIMESEEK rejected.');
     return;
   }
   audio.playCue('audio/jog-detent-clunk.wav', `TIMESEEK detent clunk: ${result.activeWindow}`);
@@ -300,7 +412,7 @@ function seekWindow(requested: TimeWindow) {
   void stage.offsetWidth;
   stage.classList.add('seek-glitch');
   window.setTimeout(() => stage.classList.remove('seek-glitch'), 900);
-  timeseekHelp.textContent = `CLUNK: WORLD RE-SEATED TO ${result.activeWindow}`;
+  setTransportMessage(`CLUNK: WORLD RE-SEATED TO ${result.activeWindow}`);
 }
 
 function settleJogWheel() {
@@ -309,7 +421,7 @@ function settleJogWheel() {
   }
   const result = seatNearestDetent(jogState, jogOptions());
   jogState = result.state;
-  if (result.event === 'detent' && result.state.seatedWindow) {
+  if (result.event === 'detent' && result.state.seatedWindow && result.state.seatedWindow !== state.snapshot().activeWindow) {
     seekWindow(result.state.seatedWindow);
   } else {
     render();
@@ -332,9 +444,17 @@ function unwrapAngle(delta: number): number {
   return delta;
 }
 
+let lastHardStopCueAt = 0;
+
 function announceHardStop() {
-  timeseekHelp.textContent = 'LOCKED 23:26-23:35: tape strains at the hard stop and kicks back.';
-  audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 23:26-23:35.');
+  setTransportMessage('LOCKED 23:26-23:35: tape strains at the hard stop and kicks back.');
+  // A long drag grinds against the stop on many consecutive frames; one thunk
+  // per strain, not one per pointermove.
+  const now = Date.now();
+  if (now - lastHardStopCueAt > 700) {
+    lastHardStopCueAt = now;
+    audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 23:26-23:35.');
+  }
 }
 
 function diegeticOverlay(nodeId: string): string {
@@ -385,7 +505,7 @@ function openExhibit(hotspot: HotspotDefinition) {
     body.textContent = sourceText;
     exhibitPaper.replaceChildren(title, body);
   }
-  exhibitScan.hidden = false;
+  openModal(exhibitScan, closeExhibit);
 }
 
 state.subscribe(render);

@@ -151,6 +151,54 @@ describe('Evidence Deck integration', () => {
   });
 
 
+  it('boots fresh instead of crashing when the stored save is corrupted', async () => {
+    vi.resetModules();
+    localStorage.clear();
+    localStorage.setItem('bluebonnet.engine.snapshot.v1', '{not valid json!!');
+    document.body.innerHTML = '<main id="app"></main>';
+    await import('../src/main');
+
+    expect(document.querySelector('.boot-screen')).toBeTruthy();
+    expect(document.querySelector('h1')?.textContent).toBe('CRUISER INTERIOR');
+    expect(localStorage.getItem('bluebonnet.engine.snapshot.v1')).toBeNull();
+  });
+
+  it('discards a save that points at a node that no longer exists', async () => {
+    await loadDeck({
+      currentNodeId: 'deleted-node-from-old-build',
+      flags: {},
+      vhsIntensity: 0.72,
+      activeWindow: '23:08-23:17',
+      discoveredTimecodes: ['23:08-23:17'],
+      journal: [],
+      completedPuzzles: [],
+      captionsEnabled: true,
+    });
+
+    expect(document.querySelector('h1')?.textContent).toBe('CRUISER INTERIOR');
+  });
+
+  it('re-seats the tape window when navigation enters a node without the active window', async () => {
+    await loadDeck({
+      currentNodeId: 'missing-minutes-gate',
+      flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
+      vhsIntensity: 0.72,
+      activeWindow: '23:17-23:26',
+      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
+      captionsEnabled: true,
+    });
+
+    realPointerClick(button('INSERT TAPE'));
+    realPointerClick(button('Enter the seated nine minutes'));
+
+    // Act IV nodes only exist inside 23:26-23:35; entering from 23:17 must
+    // jump the tape rather than strand the player on a hotspot-free view.
+    expect(document.querySelector('.timestamp')?.textContent).toContain('23:26-23:35');
+    expect(document.querySelectorAll('.hotspot').length).toBeGreaterThan(0);
+  });
+
   it('shows an in-fiction insert-tape boot screen and deck colophon', async () => {
     await loadDeck();
 

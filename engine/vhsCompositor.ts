@@ -3,23 +3,28 @@ export interface VhsCompositorControls {
   destroy(): void;
 }
 
+// The grain canvas renders at a fixed low resolution and is stretched by CSS;
+// a full-resolution ImageData every tick costs megabytes per frame on phones
+// for no visible gain at this blur/opacity.
+const GRAIN_WIDTH = 160;
+const GRAIN_HEIGHT = 90;
+
 export function installVhsCompositor(root: HTMLElement, initialIntensity: number): VhsCompositorControls {
   const grain = document.createElement('canvas');
   grain.className = 'vhs-grain';
   grain.setAttribute('aria-hidden', 'true');
+  grain.width = GRAIN_WIDTH;
+  grain.height = GRAIN_HEIGHT;
+  grain.style.imageRendering = 'pixelated';
   root.append(grain);
 
   const context = grain.getContext('2d');
-  const resize = () => {
-    grain.width = Math.max(1, root.clientWidth);
-    grain.height = Math.max(1, root.clientHeight);
-  };
+  const image = context?.createImageData(GRAIN_WIDTH, GRAIN_HEIGHT);
 
   const renderGrain = () => {
-    if (!context) {
+    if (!context || !image) {
       return;
     }
-    const image = context.createImageData(grain.width, grain.height);
     for (let index = 0; index < image.data.length; index += 4) {
       const shade = Math.random() * 255;
       image.data[index] = shade;
@@ -30,10 +35,8 @@ export function installVhsCompositor(root: HTMLElement, initialIntensity: number
     context.putImageData(image, 0, 0);
   };
 
-  resize();
   renderGrain();
   const interval = window.setInterval(renderGrain, 120);
-  window.addEventListener('resize', resize);
 
   const setIntensity = (intensity: number) => {
     const clamped = Math.max(0, Math.min(1, intensity));
@@ -45,7 +48,6 @@ export function installVhsCompositor(root: HTMLElement, initialIntensity: number
     setIntensity,
     destroy() {
       window.clearInterval(interval);
-      window.removeEventListener('resize', resize);
       grain.remove();
     },
   };

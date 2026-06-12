@@ -64,15 +64,37 @@ export function getNode(graph: NodeGraph, id: string): SceneNode {
   return node;
 }
 
+const WINDOW_SEQUENCE: TimeWindow[] = ['23:08-23:17', '23:17-23:26', '23:26-23:35'];
+
+export function nearestDefinedWindow(
+  states: Partial<Record<TimeWindow, TemporalNodeState>>,
+  window: TimeWindow,
+): TimeWindow | undefined {
+  const index = WINDOW_SEQUENCE.indexOf(window);
+  return WINDOW_SEQUENCE.filter((candidate) => states[candidate]).sort(
+    (a, b) => Math.abs(WINDOW_SEQUENCE.indexOf(a) - index) - Math.abs(WINDOW_SEQUENCE.indexOf(b) - index),
+  )[0];
+}
+
 export function getNodeState(graph: NodeGraph, id: string, window: TimeWindow): TemporalNodeState {
   const node = getNode(graph, id);
-  return (
-    node.temporalStates?.[window] ?? {
-      still: node.still,
-      caption: node.caption ?? '',
-      hotspots: node.hotspots,
-    }
-  );
+  const states = node.temporalStates ?? {};
+  const direct = states[window];
+  if (direct) {
+    return direct;
+  }
+  // Every node's base hotspot list is empty by convention; falling back to it
+  // would strand the player on a dead view. Show the nearest tape window the
+  // node actually defines instead.
+  const nearest = nearestDefinedWindow(states, window);
+  if (nearest) {
+    return states[nearest]!;
+  }
+  return {
+    still: node.still,
+    caption: node.caption ?? '',
+    hotspots: node.hotspots,
+  };
 }
 
 export function conditionsMet(conditions: FlagCondition[] | undefined, snapshot: EngineSnapshot): boolean {
