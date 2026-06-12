@@ -1,5 +1,5 @@
 import { createAudioMixer } from '../engine/audioMixer';
-import { clientPointToPercent, routeHotspotAt } from '../engine/hotspotRouter';
+import { clipPathWithinBounds, polygonBounds } from '../engine/hotspotGeometry';
 import { availableHotspots, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
 import { loadSnapshot, saveSnapshot } from '../engine/save';
@@ -116,9 +116,15 @@ function render() {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'hotspot';
+      button.dataset.hotspotId = hotspot.id;
       button.textContent = hotspot.label;
       button.title = hotspot.label;
-      button.style.clipPath = `polygon(${hotspot.polygon.map(([x, y]) => `${x}% ${y}%`).join(', ')})`;
+      const bounds = polygonBounds(hotspot.polygon);
+      button.style.left = `${bounds.minX}%`;
+      button.style.top = `${bounds.minY}%`;
+      button.style.width = `${bounds.width}%`;
+      button.style.height = `${bounds.height}%`;
+      button.style.clipPath = clipPathWithinBounds(hotspot.polygon, bounds);
       button.style.setProperty('--assist-threshold', String(hotspot.shimmerThreshold ?? 0.55));
       button.addEventListener('click', () => activateHotspot(hotspot));
       return button;
@@ -156,16 +162,6 @@ function showCaption(text: string) {
     caption.textContent = text;
   }
 }
-
-stage.addEventListener('click', (event) => {
-  const snapshot = state.snapshot();
-  const point = clientPointToPercent(stage, event.clientX, event.clientY);
-  const nodeState = getNodeState(graph, snapshot.currentNodeId, snapshot.activeWindow);
-  const hotspot = routeHotspotAt({ id: 'active-state', title: '', still: nodeState.still, caption: nodeState.caption, hotspots: availableHotspots(nodeState, snapshot) }, point);
-  if (hotspot) {
-    activateHotspot(hotspot);
-  }
-});
 
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));

@@ -152,3 +152,28 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T04:00:21+00:00 — Director review round 2 DOM fixes
+
+Changed:
+- Removed the stage-level coordinate click router and made each hotspot a stable bounded button; shimmer remains CSS-only and does not rebuild DOM during pointer interaction.
+- Added hotspot geometry helpers so rendered hotspot elements use bounding boxes plus local clip paths instead of full-frame absolute buttons.
+- Added sanity coverage that no hotspot exceeds 40% of the frame and no pair fully overlaps within a temporal state.
+- Expanded jsdom integration coverage to use real pointerdown/pointerup/click events on actual hotspot elements and assert journal text appears in the DOM.
+- Confirmed flyer clue registration renders journal entries again and the flyer -> radio -> printer -> TIMESEEK flow still swaps to the 23:17-23:26 still.
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ and deployed production Netlify.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 3 files, 9 tests.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, and cruiser-interior runtime still.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Next:
+- Director playtest the stable-hotspot build in production.
+
+Blockers:
+- None.
