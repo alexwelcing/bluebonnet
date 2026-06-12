@@ -131,6 +131,31 @@ describe('Evidence Deck integration', () => {
   });
 
 
+  it('REWIND appears only on ending nodes and clears the save', async () => {
+    await loadDeck({
+      currentNodeId: 'ending-eject',
+      flags: { 'ending:eject': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:26-20:35',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26', '20:26-20:35'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+
+    const rewind = document.querySelector<HTMLButtonElement>('.rewind')!;
+    expect(rewind.hidden).toBe(false);
+    realPointerClick(rewind);
+    expect(localStorage.getItem('bluebonnet.engine.snapshot.v1')).toBeNull();
+  });
+
+  it('REWIND stays hidden during play', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+    expect(document.querySelector<HTMLButtonElement>('.rewind')!.hidden).toBe(true);
+  });
+
   it('cue buttons seek directly; the locked cue strains like the hard stop', async () => {
     await loadDeck({
       currentNodeId: 'missing-minutes-gate',

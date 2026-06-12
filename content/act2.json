@@ -216,6 +216,14 @@
               "target": "field-threshold",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-left-row__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-left-row__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -386,6 +394,14 @@
               ],
               "target": "field-left-row",
               "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-right-row__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-right-row__2008-2017.jpg"
             }
           ]
         },
@@ -578,6 +594,14 @@
               "shimmerThreshold": 0.3,
               "cluePrompt": "the rounded patches of bluebonnet flowers",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-clock-two__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-clock-two__2008-2017.jpg"
             }
           ]
         },
@@ -795,6 +819,14 @@
               "shimmerThreshold": 0.3,
               "cluePrompt": "the clumps of blue flowers",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-clock-seven__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-clock-seven__2008-2017.jpg"
             }
           ]
         },
@@ -1101,6 +1133,14 @@
               "cluePrompt": "the bluebonnet flower stalk in the center",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-clock-one__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-clock-one__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -1385,6 +1425,14 @@
               "shimmerThreshold": 0.3,
               "cluePrompt": "the pale bare ground in the middle of the flowers",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-clock-three__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-clock-three__2008-2017.jpg"
             }
           ]
         },
@@ -1918,6 +1966,14 @@
               "cluePrompt": "the blank pale notice board",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-tally__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-tally__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -2124,6 +2180,14 @@
                   "flag": "culvert-access"
                 }
               ]
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/act2-culvert-stub__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/act2-culvert-stub__2017-2026.jpg"
             }
           ]
         }

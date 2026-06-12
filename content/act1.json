@@ -560,6 +560,14 @@
               "cluePrompt": "reflective metal sign plate on the roadside post",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/mile-marker-271__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/mile-marker-271__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -799,6 +807,14 @@
               "cluePrompt": "white paper flyer in the grass",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/flyer-ditch__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/flyer-ditch__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -1031,6 +1047,14 @@
               "discoverTimecode": "20:17-20:26",
               "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
               "exhibit": "dispatch"
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/scanner-radio__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/scanner-radio__2008-2017.jpg"
             }
           ]
         },
@@ -1282,6 +1306,14 @@
               "cluePrompt": "long white paper receipt",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/tipline-printer__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/tipline-printer__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -1490,6 +1522,14 @@
               "shimmerThreshold": 0.45,
               "cluePrompt": "white card at the base of the wooden cross",
               "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/roadside-shrine__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/roadside-shrine__2008-2017.jpg"
             }
           ]
         },
@@ -1754,6 +1794,14 @@
               ],
               "caption": "The tape has enough time to enter the field.",
               "shimmerThreshold": 0.35
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/culvert-mouth__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/culvert-mouth__2017-2026.jpg"
             }
           ]
         }

@@ -6,3 +6,6 @@ DONE B3 AUDIO UPGRADE: replace synth ambient beds with richer generated loops (c
 DONE B4 EXHIBIT ART PASS: flyer becomes a real photocopied MISSING poster (halftone photo block, tear-off phone tabs); dispatch sheet gets dot-matrix perforated-edge styling. Text still rendered by us, accurate.
 DONE B5 TITLE / BOOT: a cold-open "insert tape" boot screen and a quiet title, in-fiction; a credits/colophon reachable from the deck.
 DONE B6 FULL PLAYTHROUGH QA: BrowserUse runs Act I→IV end to end on the live site, asserts every puzzle solvable from in-world info, logs a transcript to .bridge/playthrough.md.
+
+DONE B7 IMMERSION EXPANSION — closed 2026-06-13 under canon A7 (plate-anchored generation): per-window loops on every primary view (36 loops + 1 deliberate still), 11 golden-path transitions incl. both endings, clue-silhouette hotspots, full audio kit. Viewpoint-count density (A4 numeric targets) intentionally traded for motion+transition density at equal immersion cost — director may reopen.
+GAME COMPLETE v1.0.0: four acts, two endings, REWIND loop, full supervised playthroughs of both endings, deployed.

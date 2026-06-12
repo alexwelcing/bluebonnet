@@ -5,7 +5,7 @@
       "id": "nine-field-threshold",
       "title": "Nine Minutes Threshold",
       "still": "stills/act4/nine-field-threshold__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -175,16 +175,16 @@
         }
       },
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       }
     },
     {
       "id": "nine-threshold-left",
       "title": "Nine Threshold / Left Facing",
       "still": "stills/act4/nine-threshold-left__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       },
       "caption": "",
       "hotspots": [],
@@ -219,6 +219,14 @@
               "caption": "The original threshold view snaps back into the deck.",
               "shimmerThreshold": 0.45
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-threshold-left__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-threshold-left__2026-2035.jpg"
+            }
           ]
         }
       }
@@ -227,9 +235,9 @@
       "id": "nine-threshold-right",
       "title": "Nine Threshold / Right Facing",
       "still": "stills/act4/nine-threshold-right__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       },
       "caption": "",
       "hotspots": [],
@@ -264,6 +272,14 @@
               "caption": "The original threshold view snaps back into the deck.",
               "shimmerThreshold": 0.45
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-threshold-right__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-threshold-right__2026-2035.jpg"
+            }
           ]
         }
       }
@@ -272,9 +288,9 @@
       "id": "nine-threshold-look-down",
       "title": "Nine Threshold / Look Down",
       "still": "stills/act4/nine-threshold-look-down__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       },
       "caption": "",
       "hotspots": [],
@@ -309,6 +325,14 @@
               "caption": "The original threshold view snaps back into the deck.",
               "shimmerThreshold": 0.45
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-threshold-look-down__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-threshold-look-down__2026-2035.jpg"
+            }
           ]
         }
       }
@@ -317,9 +341,9 @@
       "id": "nine-culvert-detail",
       "title": "Nine Culvert Lip Detail",
       "still": "stills/act4/nine-culvert-detail__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       },
       "caption": "",
       "hotspots": [],
@@ -354,6 +378,14 @@
               "caption": "The original threshold view snaps back into the deck.",
               "shimmerThreshold": 0.45
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/nine-culvert-detail__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/nine-culvert-detail__2026-2035.jpg"
+            }
           ]
         }
       }
@@ -362,7 +394,7 @@
       "id": "nine-flower-path",
       "title": "Luminous Flower Path",
       "still": "stills/act4/nine-flower-path__2026-2035.jpg",
-      "ambientAudio": "audio/field-wind.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -432,14 +464,14 @@
         }
       },
       "audioMix": {
-        "ambient": 0.72
+        "ambient": 0.55
       }
     },
     {
       "id": "near-car",
       "title": "The Near Car",
       "still": "stills/act4/near-car__2026-2035.jpg",
-      "ambientAudio": "audio/radio-static.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -509,14 +541,14 @@
         }
       },
       "audioMix": {
-        "ambient": 0.66
+        "ambient": 0.55
       }
     },
     {
       "id": "luminous-shrine",
       "title": "Luminous Shrine",
       "still": "stills/act4/luminous-shrine__2026-2035.jpg",
-      "ambientAudio": "audio/radio-static.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -617,18 +649,26 @@
               "target": "near-car",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/luminous-shrine__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/luminous-shrine__2026-2035.jpg"
+            }
           ]
         }
       },
       "audioMix": {
-        "ambient": 0.66
+        "ambient": 0.55
       }
     },
     {
       "id": "car-door",
       "title": "Car Door",
       "still": "stills/act4/car-door__2026-2035.jpg",
-      "ambientAudio": "audio/radio-static.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -773,18 +813,26 @@
               "target": "luminous-shrine",
               "shimmerThreshold": 0.5
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act4/car-door__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act4/car-door__2026-2035.jpg"
+            }
           ]
         }
       },
       "audioMix": {
-        "ambient": 0.66
+        "ambient": 0.55
       }
     },
     {
       "id": "final-choice",
       "title": "Final Choice",
       "still": "stills/act4/final-choice__2026-2035.jpg",
-      "ambientAudio": "audio/radio-static.wav",
+      "ambientAudio": "audio/nine-luminescence.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
@@ -893,7 +941,7 @@
         }
       },
       "audioMix": {
-        "ambient": 0.66
+        "ambient": 0.55
       }
     },
     {

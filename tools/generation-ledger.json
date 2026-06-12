@@ -222,7 +222,169 @@
       "model": "fal-ai/elevenlabs/sound-effects/v2",
       "estimatedUsd": 0.1,
       "ok": true
+    },
+    {
+      "at": "2026-06-12T20:18:16.317Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:18:18.188Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:18:22.323Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:18:42.143Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:19:19.865Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:19:26.953Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:19:27.526Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:19:46.733Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:20:24.207Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:20:31.613Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:20:37.683Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:20:56.861Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:21:36.749Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:21:44.709Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:21:46.130Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:21:57.818Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:22:46.117Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:22:52.296Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:22:53.440Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:22:58.595Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:23:53.467Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:24:02.553Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:24:03.687Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:26:25.344Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:27:25.867Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:29:25.191Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-12T20:51:49.013Z",
+      "model": "fal-ai/mmaudio-v2",
+      "estimatedUsd": 0.05,
+      "ok": true
     }
   ],
-  "estimatedSpentUsd": 38.25
+  "estimatedSpentUsd": 72.1
 }

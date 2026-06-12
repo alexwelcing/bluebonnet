@@ -580,3 +580,17 @@ Changed:
 Verification: 40 tests green (new cue-seek + locked-strain regression test); browser-verified scrub readout mid-drag (SCRUB ⏵ 20:12 → SEATED ⏵ 20:08-20:17 on release), cue direct seek, locked cue strain; screenshots reviewed.
 
 Blockers: none.
+
+## 2026-06-13T05:30:00+00:00 — v1.0.0: THE GAME IS FINISHED (Claude, supervising)
+
+Changed:
+- Loop backfill complete: 23 more supervised loops (4-wide generation, individual review). Rejections this pass: A1 timestamp burn (mile marker), duplicated flyer, camera orbit (tally board). 36 loops total + ending-eject deliberately still; every primary view breathes.
+- REWIND mechanic: ending nodes offer "⏮ REWIND TAPE — START OVER" — clears the save, boots fresh. The game loops.
+- Dedicated act4 bed: nine-luminescence drone derived from the threshold loop (MMAudio), wired to all ten nine-minutes nodes at 0.55 mix.
+- README rewritten for the finished feature set; backlog closed.
+
+Verification:
+- 42 tests green. Full organic playthrough to RECORD (18 journal entries, zero console errors). EJECT branch + deliberate stillness + REWIND-to-fresh-boot certified in browser.
+- Spend: ~$73 of $100 (ledger). ~$27 reserve remains.
+
+The tape is finished. EJECT or RECORD.

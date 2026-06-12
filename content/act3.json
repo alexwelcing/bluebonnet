@@ -432,6 +432,14 @@
               "cluePrompt": "the rusted pipe",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-pipe__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-pipe__2017-2026.jpg"
+            }
           ]
         },
         "20:26-20:35": {
@@ -651,6 +659,14 @@
                   "flag": "echo-solved"
                 }
               ]
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-echo-chamber__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-echo-chamber__2017-2026.jpg"
             }
           ]
         },
@@ -1129,6 +1145,14 @@
               },
               "caption": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent.",
               "shimmerThreshold": 0.25
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/missing-minutes-gate__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/missing-minutes-gate__2017-2026.jpg"
             }
           ]
         },

@@ -8,11 +8,13 @@ An analog-horror puzzle mystery in the Myst/Riven lineage, played entirely throu
 
 ## How it plays
 
-- The whole game lives inside the deck fiction: a tape stage, a TRACKING knob, captions, an annotation journal, and a physical **TIMESEEK** jog wheel you drag to scrub tape-time.
-- Locations are pre-rendered stills with layered ambient motion loops — nothing renders in real time.
-- The world has temporal states. Re-seating the tape to a discovered timecode shows the same geography *slightly wrong*: the pole leans, the flowers stand nearer the asphalt, the distant car is closer but never seen moving.
-- Every puzzle is solvable from in-world information alone. Nothing kills you and nothing is timed; the dread is world-state, not fail-state.
-- Accessibility: every audio cue is captioned, the jog wheel has full keyboard control (arrow keys nudge, Enter seats the nearest detent), and VHS distortion intensity is player-adjustable.
+- The whole game lives inside the deck fiction, full-bleed: the tape is the screen, and the controls ride in a slide-in deck drawer (**D**).
+- **TIMESEEK** is a physical transport: drag the jog wheel to scrub tape-time (a live readout spools the timecode), press cue buttons to seek discovered windows directly, and feel the locked nine minutes kick back.
+- **DUB COMPARE** (hold **C**): superimpose the other tape pass over the current frame — stable pixels cancel toward black, and whatever moved between windows glows.
+- The world has temporal states. The same geography goes *slightly wrong* between windows: the pole leans, the flowers stand nearer the asphalt, the distant car is closer but never seen moving.
+- Every location breathes — per-view ambient loops generated from the exact frame they play over — and navigation along the main path is a real camera move through the world, not a cut.
+- Every puzzle is solvable from in-world information alone. Nothing kills you and nothing is timed; the dread is world-state, not fail-state. Two endings; the deck offers REWIND after either.
+- Accessibility: every audio cue is captioned, full keyboard control throughout (arrows/Enter on the wheel, cue buttons, C to compare), `prefers-reduced-motion` replaces camera moves with cuts, and VHS distortion intensity is player-adjustable with a marked assist notch.
 
 ## Running locally
 

@@ -106,6 +106,7 @@ app.innerHTML = `
         CAPTIONS
       </label>
       <button class="save" type="button">BOOKMARK TAPE STATE</button>
+      <button class="rewind" type="button" hidden>⏮ REWIND TAPE — START OVER</button>
       <button class="credits" type="button">CREDITS / COLOPHON</button>
       <section class="journal-panel" aria-label="Annotation journal">
         <h2>JOURNAL</h2>
@@ -140,6 +141,7 @@ const intensity = app.querySelector<HTMLInputElement>('.intensity')!;
 const volume = app.querySelector<HTMLInputElement>('.volume')!;
 const captions = app.querySelector<HTMLInputElement>('.captions')!;
 const save = app.querySelector<HTMLButtonElement>('.save')!;
+const rewind = app.querySelector<HTMLButtonElement>('.rewind')!;
 const credits = app.querySelector<HTMLButtonElement>('.credits')!;
 const bootScreen = app.querySelector<HTMLDivElement>('.boot-screen')!;
 const insertTape = app.querySelector<HTMLButtonElement>('.insert-tape')!;
@@ -263,6 +265,8 @@ function render() {
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
   compositor.setIntensity(snapshot.vhsIntensity);
+  // The endings are terminal; the deck offers the way back.
+  rewind.hidden = !snapshot.currentNodeId.startsWith('ending-');
 
   journalList.replaceChildren(
     ...snapshot.journal.map((entry) => {
@@ -625,6 +629,15 @@ jogWheel.addEventListener('keydown', (event) => {
     settleJogWheel();
   }
 });
+rewind.addEventListener('click', () => {
+  clearSnapshot();
+  try {
+    window.location.reload();
+  } catch {
+    // jsdom — the cleared save is the observable effect
+  }
+});
+
 save.addEventListener('click', () => {
   try {
     saveSnapshot(state.snapshot());
