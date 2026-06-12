@@ -28,3 +28,10 @@ A horror puzzle-mystery game in the Myst/Riven lineage. Setting: a bluebonnet fi
 - Instant node transitions, smooth pan/zoom on stills, audio crossfades.
 - Every puzzle solvable from in-world information only.
 - Accessibility: captions for all audio, configurable VHS-effect intensity.
+
+## Operations
+- Bridge server restart command: `setsid nohup python3 -m http.server 8123 --directory /workspaces/bluebonnet/.bridge`. Port 8123 must be forwarded in VS Code for browser playtesting through the bridge.
+- After every green build, refresh `/workspaces/bluebonnet/.bridge/preview/` from `dist/` so the bridge serves the latest playable artifact.
+- Status/decision logging protocol: after each work block, append a dated entry to `.bridge/status.md` with what changed, what is next, and blockers; record durable choices that affect future sessions in `.bridge/decisions.md`.
+- Netlify production deploy: run `netlify deploy --prod --dir dist` once `NETLIFY_AUTH_TOKEN` is available in the environment or `netlify login` has been completed. Never store the Netlify token, or any secret, in the repo.
+- Session restart ritual: Hermes picks up `AGENTS.md` automatically at session start; read the tail of `.bridge/status.md` for current context before continuing work.

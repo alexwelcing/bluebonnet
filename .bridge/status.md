@@ -58,3 +58,14 @@ Next:
 
 Blockers:
 - None. Verification passed: npm run typecheck, npm test, npm run build; dist/stills/dashcam-test-01.png and .bridge/preview/stills/dashcam-test-01.png both exist.
+
+## 2026-06-12T03:05:17+00:00 — Operations playbook update
+
+Changed:
+- Appended an Operations section to AGENTS.md covering bridge server restart, VS Code port forwarding, preview refresh after green builds, status/decision logging, Netlify deploy, and session restart ritual.
+
+Next:
+- Use AGENTS.md Operations as the standard handoff/playbook for future sessions.
+
+Blockers:
+- None.
