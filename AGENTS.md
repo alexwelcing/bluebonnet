@@ -38,3 +38,6 @@ A horror puzzle-mystery game in the Myst/Riven lineage. Setting: a bluebonnet fi
 
 ## Canon pointer
 Creative authority lives in GAME_DIRECTION.md. Read it at session start; defer to it over improvisation.
+
+## Autonomous resume
+If started fresh, read .bridge/AUTONOMOUS_DIRECTIVE.md and execute it. Check .bridge/status.md tail and .bridge/backlog.md for current state.
