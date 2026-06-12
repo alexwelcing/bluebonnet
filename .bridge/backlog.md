@@ -1,6 +1,7 @@
 # Production backlog → completion
 B1 ACT IV — THE NINE MINUTES: 6 night-field nodes, luminous bluebonnets, the car finally near. Clean plates per A1, composited OSD only. Unlocks only after Act III recorder grants 23:26 AND the field gate is open. The jog wheel's hard-stop at 23:26-23:35 becomes seekable here (gate flag flips it from locked to a final detent).
 B2 ENDINGS: the EJECT (seal the tape) and RECORD (overwrite it) choice at the climax; two distinct end states with distinct final composited frames + audio; save-state records which ending was seen.
+B7 IMMERSION EXPANSION (canon A4, HIGH PRIORITY - do immediately after current item): densify Acts I-III to A4 targets - multi-facing views per position, object closeups, 3-4 candidates per shot with curation logged in shotlist.json; generate ambient video loops per act via Fal video and composite them as breathing layers over stills; engine support for layered video loops with captions-off visual parity. Act IV (B1/B2) must be BUILT at A4 density, not retrofitted.
 B3 AUDIO UPGRADE: replace synth ambient beds with richer generated loops (cruiser, field, culvert, threat static); seamless loop points; per-node mix levels.
 B4 EXHIBIT ART PASS: flyer becomes a real photocopied MISSING poster (halftone photo block, tear-off phone tabs); dispatch sheet gets dot-matrix perforated-edge styling. Text still rendered by us, accurate.
 B5 TITLE / BOOT: a cold-open "insert tape" boot screen and a quiet title, in-fiction; a credits/colophon reachable from the deck.

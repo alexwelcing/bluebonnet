@@ -51,3 +51,9 @@ Fairness rules: every code appears in at least 2 in-world places; no pixel hunts
 - Replace numeric entry with a tactile jog/shuttle wheel on the deck: pointer-drag to spin, real physics - angular velocity, flywheel inertia, friction decay, subtle wobble.
 - Tape-time scrubs with the wheel; discovered windows are detents the wheel clunks into (magnetic snap + glitch flash + transport sound stub). Locked spans are hard stops: the wheel strains, jitters, and kicks back - jammed tape feel.
 - Keyboard/AT fallback: arrow keys nudge, enter seats the nearest detent; captions announce positions. The physicality is the fiction: you are handling a machine, not a form.
+
+### A4. Density & motion (immersion mandate, director 2026-06-12)
+- Myst shipped thousands of views; this game will not feel boxed in. Every position gets multiple facings (minimum 2, ideally 3-4: forward/back plus lateral looks) and every key object gets a closeup node. Density targets: Act I ~30 views (from 8), Act II ~40 (from 10), Act III ~20 (from 6), Act IV built at ~24 from the start.
+- Candidate workflow: generate 3-4 candidates per shot, pick ONE, log picks and rejects with reasons in shotlist.json. Continuity (palette, geography, the wrongness rule) beats single-image beauty. Same prompt skeleton + seed discipline per location.
+- MOTION: the world must breathe. Composite seamless ambient video loops (Fal video models, 2-6s) as layers over stills: bluebonnets swaying, heat shimmer on asphalt, radio static, the distant car's headlights, culvert water. 3-6 loops per act. Loops obey A1: no readable text.
+- Generation budget is NOT a constraint - 5% spent so far, the director has opened the spend. Generate boldly, curate ruthlessly.
