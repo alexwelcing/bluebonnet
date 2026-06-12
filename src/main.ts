@@ -53,6 +53,7 @@ app.innerHTML = `
         <img class="scene-still" alt="Recovered Hi8 tape still" />
         <div class="motion-layer-stack" aria-hidden="true"></div>
         <div class="hotspot-layer" aria-label="Tape interaction field"></div>
+        <img class="compare-layer" hidden alt="" aria-hidden="true" />
         <div class="scanlines" aria-hidden="true"></div>
         <div class="tracking tracking-a" aria-hidden="true"></div>
         <div class="tracking tracking-b" aria-hidden="true"></div>
@@ -74,6 +75,7 @@ app.innerHTML = `
         </button>
         <p class="timeseek-help"></p>
       </div>
+      <button class="compare" type="button" aria-pressed="false" title="Hold to superimpose the other tape pass over this frame">DUB COMPARE — HOLD (C)</button>
       <label class="tracking-control">
         TRACKING
         <input class="intensity" type="range" min="0" max="1" step="0.01" />
@@ -125,6 +127,8 @@ const credits = app.querySelector<HTMLButtonElement>('.credits')!;
 const bootScreen = app.querySelector<HTMLDivElement>('.boot-screen')!;
 const insertTape = app.querySelector<HTMLButtonElement>('.insert-tape')!;
 const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
+const compareButton = app.querySelector<HTMLButtonElement>('.compare')!;
+const compareLayer = app.querySelector<HTMLImageElement>('.compare-layer')!;
 const timeseekHelp = app.querySelector<HTMLParagraphElement>('.timeseek-help')!;
 const journalList = app.querySelector<HTMLOListElement>('.journal-list')!;
 const exhibitScan = app.querySelector<HTMLDivElement>('.exhibit-scan')!;
@@ -156,6 +160,10 @@ function setTransportMessage(text: string) {
 
 function render() {
   const snapshot = state.snapshot();
+  // The overlay belongs to one node+window; any movement invalidates it.
+  if (compareActive && compareContext !== `${snapshot.currentNodeId}|${snapshot.activeWindow}`) {
+    endCompare();
+  }
   const nodeState = getNodeState(graph, snapshot.currentNodeId, snapshot.activeWindow);
   still.src = nodeState.still;
   const node = getNode(graph, snapshot.currentNodeId);
@@ -353,8 +361,74 @@ function playTransition(fromNodeId: string, toNodeId: string, finish: () => void
   const playResult = clip.play();
   if (playResult && typeof playResult.catch === 'function') {
     playResult.catch(() => conclude());
+  } else {
+    // No real media pipeline (jsdom / very old browsers): land immediately.
+    conclude();
   }
 }
+
+// --- DUB COMPARE: hold to superimpose the other tape pass --------------------
+// The wrongness rule lives in the deltas between windows; this control lets
+// the player interrogate them directly. Difference blending makes whatever
+// moved between passes glow while everything stable goes dark.
+let compareActive = false;
+let compareContext = '';
+
+function compareCandidateWindow(): TimeWindow | undefined {
+  const snapshot = state.snapshot();
+  const states = getNode(graph, snapshot.currentNodeId).temporalStates;
+  if (!states) return undefined;
+  const sequence: TimeWindow[] = ['20:08-20:17', '20:17-20:26', '20:26-20:35'];
+  const activeIndex = sequence.indexOf(snapshot.activeWindow);
+  return sequence
+    .filter((window) => window !== snapshot.activeWindow && states[window] && snapshot.discoveredTimecodes.includes(window))
+    .sort((a, b) => Math.abs(sequence.indexOf(a) - activeIndex) - Math.abs(sequence.indexOf(b) - activeIndex))[0];
+}
+
+function startCompare() {
+  if (compareActive) return;
+  const other = compareCandidateWindow();
+  if (!other) {
+    setTransportMessage('DUB COMPARE: no second pass of this segment on the reel yet.');
+    return;
+  }
+  const snapshot = state.snapshot();
+  const otherState = getNodeState(graph, snapshot.currentNodeId, other);
+  compareActive = true;
+  compareContext = `${snapshot.currentNodeId}|${snapshot.activeWindow}`;
+  compareLayer.src = otherState.still;
+  compareLayer.hidden = false;
+  compareButton.setAttribute('aria-pressed', 'true');
+  stage.classList.add('comparing');
+  setTransportMessage(`DUB COMPARE: ${snapshot.activeWindow} OVER ${other} — what moved glows.`);
+  audio.playCue('audio/jog-detent-clunk.wav', 'Dub compare engaged.');
+}
+
+function endCompare() {
+  if (!compareActive) return;
+  compareActive = false;
+  compareLayer.hidden = true;
+  compareLayer.removeAttribute('src');
+  compareButton.setAttribute('aria-pressed', 'false');
+  stage.classList.remove('comparing');
+}
+
+compareButton.addEventListener('pointerdown', startCompare);
+compareButton.addEventListener('pointerup', endCompare);
+compareButton.addEventListener('pointercancel', endCompare);
+compareButton.addEventListener('pointerleave', endCompare);
+// Keyboard parity: hold C anywhere, or hold Space/Enter on the focused button.
+document.addEventListener('keydown', (event) => {
+  if (event.repeat) return;
+  if (event.key === 'c' || event.key === 'C') startCompare();
+  if ((event.key === ' ' || event.key === 'Enter') && document.activeElement === compareButton) {
+    event.preventDefault();
+    startCompare();
+  }
+});
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'c' || event.key === 'C' || event.key === ' ' || event.key === 'Enter') endCompare();
+});
 
 function reseatWindowForNode(nodeId: string) {
   // Walking into a place the tape never recorded in the current window (e.g.

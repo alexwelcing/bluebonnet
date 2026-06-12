@@ -33,6 +33,94 @@
       "seed": 1187,
       "sourceUrl": "https://v3b.fal.media/files/b/0a9e07ea/lwHt36_3xyL6-PV_NUerV_091cfdef68594f69b94f9a13344366c7.mp4",
       "curation": "first take: seam swallows frame in white, resolves onto luminous field — the crossing-over beat"
+    },
+    {
+      "from": "culvert-mouth",
+      "to": "field-threshold",
+      "window": "20:17-20:26",
+      "src": "video/transitions/culvert-mouth__field-threshold__2017-2026.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view immediately rushes forward through the windshield glass, the empty dashboard dropping out of frame in the first instant, then a fast floating rush down the embankment into the bluebonnets, flowers whipping past the lens, settling abruptly on the flattened path in the twilight field. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 3189,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e085a/4wcKpOb777pVBidaS8-8C_eb8017bb4d0e4120bb24b88f2bbc264c.mp4",
+      "curation": "s3189: instant dash exit then flower rush; s1187/s2188 rejected for hallucinated driver hands"
+    },
+    {
+      "from": "field-gate",
+      "to": "act2-culvert-stub",
+      "window": "20:08-20:17",
+      "src": "video/transitions/field-gate__act2-culvert-stub__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the rusted cattle gate swings slowly open away from the lens with the padlock falling loose, the view gliding through the opening and along the parting bluebonnets toward the dark concrete culvert mouth waiting under the highway. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0862/xrpvUjUsFQM2gJtRw9G53_b113e1abeb5547b68036d8ac1dae0ab8.mp4",
+      "curation": "first take: padlock swings loose, gate opens, glide to culvert mouth — unlock made physical"
+    },
+    {
+      "from": "act2-culvert-stub",
+      "to": "culvert-throat",
+      "window": "20:17-20:26",
+      "src": "video/transitions/act2-culvert-stub__culvert-throat__2017-2026.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view pushes slowly into the pitch black culvert opening, darkness swallowing the whole frame for a breath, then the flooded concrete channel resolving from the dark, amber light swelling across the rippling water. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e086b/1P5mURJ4Jj5DDXp1eYVN4_4e5dfe335b1147e4a2d87cf8806bc787.mp4",
+      "curation": "first take: flower carpet rushes under lens, dark swallows frame, channel resolves"
+    },
+    {
+      "from": "nine-field-threshold",
+      "to": "nine-flower-path",
+      "window": "20:26-20:35",
+      "src": "video/transitions/nine-field-threshold__nine-flower-path__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view drifts forward from the culvert mouth down into the glowing night field, luminous bluebonnets rising shoulder-high around the lens, the sky pure featureless black with no light sources and no marks, the flower glow the only illumination, settling on the narrow dirt path between leaning blooms. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 2188,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e087d/pkz9Muz1spvEouD6X22FB_444af7e94381461e85c3defcd297725f.mp4",
+      "curation": "s2188: black sky, glow-only descent; s1187 rejected for sky flare + glyphs"
+    },
+    {
+      "from": "nine-flower-path",
+      "to": "near-car",
+      "window": "20:26-20:35",
+      "src": "video/transitions/nine-flower-path__near-car__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view glides slowly down the dirt path as the flowers part, a dark abandoned sedan resting motionless among the glowing bluebonnets sliding into view ahead, blue glow spilling from its grille, the car absolutely still as the view settles in front of it. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0887/legZr9YeqZdoAsEBISdyv_6eba2d87b3e64836b42c549520cd2709.mp4",
+      "curation": "first take: the view advances, the car fixed — nearer between frames, never during one"
+    },
+    {
+      "from": "car-door",
+      "to": "final-choice",
+      "window": "20:26-20:35",
+      "src": "video/transitions/car-door__final-choice__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the view turns away from the open car door and drifts low through the glowing flowers toward a small CRT television and VCR resting impossibly in the field, the screen's static glow brightening as the view settles before the deck. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0890/6ke3aQXBNJ7Fsj26sj81a_49898cd7cccb46e58d340a0dc2c68159.mp4",
+      "curation": "first take: blur rush over field, deck grows from distant speck, settles on plate"
+    },
+    {
+      "from": "final-choice",
+      "to": "ending-eject",
+      "window": "20:26-20:35",
+      "src": "video/transitions/final-choice__ending-eject__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the video deck pushes its cassette out, the bright static screen dies to black, the glowing field draining into darkness around the lens, and the darkness resolves into a dim ordinary living room at night where the same television sits dark on a table, the cassette half-ejected from the player, faint bluebonnets in the room shadows. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e08a0/qw9bkkczVsPUB2_Vc8Ke6_acf327f1c69e4c33910e5073088b0711.mp4",
+      "curation": "first take: static dies, full-black sealing beat, room resolves"
+    },
+    {
+      "from": "final-choice",
+      "to": "ending-record",
+      "window": "20:26-20:35",
+      "src": "video/transitions/final-choice__ending-record__2026-2035.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "First-person continuous camera move, one unbroken handheld Hi8 shot: the small red lamp on the deck lights up, the static flooding deep red and surging brighter, the glow of the field flowing into the screen as red static swallows the whole frame, then settling on the television burning red static in a dark room, the record lamp lit, glowing flowers beneath the set. Smooth single take, no cuts, ending settled on the final framing.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e08a2/obXOU1pDiC6hFDLOId7A8_21f2770d1abe48c9934e13e723fafa82.mp4",
+      "curation": "first take: lamp lights, red floods the field, settles on room plate"
     }
   ]
 }

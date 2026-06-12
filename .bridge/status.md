@@ -538,3 +538,22 @@ Next (allocation guide in A7):
 
 Blockers:
 - None.
+
+## 2026-06-13T00:30:00+00:00 — Full golden-path transitions, DUB COMPARE mechanic, complete audio kit (Claude, supervising)
+
+Changed:
+- TRANSITIONS COMPLETE: 11 plate-to-plate moves cover the golden path end to end — wagon interior→exterior→marker, culvert-mouth→field (3 takes: Veo kept hallucinating driver hands over the dash plate), gate→culvert-stub (padlock falls loose: the unlock made physical), stub→throat (flower carpet rush into the dark), act4 threshold→path→car (the view advances, the car fixed), car-door→final-choice, and BOTH ENDINGS: EJECT (static dies, full-black sealing beat, room resolves) and RECORD (lamp lights, red floods the field, settles on the room plate).
+- NEW MECHANIC — DUB COMPARE: hold the deck button (or C) to superimpose the nearest other discovered pass over the current frame with difference blending: stable pixels cancel toward black, whatever moved between windows glows. Pure engine work; the wrongness rule is now directly interrogable. Ends automatically on navigation/seek; aria-pressed + transport messaging; polite refusal when only one pass is discovered. 2 new regression tests.
+- AUDIO KIT COMPLETE (all 8 files real, synth era over): wagon-idle + field-wind derived from their loops via MMAudio v2 (foley follows picture per A7), conditioned into seamless loops (tail crossfaded into head); jog-detent-clunk, tape-hard-stop, radio-static (native seamless loop), ending stingers via ElevenLabs SFX v2 text-to-audio; culvert-rumble derived from the culvert-throat loop. All supervised via spectrogram + level analysis (hazard-relay clicks visible as periodic transients in wagon-idle; no music/voice contamination).
+- tools/generateAudioBeds.mjs gains a `direct` text-to-audio mode; ledger covers mmaudio + elevenlabs.
+
+Verification:
+- typecheck, 39 tests, lint, build green. Browser: compare hold/release + keyboard parity, act4 transition chain, audio served; zero console errors.
+
+Spend: see tools/generation-ledger.json (~$40 estimated of $100).
+
+Next:
+- Density pass (FLUX.2 multi-reference facings) and loop backfill remain from the A7 allocation; transition coverage for secondary edges as desired.
+
+Blockers:
+- None.

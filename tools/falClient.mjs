@@ -19,6 +19,8 @@ const COST_ESTIMATES = {
   'fal-ai/flux-2-pro': 0.03,
   'fal-ai/flux-2-pro/edit': 0.04,
   'fal-ai/sam-3/image': 0.01,
+  'fal-ai/mmaudio-v2': 0.05,
+  'fal-ai/elevenlabs/sound-effects/v2': 0.1,
   'fal-ai/veo3.1/first-last-frame-to-video': 1.3,
 };
 const LEDGER_PATH = new URL('./generation-ledger.json', import.meta.url);

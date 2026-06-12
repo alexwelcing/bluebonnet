@@ -199,6 +199,44 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelectorAll('.hotspot').length).toBeGreaterThan(0);
   });
 
+  it('DUB COMPARE superimposes the other discovered pass while held', async () => {
+    await loadDeck({
+      currentNodeId: 'missing-minutes-gate',
+      flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:17-20:26',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26', '20:26-20:35'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+
+    const compare = document.querySelector<HTMLButtonElement>('.compare')!;
+    const layer = document.querySelector<HTMLImageElement>('.compare-layer')!;
+    expect(layer.hidden).toBe(true);
+
+    compare.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }));
+    expect(layer.hidden).toBe(false);
+    // gate is seated at 20:17; the other discovered pass is 20:26
+    expect(layer.src).toContain('missing-minutes-gate__2026-2035.jpg');
+    expect(compare.getAttribute('aria-pressed')).toBe('true');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('DUB COMPARE');
+
+    compare.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 1 }));
+    expect(layer.hidden).toBe(true);
+    expect(compare.getAttribute('aria-pressed')).toBe('false');
+  });
+
+  it('DUB COMPARE refuses politely when only one pass is discovered', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+    const compare = document.querySelector<HTMLButtonElement>('.compare')!;
+    compare.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }));
+    expect(document.querySelector<HTMLImageElement>('.compare-layer')!.hidden).toBe(true);
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('no second pass');
+  });
+
   it('shows an in-fiction insert-tape boot screen and deck colophon', async () => {
     await loadDeck();
 

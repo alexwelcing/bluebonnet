@@ -420,3 +420,29 @@ button, .save {
 }
 .scanlines, .tracking, .vhs-grain, .timestamp, .diegetic-text { z-index: 3; }
 .hotspot-layer { z-index: 4; }
+
+/* DUB COMPARE: the other pass superimposed with difference blending — stable
+   pixels cancel toward black, whatever moved between windows glows. */
+.compare-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: difference;
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+.comparing .scene-still { filter: contrast(1.05) saturate(0.4) brightness(0.9); }
+.comparing .motion-layer { opacity: 0 !important; }
+.compare {
+  width: 100%;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  border-style: dashed;
+}
+.compare[aria-pressed='true'] {
+  background: #1d3a28;
+  box-shadow: inset 0 0 18px rgba(125, 255, 174, 0.25);
+}
