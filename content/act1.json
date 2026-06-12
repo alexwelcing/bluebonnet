@@ -115,6 +115,14 @@
               "cluePrompt": "white notebook on the seat",
               "clueHighlight": true
             }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/wagon-interior__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/wagon-interior__2008-2017.jpg"
+            }
           ]
         },
         "20:17-20:26": {
@@ -252,14 +260,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "wagon-exterior",
@@ -344,6 +345,14 @@
               ],
               "target": "roadside-shrine",
               "shimmerThreshold": 0.55
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/wagon-exterior__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/wagon-exterior__2008-2017.jpg"
             }
           ]
         },
@@ -430,14 +439,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "mile-marker-271",
@@ -666,14 +668,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "flyer-ditch",
@@ -877,14 +872,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "scanner-radio",
@@ -1169,14 +1157,7 @@
       "ambientAudio": "audio/radio-static.wav",
       "audioMix": {
         "ambient": 0.66
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "tipline-printer",
@@ -1405,14 +1386,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "roadside-shrine",
@@ -1653,14 +1627,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "culvert-mouth",
@@ -1794,14 +1761,7 @@
       "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      },
-      "motionLayers": [
-        {
-          "src": "video/act1-wagon-heat-flicker.mp4",
-          "opacity": 0.28,
-          "blendMode": "screen"
-        }
-      ]
+      }
     }
   ]
 }

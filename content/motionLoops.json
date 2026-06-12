@@ -1,44 +1,98 @@
 {
+  "schema": "per-node image-to-video loops seeded from curated plates (canon A4/A6)",
   "loops": [
     {
-      "id": "act1-wagon-heat-flicker",
+      "id": "wagon-interior__2008-2017",
       "act": "act1",
-      "runtime": "video/act1-wagon-heat-flicker.mp4",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df77f/16gBi9sh6In1jjUtk-2vJ_output.mp4",
-      "prompt": "degraded 1990s Texas highway patrol VHS dashcam idle loop, cruiser interior/exterior light flicker and faint highway heat shimmer, subtle tape drift, no readable text, no lettering, no signage characters",
-      "model": "pixverse-v6",
-      "durationSeconds": 4,
+      "window": "20:08-20:17",
+      "runtime": "video/act1/wagon-interior__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: faint heat shimmer only, the laminated pass on the visor barely trembling, dust motes drifting inside the cabin, the road and horizon completely still, no smoke, no dust plumes, nothing changes outside the windshield. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 2188,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e06b3/aImsjTfj3B9lXZ_UoKaGy_d9a8861a06f6457bb57a8ed84553ff9a.mp4",
+      "curation": "s2188: pass trembles, horizon still; s1187 rejected for phantom smoke plume on the road and oversized pass swing",
       "status": "generated-clean-motion"
     },
     {
-      "id": "act2-bluebonnet-wind",
-      "act": "act2",
-      "runtime": "video/act2-bluebonnet-wind.mp4",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df783/CPqCztSJBlar4Lqr-V4iE_output.mp4",
-      "prompt": "degraded VHS bluebonnet field idle loop, Texas roadside flowers swaying in night wind, analog tracking noise and subtle luminosity, static camera, no readable text, no lettering, no signage characters",
-      "model": "pixverse-v6",
-      "durationSeconds": 4,
-      "status": "generated-clean-motion"
-    },
-    {
-      "id": "act3-culvert-drip-static",
-      "act": "act3",
-      "runtime": "video/act3-culvert-drip-static.mp4",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df786/sTiFyXpZA7jtwxhUe0VL6_output.mp4",
-      "prompt": "degraded VHS highway culvert idle loop, concrete tunnel darkness breathing, slow water drips and faint radio-static shimmer, static camera, no readable text, no lettering, no signage characters",
-      "model": "pixverse-v6",
-      "durationSeconds": 4,
-      "status": "generated-clean-motion"
-    },
-    {
-      "id": "act4-nine-luminescence",
-      "act": "act4",
-      "runtime": "video/act4-nine-luminescence.mp4",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df78a/uyoVX7ihtvC2g11P0DU1V_output.mp4",
-      "prompt": "degraded VHS nine minutes night field idle loop, luminous bluebonnets pulsing faintly and distant car headlights flickering in blue-black darkness, static camera, no readable text, no lettering, no signage characters",
-      "model": "pixverse-v6",
-      "durationSeconds": 4,
+      "id": "wagon-exterior__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/wagon-exterior__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the amber hazard lights blinking in a slow steady rhythm, bluebonnets at the shoulder stirring in light wind, the distant headlights glimmering, the wagon itself perfectly still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e06bc/Vu10MhZBsdP02iiIMamoj_de2914c5fc5c43afa4e85ba46b845c0c.mp4",
+      "curation": "hazards blink, wind-drifted open door settles home — physically motivated, kept deliberately",
       "status": "generated-clean-motion"
     }
-  ]
+  ],
+  "queue": [
+    {
+      "act": "act2",
+      "nodeId": "field-threshold",
+      "window": "20:08-20:17",
+      "motionPrompt": "the bluebonnet field swaying gently in waves of light wind, the paired distant headlights on the horizon flickering faintly, the sky unchanged"
+    },
+    {
+      "act": "act2",
+      "nodeId": "field-gate",
+      "window": "20:17-20:26",
+      "motionPrompt": "the padlock swinging almost imperceptibly on the chain, bluebonnets pressing through the gate bars in light wind, twilight steady"
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-throat",
+      "window": "20:17-20:26",
+      "motionPrompt": "the flooded channel water rippling slowly, light swells moving across the wet surface toward the dark"
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-dripline",
+      "window": "20:17-20:26",
+      "motionPrompt": "water drips falling steadily from the ceiling, ripple rings expanding on the dark water, metronome rhythm"
+    },
+    {
+      "act": "act3",
+      "nodeId": "recorder-nest",
+      "window": "20:26-20:35",
+      "motionPrompt": "the recorder counter window glow pulsing faintly, dim glints moving on the wet mud around the caliche ledge"
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-field-threshold",
+      "window": "20:26-20:35",
+      "motionPrompt": "the field luminescence breathing slowly brighter and dimmer, the two distant red taillights flickering, flowers swaying"
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-flower-path",
+      "window": "20:26-20:35",
+      "motionPrompt": "the shoulder-high bluebonnets swaying while leaning away from the dark end of the path, their glow pulsing gently"
+    },
+    {
+      "act": "act4",
+      "nodeId": "near-car",
+      "window": "20:26-20:35",
+      "motionPrompt": "the glow spilling from the car grille pulsing softly, surrounding flowers swaying in night wind, the car itself absolutely motionless"
+    },
+    {
+      "act": "act4",
+      "nodeId": "final-choice",
+      "window": "20:26-20:35",
+      "motionPrompt": "the television static churning, its pale light flickering across the surrounding glowing bluebonnets, the deck steady"
+    },
+    {
+      "act": "act4",
+      "nodeId": "ending-eject",
+      "window": "20:26-20:35",
+      "motionPrompt": "the dying screen glow flickering low, the room dim and breathing, the flowers in the foreground barely stirring"
+    },
+    {
+      "act": "act4",
+      "nodeId": "ending-record",
+      "window": "20:26-20:35",
+      "motionPrompt": "the red static churning violently on the screen, the record lamp steady, the glowing flowers below swaying toward the set"
+    }
+  ],
+  "queueNote": "Run one at a time: node tools/generateLoops.mjs gen <act> <node> <window> \"<motionPrompt>\" — view the frame strip in /tmp/bluebonnet-loops/, re-roll with adjusted prompt if motion misbehaves (phantom events, camera drift, oversized motion), then install. Blocked 2026-06-12: fal balance exhausted."
 }

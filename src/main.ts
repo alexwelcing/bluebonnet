@@ -160,14 +160,16 @@ function render() {
   const node = getNode(graph, snapshot.currentNodeId);
   // Rebuilding the <video> elements restarts the loops and flashes black, so
   // only do it when the layer set actually changes (state publishes several
-  // times per click, and adjacent nodes often share the same act loop).
-  const motionKey = (node.motionLayers ?? [])
+  // times per click). Window-specific loops take precedence; the still
+  // underneath acts as the poster frame until the video plays.
+  const activeMotionLayers = nodeState.motionLayers ?? node.motionLayers ?? [];
+  const motionKey = activeMotionLayers
     .map((layer) => `${layer.src}|${layer.opacity}|${layer.blendMode ?? 'screen'}`)
     .join(',');
   if (motionKey !== renderedMotionKey) {
     renderedMotionKey = motionKey;
     motionLayerStack.replaceChildren(
-      ...(node.motionLayers ?? []).map((layer) => {
+      ...activeMotionLayers.map((layer) => {
         const video = document.createElement('video');
         video.className = 'motion-layer';
         video.src = layer.src;

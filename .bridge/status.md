@@ -501,3 +501,20 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T19:40:00+00:00 — Motion loop system rebuilt: per-node i2v seeded from plates (Claude, supervising)
+
+Changed:
+- Retired all four shared per-act overlay loops. The Act I loop was footage of the OLD police cruiser (flashing light bar) screen-blended over every Act I node — a canon break live on the site since the reframe. The screen-blend overlay channel is gone entirely; tape texture stays in the CSS/canvas compositor.
+- New system (canon A4): per-node-per-window idle loops generated with Veo 3.1 first/last-frame-to-video, BOTH frames set to the curated plate — frame 0 equals the still, the seam is exact, and the loop plays as the base layer (blend normal, opacity 1) with the still as poster. Engine: TemporalNodeState.motionLayers (window-level, falls back to node-level); MotionLayer.sourceStill provenance; tests assert every declared loop file exists and sourceStill matches the plate it plays over.
+- tools/generateLoops.mjs: gen (candidate + 5-frame curation strip) / install (normalize 1024x576 silent h264, wire content, log provenance + curation note in motionLoops.json).
+- Supervised one-at-a-time: wagon-interior 20:08 (re-rolled once: first take grew a phantom smoke plume on the horizon — rejected; second take clean) and wagon-exterior 20:08 (hazards blink; wind-drifted open door settles home — kept deliberately as physically-motivated dread) are LIVE.
+
+Verification:
+- typecheck, 37 tests, lint, build green. Browser check: interior loop playing (blend normal, opacity 1, currentTime advancing), per-window wiring correct, loop-less nodes cleanly show static plates, zero console errors.
+
+Next:
+- 11 hero loops queued with authored motion prompts in content/motionLoops.json (queue field). Resume one-at-a-time once fal balance is topped up.
+
+Blockers:
+- fal balance exhausted (403 on generation). Top up at fal.ai/dashboard/billing, then continue the queue.

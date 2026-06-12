@@ -122,14 +122,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-left-row",
@@ -300,14 +293,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-right-row",
@@ -478,14 +464,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-clock-two",
@@ -674,14 +653,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-clock-seven",
@@ -954,14 +926,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-clock-one",
@@ -1274,14 +1239,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-clock-three",
@@ -1586,14 +1544,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-gate",
@@ -1874,14 +1825,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "field-tally",
@@ -2038,14 +1982,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     },
     {
       "id": "act2-culvert-stub",
@@ -2178,14 +2115,7 @@
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
-      },
-      "motionLayers": [
-        {
-          "src": "video/act2-bluebonnet-wind.mp4",
-          "opacity": 0.34,
-          "blendMode": "screen"
-        }
-      ]
+      }
     }
   ]
 }

@@ -55,12 +55,16 @@ export interface TemporalNodeState {
   caption: string;
   wrongness?: string;
   hotspots: HotspotDefinition[];
+  /** Per-window idle loops (seeded from this window's plate); falls back to node.motionLayers. */
+  motionLayers?: MotionLayer[];
 }
 
 export interface MotionLayer {
   src: string;
   opacity: number;
   blendMode?: 'screen' | 'overlay' | 'lighten' | 'normal';
+  /** Poster/source plate this loop was generated from (provenance + tests). */
+  sourceStill?: string;
 }
 
 export interface SceneNode {
