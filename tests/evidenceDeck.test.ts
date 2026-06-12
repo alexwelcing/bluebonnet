@@ -101,7 +101,8 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.exhibit-dispatch .tractor-feed-left')).toBeTruthy();
     expect(document.querySelector('.exhibit-dispatch .tractor-feed-right')).toBeTruthy();
     expect(document.querySelector('.exhibit-dispatch .dot-matrix-line')?.textContent).toContain('TIP LINE 20:17');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:17-20:26');
+    const cue2017 = document.querySelector('.cue[data-window="20:17-20:26"]');
+    expect(cue2017?.classList.contains('undiscovered')).toBe(false);
 
     keyboardSeekForward();
 
@@ -123,12 +124,36 @@ describe('Evidence Deck integration', () => {
       captionsEnabled: true,
     });
 
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:08-20:17');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:17-20:26');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:26-20:35');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED: none');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('FULL TAPE OPEN');
+    const finalCue = document.querySelector('.cue[data-window="20:26-20:35"]');
+    expect(finalCue?.classList.contains('locked')).toBe(false);
+    expect(finalCue?.classList.contains('undiscovered')).toBe(false);
   });
 
+
+  it('cue buttons seek directly; the locked cue strains like the hard stop', async () => {
+    await loadDeck({
+      currentNodeId: 'missing-minutes-gate',
+      flags: { 'puzzle:field-gate': true, 'puzzle:echo-knocks': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:17-20:26',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+
+    // discovered cue seeks
+    realPointerClick(document.querySelector<HTMLButtonElement>('.cue[data-window="20:08-20:17"]')!);
+    expect(document.querySelector('.timestamp')?.textContent).toContain('20:08-20:17');
+    expect(document.querySelector('.cue[data-window="20:08-20:17"]')?.classList.contains('current')).toBe(true);
+
+    // locked cue refuses with the hard-stop strain, no seek
+    realPointerClick(document.querySelector<HTMLButtonElement>('.cue[data-window="20:26-20:35"]')!);
+    expect(document.querySelector('.timestamp')?.textContent).toContain('20:08-20:17');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED 20:26-20:35');
+  });
 
   it('persists the chosen ending into the save snapshot', async () => {
     await loadDeck({

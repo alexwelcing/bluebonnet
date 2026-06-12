@@ -567,3 +567,16 @@ Changed:
 Verification: typecheck, 39 tests, lint, build green; screenshots reviewed at every act under the new layout (panel open, tucked full-bleed, compare held).
 
 Blockers: none.
+
+## 2026-06-13T03:30:00+00:00 — TIMESEEK transport + TRACKING fader UX rework (Claude, supervising)
+
+Changed:
+- TIMESEEK is now a legible instrument: a tape ruler of three CUE buttons (VCR-style) shows every window's state at a glance — current (lit), discovered (clickable, seeks directly with clunk+glitch), undiscovered (dashed, ?), locked (red hatched, ⊘; clicking strains like the wheel's hard stop). A live needle rides under the ruler tracking wheel position; an amber readout shows SEATED ⏵ window, or SCRUB ⏵ interpolated tape-time (20:08 + 9min/detent) while dragging — spinning the wheel now visibly spools tape-time.
+- The jog wheel keeps its physics and gains a static ring of detent ticks (lit = discovered, red = locked) so the rotating marker has fixed reference points; wheel and ruler agree spatially.
+- TRACKING and VOLUME are real faders (custom track/thumb, focus styles) with endpoint scales; TRACKING explains its hidden game function: "noise up — evidence shimmers" with a marked ▲ASSIST notch.
+- Help line speaks plainly: "DRAG THE WHEEL OR PRESS A CUE // … STILL LOCKED".
+- Fixed during verification: absolutely-positioned buttons don't stretch from inset (wheel collapsed to a 25px pill); explicit dimensions.
+
+Verification: 40 tests green (new cue-seek + locked-strain regression test); browser-verified scrub readout mid-drag (SCRUB ⏵ 20:12 → SEATED ⏵ 20:08-20:17 on release), cue direct seek, locked cue strain; screenshots reviewed.
+
+Blockers: none.

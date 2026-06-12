@@ -70,20 +70,36 @@ app.innerHTML = `
         <p class="wrongness"></p>
       </div>
       <div class="timeseek-panel">
-        <p class="timeseek-label">TIMESEEK JOG/SHUTTLE</p>
-        <button class="jog-wheel" type="button" aria-label="TIMESEEK jog wheel. Drag to scrub tape time; arrow keys nudge; Enter seats nearest discovered detent.">
-          <span class="jog-marker"></span>
-        </button>
+        <p class="timeseek-label">TIMESEEK TRANSPORT</p>
+        <div class="tape-ruler" role="group" aria-label="Tape cue points">
+          <button class="cue" type="button" data-window="20:08-20:17"><span class="cue-time">20:08</span></button>
+          <button class="cue" type="button" data-window="20:17-20:26"><span class="cue-time">20:17</span></button>
+          <button class="cue" type="button" data-window="20:26-20:35"><span class="cue-time">20:26</span></button>
+          <div class="tape-needle" aria-hidden="true"></div>
+        </div>
+        <div class="jog-cluster">
+          <div class="jog-ring" aria-hidden="true">
+            <span class="ring-tick" data-window="20:08-20:17"></span>
+            <span class="ring-tick" data-window="20:17-20:26"></span>
+            <span class="ring-tick" data-window="20:26-20:35"></span>
+          </div>
+          <button class="jog-wheel" type="button" aria-label="TIMESEEK jog wheel. Drag to scrub tape time; arrow keys nudge; Enter seats nearest discovered detent.">
+            <span class="jog-marker"></span>
+          </button>
+        </div>
+        <p class="tape-readout" aria-live="off"></p>
         <p class="timeseek-help"></p>
       </div>
       <button class="compare" type="button" aria-pressed="false" title="Hold to superimpose the other tape pass over this frame">DUB COMPARE — HOLD (C)</button>
       <label class="tracking-control">
-        TRACKING
+        <span class="control-title">TRACKING <em class="control-hint">noise up — evidence shimmers</em></span>
         <input class="intensity" type="range" min="0" max="1" step="0.01" />
+        <span class="fader-scale"><i>CLEAN</i><i class="assist-notch">▲ ASSIST</i><i>NOISY</i></span>
       </label>
       <label class="volume-control">
-        VOLUME
+        <span class="control-title">VOLUME</span>
         <input class="volume" type="range" min="0" max="1" step="0.01" value="0.7" />
+        <span class="fader-scale"><i>MUTE</i><i></i><i>FULL</i></span>
       </label>
       <label class="caption-toggle">
         <input class="captions" type="checkbox" />
@@ -128,6 +144,10 @@ const credits = app.querySelector<HTMLButtonElement>('.credits')!;
 const bootScreen = app.querySelector<HTMLDivElement>('.boot-screen')!;
 const insertTape = app.querySelector<HTMLButtonElement>('.insert-tape')!;
 const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
+const cueButtons = [...app.querySelectorAll<HTMLButtonElement>('.cue')];
+const ringTicks = [...app.querySelectorAll<HTMLSpanElement>('.ring-tick')];
+const tapeNeedle = app.querySelector<HTMLDivElement>('.tape-needle')!;
+const tapeReadout = app.querySelector<HTMLParagraphElement>('.tape-readout')!;
 const compareButton = app.querySelector<HTMLButtonElement>('.compare')!;
 const compareLayer = app.querySelector<HTMLImageElement>('.compare-layer')!;
 const panelToggle = app.querySelector<HTMLButtonElement>('.panel-toggle')!;
@@ -207,7 +227,38 @@ function render() {
   diegeticText.hidden = diegeticText.textContent === '';
   const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
   timeseekHelp.textContent =
-    helpOverride ?? `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
+    helpOverride ?? `DRAG THE WHEEL OR PRESS A CUE // ${lockedWindows.length > 0 ? `${lockedWindows.join(' / ')} STILL LOCKED` : 'FULL TAPE OPEN'}`;
+
+  // Tape ruler: cue states + live needle + scrub readout.
+  for (const cue of cueButtons) {
+    const window = cue.dataset.window as TimeWindow;
+    const discovered = snapshot.discoveredTimecodes.includes(window);
+    const locked = lockedWindows.includes(window);
+    cue.classList.toggle('current', window === snapshot.activeWindow);
+    cue.classList.toggle('locked', locked);
+    cue.classList.toggle('undiscovered', !discovered && !locked);
+    cue.setAttribute(
+      'aria-label',
+      locked ? `Cue ${window}: locked` : discovered ? `Cue to ${window}` : `Cue ${window}: not yet discovered`,
+    );
+  }
+  for (const tick of ringTicks) {
+    const window = tick.dataset.window as TimeWindow;
+    tick.classList.toggle('lit', snapshot.discoveredTimecodes.includes(window));
+    tick.classList.toggle('locked', lockedWindows.includes(window));
+  }
+  const clamped = Math.max(0, Math.min(2, jogState.position));
+  tapeNeedle.style.left = `${((clamped + 0.5) / 3) * 100}%`;
+  if (jogState.seatedWindow) {
+    tapeReadout.textContent = `SEATED ⏵ ${jogState.seatedWindow}`;
+    tapeReadout.classList.remove('scrubbing');
+  } else {
+    const minutes = 1208 + clamped * 9; // 20:08 + 9 minutes per detent
+    const hh = Math.floor(minutes / 60);
+    const mm = Math.floor(minutes % 60);
+    tapeReadout.textContent = `SCRUB ⏵ ${hh}:${String(mm).padStart(2, '0')}`;
+    tapeReadout.classList.add('scrubbing');
+  }
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
@@ -513,6 +564,26 @@ document.addEventListener('keydown', (event) => {
     closeModal(colophonPanel);
   }
 });
+for (const cue of cueButtons) {
+  cue.addEventListener('click', () => {
+    const window = cue.dataset.window as TimeWindow;
+    if (cue.classList.contains('locked')) {
+      // The locked span strains exactly like the wheel's hard stop.
+      jogState = { ...jogState, strain: 1 };
+      announceHardStop();
+      render();
+      return;
+    }
+    if (window === state.snapshot().activeWindow) return;
+    if (cue.classList.contains('undiscovered')) {
+      seekWindow(window); // refused with the in-fiction message; wheel stays put
+      return;
+    }
+    jogState = createJogWheelState(window, jogOptions());
+    seekWindow(window);
+  });
+}
+
 jogWheel.addEventListener('pointerdown', (event) => {
   jogWheel.setPointerCapture(event.pointerId);
   dragState = { angle: pointerAngle(event), time: event.timeStamp };
