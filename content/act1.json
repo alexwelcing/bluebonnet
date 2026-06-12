@@ -751,7 +751,19 @@
                 ]
               ],
               "target": "dispatch-printer",
-              "shimmerThreshold": 0.55
+              "shimmerThreshold": 0.25,
+              "requires": [
+                {
+                  "flag": "puzzle:radio-tune"
+                }
+              ],
+              "journal": {
+                "id": "dispatch-log",
+                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+              },
+              "puzzleAction": "dispatch-log",
+              "discoverTimecode": "23:17-23:26",
+              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
             }
           ]
         },
@@ -835,7 +847,19 @@
                 ]
               ],
               "target": "dispatch-printer",
-              "shimmerThreshold": 0.55
+              "shimmerThreshold": 0.25,
+              "requires": [
+                {
+                  "flag": "puzzle:radio-tune"
+                }
+              ],
+              "journal": {
+                "id": "dispatch-log",
+                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+              },
+              "puzzleAction": "dispatch-log",
+              "discoverTimecode": "23:17-23:26",
+              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
             }
           ]
         }

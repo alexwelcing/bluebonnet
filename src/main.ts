@@ -18,7 +18,6 @@ for (const action of state.snapshot().completedPuzzles) {
   state.setFlag(`puzzle:${action}`);
 }
 const audio = createAudioMixer();
-const timeseek = createTimeSeek(graph, state.snapshot().activeWindow, state.snapshot().discoveredTimecodes);
 const app = document.querySelector<HTMLDivElement>('#app');
 
 if (!app) {
@@ -138,7 +137,6 @@ function activateHotspot(hotspot: HotspotDefinition) {
     state.completePuzzle(hotspot.puzzleAction);
     state.setFlag(`puzzle:${hotspot.puzzleAction}`);
     if (result.discoveredTimecode) {
-      timeseek.discover(result.discoveredTimecode);
       state.discoverTimecode(result.discoveredTimecode);
     }
   }
@@ -175,15 +173,21 @@ timeseekForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const requested = normalizeTimeSeek(timeseekInput.value);
   if (!requested) {
-    timeseekHelp.textContent = 'TIMESEEK accepts discovered windows: 23:08, 23:17. Nine minutes remain locked.';
+    timeseekHelp.textContent = 'TIMESEEK accepts discovered windows: 23:08-23:17, 23:17-23:26. Nine minutes remain locked.';
     return;
   }
+  const snapshot = state.snapshot();
+  const timeseek = createTimeSeek(graph, snapshot.activeWindow, snapshot.discoveredTimecodes);
   const result = timeseek.seek(requested);
   if (!result.ok) {
     timeseekHelp.textContent = result.reason ?? 'TIMESEEK rejected.';
     return;
   }
   state.setActiveWindow(result.activeWindow);
+  stage.classList.remove('seek-glitch');
+  void stage.offsetWidth;
+  stage.classList.add('seek-glitch');
+  window.setTimeout(() => stage.classList.remove('seek-glitch'), 900);
   timeseekHelp.textContent = `WORLD RE-SEATED TO ${result.activeWindow}`;
 });
 save.addEventListener('click', () => {

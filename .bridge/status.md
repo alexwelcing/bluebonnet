@@ -127,3 +127,28 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T03:52:38+00:00 — Director review fixes
+
+Changed:
+- Fixed TIMESEEK validation by building the seek controller from the current state snapshot at submit time, so newly discovered windows are accepted in the same UI flow.
+- Made the patrol radio's "Check the dispatch printer" hotspot grant the dispatch-log beat directly after radio tuning: it captions and journals the verbatim dispatch text including 23:17 and adds 23:17-23:26 to DISCOVERED.
+- Added a brief tracking glitch class on successful SEEK so the world re-seat is visible while the still swaps to the __2317-2326 variant and TAPE ANOMALY updates.
+- Updated TIMESEEK helper copy to show discovered time windows as ranges.
+- Added jsdom integration coverage for flyer -> radio -> printer -> seek 23:17 -> later still swap.
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ and deployed production Netlify.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 3 files, 8 tests.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, and dispatch-printer runtime still.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Next:
+- Director playtest the corrected core beat.
+
+Blockers:
+- None.

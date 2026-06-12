@@ -113,6 +113,15 @@ button, input { font: inherit; }
 }
 .tracking-b { animation-duration: 11s; animation-delay: -4s; }
 
+.seek-glitch .scene-still {
+  animation: seek-glitch 760ms steps(2, end);
+}
+
+.seek-glitch .tracking {
+  opacity: 1;
+  animation-duration: 420ms;
+}
+
 .timestamp {
   inset: auto 1rem 1rem auto;
   width: auto;
@@ -170,6 +179,14 @@ button, .save {
 .journal-list li { margin: 0.55rem 0; color: #d7f7e2; line-height: 1.35; }
 
 @keyframes track { from { transform: translateY(-20%); } to { transform: translateY(980%); } }
+
+@keyframes seek-glitch {
+  0% { transform: translateX(0) scale(1.012); filter: brightness(1.25) contrast(1.6) saturate(0.3); }
+  22% { transform: translateX(-10px) scale(1.018); }
+  44% { transform: translateX(12px) scale(1.01); }
+  68% { transform: translateX(-4px) scale(1.02); filter: brightness(0.65) contrast(1.9) saturate(0.1); }
+  100% { transform: translateX(0) scale(calc(1 + var(--vhs-intensity) * 0.012)); }
+}
 
 @media (max-width: 900px) {
   .evidence-deck { grid-template-columns: 1fr; }
