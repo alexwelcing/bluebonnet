@@ -25,7 +25,7 @@ export function createPuzzleProgression(initial: PuzzleAction[] = []): PuzzlePro
     if (!completed.includes(action)) {
       completed.push(action);
     }
-    return action === 'dispatch-log' ? { ok: true, discoveredTimecode: '23:17-23:26' } : { ok: true };
+    return action === 'dispatch-log' ? { ok: true, discoveredTimecode: '20:17-20:26' } : { ok: true };
   };
 
   return {

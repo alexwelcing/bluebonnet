@@ -27,7 +27,7 @@ export interface StateMachine {
 }
 
 export function createStateMachine(initial: InitialState): StateMachine {
-  const startingWindow = initial.activeWindow ?? '23:08-23:17';
+  const startingWindow = initial.activeWindow ?? '20:08-20:17';
   let snapshot: EngineSnapshot = {
     currentNodeId: initial.currentNodeId,
     flags: { ...(initial.flags ?? {}) },
@@ -106,8 +106,8 @@ export function createStateMachine(initial: InitialState): StateMachine {
         currentNodeId: next.currentNodeId,
         flags: { ...next.flags },
         vhsIntensity: clampIntensity(next.vhsIntensity),
-        activeWindow: next.activeWindow ?? '23:08-23:17',
-        discoveredTimecodes: uniqueWindows(next.discoveredTimecodes ?? ['23:08-23:17']),
+        activeWindow: next.activeWindow ?? '20:08-20:17',
+        discoveredTimecodes: uniqueWindows(next.discoveredTimecodes ?? ['20:08-20:17']),
         journal: [...(next.journal ?? [])],
         completedPuzzles: [...(next.completedPuzzles ?? [])],
         captionsEnabled: next.captionsEnabled ?? true,

@@ -36,12 +36,12 @@ describe('Act III culvert content', () => {
     const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
     const state = createStateMachine({
       currentNodeId: 'culvert-pipe',
-      activeWindow: '23:17-23:26',
+      activeWindow: '20:17-20:26',
       completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate'],
       flags: { 'puzzle:dispatch-log': true, 'puzzle:field-gate': true, 'culvert-access': true },
     });
 
-    const pipe = getNodeState(graph, 'culvert-pipe', '23:17-23:26');
+    const pipe = getNodeState(graph, 'culvert-pipe', '20:17-20:26');
     const pattern = pipe.hotspots.find((hotspot) => hotspot.id === 'radio-static-pattern')!;
     activate(pattern, state);
     expect(state.snapshot().journal.at(-1)?.text).toContain('Visual fallback: || _ | _ |||');
@@ -50,12 +50,12 @@ describe('Act III culvert content', () => {
     activate(knock, state);
     expect(state.snapshot().flags['echo-solved']).toBe(true);
 
-    const recorder = getNodeState(graph, 'recorder-nest', '23:17-23:26').hotspots.find((hotspot) => hotspot.id === 'read-recorder-counter')!;
+    const recorder = getNodeState(graph, 'recorder-nest', '20:17-20:26').hotspots.find((hotspot) => hotspot.id === 'read-recorder-counter')!;
     activate(recorder, state);
-    expect(state.snapshot().discoveredTimecodes).toContain('23:26-23:35');
-    expect(state.snapshot().journal.at(-1)?.text).toContain('HANDHELD RECORDER COUNTER: 23:26');
+    expect(state.snapshot().discoveredTimecodes).toContain('20:26-20:35');
+    expect(state.snapshot().journal.at(-1)?.text).toContain('INTERVIEW RECORDER COUNTER: 20:26');
 
-    const gate = getNodeState(graph, 'missing-minutes-gate', '23:17-23:26');
+    const gate = getNodeState(graph, 'missing-minutes-gate', '20:17-20:26');
     expect(availableHotspots(gate, state.snapshot()).some((hotspot) => hotspot.id === 'test-act4-lock')).toBe(false);
     expect(availableHotspots(gate, state.snapshot()).some((hotspot) => hotspot.id === 'enter-nine-minutes')).toBe(true);
   });

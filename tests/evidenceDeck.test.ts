@@ -77,7 +77,7 @@ describe('Evidence Deck integration', () => {
     }
   });
 
-  it('handles flyer -> radio -> printer -> seek 23:17 using real DOM pointer events', async () => {
+  it('handles flyer -> radio -> printer -> seek 20:17 using real DOM pointer events', async () => {
     await loadDeck();
 
     realPointerClick(button('Read the missing-person flyer'));
@@ -88,25 +88,25 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelectorAll('.exhibit-flyer .tear-off-tabs span')).toHaveLength(5);
     realPointerClick(button('RETURN TO DECK'));
 
-    realPointerClick(button('Inspect the patrol radio'));
-    expect(document.querySelector('h1')?.textContent).toBe('PATROL RADIO');
+    realPointerClick(button('Inspect the scanner radio'));
+    expect(document.querySelector('h1')?.textContent).toBe('SCANNER RADIO');
 
     realPointerClick(button('Tune 88.7 FM'));
     expect(document.querySelector('.journal-list')?.textContent).toContain('RADIO TUNED: 88.7 FM');
 
-    realPointerClick(button('Check the dispatch printer'));
-    expect(document.querySelector('.caption')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
-    expect(document.querySelector('.journal-list')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
-    expectVisibleExhibitContaining('DISPATCH 23:17', 'reset tape to 23:17');
+    realPointerClick(button('Check the tip-line printer'));
+    expect(document.querySelector('.caption')?.textContent).toContain('TIP LINE 20:17: FOR REYES — reset tape to 20:17');
+    expect(document.querySelector('.journal-list')?.textContent).toContain('TIP LINE 20:17: FOR REYES — reset tape to 20:17');
+    expectVisibleExhibitContaining('TIP LINE 20:17', 'reset tape to 20:17');
     expect(document.querySelector('.exhibit-dispatch .tractor-feed-left')).toBeTruthy();
     expect(document.querySelector('.exhibit-dispatch .tractor-feed-right')).toBeTruthy();
-    expect(document.querySelector('.exhibit-dispatch .dot-matrix-line')?.textContent).toContain('DISPATCH 23:17');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
+    expect(document.querySelector('.exhibit-dispatch .dot-matrix-line')?.textContent).toContain('TIP LINE 20:17');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:17-20:26');
 
     keyboardSeekForward();
 
     expect(document.querySelector('.timeseek-help')?.textContent).not.toContain('TIMESEEK rejects undiscovered tape-time');
-    expect(document.querySelector<HTMLImageElement>('.scene-still')?.src).toContain('__2317-2326.jpg');
+    expect(document.querySelector<HTMLImageElement>('.scene-still')?.src).toContain('__2017-2026.jpg');
     expect(document.querySelector('.wrongness')?.textContent).toContain('TAPE ANOMALY:');
     expect(document.querySelector('.tape-stage')?.classList.contains('seek-glitch')).toBe(true);
   });
@@ -116,16 +116,16 @@ describe('Evidence Deck integration', () => {
       currentNodeId: 'missing-minutes-gate',
       flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
       vhsIntensity: 0.72,
-      activeWindow: '23:26-23:35',
-      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      activeWindow: '20:26-20:35',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26', '20:26-20:35'],
       journal: [],
       completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
       captionsEnabled: true,
     });
 
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:08-23:17');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
-    expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:26-23:35');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:08-20:17');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:17-20:26');
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('20:26-20:35');
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED: none');
   });
 
@@ -135,8 +135,8 @@ describe('Evidence Deck integration', () => {
       currentNodeId: 'final-choice',
       flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
       vhsIntensity: 0.72,
-      activeWindow: '23:26-23:35',
-      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      activeWindow: '20:26-20:35',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26', '20:26-20:35'],
       journal: [],
       completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
       captionsEnabled: true,
@@ -159,7 +159,7 @@ describe('Evidence Deck integration', () => {
     await import('../src/main');
 
     expect(document.querySelector('.boot-screen')).toBeTruthy();
-    expect(document.querySelector('h1')?.textContent).toBe('CRUISER INTERIOR');
+    expect(document.querySelector('h1')?.textContent).toBe('WAGON INTERIOR');
     expect(localStorage.getItem('bluebonnet.engine.snapshot.v1')).toBeNull();
   });
 
@@ -168,14 +168,14 @@ describe('Evidence Deck integration', () => {
       currentNodeId: 'deleted-node-from-old-build',
       flags: {},
       vhsIntensity: 0.72,
-      activeWindow: '23:08-23:17',
-      discoveredTimecodes: ['23:08-23:17'],
+      activeWindow: '20:08-20:17',
+      discoveredTimecodes: ['20:08-20:17'],
       journal: [],
       completedPuzzles: [],
       captionsEnabled: true,
     });
 
-    expect(document.querySelector('h1')?.textContent).toBe('CRUISER INTERIOR');
+    expect(document.querySelector('h1')?.textContent).toBe('WAGON INTERIOR');
   });
 
   it('re-seats the tape window when navigation enters a node without the active window', async () => {
@@ -183,8 +183,8 @@ describe('Evidence Deck integration', () => {
       currentNodeId: 'missing-minutes-gate',
       flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
       vhsIntensity: 0.72,
-      activeWindow: '23:17-23:26',
-      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      activeWindow: '20:17-20:26',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26', '20:26-20:35'],
       journal: [],
       completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
       captionsEnabled: true,
@@ -193,9 +193,9 @@ describe('Evidence Deck integration', () => {
     realPointerClick(button('INSERT TAPE'));
     realPointerClick(button('Enter the seated nine minutes'));
 
-    // Act IV nodes only exist inside 23:26-23:35; entering from 23:17 must
+    // Act IV nodes only exist inside 20:26-20:35; entering from 20:17 must
     // jump the tape rather than strand the player on a hotspot-free view.
-    expect(document.querySelector('.timestamp')?.textContent).toContain('23:26-23:35');
+    expect(document.querySelector('.timestamp')?.textContent).toContain('20:26-20:35');
     expect(document.querySelectorAll('.hotspot').length).toBeGreaterThan(0);
   });
 

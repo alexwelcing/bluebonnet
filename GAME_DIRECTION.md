@@ -72,3 +72,31 @@ The game has been too sparse. Myst had ~2,500 images, Riven ~5,000; immersion ca
 - Marble (marble.worldlabs.ai): generate explorable 3D worlds → export splats (.spz/.splat/.ply) → render multi-angle consistent node views. Driven via Claude-in-Chrome with the marble-world-creator skill.
 - Gemini AI Studio writing-lab app (operator-driven): Nano Banana images + Veo video loops/flythroughs; also a writing tool for in-world documents/lore.
 - Envato (app.envato.com): licensed 2D textures, UI bits, and audio stems where generation isn't ideal. License before use; log source.
+
+## Canon amendment A6 (director, 2026-06-12) — THE JOURNALIST REFRAME (supersedes the logline and all police framing)
+
+### New logline
+April 12, 1998. Dana Reyes — independent journalist, sole voice of the late-night tip line on 88.7 KBLN, community radio for the town of Mirasol, Texas — has spent five weeks investigating the disappearance of Lena Ortiz. Tonight her station wagon is found idling on the shoulder of FM 1187 at mile marker 271: doors open, dash-mounted Hi8 camcorder running, bluebonnets blooming hard out of season. Dana is never found. The tape has nine missing minutes. Decades later her evidence box lands on your desk with a VCR and a note in her handwriting: the tape is not just footage.
+
+### Universe (establishment mandate)
+- MIRASOL, TX: a small Hill-Country-edge town off FM 1187. Water tower, feed store, one strip of storefronts, KBLN's transmitter shack. The town is established through Dana's artifacts, not exposition.
+- DANA REYES: independent journalist. Press pass clipped to the visor. Spiral notebooks. A police scanner (she monitors, she is not police). A thermal tip-line printer wired into the wagon. A handheld interview recorder. Her flyers for Lena Ortiz carry her own tip line: 88.7 FM after sundown.
+- LENA ORTIZ: the original missing person. Dana's flyer, Dana's investigation, Dana's obsession.
+- THE PLAYER: the investigator Dana's archive reaches, decades later. The deck is hers; we inherit it.
+
+### Object translations (mechanics preserved 1:1)
+- DPS cruiser → Dana's station wagon (cluttered: notes, maps, coffee, cigarettes; press pass on visor)
+- patrol radio → Dana's police scanner + the wagon's radio tuned to 88.7
+- dispatch printer → Dana's thermal tip-line printer (perforated paper, tip transcripts)
+- dashcam → dash-mounted Hi8 camcorder, timestamp burn-in
+- handheld recorder (Act III) → her interview recorder, unchanged
+- All puzzle logic, flags, fairness rules, and the wrongness rule are unchanged.
+
+### Tape-time correction (fixes the dusk/timestamp contradiction)
+The burn-in windows move from 23:08-23:35 to **20:08-20:17 / 20:17-20:26 / 20:26-20:35** — last amber light, deepening blue-violet, true dark. April civil twilight in Texas. "After sundown" now agrees with the sky, and the visual canon's dusk palette is correct rather than contradicted.
+
+### A6.1 Clue-precise hotspots (segmentation mandate)
+Hotspots stop being rectangles. Every clue hotspot's polygon is derived from model-driven image segmentation (SAM-family, text-prompted) over the final plate, simplified to a percent-coordinate polygon and stored in content. The engine clips the interactive region to the actual object and renders effects (shimmer, glow) on the object's true silhouette. Navigation hotspots (walk forward, turn) may remain regions; *clues* must be silhouettes. Pipeline: tools/segmentClues.mjs; segmentation prompts live with the hotspot as `cluePrompt`.
+
+### Production order for the re-shoot
+Full re-shoot of all plates under the new universe (open budget): journalist wagon, scanner, tip-line printer, Mirasol establishment beats, corrected 20:0x light. 3-4 candidates per shot, curate hard, log picks in shotlist.json. Segmentation runs on each chosen plate before it ships.

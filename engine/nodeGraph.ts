@@ -12,7 +12,7 @@ import type {
 export function loadNodeGraph(manifests: SceneManifest[]): NodeGraph {
   const nodes: Record<string, SceneNode> = {};
   let startNodeId: string | undefined;
-  let initialWindow: TimeWindow = '23:08-23:17';
+  let initialWindow: TimeWindow = '20:08-20:17';
   const lockedWindows = new Set<TimeWindow>();
 
   for (const manifest of manifests) {
@@ -64,7 +64,7 @@ export function getNode(graph: NodeGraph, id: string): SceneNode {
   return node;
 }
 
-const WINDOW_SEQUENCE: TimeWindow[] = ['23:08-23:17', '23:17-23:26', '23:26-23:35'];
+const WINDOW_SEQUENCE: TimeWindow[] = ['20:08-20:17', '20:17-20:26', '20:26-20:35'];
 
 export function nearestDefinedWindow(
   states: Partial<Record<TimeWindow, TemporalNodeState>>,

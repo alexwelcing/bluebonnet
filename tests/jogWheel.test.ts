@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel, type JogWheelState } from '../engine/jogWheel';
 import type { TimeWindow } from '../engine/types';
 
-const twoWindowOptions = { ...defaultJogWheelOptions, discovered: ['23:08-23:17', '23:17-23:26'] as TimeWindow[] };
+const twoWindowOptions = { ...defaultJogWheelOptions, discovered: ['20:08-20:17', '20:17-20:26'] as TimeWindow[] };
 
 describe('jog wheel physics', () => {
   it('decays angular velocity with friction inertia', () => {
@@ -14,15 +14,15 @@ describe('jog wheel physics', () => {
   });
 
   it('captures discovered windows as magnetic detents', () => {
-    const near = { ...createJogWheelState('23:08-23:17', twoWindowOptions), position: 0.99, angle: 0.99 * Math.PI * 1.5, velocity: 0.3, seatedWindow: undefined };
+    const near = { ...createJogWheelState('20:08-20:17', twoWindowOptions), position: 0.99, angle: 0.99 * Math.PI * 1.5, velocity: 0.3, seatedWindow: undefined };
     const result = seatNearestDetent(near, twoWindowOptions);
     expect(result.event).toBe('detent');
-    expect(result.state.seatedWindow).toBe('23:17-23:26');
+    expect(result.state.seatedWindow).toBe('20:17-20:26');
     expect(result.state.position).toBe(1);
   });
 
   it('rejects locked hard-stop spans and kicks back', () => {
-    const start = { ...createJogWheelState('23:17-23:26', twoWindowOptions), position: 1.98, angle: 1.98 * Math.PI * 1.5, velocity: 5, seatedWindow: undefined };
+    const start = { ...createJogWheelState('20:17-20:26', twoWindowOptions), position: 1.98, angle: 1.98 * Math.PI * 1.5, velocity: 5, seatedWindow: undefined };
     const result = stepJogWheel(start, 0.1, twoWindowOptions);
     expect(result.event).toBe('hard-stop');
     expect(result.state.position).toBeLessThan(2);
@@ -47,10 +47,10 @@ describe('jog wheel physics', () => {
   it('stops kicking back at the final detent once the nine minutes unlock', () => {
     const unlockedOptions = {
       ...defaultJogWheelOptions,
-      discovered: ['23:08-23:17', '23:17-23:26', '23:26-23:35'] as TimeWindow[],
+      discovered: ['20:08-20:17', '20:17-20:26', '20:26-20:35'] as TimeWindow[],
       locked: [] as TimeWindow[],
     };
-    const start = { ...createJogWheelState('23:17-23:26', unlockedOptions), position: 1.98, angle: 1.98 * Math.PI * 1.5, velocity: 5, seatedWindow: undefined };
+    const start = { ...createJogWheelState('20:17-20:26', unlockedOptions), position: 1.98, angle: 1.98 * Math.PI * 1.5, velocity: 5, seatedWindow: undefined };
     const result = stepJogWheel(start, 0.1, unlockedOptions);
     expect(result.event).not.toBe('hard-stop');
     // The wheel still cannot be wound past the end of the tape.

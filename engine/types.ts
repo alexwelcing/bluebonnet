@@ -1,5 +1,5 @@
 export type Point = readonly [number, number];
-export type TimeWindow = '23:08-23:17' | '23:17-23:26' | '23:26-23:35';
+export type TimeWindow = '20:08-20:17' | '20:17-20:26' | '20:26-20:35';
 
 export interface FlagCondition {
   flag: string;

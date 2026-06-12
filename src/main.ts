@@ -37,19 +37,19 @@ app.innerHTML = `
   <section class="evidence-deck" aria-label="Evidence Deck CRT and VCR interface">
     <div class="boot-screen" role="dialog" aria-label="Insert tape boot screen">
       <div class="boot-card">
-        <p class="boot-eyebrow">TEXAS DPS EVIDENCE DECK</p>
+        <p class="boot-eyebrow">REYES ARCHIVE — MIRASOL, TX</p>
         <h2>BLUEBONNET</h2>
-        <p>BOX 271 // DASHCAM TAPE // APR 12 1998</p>
+        <p>BOX 271 // FM 1187 HI8 TAPE // APR 12 1998</p>
         <button class="insert-tape" type="button">INSERT TAPE</button>
       </div>
     </div>
     <header class="deck-header">
-      <div class="case-label">TEXAS DPS EVIDENCE DECK // BOX 271 // REYES, D.</div>
-      <div class="tape-slot">VCR: DASHCAM TAPE INSERTED</div>
+      <div class="case-label">REYES ARCHIVE // BOX 271 // KBLN 88.7 MIRASOL</div>
+      <div class="tape-slot">VCR: HI8 DUB INSERTED</div>
     </header>
     <div class="crt-bezel">
       <div class="tape-stage">
-        <img class="scene-still" alt="Recovered highway patrol tape still" />
+        <img class="scene-still" alt="Recovered Hi8 tape still" />
         <div class="motion-layer-stack" aria-hidden="true"></div>
         <div class="hotspot-layer" aria-label="Tape interaction field"></div>
         <div class="scanlines" aria-hidden="true"></div>
@@ -188,7 +188,7 @@ function render() {
   wrongness.textContent = nodeState.wrongness ? `TAPE ANOMALY: ${nodeState.wrongness}` : 'TAPE ANOMALY: baseline window stable.';
   intensity.value = String(snapshot.vhsIntensity);
   captions.checked = snapshot.captionsEnabled;
-  timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} TX-DPS`;
+  timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} HI8`;
   diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
   diegeticText.hidden = diegeticText.textContent === '';
   const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
@@ -280,7 +280,7 @@ function activateHotspot(hotspot: HotspotDefinition) {
 
 function reseatWindowForNode(nodeId: string) {
   // Walking into a place the tape never recorded in the current window (e.g.
-  // stepping into the nine minutes while seated at 23:17) jumps the tape to
+  // stepping into the nine minutes while seated at 20:17) jumps the tape to
   // the nearest window that node defines, keeping the timestamp truthful.
   const snapshot = state.snapshot();
   const node = getNode(graph, nodeId);
@@ -447,22 +447,24 @@ function unwrapAngle(delta: number): number {
 let lastHardStopCueAt = 0;
 
 function announceHardStop() {
-  setTransportMessage('LOCKED 23:26-23:35: tape strains at the hard stop and kicks back.');
+  setTransportMessage('LOCKED 20:26-20:35: tape strains at the hard stop and kicks back.');
   // A long drag grinds against the stop on many consecutive frames; one thunk
   // per strain, not one per pointermove.
   const now = Date.now();
   if (now - lastHardStopCueAt > 700) {
     lastHardStopCueAt = now;
-    audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 23:26-23:35.');
+    audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 20:26-20:35.');
   }
 }
 
 function diegeticOverlay(nodeId: string): string {
+  if (nodeId === 'wagon-interior') return 'VISOR PASS // PRESS — D. REYES — KBLN 88.7';
+  if (nodeId === 'mile-marker-271') return 'FM 1187 // MILE 271 // MIRASOL 4';
   if (nodeId === 'field-gate') return 'PADLOCK // 2 7 1 3';
   if (nodeId === 'field-tally') return 'GATE TALLY // II / VII / I / III';
-  if (nodeId === 'patrol-radio') return 'LCD // 88.7 FM';
-  if (nodeId === 'dispatch-printer') return 'DOT MATRIX // 23:17';
-  if (nodeId === 'recorder-nest') return 'RECORDER COUNTER // 23:26';
+  if (nodeId === 'scanner-radio') return 'LCD // 88.7 FM';
+  if (nodeId === 'tipline-printer') return 'TIP LINE // 20:17';
+  if (nodeId === 'recorder-nest') return 'RECORDER COUNTER // 20:26';
   if (nodeId === 'ending-eject') return 'EJECT // BOX 271 SEALED';
   if (nodeId === 'ending-record') return 'RECORD // VIEWER TRACK ARMED';
   return '';
@@ -490,7 +492,7 @@ function openExhibit(hotspot: HotspotDefinition) {
     }
     exhibitPaper.replaceChildren(title, photoBlock, body, tabs);
   } else if (hotspot.exhibit === 'dispatch') {
-    title.textContent = 'THERMAL DISPATCH PRINTOUT';
+    title.textContent = 'TIP-LINE THERMAL PRINTOUT';
     const leftFeed = document.createElement('div');
     leftFeed.className = 'tractor-feed-left';
     const rightFeed = document.createElement('div');
@@ -500,7 +502,7 @@ function openExhibit(hotspot: HotspotDefinition) {
     body.textContent = sourceText;
     exhibitPaper.replaceChildren(leftFeed, rightFeed, title, body);
   } else {
-    title.textContent = 'HANDHELD RECORDER COUNTER';
+    title.textContent = 'INTERVIEW RECORDER COUNTER';
     const body = document.createElement('pre');
     body.textContent = sourceText;
     exhibitPaper.replaceChildren(title, body);

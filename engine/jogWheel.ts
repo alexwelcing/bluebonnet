@@ -29,15 +29,15 @@ export const defaultJogWheelOptions: JogWheelOptions = {
   detentRadius: 0.085,
   hardStopPosition: 2,
   windows: {
-    '23:08-23:17': 0,
-    '23:17-23:26': 1,
-    '23:26-23:35': 2,
+    '20:08-20:17': 0,
+    '20:17-20:26': 1,
+    '20:26-20:35': 2,
   },
-  discovered: ['23:08-23:17'],
-  locked: ['23:26-23:35'],
+  discovered: ['20:08-20:17'],
+  locked: ['20:26-20:35'],
 };
 
-export function createJogWheelState(window: TimeWindow = '23:08-23:17', options = defaultJogWheelOptions): JogWheelState {
+export function createJogWheelState(window: TimeWindow = '20:08-20:17', options = defaultJogWheelOptions): JogWheelState {
   return { angle: options.windows[window] * Math.PI * 1.5, velocity: 0, position: options.windows[window], seatedWindow: window, strain: 0 };
 }
 

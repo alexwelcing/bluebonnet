@@ -1,21 +1,21 @@
 {
   "schemaVersion": 2,
-  "startNodeId": "cruiser-interior",
-  "initialWindow": "23:08-23:17",
+  "startNodeId": "wagon-interior",
+  "initialWindow": "20:08-20:17",
   "lockedWindows": [
-    "23:26-23:35"
+    "20:26-20:35"
   ],
   "nodes": [
     {
-      "id": "cruiser-interior",
-      "title": "Cruiser Interior",
-      "still": "stills/act1/cruiser-interior__2308-2317.jpg",
+      "id": "wagon-interior",
+      "title": "Wagon Interior",
+      "still": "stills/act1/wagon-interior__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/cruiser-interior__2308-2317.jpg",
-          "caption": "The passenger floor flyer reads: MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown.",
+        "20:08-20:17": {
+          "still": "stills/act1/wagon-interior__2008-2017.jpg",
+          "caption": "Dana's wagon, mid-shift: notebooks, cold coffee, a county map inked with route marks. Her flyer is on the passenger floor: MISSING: LENA ORTIZ — call 88.7 FM after sundown.",
           "wrongness": "",
           "hotspots": [
             {
@@ -39,12 +39,12 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
               "id": "radio",
-              "label": "Inspect the patrol radio",
+              "label": "Inspect the scanner radio",
               "polygon": [
                 [
                   35,
@@ -63,7 +63,7 @@
                   70
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "shimmerThreshold": 0.55
             },
             {
@@ -87,20 +87,20 @@
                   98
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "journal": {
                 "id": "flyer-frequency",
-                "text": "MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown."
+                "text": "MISSING: LENA ORTIZ — call 88.7 FM after sundown."
               },
               "puzzleAction": "flyer-frequency",
-              "caption": "MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown.",
+              "caption": "MISSING: LENA ORTIZ — call 88.7 FM after sundown.",
               "shimmerThreshold": 0.35,
               "exhibit": "flyer"
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/cruiser-interior__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act1/wagon-interior__2017-2026.jpg",
           "caption": "The flyer has curled toward the radio. 88.7 FM is also scratched into the sun visor.",
           "wrongness": "The same flyer points at the radio now; nobody touched it.",
           "hotspots": [
@@ -125,12 +125,12 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
               "id": "radio",
-              "label": "Inspect the patrol radio",
+              "label": "Inspect the scanner radio",
               "polygon": [
                 [
                   35,
@@ -149,7 +149,7 @@
                   70
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "shimmerThreshold": 0.55
             },
             {
@@ -173,7 +173,7 @@
                   32
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "journal": {
                 "id": "visor-frequency",
                 "text": "VISOR SCRATCH: 88.7 FM / AFTER SUNDOWN."
@@ -185,33 +185,33 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
       ]
     },
     {
-      "id": "cruiser-exterior",
-      "title": "Shoulder / Cruiser Exterior",
-      "still": "stills/act1/cruiser-exterior__2308-2317.jpg",
+      "id": "wagon-exterior",
+      "title": "Shoulder / Wagon Exterior",
+      "still": "stills/act1/wagon-exterior__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/cruiser-exterior__2308-2317.jpg",
-          "caption": "Both cruiser doors hang open. Bluebonnets stop just short of the tires.",
+        "20:08-20:17": {
+          "still": "stills/act1/wagon-exterior__2008-2017.jpg",
+          "caption": "Both wagon doors hang open, engine idling in park. Dana's press pass still swings from the visor. Bluebonnets stop just short of the tires.",
           "wrongness": "",
           "hotspots": [
             {
               "id": "inside",
-              "label": "Return to the cruiser interior",
+              "label": "Back inside the wagon",
               "polygon": [
                 [
                   0,
@@ -230,7 +230,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "shimmerThreshold": 0.55
             },
             {
@@ -283,14 +283,14 @@
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/cruiser-exterior__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act1/wagon-exterior__2017-2026.jpg",
           "caption": "Both doors are still open, but the flowers now brush the tires.",
           "wrongness": "The flowers stand nearer the asphalt; the distant car is closer but never moving.",
           "hotspots": [
             {
               "id": "inside",
-              "label": "Return to the cruiser interior",
+              "label": "Back inside the wagon",
               "polygon": [
                 [
                   0,
@@ -309,7 +309,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "shimmerThreshold": 0.55
             },
             {
@@ -363,13 +363,13 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
@@ -378,18 +378,18 @@
     {
       "id": "mile-marker-271",
       "title": "Mile Marker 271",
-      "still": "stills/act1/mile-marker-271__2308-2317.jpg",
+      "still": "stills/act1/mile-marker-271__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/mile-marker-271__2308-2317.jpg",
+        "20:08-20:17": {
+          "still": "stills/act1/mile-marker-271__2008-2017.jpg",
           "caption": "Mile marker 271 catches the last rose light. A flyer scrap is wedged behind it.",
           "wrongness": "",
           "hotspots": [
             {
               "id": "back",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   0,
@@ -408,7 +408,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
@@ -459,21 +459,21 @@
               "target": "mile-marker-271",
               "journal": {
                 "id": "marker-timecode",
-                "text": "MILE MARKER REFLECTION: 23:17 repeats under the 271 numerals."
+                "text": "MILE MARKER REFLECTION: 20:17 repeats under the 271 numerals."
               },
-              "caption": "MILE MARKER REFLECTION: 23:17 repeats under the 271 numerals.",
+              "caption": "MILE MARKER REFLECTION: 20:17 repeats under the 271 numerals.",
               "shimmerThreshold": 0.45
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/mile-marker-271__2317-2326.jpg",
-          "caption": "The marker leans toward the field. 23:17 ghosts across the reflective numbers.",
+        "20:17-20:26": {
+          "still": "stills/act1/mile-marker-271__2017-2026.jpg",
+          "caption": "The marker leans toward the field. 20:17 ghosts across the reflective numbers.",
           "wrongness": "The pole leans; the numbers reflect a time that should already be gone.",
           "hotspots": [
             {
               "id": "back",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   0,
@@ -492,7 +492,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
@@ -543,21 +543,21 @@
               "target": "mile-marker-271",
               "journal": {
                 "id": "marker-timecode-late",
-                "text": "MILE MARKER DOUBLE: 23:17 / 23:17 / 23:17."
+                "text": "MILE MARKER DOUBLE: 20:17 / 20:17 / 20:17."
               },
-              "caption": "MILE MARKER DOUBLE: 23:17 / 23:17 / 23:17.",
+              "caption": "MILE MARKER DOUBLE: 20:17 / 20:17 / 20:17.",
               "shimmerThreshold": 0.45
             }
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
@@ -566,13 +566,13 @@
     {
       "id": "flyer-ditch",
       "title": "Ditch Flyer",
-      "still": "stills/act1/flyer-ditch__2308-2317.jpg",
+      "still": "stills/act1/flyer-ditch__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/flyer-ditch__2308-2317.jpg",
-          "caption": "A damp flyer repeats the same instruction from the cruiser floor.",
+        "20:08-20:17": {
+          "still": "stills/act1/flyer-ditch__2008-2017.jpg",
+          "caption": "A damp flyer repeats the same instruction from the wagon floor. Her staple gun is still in the ditch grass beside it.",
           "wrongness": "",
           "hotspots": [
             {
@@ -623,17 +623,17 @@
               "target": "flyer-ditch",
               "journal": {
                 "id": "flyer-frequency-ditch",
-                "text": "DITCH FLYER: LENA ORTIZ \u2014 88.7 FM after sundown."
+                "text": "DITCH FLYER: LENA ORTIZ — 88.7 FM after sundown."
               },
               "puzzleAction": "flyer-frequency",
-              "caption": "DITCH FLYER: LENA ORTIZ \u2014 88.7 FM after sundown.",
+              "caption": "DITCH FLYER: LENA ORTIZ — 88.7 FM after sundown.",
               "shimmerThreshold": 0.35,
               "exhibit": "flyer"
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/flyer-ditch__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act1/flyer-ditch__2017-2026.jpg",
           "caption": "The paper is dry now. The ink has crawled into the shape of antenna towers.",
           "wrongness": "The ink moved; the ditch water is gone.",
           "hotspots": [
@@ -694,33 +694,33 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
       ]
     },
     {
-      "id": "patrol-radio",
-      "title": "Patrol Radio",
-      "still": "stills/act1/patrol-radio__2308-2317.jpg",
+      "id": "scanner-radio",
+      "title": "Scanner Radio",
+      "still": "stills/act1/scanner-radio__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/patrol-radio__2308-2317.jpg",
-          "caption": "The patrol radio is dark except for a standby LED. The dial can still turn.",
+        "20:08-20:17": {
+          "still": "stills/act1/scanner-radio__2008-2017.jpg",
+          "caption": "Dana's police scanner hangs under the dash, dark except for a standby LED. The wagon radio beside it can still tune.",
           "wrongness": "",
           "hotspots": [
             {
               "id": "interior",
-              "label": "Back to the cruiser interior",
+              "label": "Back to the wagon interior",
               "polygon": [
                 [
                   0,
@@ -739,7 +739,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "shimmerThreshold": 0.55
             },
             {
@@ -763,7 +763,7 @@
                   70
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "requires": [
                 {
                   "flag": "puzzle:flyer-frequency"
@@ -771,15 +771,15 @@
               ],
               "journal": {
                 "id": "radio-tune",
-                "text": "RADIO TUNED: 88.7 FM \u2014 static clears long enough to say dispatch printed it."
+                "text": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line."
               },
               "puzzleAction": "radio-tune",
-              "caption": "RADIO TUNED: 88.7 FM \u2014 static clears long enough to say dispatch printed it.",
+              "caption": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line.",
               "shimmerThreshold": 0.25
             },
             {
               "id": "dispatch",
-              "label": "Check the dispatch printer",
+              "label": "Check the tip-line printer",
               "polygon": [
                 [
                   78,
@@ -798,7 +798,7 @@
                   85
                 ]
               ],
-              "target": "dispatch-printer",
+              "target": "tipline-printer",
               "shimmerThreshold": 0.25,
               "requires": [
                 {
@@ -807,23 +807,23 @@
               ],
               "journal": {
                 "id": "dispatch-log",
-                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+                "text": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet."
               },
               "puzzleAction": "dispatch-log",
-              "discoverTimecode": "23:17-23:26",
-              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "discoverTimecode": "20:17-20:26",
+              "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
               "exhibit": "dispatch"
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/patrol-radio__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act1/scanner-radio__2017-2026.jpg",
           "caption": "The radio backlight pulses in time with the tracking band.",
           "wrongness": "The LED pulses even with the ignition key absent.",
           "hotspots": [
             {
               "id": "interior",
-              "label": "Back to the cruiser interior",
+              "label": "Back to the wagon interior",
               "polygon": [
                 [
                   0,
@@ -842,7 +842,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-interior",
+              "target": "wagon-interior",
               "shimmerThreshold": 0.55
             },
             {
@@ -866,17 +866,17 @@
                   70
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "journal": {
                 "id": "radio-timecode-repeat",
-                "text": "RADIO VOICE: 23:17 is the hinge. 23:17 is where the shoulder changes."
+                "text": "RADIO VOICE: 20:17 is the hinge. 20:17 is where the shoulder changes."
               },
-              "caption": "RADIO VOICE: 23:17 is the hinge. 23:17 is where the shoulder changes.",
+              "caption": "RADIO VOICE: 20:17 is the hinge. 20:17 is where the shoulder changes.",
               "shimmerThreshold": 0.25
             },
             {
               "id": "dispatch",
-              "label": "Check the dispatch printer",
+              "label": "Check the tip-line printer",
               "polygon": [
                 [
                   78,
@@ -895,7 +895,7 @@
                   85
                 ]
               ],
-              "target": "dispatch-printer",
+              "target": "tipline-printer",
               "shimmerThreshold": 0.25,
               "requires": [
                 {
@@ -904,11 +904,11 @@
               ],
               "journal": {
                 "id": "dispatch-log",
-                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+                "text": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet."
               },
               "puzzleAction": "dispatch-log",
-              "discoverTimecode": "23:17-23:26",
-              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "discoverTimecode": "20:17-20:26",
+              "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
               "exhibit": "dispatch"
             }
           ]
@@ -920,22 +920,22 @@
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
       ]
     },
     {
-      "id": "dispatch-printer",
-      "title": "Dispatch Log Printer",
-      "still": "stills/act1/dispatch-printer__2308-2317.jpg",
+      "id": "tipline-printer",
+      "title": "Tip-Line Printer",
+      "still": "stills/act1/tipline-printer__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/dispatch-printer__2308-2317.jpg",
-          "caption": "A thermal dispatch strip curls from the printer, but most of it is black static.",
+        "20:08-20:17": {
+          "still": "stills/act1/tipline-printer__2008-2017.jpg",
+          "caption": "A thermal strip curls from the tip-line printer Dana wired into the wagon, but most of it is black static.",
           "wrongness": "",
           "hotspots": [
             {
@@ -959,12 +959,12 @@
                   85
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "shimmerThreshold": 0.55
             },
             {
               "id": "read-dispatch",
-              "label": "Read the clear dispatch line",
+              "label": "Read the clear tip line",
               "polygon": [
                 [
                   35,
@@ -983,7 +983,7 @@
                   70
                 ]
               ],
-              "target": "dispatch-printer",
+              "target": "tipline-printer",
               "requires": [
                 {
                   "flag": "puzzle:radio-tune"
@@ -991,19 +991,19 @@
               ],
               "journal": {
                 "id": "dispatch-log",
-                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+                "text": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet."
               },
               "puzzleAction": "dispatch-log",
-              "discoverTimecode": "23:17-23:26",
-              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "discoverTimecode": "20:17-20:26",
+              "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
               "shimmerThreshold": 0.25,
               "exhibit": "dispatch"
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/dispatch-printer__2317-2326.jpg",
-          "caption": "The same dispatch line has printed three times, each lower on the strip.",
+        "20:17-20:26": {
+          "still": "stills/act1/tipline-printer__2017-2026.jpg",
+          "caption": "The same tip has printed three times, each lower on the strip.",
           "wrongness": "The fresh paper is warm though the printer is unplugged.",
           "hotspots": [
             {
@@ -1027,12 +1027,12 @@
                   85
                 ]
               ],
-              "target": "patrol-radio",
+              "target": "scanner-radio",
               "shimmerThreshold": 0.55
             },
             {
               "id": "read-dispatch-late",
-              "label": "Read the repeated dispatch line",
+              "label": "Read the repeated tip line",
               "polygon": [
                 [
                   35,
@@ -1051,24 +1051,24 @@
                   70
                 ]
               ],
-              "target": "dispatch-printer",
+              "target": "tipline-printer",
               "journal": {
                 "id": "dispatch-log-repeat",
-                "text": "DISPATCH REPEAT: 23:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS."
+                "text": "TIP REPEAT: 20:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS."
               },
-              "caption": "DISPATCH REPEAT: 23:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS.",
+              "caption": "TIP REPEAT: 20:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS.",
               "shimmerThreshold": 0.25
             }
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
@@ -1077,18 +1077,18 @@
     {
       "id": "roadside-shrine",
       "title": "Roadside Shrine",
-      "still": "stills/act1/roadside-shrine__2308-2317.jpg",
+      "still": "stills/act1/roadside-shrine__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/roadside-shrine__2308-2317.jpg",
+        "20:08-20:17": {
+          "still": "stills/act1/roadside-shrine__2008-2017.jpg",
           "caption": "Plastic flowers, a rosary, and a photo with the face scratched out.",
           "wrongness": "",
           "hotspots": [
             {
               "id": "cruiser",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   25,
@@ -1107,7 +1107,7 @@
                   32
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
@@ -1141,14 +1141,14 @@
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/roadside-shrine__2317-2326.jpg",
-          "caption": "The plastic flowers have been replaced by fresh bluebonnets, all facing the cruiser.",
+        "20:17-20:26": {
+          "still": "stills/act1/roadside-shrine__2017-2026.jpg",
+          "caption": "The plastic flowers have been replaced by fresh bluebonnets, all facing the wagon.",
           "wrongness": "The offering changed without a cut in the tape.",
           "hotspots": [
             {
               "id": "cruiser",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   25,
@@ -1167,7 +1167,7 @@
                   32
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
@@ -1194,21 +1194,21 @@
               "target": "roadside-shrine",
               "journal": {
                 "id": "shrine-note-late",
-                "text": "NEW SHRINE NOTE: 23:17 was already on the tape before Reyes arrived."
+                "text": "NEW SHRINE NOTE: 20:17 was already on the tape before Reyes arrived."
               },
-              "caption": "NEW SHRINE NOTE: 23:17 was already on the tape before Reyes arrived.",
+              "caption": "NEW SHRINE NOTE: 20:17 was already on the tape before Reyes arrived.",
               "shimmerThreshold": 0.45
             }
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }
@@ -1217,18 +1217,18 @@
     {
       "id": "culvert-mouth",
       "title": "Culvert Mouth",
-      "still": "stills/act1/culvert-mouth__2308-2317.jpg",
+      "still": "stills/act1/culvert-mouth__2008-2017.jpg",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:08-23:17": {
-          "still": "stills/act1/culvert-mouth__2308-2317.jpg",
+        "20:08-20:17": {
+          "still": "stills/act1/culvert-mouth__2008-2017.jpg",
           "caption": "The culvert is visible from the shoulder, but the flowers make a hard border around it.",
           "wrongness": "",
           "hotspots": [
             {
               "id": "cruiser",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   0,
@@ -1247,19 +1247,19 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             }
           ]
         },
-        "23:17-23:26": {
-          "still": "stills/act1/culvert-mouth__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act1/culvert-mouth__2017-2026.jpg",
           "caption": "The culvert mouth is darker now. The flowers stop at the concrete like they were cut.",
           "wrongness": "The darkness under the road has moved closer.",
           "hotspots": [
             {
               "id": "cruiser",
-              "label": "Back to the cruiser",
+              "label": "Back to the wagon",
               "polygon": [
                 [
                   0,
@@ -1278,7 +1278,7 @@
                   85
                 ]
               ],
-              "target": "cruiser-exterior",
+              "target": "wagon-exterior",
               "shimmerThreshold": 0.55
             },
             {
@@ -1305,9 +1305,9 @@
               "target": "culvert-mouth",
               "journal": {
                 "id": "nine-locked",
-                "text": "The tape counter jumps at 23:26. The nine minutes are still locked."
+                "text": "The tape counter jumps at 20:26. The nine minutes are still locked."
               },
-              "caption": "The tape counter jumps at 23:26. The nine minutes are still locked.",
+              "caption": "The tape counter jumps at 20:26. The nine minutes are still locked.",
               "shimmerThreshold": 0.65
             },
             {
@@ -1343,13 +1343,13 @@
           ]
         }
       },
-      "ambientAudio": "audio/cruiser-idle.wav",
+      "ambientAudio": "audio/wagon-idle.wav",
       "audioMix": {
         "ambient": 0.58
       },
       "motionLayers": [
         {
-          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "src": "video/act1-wagon-heat-flicker.mp4",
           "opacity": 0.28,
           "blendMode": "screen"
         }

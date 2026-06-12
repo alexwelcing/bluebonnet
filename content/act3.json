@@ -4,13 +4,13 @@
     {
       "id": "culvert-throat",
       "title": "Culvert Throat",
-      "still": "stills/act3/culvert-throat__2317-2326.jpg",
+      "still": "stills/act3/culvert-throat__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/culvert-throat__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-throat__2017-2026.jpg",
           "caption": "Inside the culvert throat. Highway noise comes through the concrete in long swells.",
           "wrongness": "",
           "hotspots": [
@@ -64,8 +64,8 @@
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/culvert-throat__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-throat__2026-2035.jpg",
           "caption": "The concrete seams bend toward the locked minutes. Every step reads as downhill.",
           "wrongness": "concrete seams bend toward the locked minutes",
           "hotspots": [
@@ -134,13 +134,13 @@
     {
       "id": "culvert-dripline",
       "title": "Dripline",
-      "still": "stills/act3/culvert-dripline__2317-2326.jpg",
+      "still": "stills/act3/culvert-dripline__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/culvert-dripline__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-dripline__2017-2026.jpg",
           "caption": "A dripline stitches the dark, steady as a metronome.",
           "wrongness": "",
           "hotspots": [
@@ -218,8 +218,8 @@
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/culvert-dripline__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-dripline__2026-2035.jpg",
           "caption": "The drips smear upward through the frame. The sound of them still falls.",
           "wrongness": "drips fall upward in the tape smear",
           "hotspots": [
@@ -312,13 +312,13 @@
     {
       "id": "culvert-pipe",
       "title": "Knock Pipe",
-      "still": "stills/act3/culvert-pipe__2317-2326.jpg",
+      "still": "stills/act3/culvert-pipe__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/culvert-pipe__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-pipe__2017-2026.jpg",
           "caption": "An iron service pipe runs the wall, cold enough to fog the lens. The radio static gathers against it.",
           "wrongness": "",
           "hotspots": [
@@ -414,8 +414,8 @@
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/culvert-pipe__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-pipe__2026-2035.jpg",
           "caption": "The pipe sits closer to the camera than it did. Nothing on the audio track moved.",
           "wrongness": "the pipe has shifted closer to the camera without sound",
           "hotspots": [
@@ -526,13 +526,13 @@
     {
       "id": "culvert-echo-chamber",
       "title": "Echo Chamber",
-      "still": "stills/act3/culvert-echo-chamber__2317-2326.jpg",
+      "still": "stills/act3/culvert-echo-chamber__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/culvert-echo-chamber__2317-2326.jpg",
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-echo-chamber__2017-2026.jpg",
           "caption": "The chamber rounds out beneath the median. Every sound comes back one count late.",
           "wrongness": "",
           "hotspots": [
@@ -591,8 +591,8 @@
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/culvert-echo-chamber__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-echo-chamber__2026-2035.jpg",
           "caption": "The pooled water reflects bluebonnets instead of concrete.",
           "wrongness": "the pooled water reflects the field instead of concrete",
           "hotspots": [
@@ -666,14 +666,14 @@
     {
       "id": "recorder-nest",
       "title": "Recorder Nest",
-      "still": "stills/act3/recorder-nest__2317-2326.jpg",
+      "still": "stills/act3/recorder-nest__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/recorder-nest__2317-2326.jpg",
-          "caption": "A handheld recorder sits dry on a ledge of caliche, set down carefully, like someone meant to come back.",
+        "20:17-20:26": {
+          "still": "stills/act3/recorder-nest__2017-2026.jpg",
+          "caption": "Dana's interview recorder sits dry on a ledge of caliche, set down carefully, like she meant to come back for it.",
           "wrongness": "",
           "hotspots": [
             {
@@ -702,7 +702,7 @@
             },
             {
               "id": "read-recorder-counter",
-              "label": "Read the handheld recorder counter",
+              "label": "Read the interview recorder counter",
               "polygon": [
                 [
                   35,
@@ -729,11 +729,11 @@
               ],
               "journal": {
                 "id": "recorder-counter",
-                "text": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked."
+                "text": "INTERVIEW RECORDER COUNTER: 20:26. The missing minutes are present but physically locked."
               },
-              "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
+              "caption": "INTERVIEW RECORDER COUNTER: 20:26. The missing minutes are present but physically locked.",
               "puzzleAction": "recorder-counter",
-              "discoverTimecode": "23:26-23:35",
+              "discoverTimecode": "20:26-20:35",
               "setFlag": "act4-gate",
               "shimmerThreshold": 0.25
             },
@@ -768,8 +768,8 @@
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/recorder-nest__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/recorder-nest__2026-2035.jpg",
           "caption": "The recorder counter window glows in the dark. The deck reads the number the lens refuses.",
           "wrongness": "the recorder window glows without readable marks",
           "hotspots": [
@@ -799,7 +799,7 @@
             },
             {
               "id": "read-recorder-counter",
-              "label": "Read the handheld recorder counter",
+              "label": "Read the interview recorder counter",
               "polygon": [
                 [
                   35,
@@ -826,11 +826,11 @@
               ],
               "journal": {
                 "id": "recorder-counter",
-                "text": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked."
+                "text": "INTERVIEW RECORDER COUNTER: 20:26. The missing minutes are present but physically locked."
               },
-              "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
+              "caption": "INTERVIEW RECORDER COUNTER: 20:26. The missing minutes are present but physically locked.",
               "puzzleAction": "recorder-counter",
-              "discoverTimecode": "23:26-23:35",
+              "discoverTimecode": "20:26-20:35",
               "setFlag": "act4-gate",
               "shimmerThreshold": 0.25
             },
@@ -880,14 +880,14 @@
     {
       "id": "missing-minutes-gate",
       "title": "Missing Minutes Gate",
-      "still": "stills/act3/missing-minutes-gate__2317-2326.jpg",
+      "still": "stills/act3/missing-minutes-gate__2017-2026.jpg",
       "ambientAudio": "audio/culvert-rumble.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:17-23:26": {
-          "still": "stills/act3/missing-minutes-gate__2317-2326.jpg",
-          "caption": "The far end of the culvert ends in a dark the lamp will not cross. The tape counter stutters at 23:26.",
+        "20:17-20:26": {
+          "still": "stills/act3/missing-minutes-gate__2017-2026.jpg",
+          "caption": "The far end of the culvert ends in a dark the lamp will not cross. The tape counter stutters at 20:26.",
           "wrongness": "",
           "hotspots": [
             {
@@ -942,7 +942,7 @@
                   "equals": false
                 }
               ],
-              "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
+              "caption": "The deck hard-stops. 20:26-20:35 remains locked behind the Act IV gate flag.",
               "shimmerThreshold": 0.35
             },
             {
@@ -980,15 +980,15 @@
               ],
               "journal": {
                 "id": "nine-minutes-open",
-                "text": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent."
+                "text": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent."
               },
-              "caption": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent.",
+              "caption": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent.",
               "shimmerThreshold": 0.25
             }
           ]
         },
-        "23:26-23:35": {
-          "still": "stills/act3/missing-minutes-gate__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act3/missing-minutes-gate__2026-2035.jpg",
           "caption": "The nine minutes press against the exit like a dark wall with a seam in it.",
           "wrongness": "the locked nine minutes press against the exit like a dark wall",
           "hotspots": [
@@ -1044,7 +1044,7 @@
                   "equals": false
                 }
               ],
-              "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
+              "caption": "The deck hard-stops. 20:26-20:35 remains locked behind the Act IV gate flag.",
               "shimmerThreshold": 0.35
             },
             {
@@ -1082,9 +1082,9 @@
               ],
               "journal": {
                 "id": "nine-minutes-open",
-                "text": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent."
+                "text": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent."
               },
-              "caption": "MISSING NINE MINUTES: 23:26-23:35 seats as the final TIMESEEK detent.",
+              "caption": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent.",
               "shimmerThreshold": 0.25
             }
           ]

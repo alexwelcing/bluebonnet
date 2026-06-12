@@ -9,7 +9,7 @@ import { createPuzzleProgression } from '../engine/puzzle';
 import { createStateMachine } from '../engine/stateMachine';
 import type { HotspotDefinition, SceneManifest } from '../engine/types';
 
-function activate(hotspot: HotspotDefinition, state = createStateMachine({ currentNodeId: 'field-threshold', activeWindow: '23:17-23:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] })) {
+function activate(hotspot: HotspotDefinition, state = createStateMachine({ currentNodeId: 'field-threshold', activeWindow: '20:17-20:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] })) {
   if (hotspot.puzzleAction) {
     const puzzle = createPuzzleProgression(state.snapshot().completedPuzzles);
     const result = puzzle.apply(hotspot.puzzleAction);
@@ -34,8 +34,8 @@ describe('Act II field content', () => {
 
   it('gates culvert access behind all four flower-clock digits', () => {
     const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
-    const state = createStateMachine({ currentNodeId: 'field-gate', activeWindow: '23:17-23:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] });
-    let gateState = getNodeState(graph, 'field-gate', '23:17-23:26');
+    const state = createStateMachine({ currentNodeId: 'field-gate', activeWindow: '20:17-20:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] });
+    let gateState = getNodeState(graph, 'field-gate', '20:17-20:26');
     expect(availableHotspots(gateState, state.snapshot()).some((hotspot) => hotspot.id === 'unlock-field-gate')).toBe(false);
 
     for (const [nodeId, hotspotId] of [
@@ -44,13 +44,13 @@ describe('Act II field content', () => {
       ['field-clock-one', 'flower-one'],
       ['field-clock-three', 'flower-three'],
     ] as const) {
-      const nodeState = getNodeState(graph, nodeId, '23:17-23:26');
+      const nodeState = getNodeState(graph, nodeId, '20:17-20:26');
       const hotspot = nodeState.hotspots.find((candidate) => candidate.id === hotspotId);
       expect(hotspot).toBeDefined();
       activate(hotspot!, state);
     }
 
-    gateState = getNodeState(graph, 'field-gate', '23:17-23:26');
+    gateState = getNodeState(graph, 'field-gate', '20:17-20:26');
     const unlock = availableHotspots(gateState, state.snapshot()).find((hotspot) => hotspot.id === 'unlock-field-gate');
     expect(unlock).toBeDefined();
     activate(unlock!, state);

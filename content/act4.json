@@ -4,14 +4,14 @@
     {
       "id": "nine-field-threshold",
       "title": "Nine Minutes Threshold",
-      "still": "stills/act4/nine-field-threshold__2326-2335.jpg",
+      "still": "stills/act4/nine-field-threshold__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-field-threshold__2326-2335.jpg",
-          "caption": "23:26-23:35: the culvert opens onto the night field. The bluebonnets give off their own light.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-field-threshold__2026-2035.jpg",
+          "caption": "20:26-20:35: the culvert opens onto the night field. The bluebonnets give off their own light.",
           "wrongness": "the missing minutes are seated; the shoulder is gone behind the flowers",
           "hotspots": [
             {
@@ -180,7 +180,7 @@
     {
       "id": "nine-threshold-left",
       "title": "Nine Threshold / Left Facing",
-      "still": "stills/act4/nine-threshold-left__2326-2335.jpg",
+      "still": "stills/act4/nine-threshold-left__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
@@ -195,9 +195,9 @@
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-threshold-left__2326-2335.jpg",
-          "caption": "23:26-23:35: left of the culvert, the field bends around the camera like a hallway made of flowers.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-threshold-left__2026-2035.jpg",
+          "caption": "20:26-20:35: left of the culvert, the field bends around the camera like a hallway made of flowers.",
           "wrongness": "the lateral view proves the threshold has width, not just a forward path",
           "hotspots": [
             {
@@ -232,7 +232,7 @@
     {
       "id": "nine-threshold-right",
       "title": "Nine Threshold / Right Facing",
-      "still": "stills/act4/nine-threshold-right__2326-2335.jpg",
+      "still": "stills/act4/nine-threshold-right__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
@@ -247,9 +247,9 @@
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-threshold-right__2326-2335.jpg",
-          "caption": "23:26-23:35: right of the culvert, the highway shoulder has been replaced by a dark bluebonnet wall.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-threshold-right__2026-2035.jpg",
+          "caption": "20:26-20:35: right of the culvert, the highway shoulder has been replaced by a dark bluebonnet wall.",
           "wrongness": "the road exists only as a memory in the tape grain",
           "hotspots": [
             {
@@ -284,7 +284,7 @@
     {
       "id": "nine-threshold-look-down",
       "title": "Nine Threshold / Look Down",
-      "still": "stills/act4/nine-threshold-look-down__2326-2335.jpg",
+      "still": "stills/act4/nine-threshold-look-down__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
@@ -299,9 +299,9 @@
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-threshold-look-down__2326-2335.jpg",
-          "caption": "23:26-23:35: the player footprint breaks the flowers, but the tape shows no arrival.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-threshold-look-down__2026-2035.jpg",
+          "caption": "20:26-20:35: the player footprint breaks the flowers, but the tape shows no arrival.",
           "wrongness": "the ground is the cut between recorded and missing time",
           "hotspots": [
             {
@@ -336,7 +336,7 @@
     {
       "id": "nine-culvert-detail",
       "title": "Nine Culvert Lip Detail",
-      "still": "stills/act4/nine-culvert-detail__2326-2335.jpg",
+      "still": "stills/act4/nine-culvert-detail__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "audioMix": {
         "ambient": 0.72
@@ -351,9 +351,9 @@
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-culvert-detail__2326-2335.jpg",
-          "caption": "23:26-23:35: the wet concrete lip carries bluebonnet roots from inside the culvert outward.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-culvert-detail__2026-2035.jpg",
+          "caption": "20:26-20:35: the wet concrete lip carries bluebonnet roots from inside the culvert outward.",
           "wrongness": "the culvert is growing into the missing minutes",
           "hotspots": [
             {
@@ -388,14 +388,14 @@
     {
       "id": "nine-flower-path",
       "title": "Luminous Flower Path",
-      "still": "stills/act4/nine-flower-path__2326-2335.jpg",
+      "still": "stills/act4/nine-flower-path__2026-2035.jpg",
       "ambientAudio": "audio/field-wind.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/nine-flower-path__2326-2335.jpg",
-          "caption": "23:26-23:35: the flowers stand shoulder-high and lean away from a car you still cannot see moving.",
+        "20:26-20:35": {
+          "still": "stills/act4/nine-flower-path__2026-2035.jpg",
+          "caption": "20:26-20:35: the flowers stand shoulder-high and lean away from a car you still cannot see moving.",
           "wrongness": "every bloom head tracks the unseen car instead of the camera",
           "hotspots": [
             {
@@ -464,14 +464,14 @@
     {
       "id": "near-car",
       "title": "The Near Car",
-      "still": "stills/act4/near-car__2326-2335.jpg",
+      "still": "stills/act4/near-car__2026-2035.jpg",
       "ambientAudio": "audio/radio-static.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/near-car__2326-2335.jpg",
-          "caption": "23:26-23:35: the car is finally near. Its dark windshield reflects the cruiser dashboard instead of the sky.",
+        "20:26-20:35": {
+          "still": "stills/act4/near-car__2026-2035.jpg",
+          "caption": "20:26-20:35: the car is finally near. Its dark windshield reflects Dana's dashboard instead of the sky.",
           "wrongness": "the distance collapsed without motion blur or engine sound",
           "hotspots": [
             {
@@ -540,14 +540,14 @@
     {
       "id": "luminous-shrine",
       "title": "Luminous Shrine",
-      "still": "stills/act4/luminous-shrine__2326-2335.jpg",
+      "still": "stills/act4/luminous-shrine__2026-2035.jpg",
       "ambientAudio": "audio/radio-static.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/luminous-shrine__2326-2335.jpg",
-          "caption": "23:26-23:35: blank evidence tags hang from the shrine. The deck overlays only what the tape can prove.",
+        "20:26-20:35": {
+          "still": "stills/act4/luminous-shrine__2026-2035.jpg",
+          "caption": "20:26-20:35: blank evidence tags hang from the shrine. The deck overlays only what the tape can prove.",
           "wrongness": "the offering is both memorial and warning",
           "hotspots": [
             {
@@ -601,7 +601,7 @@
                 ]
               ],
               "target": "car-door",
-              "caption": "The driver's door is open exactly as the cruiser was.",
+              "caption": "The driver's door is open exactly as Dana's wagon was.",
               "shimmerThreshold": 0.35
             },
             {
@@ -645,15 +645,15 @@
     {
       "id": "car-door",
       "title": "Car Door",
-      "still": "stills/act4/car-door__2326-2335.jpg",
+      "still": "stills/act4/car-door__2026-2035.jpg",
       "ambientAudio": "audio/radio-static.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/car-door__2326-2335.jpg",
-          "caption": "23:26-23:35: the driver's seat is empty. The dashcam reflection shows a hand reaching for the deck controls.",
-          "wrongness": "the car and cruiser share the same empty interior",
+        "20:26-20:35": {
+          "still": "stills/act4/car-door__2026-2035.jpg",
+          "caption": "20:26-20:35: the driver's seat is empty. The dashcam reflection shows a hand reaching for the deck controls.",
+          "wrongness": "the car and the wagon share the same empty interior",
           "hotspots": [
             {
               "id": "car-door-readout",
@@ -750,19 +750,19 @@
     {
       "id": "final-choice",
       "title": "Final Choice",
-      "still": "stills/act4/final-choice__2326-2335.jpg",
+      "still": "stills/act4/final-choice__2026-2035.jpg",
       "ambientAudio": "audio/radio-static.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/final-choice__2326-2335.jpg",
-          "caption": "23:26-23:35: the tape has no more geography. Only the deck remains: EJECT to seal it, RECORD to overwrite it.",
+        "20:26-20:35": {
+          "still": "stills/act4/final-choice__2026-2035.jpg",
+          "caption": "20:26-20:35: the tape has no more geography. Only the deck remains: EJECT to seal it, RECORD to overwrite it.",
           "wrongness": "the missing minutes wait for an ending choice",
           "hotspots": [
             {
               "id": "choose-eject",
-              "label": "EJECT \u2014 seal the tape",
+              "label": "EJECT — seal the tape",
               "polygon": [
                 [
                   20,
@@ -785,14 +785,14 @@
               "setFlag": "ending:eject",
               "journal": {
                 "id": "ending-eject",
-                "text": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
+                "text": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
               },
-              "caption": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
+              "caption": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
               "shimmerThreshold": 0.25
             },
             {
               "id": "choose-record",
-              "label": "RECORD \u2014 overwrite the evidence",
+              "label": "RECORD — overwrite the evidence",
               "polygon": [
                 [
                   55,
@@ -815,9 +815,9 @@
               "setFlag": "ending:record",
               "journal": {
                 "id": "ending-record",
-                "text": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape."
+                "text": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape."
               },
-              "caption": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
+              "caption": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
               "shimmerThreshold": 0.25
             },
             {
@@ -861,13 +861,13 @@
     {
       "id": "ending-eject",
       "title": "Ending / Eject",
-      "still": "stills/act4/ending-eject__2326-2335.jpg",
+      "still": "stills/act4/ending-eject__2026-2035.jpg",
       "ambientAudio": "audio/ending-eject-seal.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/ending-eject__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act4/ending-eject__2026-2035.jpg",
           "caption": "EJECT ENDING: the cassette releases. The field goes dark on the monitor. The evidence box can be sealed again.",
           "wrongness": "containment holds because the tape is no longer playing",
           "hotspots": [
@@ -917,13 +917,13 @@
     {
       "id": "ending-record",
       "title": "Ending / Record",
-      "still": "stills/act4/ending-record__2326-2335.jpg",
+      "still": "stills/act4/ending-record__2026-2035.jpg",
       "ambientAudio": "audio/ending-record-overwrite.wav",
       "caption": "",
       "hotspots": [],
       "temporalStates": {
-        "23:26-23:35": {
-          "still": "stills/act4/ending-record__2326-2335.jpg",
+        "20:26-20:35": {
+          "still": "stills/act4/ending-record__2026-2035.jpg",
           "caption": "RECORD ENDING: the red lamp comes on. The evidence deck records over Reyes with the viewer still inside the bluebonnets.",
           "wrongness": "the tape now contains one more witness than it began with",
           "hotspots": [
@@ -951,9 +951,9 @@
               "target": "ending-record",
               "journal": {
                 "id": "ending-record-overwritten",
-                "text": "OVERWRITE COUNTER: RECORD / 23:26-23:35 / VIEWER TRACK ARMED."
+                "text": "OVERWRITE COUNTER: RECORD / 20:26-20:35 / VIEWER TRACK ARMED."
               },
-              "caption": "OVERWRITE COUNTER: RECORD / 23:26-23:35 / VIEWER TRACK ARMED.",
+              "caption": "OVERWRITE COUNTER: RECORD / 20:26-20:35 / VIEWER TRACK ARMED.",
               "shimmerThreshold": 0.25
             }
           ]

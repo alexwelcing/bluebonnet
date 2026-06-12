@@ -1,9 +1,9 @@
 {
   "loops": [
     {
-      "id": "act1-cruiser-heat-flicker",
+      "id": "act1-wagon-heat-flicker",
       "act": "act1",
-      "runtime": "video/act1-cruiser-heat-flicker.mp4",
+      "runtime": "video/act1-wagon-heat-flicker.mp4",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9df77f/16gBi9sh6In1jjUtk-2vJ_output.mp4",
       "prompt": "degraded 1990s Texas highway patrol VHS dashcam idle loop, cruiser interior/exterior light flicker and faint highway heat shimmer, subtle tape drift, no readable text, no lettering, no signage characters",
       "model": "pixverse-v6",
