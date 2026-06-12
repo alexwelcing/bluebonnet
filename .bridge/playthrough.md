@@ -59,3 +59,16 @@ Checks:
 - Verified runtime volume control remained present at 0.7.
 
 Result: PASS for deployed richer ambient loops, per-node mix metadata, and runtime smoke test.
+
+
+## 2026-06-12T06:16:05.364682+00:00 — B4 exhibit art pass live self-playtest
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2ba3c485b0961851934ed5
+
+Checks:
+- Opened the missing-person flyer exhibit from the live cruiser interior. Confirmed runtime-rendered poster includes `MISSING: LENA ORTIZ`, halftone `PHOTO BLOCK / HALFTONE COPY`, and five `88.7 FM` tear-off tabs.
+- Tuned 88.7 FM and opened the dispatch exhibit. Confirmed runtime-rendered dispatch text appears inside dot-matrix styling with left/right tractor-feed perforation elements.
+- Confirmed no story text came from generated images; it is all DOM-rendered exhibit text.
+
+Result: PASS for B4 flyer photocopy and dispatch dot-matrix exhibit art pass.

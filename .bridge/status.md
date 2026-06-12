@@ -332,3 +332,28 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T06:16:05.365164+00:00 — B4 exhibit art pass
+
+Changed:
+- Upgraded flyer exhibit markup into a runtime-rendered photocopied missing poster with halftone photo block and tear-off tabs.
+- Upgraded dispatch exhibit markup/CSS into a dot-matrix/printer paper artifact with tractor-feed perforation edges.
+- Kept all story-critical text DOM-rendered from hotspot journal/caption source text; no image-baked text added.
+- Added DOM regression coverage for flyer photo block/tabs and dispatch perforation/dot-matrix line.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended B4 live exhibit self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 9 files, 26 tests.
+- `npm run lint:shotlist` passed: 56 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, flyer still, and dispatch still.
+- Browser live self-playtest passed at https://bluebonnet-tape.netlify.app after deploy 6a2ba3c485b0961851934ed5: flyer and dispatch exhibit overlays render their new DOM art treatments and exact text.
+
+Next:
+- Continue with B5 TITLE / BOOT: in-fiction insert tape boot/title and credits/colophon reachable from deck.
+
+Blockers:
+- None.

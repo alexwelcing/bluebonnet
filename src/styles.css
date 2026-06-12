@@ -243,8 +243,61 @@ button, .save {
   transform: rotate(-0.6deg);
   line-height: 1.45;
 }
-.exhibit-dispatch { font-family: 'Courier New', monospace; background: #ddd5b9; }
+.exhibit-dispatch {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  background:
+    repeating-linear-gradient(to bottom, rgba(0,0,0,0.035) 0 1px, transparent 1px 18px),
+    #ddd5b9;
+}
+.tractor-feed-left,
+.tractor-feed-right {
+  position: absolute;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  width: 1.05rem;
+  background: radial-gradient(circle, rgba(20,18,14,0.42) 0 28%, transparent 32%) 0 0 / 1rem 1.15rem repeat-y;
+  opacity: 0.65;
+}
+.tractor-feed-left { left: 1rem; }
+.tractor-feed-right { right: 1rem; }
+.dot-matrix-line {
+  border-top: 1px dashed rgba(20,18,14,0.38);
+  border-bottom: 1px dashed rgba(20,18,14,0.38);
+  padding: 1rem 0;
+  text-shadow: 0.7px 0 rgba(20,18,14,0.45);
+}
 .exhibit-flyer { font-family: Georgia, 'Times New Roman', serif; text-align: center; }
+.flyer-photo-block {
+  width: min(320px, 65%);
+  min-height: 12rem;
+  margin: 1rem auto;
+  display: grid;
+  place-items: center;
+  border: 5px solid rgba(20,18,14,0.82);
+  background:
+    radial-gradient(circle, rgba(20,18,14,0.55) 0 1px, transparent 1px 4px),
+    linear-gradient(135deg, rgba(20,18,14,0.18), rgba(20,18,14,0.02));
+  color: rgba(20,18,14,0.72);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.12em;
+}
+.flyer-copy { font-size: 1.45rem; font-weight: bold; }
+.tear-off-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px dashed rgba(20,18,14,0.7);
+  margin-top: 2rem;
+}
+.tear-off-tabs span {
+  min-height: 4.8rem;
+  padding: 0.5rem 0.2rem;
+  border-left: 1px dashed rgba(20,18,14,0.55);
+  writing-mode: vertical-rl;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
 .exhibit-paper h2 { color: #111; letter-spacing: 0.08em; }
 .exhibit-paper pre { white-space: pre-wrap; font-size: 1.25rem; }
 

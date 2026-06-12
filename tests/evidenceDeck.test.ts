@@ -84,6 +84,8 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.caption')?.textContent).toContain('MISSING: LENA ORTIZ');
     expect(document.querySelector('.journal-list')?.textContent).toContain('MISSING: LENA ORTIZ');
     expectVisibleExhibitContaining('LENA ORTIZ', '88.7');
+    expect(document.querySelector('.exhibit-flyer .flyer-photo-block')?.textContent).toContain('PHOTO BLOCK');
+    expect(document.querySelectorAll('.exhibit-flyer .tear-off-tabs span')).toHaveLength(5);
     realPointerClick(button('RETURN TO DECK'));
 
     realPointerClick(button('Inspect the patrol radio'));
@@ -96,6 +98,9 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.caption')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
     expect(document.querySelector('.journal-list')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
     expectVisibleExhibitContaining('DISPATCH 23:17', 'reset tape to 23:17');
+    expect(document.querySelector('.exhibit-dispatch .tractor-feed-left')).toBeTruthy();
+    expect(document.querySelector('.exhibit-dispatch .tractor-feed-right')).toBeTruthy();
+    expect(document.querySelector('.exhibit-dispatch .dot-matrix-line')?.textContent).toContain('DISPATCH 23:17');
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
 
     keyboardSeekForward();

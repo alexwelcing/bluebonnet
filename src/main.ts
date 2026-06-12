@@ -304,20 +304,39 @@ function openExhibit(hotspot: HotspotDefinition) {
   if (!hotspot.exhibit) return;
   const sourceText = hotspot.journal?.text ?? hotspot.caption ?? hotspot.label;
   const title = document.createElement('h2');
-  const body = document.createElement(hotspot.exhibit === 'dispatch' || hotspot.exhibit === 'recorder' ? 'pre' : 'p');
   exhibitPaper.className = `exhibit-paper exhibit-${hotspot.exhibit}`;
   if (hotspot.exhibit === 'flyer') {
     title.textContent = 'MISSING: LENA ORTIZ';
-    body.className = 'photocopy';
+    const photoBlock = document.createElement('div');
+    photoBlock.className = 'flyer-photo-block';
+    photoBlock.textContent = 'PHOTO BLOCK / HALFTONE COPY';
+    const body = document.createElement('p');
+    body.className = 'photocopy flyer-copy';
     body.textContent = sourceText.includes('88.7') ? sourceText : `${sourceText} 88.7 FM AFTER SUNDOWN.`;
+    const tabs = document.createElement('div');
+    tabs.className = 'tear-off-tabs';
+    for (let index = 0; index < 5; index += 1) {
+      const tab = document.createElement('span');
+      tab.textContent = '88.7 FM';
+      tabs.append(tab);
+    }
+    exhibitPaper.replaceChildren(title, photoBlock, body, tabs);
   } else if (hotspot.exhibit === 'dispatch') {
     title.textContent = 'THERMAL DISPATCH PRINTOUT';
+    const leftFeed = document.createElement('div');
+    leftFeed.className = 'tractor-feed-left';
+    const rightFeed = document.createElement('div');
+    rightFeed.className = 'tractor-feed-right';
+    const body = document.createElement('pre');
+    body.className = 'dot-matrix-line';
     body.textContent = sourceText;
+    exhibitPaper.replaceChildren(leftFeed, rightFeed, title, body);
   } else {
     title.textContent = 'HANDHELD RECORDER COUNTER';
+    const body = document.createElement('pre');
     body.textContent = sourceText;
+    exhibitPaper.replaceChildren(title, body);
   }
-  exhibitPaper.replaceChildren(title, body);
   exhibitScan.hidden = false;
 }
 
