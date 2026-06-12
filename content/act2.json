@@ -118,7 +118,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-left-row",
@@ -285,7 +286,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-right-row",
@@ -452,7 +454,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-clock-two",
@@ -585,7 +588,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-clock-seven",
@@ -718,7 +722,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-clock-one",
@@ -899,7 +904,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-clock-three",
@@ -1080,7 +1086,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-gate",
@@ -1289,7 +1296,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "field-tally",
@@ -1418,7 +1426,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     },
     {
       "id": "act2-culvert-stub",
@@ -1455,6 +1464,35 @@
               ],
               "target": "field-gate",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-throat",
+              "label": "Enter the highway culvert",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "culvert-access"
+                }
+              ]
             }
           ]
         },
@@ -1486,10 +1524,40 @@
               ],
               "target": "field-gate",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-throat",
+              "label": "Enter the highway culvert",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "culvert-access"
+                }
+              ]
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/field-wind.wav"
     }
   ]
 }

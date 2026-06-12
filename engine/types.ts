@@ -20,7 +20,9 @@ export type PuzzleAction =
   | 'flower-digit-7'
   | 'flower-digit-1'
   | 'flower-digit-3'
-  | 'field-gate';
+  | 'field-gate'
+  | 'echo-knocks'
+  | 'recorder-counter';
 
 export interface JournalClue {
   id: string;
@@ -37,6 +39,7 @@ export interface HotspotDefinition {
   requires?: FlagCondition[];
   conditionalTargets?: ConditionalTarget[];
   caption?: string;
+  exhibit?: 'flyer' | 'dispatch' | 'recorder';
   journal?: JournalClue;
   puzzleAction?: PuzzleAction;
   discoverTimecode?: TimeWindow;
@@ -55,6 +58,7 @@ export interface SceneNode {
   title: string;
   still: string;
   ambientAudio?: string;
+  threatAudio?: string;
   caption?: string;
   hotspots: HotspotDefinition[];
   temporalStates?: Partial<Record<TimeWindow, TemporalNodeState>>;

@@ -165,7 +165,7 @@ button, input { font: inherit; }
 h1 { margin: 0.25rem 0 0.7rem; font-size: clamp(1.25rem, 3vw, 2.2rem); }
 .wrongness, .timeseek-help { color: #cbeed6; line-height: 1.4; font-size: 0.9rem; }
 
-.timeseek-panel, .tracking-control, .caption-toggle { display: grid; gap: 0.35rem; margin: 1rem 0; }
+.timeseek-panel, .tracking-control, .volume-control, .caption-toggle { display: grid; gap: 0.35rem; margin: 1rem 0; }
 .timeseek-label { margin: 0; color: #9df2ad; letter-spacing: 0.12em; }
 .jog-wheel {
   position: relative;
@@ -221,6 +221,32 @@ button, .save {
 .journal-panel h2 { font-size: 1rem; letter-spacing: 0.14em; }
 .journal-list { padding-left: 1.3rem; max-height: 35vh; overflow: auto; }
 .journal-list li { margin: 0.55rem 0; color: #d7f7e2; line-height: 1.35; }
+
+.exhibit-scan {
+  position: fixed;
+  inset: 1rem;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background: rgba(0,0,0,0.86);
+  border: 1px solid rgba(164,255,197,0.28);
+}
+.exhibit-scan[hidden] { display: none; }
+.exhibit-paper {
+  width: min(760px, 88vw);
+  min-height: min(76vh, 720px);
+  padding: 3rem;
+  color: #14120e;
+  background: #e6dfc8;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.65), inset 0 0 90px rgba(66,45,20,0.15);
+  transform: rotate(-0.6deg);
+  line-height: 1.45;
+}
+.exhibit-dispatch { font-family: 'Courier New', monospace; background: #ddd5b9; }
+.exhibit-flyer { font-family: Georgia, 'Times New Roman', serif; text-align: center; }
+.exhibit-paper h2 { color: #111; letter-spacing: 0.08em; }
+.exhibit-paper pre { white-space: pre-wrap; font-size: 1.25rem; }
 
 @keyframes track { from { transform: translateY(-20%); } to { transform: translateY(980%); } }
 

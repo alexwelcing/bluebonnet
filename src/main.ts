@@ -1,7 +1,7 @@
 import { createAudioMixer } from '../engine/audioMixer';
 import { clipPathWithinBounds, polygonBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
-import { availableHotspots, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
+import { availableHotspots, getNode, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
 import { loadSnapshot, saveSnapshot } from '../engine/save';
 import { createStateMachine } from '../engine/stateMachine';
@@ -60,6 +60,10 @@ app.innerHTML = `
         TRACKING
         <input class="intensity" type="range" min="0" max="1" step="0.01" />
       </label>
+      <label class="volume-control">
+        VOLUME
+        <input class="volume" type="range" min="0" max="1" step="0.01" value="0.7" />
+      </label>
       <label class="caption-toggle">
         <input class="captions" type="checkbox" />
         CAPTIONS
@@ -70,6 +74,10 @@ app.innerHTML = `
         <ol class="journal-list"></ol>
       </section>
     </aside>
+    <div class="exhibit-scan" hidden role="dialog" aria-modal="true" aria-label="Evidence exhibit scan">
+      <article class="exhibit-paper"></article>
+      <button class="close-exhibit" type="button">RETURN TO DECK</button>
+    </div>
   </section>
 `;
 
@@ -82,11 +90,15 @@ const wrongness = app.querySelector<HTMLParagraphElement>('.wrongness')!;
 const timestamp = app.querySelector<HTMLDivElement>('.timestamp')!;
 const diegeticText = app.querySelector<HTMLDivElement>('.diegetic-text')!;
 const intensity = app.querySelector<HTMLInputElement>('.intensity')!;
+const volume = app.querySelector<HTMLInputElement>('.volume')!;
 const captions = app.querySelector<HTMLInputElement>('.captions')!;
 const save = app.querySelector<HTMLButtonElement>('.save')!;
 const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
 const timeseekHelp = app.querySelector<HTMLParagraphElement>('.timeseek-help')!;
 const journalList = app.querySelector<HTMLOListElement>('.journal-list')!;
+const exhibitScan = app.querySelector<HTMLDivElement>('.exhibit-scan')!;
+const exhibitPaper = app.querySelector<HTMLElement>('.exhibit-paper')!;
+const closeExhibit = app.querySelector<HTMLButtonElement>('.close-exhibit')!;
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
@@ -107,7 +119,7 @@ function render() {
   timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${graph.lockedWindows.join(' / ')}`;
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
-  audio.setAmbient(undefined);
+  audio.setAmbient(getNode(graph, snapshot.currentNodeId).ambientAudio);
   compositor.setIntensity(snapshot.vhsIntensity);
 
   journalList.replaceChildren(
@@ -162,6 +174,9 @@ function activateHotspot(hotspot: HotspotDefinition) {
   if (hotspot.caption) {
     showCaption(hotspot.caption);
   }
+  if (hotspot.exhibit) {
+    openExhibit(hotspot.exhibit);
+  }
 }
 
 function showCaption(text: string) {
@@ -171,7 +186,11 @@ function showCaption(text: string) {
 }
 
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
+volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
+closeExhibit.addEventListener('click', () => {
+  exhibitScan.hidden = true;
+});
 jogWheel.addEventListener('pointerdown', (event) => {
   jogWheel.setPointerCapture(event.pointerId);
   dragState = { angle: pointerAngle(event), time: event.timeStamp };
@@ -222,6 +241,7 @@ function seekWindow(requested: TimeWindow) {
     timeseekHelp.textContent = result.reason ?? 'TIMESEEK rejected.';
     return;
   }
+  audio.playCue('audio/jog-detent-clunk.wav', `TIMESEEK detent clunk: ${result.activeWindow}`);
   state.setActiveWindow(result.activeWindow);
   stage.classList.remove('seek-glitch');
   void stage.offsetWidth;
@@ -261,12 +281,27 @@ function unwrapAngle(delta: number): number {
 
 function announceHardStop() {
   timeseekHelp.textContent = 'LOCKED 23:26-23:35: tape strains at the hard stop and kicks back.';
+  audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 23:26-23:35.');
 }
 
 function diegeticOverlay(nodeId: string): string {
   if (nodeId === 'field-gate') return 'PADLOCK // 2 7 1 3';
   if (nodeId === 'field-tally') return 'GATE TALLY // II / VII / I / III';
+  if (nodeId === 'patrol-radio') return 'LCD // 88.7 FM';
+  if (nodeId === 'dispatch-printer') return 'DOT MATRIX // 23:17';
+  if (nodeId === 'recorder-nest') return 'RECORDER COUNTER // 23:26';
   return '';
+}
+
+function openExhibit(kind: 'flyer' | 'dispatch' | 'recorder') {
+  const exhibits = {
+    flyer: '<h2>MISSING: LENA ORTIZ</h2><p class="photocopy">CALL 88.7 FM AFTER SUNDOWN</p><p>Last seen near FM 1187 mile marker 271. If found, do not enter the bluebonnets.</p>',
+    dispatch: '<h2>THERMAL DISPATCH PRINTOUT</h2><pre>23:17  REYES, D.\nRESET TAPE TO 23:17\nDO NOT ENTER THE BLUEBONNETS YET.</pre>',
+    recorder: '<h2>HANDHELD RECORDER COUNTER</h2><pre>COUNTER: 23:26\nLOCKED SPAN PRESENT // DECK HARD-STOP ACTIVE</pre>',
+  };
+  exhibitPaper.className = `exhibit-paper exhibit-${kind}`;
+  exhibitPaper.innerHTML = exhibits[kind];
+  exhibitScan.hidden = false;
 }
 
 state.subscribe(render);

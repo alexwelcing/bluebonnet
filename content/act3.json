@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 2,
+  "nodes": [
+    {
+      "id": "culvert-throat",
+      "title": "Culvert Throat",
+      "still": "stills/act3/culvert-throat__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/culvert-throat__2317-2326.jpg",
+          "caption": "Culvert Throat: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Move under the highway",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-gate",
+              "label": "Back toward the opened field gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/culvert-throat__2326-2335.jpg",
+          "caption": "Culvert Throat: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "concrete seams bend toward the locked minutes",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Move under the highway",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-gate",
+              "label": "Back toward the opened field gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "culvert-dripline",
+      "title": "Dripline",
+      "still": "stills/act3/culvert-dripline__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/culvert-dripline__2317-2326.jpg",
+          "caption": "Dripline: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-culvert-pipe",
+              "label": "Inspect the rusted knock pipe",
+              "polygon": [
+                [
+                  65,
+                  25
+                ],
+                [
+                  92,
+                  25
+                ],
+                [
+                  92,
+                  72
+                ],
+                [
+                  65,
+                  72
+                ]
+              ],
+              "target": "culvert-pipe",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-echo-chamber",
+              "label": "Step into the echo chamber",
+              "polygon": [
+                [
+                  35,
+                  25
+                ],
+                [
+                  62,
+                  25
+                ],
+                [
+                  62,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "culvert-echo-chamber",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-throat",
+              "label": "Back to the culvert throat",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/culvert-dripline__2326-2335.jpg",
+          "caption": "Dripline: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "drips fall upward in the tape smear",
+          "hotspots": [
+            {
+              "id": "to-culvert-pipe",
+              "label": "Inspect the rusted knock pipe",
+              "polygon": [
+                [
+                  65,
+                  25
+                ],
+                [
+                  92,
+                  25
+                ],
+                [
+                  92,
+                  72
+                ],
+                [
+                  65,
+                  72
+                ]
+              ],
+              "target": "culvert-pipe",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-echo-chamber",
+              "label": "Step into the echo chamber",
+              "polygon": [
+                [
+                  35,
+                  25
+                ],
+                [
+                  62,
+                  25
+                ],
+                [
+                  62,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "culvert-echo-chamber",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-throat",
+              "label": "Back to the culvert throat",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "culvert-pipe",
+      "title": "Knock Pipe",
+      "still": "stills/act3/culvert-pipe__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/culvert-pipe__2317-2326.jpg",
+          "caption": "Knock Pipe: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Back to the dripline",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "radio-static-pattern",
+              "label": "Caption the radio-static knock pattern",
+              "polygon": [
+                [
+                  28,
+                  18
+                ],
+                [
+                  62,
+                  18
+                ],
+                [
+                  62,
+                  42
+                ],
+                [
+                  28,
+                  42
+                ]
+              ],
+              "target": "culvert-pipe",
+              "journal": {
+                "id": "echo-pattern",
+                "text": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||."
+              },
+              "caption": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||.",
+              "setFlag": "echo-pattern-known",
+              "shimmerThreshold": 0.3
+            },
+            {
+              "id": "repeat-echo-knocks",
+              "label": "Repeat the pattern on the pipe",
+              "polygon": [
+                [
+                  35,
+                  48
+                ],
+                [
+                  72,
+                  48
+                ],
+                [
+                  72,
+                  76
+                ],
+                [
+                  35,
+                  76
+                ]
+              ],
+              "target": "culvert-pipe",
+              "requires": [
+                {
+                  "flag": "echo-pattern-known"
+                }
+              ],
+              "journal": {
+                "id": "echo-knocks",
+                "text": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove."
+              },
+              "caption": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove.",
+              "puzzleAction": "echo-knocks",
+              "setFlag": "echo-solved",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/culvert-pipe__2326-2335.jpg",
+          "caption": "Knock Pipe: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "the pipe has shifted closer to the camera without sound",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Back to the dripline",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "radio-static-pattern",
+              "label": "Caption the radio-static knock pattern",
+              "polygon": [
+                [
+                  28,
+                  18
+                ],
+                [
+                  62,
+                  18
+                ],
+                [
+                  62,
+                  42
+                ],
+                [
+                  28,
+                  42
+                ]
+              ],
+              "target": "culvert-pipe",
+              "journal": {
+                "id": "echo-pattern",
+                "text": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||."
+              },
+              "caption": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||.",
+              "setFlag": "echo-pattern-known",
+              "shimmerThreshold": 0.3
+            },
+            {
+              "id": "repeat-echo-knocks",
+              "label": "Repeat the pattern on the pipe",
+              "polygon": [
+                [
+                  35,
+                  48
+                ],
+                [
+                  72,
+                  48
+                ],
+                [
+                  72,
+                  76
+                ],
+                [
+                  35,
+                  76
+                ]
+              ],
+              "target": "culvert-pipe",
+              "requires": [
+                {
+                  "flag": "echo-pattern-known"
+                }
+              ],
+              "journal": {
+                "id": "echo-knocks",
+                "text": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove."
+              },
+              "caption": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove.",
+              "puzzleAction": "echo-knocks",
+              "setFlag": "echo-solved",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "culvert-echo-chamber",
+      "title": "Echo Chamber",
+      "still": "stills/act3/culvert-echo-chamber__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/culvert-echo-chamber__2317-2326.jpg",
+          "caption": "Echo Chamber: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Return to the dripline",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-recorder-nest",
+              "label": "Follow the opened alcove",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "echo-solved"
+                }
+              ]
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/culvert-echo-chamber__2326-2335.jpg",
+          "caption": "Echo Chamber: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "the pooled water reflects the field instead of concrete",
+          "hotspots": [
+            {
+              "id": "to-culvert-dripline",
+              "label": "Return to the dripline",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-recorder-nest",
+              "label": "Follow the opened alcove",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "echo-solved"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "recorder-nest",
+      "title": "Recorder Nest",
+      "still": "stills/act3/recorder-nest__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/recorder-nest__2317-2326.jpg",
+          "caption": "Recorder Nest: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-culvert-echo-chamber",
+              "label": "Back to the echo chamber",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-echo-chamber",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "read-recorder-counter",
+              "label": "Read the handheld recorder counter",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "recorder-nest",
+              "requires": [
+                {
+                  "flag": "echo-solved"
+                }
+              ],
+              "journal": {
+                "id": "recorder-counter",
+                "text": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked."
+              },
+              "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
+              "puzzleAction": "recorder-counter",
+              "discoverTimecode": "23:26-23:35",
+              "setFlag": "recorder-counter",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "to-missing-minutes-gate",
+              "label": "Approach the missing-minutes gate",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "missing-minutes-gate",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "recorder-counter"
+                }
+              ]
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/recorder-nest__2326-2335.jpg",
+          "caption": "Recorder Nest: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "the recorder window glows without readable marks",
+          "hotspots": [
+            {
+              "id": "to-culvert-echo-chamber",
+              "label": "Back to the echo chamber",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-echo-chamber",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "read-recorder-counter",
+              "label": "Read the handheld recorder counter",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "recorder-nest",
+              "requires": [
+                {
+                  "flag": "echo-solved"
+                }
+              ],
+              "journal": {
+                "id": "recorder-counter",
+                "text": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked."
+              },
+              "caption": "HANDHELD RECORDER COUNTER: 23:26. The missing minutes are present but physically locked.",
+              "puzzleAction": "recorder-counter",
+              "discoverTimecode": "23:26-23:35",
+              "setFlag": "recorder-counter",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "to-missing-minutes-gate",
+              "label": "Approach the missing-minutes gate",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "missing-minutes-gate",
+              "shimmerThreshold": 0.5,
+              "requires": [
+                {
+                  "flag": "recorder-counter"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing-minutes-gate",
+      "title": "Missing Minutes Gate",
+      "still": "stills/act3/missing-minutes-gate__2317-2326.jpg",
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:17-23:26": {
+          "still": "stills/act3/missing-minutes-gate__2317-2326.jpg",
+          "caption": "Missing Minutes Gate: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-recorder-nest",
+              "label": "Back to the recorder nest",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "test-act4-lock",
+              "label": "Try to force the missing nine minutes",
+              "polygon": [
+                [
+                  35,
+                  25
+                ],
+                [
+                  70,
+                  25
+                ],
+                [
+                  70,
+                  75
+                ],
+                [
+                  35,
+                  75
+                ]
+              ],
+              "target": "missing-minutes-gate",
+              "requires": [
+                {
+                  "flag": "act4-gate",
+                  "equals": false
+                }
+              ],
+              "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        },
+        "23:26-23:35": {
+          "still": "stills/act3/missing-minutes-gate__2326-2335.jpg",
+          "caption": "Missing Minutes Gate: under-highway clean plate with all text rendered by the deck overlay.",
+          "wrongness": "the locked nine minutes press against the exit like a dark wall",
+          "hotspots": [
+            {
+              "id": "to-recorder-nest",
+              "label": "Back to the recorder nest",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "test-act4-lock",
+              "label": "Try to force the missing nine minutes",
+              "polygon": [
+                [
+                  35,
+                  25
+                ],
+                [
+                  70,
+                  25
+                ],
+                [
+                  70,
+                  75
+                ],
+                [
+                  35,
+                  75
+                ]
+              ],
+              "target": "missing-minutes-gate",
+              "requires": [
+                {
+                  "flag": "act4-gate",
+                  "equals": false
+                }
+              ],
+              "caption": "The deck hard-stops. 23:26-23:35 remains locked behind the Act IV gate flag.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

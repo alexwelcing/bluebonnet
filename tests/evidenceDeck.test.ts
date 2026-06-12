@@ -71,6 +71,8 @@ describe('Evidence Deck integration', () => {
     realPointerClick(button('Read the missing-person flyer'));
     expect(document.querySelector('.caption')?.textContent).toContain('MISSING: LENA ORTIZ');
     expect(document.querySelector('.journal-list')?.textContent).toContain('MISSING: LENA ORTIZ');
+    expect(document.querySelector('.exhibit-paper')?.textContent).toContain('CALL 88.7 FM AFTER SUNDOWN');
+    realPointerClick(button('RETURN TO DECK'));
 
     realPointerClick(button('Inspect the patrol radio'));
     expect(document.querySelector('h1')?.textContent).toBe('PATROL RADIO');
@@ -81,6 +83,7 @@ describe('Evidence Deck integration', () => {
     realPointerClick(button('Check the dispatch printer'));
     expect(document.querySelector('.caption')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
     expect(document.querySelector('.journal-list')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
+    expect(document.querySelector('.exhibit-paper')?.textContent).toContain('RESET TAPE TO 23:17');
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
 
     keyboardSeekForward();

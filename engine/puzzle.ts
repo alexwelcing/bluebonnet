@@ -2,6 +2,7 @@ import type { PuzzleAction, TimeWindow } from './types';
 
 const actOneOrder: PuzzleAction[] = ['flyer-frequency', 'radio-tune', 'dispatch-log'];
 const flowerDigits: PuzzleAction[] = ['flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3'];
+const actThreeOrder: PuzzleAction[] = ['echo-knocks', 'recorder-counter'];
 
 export interface PuzzleResult {
   ok: boolean;
@@ -48,6 +49,10 @@ function canComplete(action: PuzzleAction, completed: PuzzleAction[]): boolean {
   }
   if (action === 'field-gate') {
     return [...actOneOrder, ...flowerDigits].every((required) => completed.includes(required));
+  }
+  const actThreeIndex = actThreeOrder.indexOf(action);
+  if (actThreeIndex !== -1) {
+    return (['field-gate', ...actThreeOrder.slice(0, actThreeIndex)] as PuzzleAction[]).every((required) => completed.includes(required));
   }
   return false;
 }

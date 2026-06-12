@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import act1 from '../content/act1.json';
 import act2 from '../content/act2.json';
+import act3 from '../content/act3.json';
 import shotlist from '../content/shotlist.json';
 import { availableHotspots, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
@@ -31,7 +32,7 @@ describe('Act II field content', () => {
   });
 
   it('gates culvert access behind all four flower-clock digits', () => {
-    const graph = loadNodeGraph([act1 as unknown as SceneManifest, act2 as unknown as SceneManifest]);
+    const graph = loadNodeGraph([act1, act2, act3] as unknown as SceneManifest[]);
     const state = createStateMachine({ currentNodeId: 'field-gate', activeWindow: '23:17-23:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] });
     let gateState = getNodeState(graph, 'field-gate', '23:17-23:26');
     expect(availableHotspots(gateState, state.snapshot()).some((hotspot) => hotspot.id === 'unlock-field-gate')).toBe(false);

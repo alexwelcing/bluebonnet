@@ -204,3 +204,30 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T04:48:52+00:00 — Milestone 3 Act I retrofit, Act III culvert, audio
+
+Changed:
+- Retrofitted Act I to A1 clean plates: regenerated all 16 Act I stills with no-text prompts and moved flyer, radio LCD, dispatch, marker, and timestamp information into runtime DOM/deck overlays.
+- Added diegetic EXHIBIT SCAN views for close-read flyer and dispatch printout text, rendered by the deck rather than the image model.
+- Extended shotlist lint to cover all 48 generated plates across all acts; build now fails if any prompt lacks the A1 no-text clause.
+- Added Act III culvert content: 6 nodes across 23:17-23:26 and 23:26-23:35 clean plates, under-highway wrongness escalation, echo/knock pipe puzzle with captioned waveform fallback, recorder counter grant for 23:26, and Act IV hard-lock gating.
+- Generated 12 Act III clean-plate stills via Fal; masters live in assets/act3/ and runtime copies in public/stills/act3/.
+- Replaced the audio mixer stub with ambient source tracking, crossfade state, volume control, and captioned cue tracking; added procedural seamless WAV loops/SFX under public/audio/ and assets/audio/.
+- Added tests for whole-shotlist lint coverage, exhibit scan text accuracy, echo puzzle progression/waveform fallback, recorder timecode grant, and mixer crossfade/cue logic.
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ and deployed production Netlify.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 7 files, 19 tests.
+- `npm run build` passed, including whole-shotlist A1 lint.
+- Production 200 checks passed for index, current JS/CSS bundles, Act I retrofit still, Act III recorder still, culvert ambient audio, and jog detent SFX.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Next:
+- Director playtest Act I exhibit scans, Act III echo puzzle, and ambient/cue balance.
+
+Blockers:
+- None.

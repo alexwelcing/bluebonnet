@@ -94,7 +94,8 @@
               },
               "puzzleAction": "flyer-frequency",
               "caption": "MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown.",
-              "shimmerThreshold": 0.35
+              "shimmerThreshold": 0.35,
+              "exhibit": "flyer"
             }
           ]
         },
@@ -178,11 +179,13 @@
                 "text": "VISOR SCRATCH: 88.7 FM / AFTER SUNDOWN."
               },
               "caption": "VISOR SCRATCH: 88.7 FM / AFTER SUNDOWN.",
-              "shimmerThreshold": 0.35
+              "shimmerThreshold": 0.35,
+              "exhibit": "flyer"
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "cruiser-exterior",
@@ -349,7 +352,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "mile-marker-271",
@@ -526,7 +530,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "flyer-ditch",
@@ -592,7 +597,8 @@
               },
               "puzzleAction": "flyer-frequency",
               "caption": "DITCH FLYER: LENA ORTIZ \u2014 88.7 FM after sundown.",
-              "shimmerThreshold": 0.35
+              "shimmerThreshold": 0.35,
+              "exhibit": "flyer"
             }
           ]
         },
@@ -652,11 +658,13 @@
                 "text": "CHANGED FLYER: 88.7 FM IS WHERE SHE ANSWERS."
               },
               "caption": "CHANGED FLYER: 88.7 FM IS WHERE SHE ANSWERS.",
-              "shimmerThreshold": 0.35
+              "shimmerThreshold": 0.35,
+              "exhibit": "flyer"
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "patrol-radio",
@@ -763,7 +771,8 @@
               },
               "puzzleAction": "dispatch-log",
               "discoverTimecode": "23:17-23:26",
-              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "exhibit": "dispatch"
             }
           ]
         },
@@ -859,11 +868,13 @@
               },
               "puzzleAction": "dispatch-log",
               "discoverTimecode": "23:17-23:26",
-              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "exhibit": "dispatch"
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/radio-static.wav"
     },
     {
       "id": "dispatch-printer",
@@ -935,7 +946,8 @@
               "puzzleAction": "dispatch-log",
               "discoverTimecode": "23:17-23:26",
               "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "exhibit": "dispatch"
             }
           ]
         },
@@ -999,7 +1011,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "roadside-shrine",
@@ -1128,7 +1141,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     },
     {
       "id": "culvert-mouth",
@@ -1258,7 +1272,8 @@
             }
           ]
         }
-      }
+      },
+      "ambientAudio": "audio/cruiser-idle.wav"
     }
   ]
 }
