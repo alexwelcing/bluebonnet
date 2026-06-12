@@ -1,7 +1,11 @@
 node_modules/
 dist/
 .env
-.bridge/preview/
 
 # Local Netlify folder
 .netlify/
+
+# Agent bridge: machine artifacts, caches, and recon stay local.
+# Production logs that are already tracked (status.md, decisions.md,
+# backlog.md, playthrough.md, AUTONOMOUS_DIRECTIVE.md) remain tracked.
+.bridge/

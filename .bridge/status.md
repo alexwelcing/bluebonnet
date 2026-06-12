@@ -457,3 +457,28 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T15:00:00+00:00 — Public-release hardening pass (Claude, supervising)
+
+Changed:
+- Independent two-agent review of engine + content, then fixes for everything found.
+- save.ts: corrupted/stale localStorage saves no longer brick boot — malformed JSON is discarded and cleared; saves pointing at deleted nodes are dropped (main.ts).
+- audioMixer.ts: ambient beds now actually PLAY. The mixer previously tracked crossfade bookkeeping with no playback backend; it now drives looped HTMLAudioElements with a 1.2s crossfade, gated behind an unlock() on the INSERT TAPE gesture for autoplay policy. Volume slider and per-node ambient mix are live.
+- nodeGraph.ts: getNodeState falls back to the nearest defined temporal window instead of the empty base hotspot list (dead-view hazard found by both reviewers); main.ts additionally re-seats the tape window on navigation into a node that lacks the active window ("TAPE JUMPS" message), so Act IV entry from 23:17 lands seated at 23:26-23:35.
+- jogWheel.ts: hard stop only fires while 23:26-23:35 is locked (no more false "LOCKED" kickback after the recorder grants it); drag no longer double-integrates pointer motion (~1.9x overshoot); soft end stops both directions.
+- main.ts: transport messages (CLUNK/LOCKED/TAPE JUMPS) survive re-renders via a 4s override instead of being clobbered; motion-layer videos rebuild only when the layer set changes (no restart/black-flash per state publish); keyboard focus restored across hotspot rebuilds; exhibit/colophon modals manage focus and close on Escape; hard-stop cue throttled; bookmark/ending saves guarded against storage failure; h1 uses node title not node id; content glob narrowed to act*.json so shotlist.json (gen prompts, fal URLs) no longer ships in the public bundle (-44KB).
+- vhsCompositor.ts: grain renders a 160x90 tile CSS-scaled instead of full-resolution ImageData 8x/s.
+- styles.css: hotspot focus-visible affordance has a floor so keyboard focus stays perceptible at low TRACKING.
+- content: all 32 Act II/III captions were shipped production boilerplate ("the field plate carries no embedded text...") — replaced with diegetic captions in the Act I register honoring the wrongness rule; "Culvert Approach Stub" retitled "Culvert Approach".
+- Packaging: README.md added; package.json deps pinned (were all "latest") and moved to devDependencies, unused @vitejs/plugin-basic-ssl dropped; favicon + meta description added (was 404ing every load); .bridge/ machine artifacts gitignored.
+
+Verification:
+- npm run typecheck, npm test (36 tests, 6 new regression tests), npm run lint:shotlist (60 plates), npm run build all pass.
+- Headless-chromium playthrough of the production build: 11/11 checks pass, zero console errors — corrupted-save boot, audible ambient after INSERT TAPE, exhibit/colophon Escape + focus, locked kickback message now visible, no phantom re-seat on plain wheel click, unlocked final detent seekable by drag and keyboard, Act IV re-seat with 6 hotspots, bookmark/resume roundtrip.
+
+Next:
+- Redeploy to Netlify (needs auth in this session).
+- Optional: B7/D1 density backfill for Acts I-III continues per backlog.
+
+Blockers:
+- None.

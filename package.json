@@ -1,23 +1,22 @@
 {
   "name": "bluebonnet",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "An analog-horror puzzle mystery played through a recovered Texas DPS dashcam tape.",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "npm run lint:shotlist && tsc --noEmit && vite build",
+    "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "lint:shotlist": "node tools/shotlistLint.mjs"
   },
-  "dependencies": {
-    "@vitejs/plugin-basic-ssl": "latest",
-    "vite": "latest",
-    "typescript": "latest"
-  },
   "devDependencies": {
-    "@types/node": "latest",
-    "vitest": "latest",
-    "jsdom": "latest"
+    "@types/node": "^25.9.3",
+    "jsdom": "^29.1.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
   }
 }
