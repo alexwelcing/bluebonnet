@@ -1,0 +1,44 @@
+{
+  "loops": [
+    {
+      "id": "act1-cruiser-heat-flicker",
+      "act": "act1",
+      "runtime": "video/act1-cruiser-heat-flicker.mp4",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df77f/16gBi9sh6In1jjUtk-2vJ_output.mp4",
+      "prompt": "degraded 1990s Texas highway patrol VHS dashcam idle loop, cruiser interior/exterior light flicker and faint highway heat shimmer, subtle tape drift, no readable text, no lettering, no signage characters",
+      "model": "pixverse-v6",
+      "durationSeconds": 4,
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "act2-bluebonnet-wind",
+      "act": "act2",
+      "runtime": "video/act2-bluebonnet-wind.mp4",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df783/CPqCztSJBlar4Lqr-V4iE_output.mp4",
+      "prompt": "degraded VHS bluebonnet field idle loop, Texas roadside flowers swaying in night wind, analog tracking noise and subtle luminosity, static camera, no readable text, no lettering, no signage characters",
+      "model": "pixverse-v6",
+      "durationSeconds": 4,
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "act3-culvert-drip-static",
+      "act": "act3",
+      "runtime": "video/act3-culvert-drip-static.mp4",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df786/sTiFyXpZA7jtwxhUe0VL6_output.mp4",
+      "prompt": "degraded VHS highway culvert idle loop, concrete tunnel darkness breathing, slow water drips and faint radio-static shimmer, static camera, no readable text, no lettering, no signage characters",
+      "model": "pixverse-v6",
+      "durationSeconds": 4,
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "act4-nine-luminescence",
+      "act": "act4",
+      "runtime": "video/act4-nine-luminescence.mp4",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df78a/uyoVX7ihtvC2g11P0DU1V_output.mp4",
+      "prompt": "degraded VHS nine minutes night field idle loop, luminous bluebonnets pulsing faintly and distant car headlights flickering in blue-black darkness, static camera, no readable text, no lettering, no signage characters",
+      "model": "pixverse-v6",
+      "durationSeconds": 4,
+      "status": "generated-clean-motion"
+    }
+  ]
+}

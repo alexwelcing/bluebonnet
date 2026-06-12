@@ -188,7 +188,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "cruiser-exterior",
@@ -359,7 +366,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "mile-marker-271",
@@ -540,7 +554,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "flyer-ditch",
@@ -676,7 +697,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "patrol-radio",
@@ -889,7 +917,14 @@
       "ambientAudio": "audio/radio-static.wav",
       "audioMix": {
         "ambient": 0.66
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "dispatch-printer",
@@ -1030,7 +1065,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "roadside-shrine",
@@ -1163,7 +1205,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "culvert-mouth",
@@ -1297,7 +1346,14 @@
       "ambientAudio": "audio/cruiser-idle.wav",
       "audioMix": {
         "ambient": 0.58
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act1-cruiser-heat-flicker.mp4",
+          "opacity": 0.28,
+          "blendMode": "screen"
+        }
+      ]
     }
   ]
 }

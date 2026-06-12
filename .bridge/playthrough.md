@@ -118,3 +118,17 @@ Final state:
 - Discovered timecodes: 23:08-23:17, 23:17-23:26, 23:26-23:35.
 
 Result: PASS. Act I→IV is solvable on the live production site from in-world information only, with no timed fail state and with journal/caption fallbacks for all puzzle-critical evidence.
+
+
+## 2026-06-12T06:51:10.097625+00:00 — B7/D2 live motion-layer smoke test
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2bac95010b8a2599edbbad
+
+Checks:
+- Loaded live production site, clicked INSERT TAPE, and confirmed CRUISER INTERIOR renders a `.motion-layer` video over the clean plate.
+- Act I layer: `video/act1-cruiser-heat-flicker.mp4`, muted=true, loop=true, autoplay=true, playsInline=true, opacity=0.28, blend=screen, readyState=4.
+- Seeded an Act IV `nine-field-threshold` save and confirmed it swaps to `video/act4-nine-luminescence.mp4`, muted=true, loop=true, autoplay=true, playsInline=true, opacity=0.36, blend=screen.
+- Browser console reported no JS errors.
+
+Result: PASS for B7/D2 foundation: deployed shared idle motion layers render live over still clean plates while preserving hotspot/caption UI.

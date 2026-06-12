@@ -169,4 +169,17 @@ describe('Evidence Deck integration', () => {
     expect(colophon?.textContent).toContain('A1 clean plates');
   });
 
+
+  it('renders muted looping idle motion layers over the current clean plate', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+
+    const layers = [...document.querySelectorAll<HTMLVideoElement>('.motion-layer')];
+    expect(layers.length).toBeGreaterThan(0);
+    expect(layers[0].muted).toBe(true);
+    expect(layers[0].loop).toBe(true);
+    expect(layers[0].playsInline).toBe(true);
+    expect(layers[0].src).toContain('/video/');
+  });
+
 });

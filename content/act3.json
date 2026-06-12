@@ -122,7 +122,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     },
     {
       "id": "culvert-dripline",
@@ -293,7 +300,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     },
     {
       "id": "culvert-pipe",
@@ -500,7 +514,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     },
     {
       "id": "culvert-echo-chamber",
@@ -633,7 +654,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     },
     {
       "id": "recorder-nest",
@@ -840,7 +868,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     },
     {
       "id": "missing-minutes-gate",
@@ -1057,7 +1092,14 @@
       },
       "audioMix": {
         "ambient": 0.82
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act3-culvert-drip-static.mp4",
+          "opacity": 0.32,
+          "blendMode": "overlay"
+        }
+      ]
     }
   ]
 }

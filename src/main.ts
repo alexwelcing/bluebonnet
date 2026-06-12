@@ -42,6 +42,7 @@ app.innerHTML = `
     <div class="crt-bezel">
       <div class="tape-stage">
         <img class="scene-still" alt="Recovered highway patrol tape still" />
+        <div class="motion-layer-stack" aria-hidden="true"></div>
         <div class="hotspot-layer" aria-label="Tape interaction field"></div>
         <div class="scanlines" aria-hidden="true"></div>
         <div class="tracking tracking-a" aria-hidden="true"></div>
@@ -100,6 +101,7 @@ app.innerHTML = `
 
 const stage = app.querySelector<HTMLDivElement>('.tape-stage')!;
 const still = app.querySelector<HTMLImageElement>('.scene-still')!;
+const motionLayerStack = app.querySelector<HTMLDivElement>('.motion-layer-stack')!;
 const hotspotLayer = app.querySelector<HTMLDivElement>('.hotspot-layer')!;
 const title = app.querySelector<HTMLHeadingElement>('h1')!;
 const caption = app.querySelector<HTMLParagraphElement>('.caption')!;
@@ -129,6 +131,22 @@ function render() {
   const snapshot = state.snapshot();
   const nodeState = getNodeState(graph, snapshot.currentNodeId, snapshot.activeWindow);
   still.src = nodeState.still;
+  const node = getNode(graph, snapshot.currentNodeId);
+  motionLayerStack.replaceChildren(
+    ...(node.motionLayers ?? []).map((layer) => {
+      const video = document.createElement('video');
+      video.className = 'motion-layer';
+      video.src = layer.src;
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.dataset.blendMode = layer.blendMode ?? 'screen';
+      video.style.opacity = String(layer.opacity);
+      video.style.mixBlendMode = layer.blendMode ?? 'screen';
+      return video;
+    }),
+  );
   title.textContent = snapshot.currentNodeId.replaceAll('-', ' ').toUpperCase();
   caption.textContent = snapshot.captionsEnabled ? nodeState.caption : '';
   caption.hidden = !snapshot.captionsEnabled;
@@ -142,7 +160,6 @@ function render() {
   timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${lockedWindows.length > 0 ? lockedWindows.join(' / ') : 'none'}`;
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
-  const node = getNode(graph, snapshot.currentNodeId);
   audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
   compositor.setIntensity(snapshot.vhsIntensity);
 

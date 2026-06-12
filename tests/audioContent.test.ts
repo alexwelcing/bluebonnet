@@ -18,3 +18,19 @@ describe('B3 audio content upgrade', () => {
     }
   });
 });
+
+describe('B7 motion layer content', () => {
+  it('gives every node at least one deployable idle motion loop layer', () => {
+    const nodes = manifests.flatMap((manifest) => manifest.nodes);
+    expect(nodes.length).toBeGreaterThan(0);
+
+    for (const node of nodes) {
+      expect(node.motionLayers?.length, node.id).toBeGreaterThan(0);
+      for (const layer of node.motionLayers ?? []) {
+        expect(layer.src, node.id).toMatch(/^video\/.+\.mp4$/);
+        expect(layer.opacity, node.id).toBeGreaterThan(0);
+        expect(layer.opacity, node.id).toBeLessThanOrEqual(1);
+      }
+    }
+  });
+});

@@ -401,3 +401,31 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T06:51:10.097625+00:00 — B7/D2 motion-layer foundation
+
+Changed:
+- Added MotionLayer typing and runtime support for muted looping video overlays composited between still clean plates and hotspot/OSD layers.
+- Generated four Fal/Pixverse 4s no-text motion loops: Act I cruiser heat/flicker, Act II bluebonnet wind, Act III culvert drip/static, Act IV nine-minute luminescence.
+- Archived masters under assets/video/ and runtime copies under public/video/.
+- Added `motionLayers` to every node across Acts I-IV, using one shared curated loop per act as the first A4 motion foundation.
+- Added content provenance in content/motionLoops.json.
+- Added tests asserting every node has deployable motion metadata and the DOM renders muted looping `.motion-layer` video elements.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended live motion-layer self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- RED observed before implementation: `npm test -- tests/audioContent.test.ts tests/evidenceDeck.test.ts` failed for missing motionLayers and missing DOM video layers.
+- `npm run typecheck` passed.
+- `npm test` passed: 9 files, 29 tests.
+- `npm run lint:shotlist` passed: 56 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, and all four MP4 motion loops.
+- Browser live smoke test passed at https://bluebonnet-tape.netlify.app after deploy 6a2bac95010b8a2599edbbad: Act I and seeded Act IV both render the expected motion loop layer; no JS errors.
+
+Next:
+- Continue B7 with D1 viewpoint density: add multi-facing and detail-zoom nodes, starting Act IV at A4 density, then backfill Acts I-III.
+
+Blockers:
+- None.

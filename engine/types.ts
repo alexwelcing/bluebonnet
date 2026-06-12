@@ -53,6 +53,12 @@ export interface TemporalNodeState {
   hotspots: HotspotDefinition[];
 }
 
+export interface MotionLayer {
+  src: string;
+  opacity: number;
+  blendMode?: 'screen' | 'overlay' | 'lighten' | 'normal';
+}
+
 export interface SceneNode {
   id: string;
   title: string;
@@ -63,6 +69,7 @@ export interface SceneNode {
     ambient: number;
     threat?: number;
   };
+  motionLayers?: MotionLayer[];
   caption?: string;
   hotspots: HotspotDefinition[];
   temporalStates?: Partial<Record<TimeWindow, TemporalNodeState>>;

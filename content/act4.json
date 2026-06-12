@@ -68,7 +68,14 @@
       },
       "audioMix": {
         "ambient": 0.72
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "nine-flower-path",
@@ -137,7 +144,14 @@
       },
       "audioMix": {
         "ambient": 0.72
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "near-car",
@@ -206,7 +220,14 @@
       },
       "audioMix": {
         "ambient": 0.66
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "luminous-shrine",
@@ -304,7 +325,14 @@
       },
       "audioMix": {
         "ambient": 0.66
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "car-door",
@@ -402,7 +430,14 @@
       },
       "audioMix": {
         "ambient": 0.66
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "final-choice",
@@ -506,7 +541,14 @@
       },
       "audioMix": {
         "ambient": 0.66
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "ending-eject",
@@ -555,7 +597,14 @@
       },
       "audioMix": {
         "ambient": 0.74
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     },
     {
       "id": "ending-record",
@@ -604,7 +653,14 @@
       },
       "audioMix": {
         "ambient": 0.86
-      }
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ]
     }
   ]
 }
