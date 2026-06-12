@@ -482,3 +482,22 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T18:30:00+00:00 — Journalist reframe + full re-shoot + clue segmentation (Claude, supervising)
+
+Changed:
+- Canon A6: Dana Reyes is now an independent journalist (88.7 KBLN tip line, Mirasol TX); her station wagon replaces the DPS cruiser; player inherits her archive. All mechanics 1:1.
+- Tape windows migrated 23:08-23:35 → 20:08-20:35 (dusk-to-dark matches visual canon; fixes the dusk/timestamp contradiction). Engine type, content keys, 124 asset filenames, tests all renamed.
+- Node IDs: cruiser-* → wagon-*, patrol-radio → scanner-radio, dispatch-printer → tipline-printer. All player-facing text rewritten; deck chrome rebadged REYES ARCHIVE; new establishment overlays (press pass, MIRASOL 4 mile marker).
+- FULL RE-SHOOT: all 60 plates regenerated via FLUX.2 pro (tools/generateStills.mjs; 3 candidates/shot; picks + rejection reasons in shotlist.json). Rejected: A1 text burns, people/figures, motion-blurred cars, era-wrong devices, wrong vantages, palette drift.
+- CLUE SEGMENTATION (canon A6.1): tools/segmentClues.mjs runs SAM 3 text-prompted per hotspot cluePrompt → simplified percent polygon. 31/33 clue hotspots are model-derived silhouettes (scores 0.52-0.97); 2 hand-authored (final-choice eject slot + record button). Engine renders silhouettes with SVG outline-glow.
+
+Verification:
+- typecheck, 36 tests, whole-shotlist lint, build: green.
+- Headless-chromium playthrough: 12/12 checks, zero console errors.
+
+Next:
+- Regenerate the 4 motion loops against the new plates.
+
+Blockers:
+- None.

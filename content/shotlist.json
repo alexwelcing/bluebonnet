@@ -874,12 +874,20 @@
       "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330000,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/x9LeCoVen2pY_eKZ0MtnY_eX8L8aNf.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bb/yR74bsZUcpnkc0F1ZjGzc_EinFfQI7.jpg",
       "candidateUrls": {
         "c1": "https://v3b.fal.media/files/b/0a9e04bb/yR74bsZUcpnkc0F1ZjGzc_EinFfQI7.jpg",
         "c0": "https://v3b.fal.media/files/b/0a9e04bb/ELRmRKc_CuJGTmSwc6vqx_jVVgdSEb.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bb/YzhTcWSW9dKKoubp-5pc6_Rh33bD60.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "flooded channel pulls the eye into the dark, light swells on the water; c0 flatter, c2 rejected for car hood vantage inside the culvert",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       }
     },
     {
@@ -890,12 +898,20 @@
       "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, under-highway culvert entrance, concrete mouth slick with rain, bluebonnets stopping at the shadow line, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330011,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a5/P49jCxnUygYf9dEpzw9j3_C1Y85ocm.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bb/MPXk2yX71mSxTeGktgMqT_tHFMm0dG.jpg",
       "candidateUrls": {
         "c1": "https://v3b.fal.media/files/b/0a9e04bb/SRUOkZgQjwdBYEXkbPVGd_TqobGL1o.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bb/CYTR7YjBexLA_U5OmcxhH_qL2HzTls.jpg",
         "c0": "https://v3b.fal.media/files/b/0a9e04bb/MPXk2yX71mSxTeGktgMqT_tHFMm0dG.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "night void maw with bluebonnets colonizing the approach, foreshadows act4 roots; c1 reads road tunnel with vehicle light, c2 car inside breaks act3",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -906,12 +922,20 @@
       "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330037,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/zakvFoFSDw0HsWpPxT_4r_BmkqpAq7.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bc/NRID3JVz_rrM-8doMO7JF_irKPlp5r.jpg",
       "candidateUrls": {
         "c0": "https://v3b.fal.media/files/b/0a9e04bc/vn9Sh5ac8ByB0q9J4rMqs_X8V08K2X.jpg",
         "c1": "https://v3b.fal.media/files/b/0a9e04bc/NRID3JVz_rrM-8doMO7JF_irKPlp5r.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bc/YUEP5ppPFV7XHuFkIl7Ak_v6Cj9z5U.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "drip strands stitch the dark with metronome ripple rings per caption; c0 muddy daylight, c2 weaker drip line",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       }
     },
     {
@@ -922,12 +946,20 @@
       "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, inside the culvert, shallow water and ceiling drips, road-rumble implied overhead, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330048,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a6/3NiSLxVb9x9THmeDrw6W5_fx4eOASD.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bc/ATQShKDrn-hyh3HX15y3K_972u6t4w.jpg",
       "candidateUrls": {
         "c1": "https://v3b.fal.media/files/b/0a9e04bc/9_yCdrzRFSUVVF0Skmzgb_AqYfiRuC.jpg",
         "c0": "https://v3b.fal.media/files/b/0a9e04bc/ATQShKDrn-hyh3HX15y3K_972u6t4w.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bc/Af_B1fkJKoXWnfhIvmms8_xWhxPmsb.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "droplets hang suspended with upward tape-smear streaks per wrongness; c1 churn overdone, c2 floating debris distracts",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -938,12 +970,20 @@
       "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330074,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ae/i0ti7Zp9CUov2rScOh8-7_HDng7zyH.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bd/21O6FQ01zwfZJEXHLqg6S_KIPZJ5nB.jpg",
       "candidateUrls": {
         "c2": "https://v3b.fal.media/files/b/0a9e04bd/prFPlUFNYKntGx6yodvL8_MFXy6pev.jpg",
         "c0": "https://v3b.fal.media/files/b/0a9e04bd/U0B109YV0n_xqA98BNIe7_nMleQevW.jpg",
         "c1": "https://v3b.fal.media/files/b/0a9e04bd/21O6FQ01zwfZJEXHLqg6S_KIPZJ5nB.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "pipe crisp and dominant for the knock-puzzle silhouette; c0 recedes too dark, c2 fog obscures the object",
+        "rejected": [
+          "c2",
+          "c0"
+        ]
       }
     },
     {
@@ -954,12 +994,20 @@
       "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, rusted drainage pipe crossing the culvert wall, blank metal surface, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330085,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4a9/VSUxpvfxRKFA53Dp12VOi_A9v3Xnx8.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bd/vlYxPqCjqIpQh_tQaRgcc_3IsNM8tT.jpg",
       "candidateUrls": {
         "c0": "https://v3b.fal.media/files/b/0a9e04bd/r5mpOmZdoB689yA3iAaab_SLXmO1BE.jpg",
         "c1": "https://v3b.fal.media/files/b/0a9e04bd/vlYxPqCjqIpQh_tQaRgcc_3IsNM8tT.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bd/YeV41-pPuMvBq4coy1wYn_6VbU6ju0.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "pipe frontal and closer in flash-lit alcove per wrongness; c0 too far, c2 faint stencil-like marks risk A1",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       }
     },
     {
@@ -970,12 +1018,20 @@
       "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, wide underpass chamber with pooled water and flower stems in cracks, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330111,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4af/-67fVlHcQ3cWeMHwh-92M_DD8MjAAp.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04be/7UqqOLO-KHO0Mb2RpI7cf_QkzKdtWM.jpg",
       "candidateUrls": {
         "c0": "https://v3b.fal.media/files/b/0a9e04be/7UqqOLO-KHO0Mb2RpI7cf_QkzKdtWM.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04be/UWtm3Tu-MKgH3SufRvNZb_RABB9QH0.jpg",
         "c1": "https://v3b.fal.media/files/b/0a9e04be/WOjQPMljrURlIxBFISBCK_vbiOPAJT.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "reverberant pillar gallery sells the echo, flowers breach the cracks; c1 too tight to read as a chamber, c2 green tint",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
       }
     },
     {
@@ -986,12 +1042,20 @@
       "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, wide underpass chamber with pooled water and flower stems in cracks, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
       "seed": 330122,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4aa/Jk754YaxKJt5BZTxoWI6G_P08AkEGy.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e04bf/0sdhO7Xevpsbc2ckAXHnv_sHev00nw.jpg",
       "candidateUrls": {
         "c1": "https://v3b.fal.media/files/b/0a9e04be/471LkLycR9oSjQBST_z9q_SU4J94ir.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e04bf/0sdhO7Xevpsbc2ckAXHnv_sHev00nw.jpg",
         "c0": "https://v3b.fal.media/files/b/0a9e04bf/6THD4174H6cmR2lHIPlyr_6dpt6MBk.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "standing blooms ring the pool whose reflection carries the field per wrongness; c0/c1 strewn cut flowers read as litter instead",
+        "rejected": [
+          "c1",
+          "c0"
+        ]
       }
     },
     {
@@ -999,15 +1063,23 @@
       "nodeId": "recorder-nest",
       "window": "20:17-20:26",
       "filename": "recorder-nest__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 330148,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, a 1990s handheld cassette tape recorder with a small mechanical tape counter window, sitting dry and carefully placed on a ledge of pale caliche rock inside a dark concrete culvert, the one dry spot above mud and puddles, dim torchlight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures",
+      "seed": 330177,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4b1/EV9accUt2p_Mb8hIAAxP7_Jb3Fo2uK.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0562/HeuKylnkoWZHjku_KCLKE_TvdRv08O.jpg",
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04bf/dlZcgkZeQkYR7QRoAX5Fz_ApztW53J.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04bf/T8biMh7TV1whzqHeny92J_WBpAoi0B.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04bf/cZynjRurA_uyHiBDhlpUE_GOuWAb6Q.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e0562/s4MsklCNgBjDco3rHQKzU_m5HJPZfJ.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0562/FWlAtCeB19XlX_4yAWgrl_o7cwlIKk.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0562/HeuKylnkoWZHjku_KCLKE_TvdRv08O.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "era cassette recorder placed dry on caliche ledge; c0 flashlight prop implies a hand, c1 reads portable radio not recorder",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
       }
     },
     {
@@ -1015,15 +1087,23 @@
       "nodeId": "recorder-nest",
       "window": "20:26-20:35",
       "filename": "recorder-nest__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, muddy alcove under the highway with handheld recorder shape half buried, blank counter window, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 330159,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, a 1990s handheld cassette tape recorder with a small mechanical tape counter window, sitting dry and carefully placed on a ledge of pale caliche rock inside a dark concrete culvert, the one dry spot above mud and puddles, night, the counter window glowing faintly from within, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures",
+      "seed": 330188,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/6VIddOv72FBYZPc5R6vHM_iecxBSiB.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0562/qX1KBXMl_ExLCtLnT06RZ_Mky3bJZl.jpg",
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c5/9ygYcMQzHU11bAQLiqHya_7NnNKbm2.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c0/4HnlbQBjxF2Ba7mNTcP3D_o2hxVS4S.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c1/ZKR4DNw5pK58Iyoy_jaRJ_ZFyR64KI.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e0562/ytlo8QPxlGuq-hjj5nrvy_6JFWycNP.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0562/qX1KBXMl_ExLCtLnT06RZ_Mky3bJZl.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0562/lRL6TEO5XkWE2hKom_vy6_ZCOfmv02.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "counter window glows from within per wrongness, pedestal staging; c0 unlit window, c2 cable clutter",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       }
     },
     {
@@ -1031,15 +1111,23 @@
       "nodeId": "missing-minutes-gate",
       "window": "20:17-20:26",
       "filename": "missing-minutes-gate__2017-2026.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, late dusk under-highway darkness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 330185,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, deep inside a dark concrete culvert on foot, the passage ahead ending in an absolute wall of blackness that swallows the flashlight beam, wet concrete walls converging, dim handheld torchlight, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no vehicles, no car interior",
+      "seed": 330216,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ac/-3-goBZiX0V9oNRCfRlbS_ISd6aHkl.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e056b/8JaK_TYmbp89igzGrTx4t_1HhdRoyi.jpg",
       "candidateUrls": {
-        "c1": "https://v3b.fal.media/files/b/0a9e04c0/A4MWk1QrHEFdHMLiKpiso_ZS1JtBcH.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c0/xH7Ti8QQv8OuhZECYZ4aR_RnFHRVCa.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c0/NMk6eBX0e_gwVH3EIpjbA_oErPsgpB.jpg"
+        "c1": "https://v3b.fal.media/files/b/0a9e056a/4z-Qj0qr-XzAMUyNvO0ff_XkkgTrAp.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e056b/w7SfxEDtTHoHnvu3y0BId_GRPywl27.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e056b/8JaK_TYmbp89igzGrTx4t_1HhdRoyi.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "dropped still-burning flashlight as Dana's gear trail, absolute dark ahead; c0 player torch in frame, c1 invented glowing ring",
+        "rejected": [
+          "c1",
+          "c0"
+        ]
       }
     },
     {
@@ -1047,15 +1135,23 @@
       "nodeId": "missing-minutes-gate",
       "window": "20:26-20:35",
       "filename": "missing-minutes-gate__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, black culvert exit framed by concrete ribs and distant bluebonnets, clean plate, locked missing-minutes pressure, night blue-black wrongness, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 330196,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder first-person view, deep inside a dark concrete culvert at night, the passage ahead a flat black wall of darkness with one thin faint vertical seam of pale light in it, wet floor reflecting the seam, analog horror, muted colors, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no vehicles, no car interior",
+      "seed": 330227,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df4ad/UGDZShnzwty2xIEhudgYA_fQ3eibqu.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e056b/hbbW9juc8JZumSrJ9CG-f_7iny9S4v.jpg",
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c0/Kc6Z3-0vNxXL0OCo1XQ0M_L7hpA4Vp.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c1/2c_IGk7yQxVgcEdRiEbX1_6p8Wy6Z0.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c1/AbGwd5BLXc91tgm3rGbxc_iZ2uKqPM.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e056b/AOqubJrZjfpFkgC0esO9m_DabpybL6.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e056b/APklhvD8cx7IEKNAXES4D_Eg4mNNvQ.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e056b/hbbW9juc8JZumSrJ9CG-f_7iny9S4v.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "light seam with wavering live reflection; c0 static, c1 green tint",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
       }
     },
     {
@@ -1063,15 +1159,23 @@
       "nodeId": "nine-field-threshold",
       "window": "20:26-20:35",
       "filename": "nine-field-threshold__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, locked nine minutes night field threshold, luminous bluebonnets glowing faint blue, highway shoulder swallowed by flowers, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440000,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, first-person view stepping out of a dark concrete culvert mouth into an endless night field of faintly glowing bluebonnets, no road anywhere, the shoulder gone, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440037,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df588/n5hY7bpvPnh_HP4mikazs_nGMqIoEy.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0594/s5VL82QkEhgNybT8320Vi_8507LwKn.jpg",
       "candidateUrls": {
-        "c2": "https://v3b.fal.media/files/b/0a9e04c3/LTudbvlHgLcrajNtp984F_QqRVX4YA.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c3/CcUvpdC8u5JHYOlDmP76d_TTnWtP4t.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c3/EXrfuDjzWueBvzYoyKuTP_fn2cW6lM.jpg"
+        "c2": "https://v3b.fal.media/files/b/0a9e0594/s5VL82QkEhgNybT8320Vi_8507LwKn.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0594/A-BAZ-re4ZJI60V7j44GG_fiza2Njo.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0594/kl16xldxIoYMEkrDqZAll_bhFAzNLE.jpg"
+      },
+      "curation": {
+        "picked": "c2",
+        "reason": "luminous field from culvert mouth with distant paired taillights teasing the near car; c0 no car presence, c1 figure-like shape violates empty-world",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
       }
     },
     {
@@ -1079,15 +1183,23 @@
       "nodeId": "nine-flower-path",
       "window": "20:26-20:35",
       "filename": "nine-flower-path__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, path through luminous bluebonnets during the missing nine minutes, flowers standing too tall and too close, empty clean plate, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440011,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, narrow dirt path between shoulder-high faintly glowing bluebonnets at night, every bloom leaning away from something far down the path, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440048,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58e/7ZxMeE_6KKyDbK-sYtfVm_sOCzP62v.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0594/woxPik21tXiEHiLe7yPkh_wgJIMAgU.jpg",
       "candidateUrls": {
-        "c2": "https://v3b.fal.media/files/b/0a9e04c3/ok4Q8rp-hrqkf5xAWPMZd_UcCbHRAK.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c3/sy7Oail9G1awNJLpiQHmJ_Jq2GfgVp.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c3/2fN489qEuAigNsI3qFH9z_NVxIhlKU.jpg"
+        "c2": "https://v3b.fal.media/files/b/0a9e0594/gU0RyssSlJWlNDBQ_VFh2_YKVmEZYW.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0594/1Pvc1MHHwJwMVCfQ-eFoV_GexMID1L.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0594/woxPik21tXiEHiLe7yPkh_wgJIMAgU.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "blooms lean away from the dark end of the path per caption; c0 corner watermark-like blob risks A1, c2 glitch bands too heavy",
+        "rejected": [
+          "c2",
+          "c0"
+        ]
       }
     },
     {
@@ -1095,15 +1207,23 @@
       "nodeId": "near-car",
       "window": "20:26-20:35",
       "filename": "near-car__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 35mm documentary photograph, abandoned car shape near the edge of a luminous bluebonnet field, headlights dark, no visible people, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440022,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, a dark abandoned 1990s sedan resting among faintly glowing bluebonnets at night, headlights dead, windshield black and reflective, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440059,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/VvwvtNfSEku_nzb10FVgA_E1fwrdKS.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0596/8ZBReev9yTKvi4okfK2O__seqbuS5N.jpg",
       "candidateUrls": {
-        "c2": "https://v3b.fal.media/files/b/0a9e04c4/s-DiUXegJjiovFxm00TGv_b7dtWTzr.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c4/l-RlZB4Uk4xY7Eah2siC3_vjiAJU8Q.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04ca/EHjr7MMmj4-zHyJQOY9ak_h4Xckf5R.jpg"
+        "c2": "https://v3b.fal.media/files/b/0a9e059c/xOL7tJahWKS0mpLickUl1_Xb0OqtYC.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0595/kvxGQxnbPNr_koiRFO6ly_DlJK0x5l.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0596/8ZBReev9yTKvi4okfK2O__seqbuS5N.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "flowers colonize the car from inside, glow spilling from grille and dash; c0 mundane abandonment, c2 lit headlights and plate characters risk",
+        "rejected": [
+          "c2",
+          "c0"
+        ]
       }
     },
     {
@@ -1111,15 +1231,23 @@
       "nodeId": "luminous-shrine",
       "window": "20:26-20:35",
       "filename": "luminous-shrine__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, close roadside shrine overtaken by luminous bluebonnets, blank photograph area and blank tape label surface, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440033,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, a roadside memorial shrine overtaken by faintly glowing bluebonnets at night, small wooden cross, blank hanging paper tags, blank photo frame face down, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440070,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58f/3WHiMlY7l5TVcn0o8KYUQ_m9Gf0oYq.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e059c/Uo_RwPQnovVBOPtSNzP8Z_JNmhZb7L.jpg",
       "candidateUrls": {
-        "c1": "https://v3b.fal.media/files/b/0a9e04c4/tRPT8Pbi-yScP4n2su8aC_1nnXxCZ5.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c4/Bs6CSNLkYg0Jb4fvdxitA_bu7KULB6.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c4/gEo1I72EG-X3OpHvtmUfL_1E5wNqVL.jpg"
+        "c1": "https://v3b.fal.media/files/b/0a9e059c/Uo_RwPQnovVBOPtSNzP8Z_JNmhZb7L.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e059c/jUQ9yDgzs4Jt3BIwBauvn_1i801FVZ.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e059c/AJW3iUzg0F-x91FKtWr7T_Ot5wu3VD.jpg"
+      },
+      "curation": {
+        "picked": "c1",
+        "reason": "five blank tags, glow within the flowers, photo an unresolvable blur consistent with the lens-refusal motif; c0 clear face violates canon, c2 faint A1 burn",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       }
     },
     {
@@ -1127,15 +1255,23 @@
       "nodeId": "car-door",
       "window": "20:26-20:35",
       "filename": "car-door__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, bluebonnet field terminus during missing nine minutes, station wagon and car nearly nose to nose in impossible distance, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440044,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, the open driver's door of a dark sedan at night in a glowing bluebonnet field, empty seat, faint reflections on the dashboard glass, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440081,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/fokg0kw5TLpTO3WFIZmIM_RHpjbJsF.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0596/EzcOoSi8XJsI1kbXYqmnS_U81oSWwr.jpg",
       "candidateUrls": {
-        "c1": "https://v3b.fal.media/files/b/0a9e04c5/K9ROFWKwajTCi0tA9VuWm_JMU9kdgZ.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c5/vLURidetB9OxGS_WxIwvO_QfgxZKLM.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c5/RzrRuCvfh4RvjOEbg1q9M_b8Dne0o6.jpg"
+        "c1": "https://v3b.fal.media/files/b/0a9e0597/ALYPec-cZAFiwXGnwDsd4_INbYHdzm.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0597/8EZKzOCaXEWMUoELuyrUt_dQ5TxOvT.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0596/EzcOoSi8XJsI1kbXYqmnS_U81oSWwr.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "open driver door with plainly empty seat and readable dash for the reflection clue; c1 ambiguous colored blob inside, c2 weaker framing",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -1143,15 +1279,23 @@
       "nodeId": "final-choice",
       "window": "20:26-20:35",
       "filename": "final-choice__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, final tape choice altar inside luminous bluebonnet field, blank VCR cassette surface and blank evidence tags, no people visible, clean plate for runtime compositing, blue-black night wrongness, analog horror, muted colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440055,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, an old VCR deck and small CRT resting impossibly among glowing bluebonnets at night, two large blank mechanical buttons on the deck, screen static glow, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440092,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/SAJilIk5rGaFy7S0xAPSE_bKffVZmM.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0597/d6XtMZe85BSzRx1Gjpins_Yeioz6IH.jpg",
       "candidateUrls": {
-        "c1": "https://v3b.fal.media/files/b/0a9e04c5/lMXGIj1oAUq7xpIsete2K_8QkyQxCl.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c5/_J69D5qV8AsXaj-zh3iJG_gPb29ruO.jpg",
-        "c0": "https://v3b.fal.media/files/b/0a9e04c6/E6bnPjrTkWzEAfES_hP6P_cW9CMKCH.jpg"
+        "c1": "https://v3b.fal.media/files/b/0a9e0597/ELzg0OWbgt3Xe4fbxnCgT_eo3eY0rP.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0598/PoV6RRoR7nWpEIKyQFjuF_7F7o2oGu.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e0597/d6XtMZe85BSzRx1Gjpins_Yeioz6IH.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "two distinct blank buttons for the composited EJECT/RECORD choice targets; c1 knobs not buttons, c2 deck labels risk A1",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -1159,15 +1303,23 @@
       "nodeId": "ending-eject",
       "window": "20:26-20:35",
       "filename": "ending-eject__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, EJECT ending sealed evidence box on quiet CRT deck, bluebonnet glow fading outside black screen reflection, blank tape label and blank case tag for runtime compositing, analog horror restraint, muted blue-black colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440066,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, a VHS cassette half-ejected from a VCR deck in darkness, faint blue flower glow dying in the black screen reflection, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440103,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df621/pDLMxK9j12EVBX5L7P_M2_6MBuOJbQ.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0598/B2pfZPqJQitEb-D8a9h1a_RLUNcaOf.jpg",
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c6/705ISvSnf-g2VYuERBYS7_8y0mvEP5.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c6/7Cfcdq4od71HBWIMUYCQS_0N18rDsE.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c6/zOp8zkP7Zcd8lFTqW3Ahp_XmMtUYXN.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e0598/B2pfZPqJQitEb-D8a9h1a_RLUNcaOf.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0598/Tf0uQSgndWReqsut5p-cx_cqAMjhX4.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0598/cZrGqDbYRAabCGcWZOAvc_LOzSaUkF.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "cassette half-ejected, field dying on the monitor, flowers leaking into the player's room; c1 ejected a CD, c2 deck reads DVD-era",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -1175,15 +1327,23 @@
       "nodeId": "ending-record",
       "window": "20:26-20:35",
       "filename": "ending-record__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, RECORD ending overwritten tape view from inside the evidence deck, field and CRT reflections layered together, luminous bluebonnets pressing against glass, blank tape label for runtime compositing, analog horror, muted blue-black colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 440077,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, a CRT screen glowing red-on-black in darkness showing only static, a VCR deck record lamp lit, glowing bluebonnets reflected in the glass, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 440114,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9df61c/n6ueL4pQPaKhl1vnc1l2l_lwx2vC8m.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e0599/KcWy7aGBc3ZWTo7euJtB6_68vdLoQ6.jpg",
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c6/8y951xz8HRkaMTqFlV7vc_wZaWZndP.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c6/9EKNs_ELr-ocmzs_o7hUM_cKEJjhDy.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c7/8WKRKJDY9HWVOagDTCADX_joDutF3W.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e0599/KcWy7aGBc3ZWTo7euJtB6_68vdLoQ6.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e0599/ayFmVCFxG-nZIvGOgiBSF_x4sBL0UC.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e0599/xQHNSwQsxxWiwA38d5-JJ_WnXtl6GG.jpg"
+      },
+      "curation": {
+        "picked": "c0",
+        "reason": "flowers breach the screen boundary into the red static, record lamp lit; c1 weaker motif, c2 camcorder prop with deck text risk",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       }
     },
     {
@@ -1191,19 +1351,23 @@
       "nodeId": "nine-threshold-left",
       "window": "20:26-20:35",
       "filename": "nine-threshold-left__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, left-facing view from the culvert mouth into a luminous bluebonnet field at night, blue-black palette, faint car headlight glow off-frame, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 450101,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, first-person view turned left from the culvert mouth, the glowing bluebonnet field bending around the camera like a hallway of flowers, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 450138,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff99/2TY1QyXntETKMKQgs3O8o_dUl5r7Bu.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e059a/NUjrXLb5bEf3eKkCSVeiY_kJopQIAw.jpg",
       "curation": {
-        "selected": true,
-        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+        "picked": "c1",
+        "reason": "flower banks bend like a hallway per caption, culvert dark behind; c0 heavy color-noise band, c2 warm-lit culvert contradicts the void",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       },
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c7/tHyr0ecroMxJne8g28ig4_J6PFu0SK.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c7/iUCNimumaAU96DZJuRZqG_5IcKkpjf.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04cd/ehj9D4vHD8LcD0sOTo5kH_Iuhg7QhA.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e0599/AQr-LrCCknETC4ky370Vd_DcUJDh67.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e059a/NUjrXLb5bEf3eKkCSVeiY_kJopQIAw.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e059a/u6vxs30diA8L2v68kOQiN_TkLcUi4d.jpg"
       }
     },
     {
@@ -1211,19 +1375,23 @@
       "nodeId": "nine-threshold-right",
       "window": "20:26-20:35",
       "filename": "nine-threshold-right__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, right-facing view from the culvert mouth across shoulder-high luminous bluebonnets at night, highway shoulder vanished behind flowers, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 450102,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, first-person view turned right from the culvert mouth, a wall of shoulder-high faintly glowing bluebonnets where a road should be, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 450139,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/NpvFJccjFm4HuoYagdqIF_ITUJpCIp.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e059a/54IAoMmxHD7c4uv0AUvhQ_SDaYBs7k.jpg",
       "curation": {
-        "selected": true,
-        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+        "picked": "c1",
+        "reason": "ghost of the road dissolving into the flower wall per caption; c0 glitch corner, c2 reuses culvert lip",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       },
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c8/k1_uhLovTxw0OmdB9bC6r_T8KHF6EE.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04ce/2i1Xzi-dnO4C5RJmCoCLl_pcn0AooK.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04ce/w0U4uBPlB8mInYNxOIJ3z_jVmfCUHT.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e059a/xZepnplMV0jNbkqcyFmeX_QsRMfQ1Y.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e059a/54IAoMmxHD7c4uv0AUvhQ_SDaYBs7k.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e059a/iu2HwYgBZcpbiURvFZ-q0_Be5sfAlK.jpg"
       }
     },
     {
@@ -1231,19 +1399,23 @@
       "nodeId": "nine-threshold-look-down",
       "window": "20:26-20:35",
       "filename": "nine-threshold-look-down__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, look-down view at boots disappearing into bluebonnets and dark soil near culvert threshold, analog horror, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 450103,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, first-person view looking straight down at crushed faintly glowing bluebonnets and dark soil at the culvert lip, no footprints, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 450140,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/e1jbsjOeqVmWPFvhmAohH_QifjmrSM.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e059a/mEAp0jOqDQZ3JXvE2mIv3_l3ZCZQ1T.jpg",
       "curation": {
-        "selected": true,
-        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+        "picked": "c1",
+        "reason": "single glowing clump breaching the lip crack, no footprints per caption; c0 operator-shadow blob at frame edge, c2 busier",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
       },
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04ce/CyMBGbOC-ABnCatWOoFOX_U3cPhi6Q.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c8/1FfPne4o4AjLCs05rrGyq_wjL8266o.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c8/Nr1sl96QsWSaxpYsUN6Al_j1cxgotd.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e059a/Gs3olKUqIHaqeSzCg-_AZ_OSq5smuP.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e059a/mEAp0jOqDQZ3JXvE2mIv3_l3ZCZQ1T.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e059a/tIw7rze1Z_5YrH39c5Bn1_jHBlrXcu.jpg"
       }
     },
     {
@@ -1251,19 +1423,23 @@
       "nodeId": "nine-culvert-detail",
       "window": "20:26-20:35",
       "filename": "nine-culvert-detail__2026-2035.jpg",
-      "prompt": "degraded VHS still frame, 1998 dash-mounted Hi8 camcorder, Act IV missing nine minutes, close detail of wet concrete culvert lip with bluebonnet roots creeping over it, blank surfaces only, eerie night luminescence, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters",
-      "seed": 450104,
+      "prompt": "degraded VHS still frame, 1998 handheld Hi8 camcorder, extreme close detail of a wet concrete culvert lip with bluebonnet roots growing outward from inside the dark culvert, true night, faint blue luminescence rising from the bluebonnets themselves the only light source, analog horror, muted colors, uncluttered composition for runtime overlay, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no figures, no roads, no highway",
+      "seed": 450141,
       "model": "fal-configured-image-generation",
-      "status": "regen-pending",
-      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9b/7GzaKHU-oG-mIBcbrwqWP_ZmRZ4iYE.png",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e059b/pk4ZYgAjLlXHKEvCRVu1x_9j9rTZZM.jpg",
       "curation": {
-        "selected": true,
-        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+        "picked": "c0",
+        "reason": "exposed roots crawl outward over the wet lip per caption, glowing bloom tips; c1 pipe geometry diverges, c2 static row",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
       },
       "candidateUrls": {
-        "c0": "https://v3b.fal.media/files/b/0a9e04c9/obzTNdziH7VDlOmTFZQcJ_Zmzq5hhR.jpg",
-        "c1": "https://v3b.fal.media/files/b/0a9e04c9/vUraeVL_CrYhkrtYIZg5F_pi6BgyiZ.jpg",
-        "c2": "https://v3b.fal.media/files/b/0a9e04c9/aS33ai1NFydb_wTmw9dVL_UGrlHUSb.jpg"
+        "c0": "https://v3b.fal.media/files/b/0a9e059b/pk4ZYgAjLlXHKEvCRVu1x_9j9rTZZM.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e059b/Wm3ffeh2zAqm_H5CAcdSM_NccqpMxF.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e059b/7pjGnuKTCkx63981VCky3_hkXZJkxa.jpg"
       }
     }
   ],

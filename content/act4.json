@@ -555,20 +555,32 @@
               "label": "Log the composited shrine warning",
               "polygon": [
                 [
-                  34,
-                  30
+                  37.5,
+                  31.6
                 ],
                 [
-                  66,
-                  30
+                  39.1,
+                  31.8
                 ],
                 [
-                  66,
-                  62
+                  40.1,
+                  33.2
                 ],
                 [
-                  34,
-                  62
+                  40.4,
+                  41.3
+                ],
+                [
+                  36.9,
+                  41.8
+                ],
+                [
+                  36.4,
+                  33.3
+                ],
+                [
+                  37.4,
+                  31.8
                 ]
               ],
               "target": "luminous-shrine",
@@ -577,7 +589,9 @@
                 "text": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it."
               },
               "caption": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the blank paper tags hanging by the wooden cross",
+              "clueHighlight": true
             },
             {
               "id": "to-car-door",
@@ -660,20 +674,76 @@
               "label": "Log the final dash reflection",
               "polygon": [
                 [
-                  35,
-                  28
+                  64.1,
+                  55
                 ],
                 [
-                  68,
-                  28
+                  69.8,
+                  58.3
                 ],
                 [
-                  68,
-                  62
+                  71.7,
+                  61.5
                 ],
                 [
-                  35,
-                  62
+                  70.5,
+                  70.7
+                ],
+                [
+                  68.2,
+                  71.4
+                ],
+                [
+                  67.5,
+                  68.8
+                ],
+                [
+                  64.9,
+                  68.1
+                ],
+                [
+                  62.1,
+                  70.3
+                ],
+                [
+                  54.3,
+                  71.5
+                ],
+                [
+                  56.2,
+                  65.3
+                ],
+                [
+                  55,
+                  65.3
+                ],
+                [
+                  55,
+                  63.2
+                ],
+                [
+                  56.9,
+                  64.1
+                ],
+                [
+                  55.5,
+                  63
+                ],
+                [
+                  56.2,
+                  61.8
+                ],
+                [
+                  55.4,
+                  60.2
+                ],
+                [
+                  58.1,
+                  56.1
+                ],
+                [
+                  64,
+                  55.2
                 ]
               ],
               "target": "car-door",
@@ -682,7 +752,9 @@
                 "text": "FINAL DASH REFLECTION: the evidence deck is visible inside the missing car. Choose EJECT or RECORD."
               },
               "caption": "FINAL DASH REFLECTION: the evidence deck is visible inside the missing car. Choose EJECT or RECORD.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the dashboard and steering wheel inside the car",
+              "clueHighlight": true
             },
             {
               "id": "to-final-choice",
@@ -765,20 +837,20 @@
               "label": "EJECT — seal the tape",
               "polygon": [
                 [
-                  20,
-                  58
+                  32,
+                  69
                 ],
                 [
-                  45,
-                  58
+                  49,
+                  69
                 ],
                 [
-                  45,
-                  86
+                  49,
+                  78.5
                 ],
                 [
-                  20,
-                  86
+                  32,
+                  78.5
                 ]
               ],
               "target": "ending-eject",
@@ -788,27 +860,29 @@
                 "text": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
               },
               "caption": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the dark cassette slot opening on the video player (hand-authored from plate)",
+              "clueHighlight": true
             },
             {
               "id": "choose-record",
               "label": "RECORD — overwrite the evidence",
               "polygon": [
                 [
-                  55,
-                  58
+                  50,
+                  70
                 ],
                 [
-                  82,
-                  58
+                  56,
+                  70
                 ],
                 [
-                  82,
-                  86
+                  56,
+                  78.5
                 ],
                 [
-                  55,
-                  86
+                  50,
+                  78.5
                 ]
               ],
               "target": "ending-record",
@@ -818,7 +892,9 @@
                 "text": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape."
               },
               "caption": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the small red button on the video player (hand-authored from plate)",
+              "clueHighlight": true
             },
             {
               "id": "to-car-door",
@@ -876,20 +952,40 @@
               "label": "Read the sealed evidence tag",
               "polygon": [
                 [
-                  34,
-                  34
+                  48,
+                  52.6
                 ],
                 [
-                  66,
-                  34
+                  48.3,
+                  53.5
                 ],
                 [
-                  66,
-                  68
+                  59.3,
+                  53.5
                 ],
                 [
-                  34,
-                  68
+                  59.9,
+                  54.9
+                ],
+                [
+                  60.3,
+                  62.2
+                ],
+                [
+                  40.6,
+                  61.8
+                ],
+                [
+                  40.4,
+                  60.4
+                ],
+                [
+                  42.2,
+                  53.8
+                ],
+                [
+                  48,
+                  52.8
                 ]
               ],
               "target": "ending-eject",
@@ -898,7 +994,9 @@
                 "text": "SEALED EVIDENCE TAG: EJECT / BOX 271 / DO NOT REINSERT."
               },
               "caption": "SEALED EVIDENCE TAG: EJECT / BOX 271 / DO NOT REINSERT.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the video cassette tape lying on the tray in front of the player",
+              "clueHighlight": true
             }
           ]
         }
@@ -932,20 +1030,56 @@
               "label": "Read the overwrite counter",
               "polygon": [
                 [
-                  34,
-                  34
+                  44.9,
+                  11.5
                 ],
                 [
-                  66,
-                  34
+                  64.5,
+                  12.2
                 ],
                 [
-                  66,
-                  68
+                  66.7,
+                  13.5
                 ],
                 [
-                  34,
-                  68
+                  67.8,
+                  16.5
+                ],
+                [
+                  66.9,
+                  19.1
+                ],
+                [
+                  67.2,
+                  53.3
+                ],
+                [
+                  59.9,
+                  55.4
+                ],
+                [
+                  46,
+                  55.6
+                ],
+                [
+                  34.6,
+                  54.9
+                ],
+                [
+                  32.4,
+                  53.3
+                ],
+                [
+                  31.6,
+                  24.8
+                ],
+                [
+                  32.5,
+                  13.2
+                ],
+                [
+                  44.8,
+                  11.6
                 ]
               ],
               "target": "ending-record",
@@ -954,7 +1088,9 @@
                 "text": "OVERWRITE COUNTER: RECORD / 20:26-20:35 / VIEWER TRACK ARMED."
               },
               "caption": "OVERWRITE COUNTER: RECORD / 20:26-20:35 / VIEWER TRACK ARMED.",
-              "shimmerThreshold": 0.25
+              "shimmerThreshold": 0.25,
+              "cluePrompt": "the glowing red television screen",
+              "clueHighlight": true
             }
           ]
         }
