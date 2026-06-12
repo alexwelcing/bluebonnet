@@ -1225,6 +1225,36 @@
               },
               "caption": "The tape counter jumps at 23:26. The nine minutes are still locked.",
               "shimmerThreshold": 0.65
+            },
+            {
+              "id": "enter-field",
+              "label": "Enter the bluebonnet field",
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
+              "target": "field-threshold",
+              "requires": [
+                {
+                  "flag": "puzzle:dispatch-log"
+                }
+              ],
+              "caption": "The tape has enough time to enter the field.",
+              "shimmerThreshold": 0.35
             }
           ]
         }

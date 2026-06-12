@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run lint:shotlist && tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint:shotlist": "node tools/shotlistLint.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-basic-ssl": "latest",

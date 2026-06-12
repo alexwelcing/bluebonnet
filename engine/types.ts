@@ -12,7 +12,15 @@ export interface ConditionalTarget {
   label?: string;
 }
 
-export type PuzzleAction = 'flyer-frequency' | 'radio-tune' | 'dispatch-log';
+export type PuzzleAction =
+  | 'flyer-frequency'
+  | 'radio-tune'
+  | 'dispatch-log'
+  | 'flower-digit-2'
+  | 'flower-digit-7'
+  | 'flower-digit-1'
+  | 'flower-digit-3'
+  | 'field-gate';
 
 export interface JournalClue {
   id: string;

@@ -1,5 +1,6 @@
 import { createAudioMixer } from '../engine/audioMixer';
 import { clipPathWithinBounds, polygonBounds } from '../engine/hotspotGeometry';
+import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
 import { availableHotspots, getNodeState, loadNodeGraph, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
 import { loadSnapshot, saveSnapshot } from '../engine/save';
@@ -37,6 +38,7 @@ app.innerHTML = `
         <div class="scanlines" aria-hidden="true"></div>
         <div class="tracking tracking-a" aria-hidden="true"></div>
         <div class="tracking tracking-b" aria-hidden="true"></div>
+        <div class="diegetic-text" aria-live="off"></div>
         <div class="timestamp" aria-live="off"></div>
       </div>
       <p class="caption" aria-live="polite"></p>
@@ -47,14 +49,13 @@ app.innerHTML = `
         <h1></h1>
         <p class="wrongness"></p>
       </div>
-      <form class="timeseek-panel">
-        <label for="timeseek">TIMESEEK</label>
-        <div class="timeseek-row">
-          <input id="timeseek" class="timeseek" name="timeseek" inputmode="numeric" placeholder="23:17" />
-          <button type="submit">SEEK</button>
-        </div>
+      <div class="timeseek-panel">
+        <p class="timeseek-label">TIMESEEK JOG/SHUTTLE</p>
+        <button class="jog-wheel" type="button" aria-label="TIMESEEK jog wheel. Drag to scrub tape time; arrow keys nudge; Enter seats nearest discovered detent.">
+          <span class="jog-marker"></span>
+        </button>
         <p class="timeseek-help"></p>
-      </form>
+      </div>
       <label class="tracking-control">
         TRACKING
         <input class="intensity" type="range" min="0" max="1" step="0.01" />
@@ -79,14 +80,16 @@ const title = app.querySelector<HTMLHeadingElement>('h1')!;
 const caption = app.querySelector<HTMLParagraphElement>('.caption')!;
 const wrongness = app.querySelector<HTMLParagraphElement>('.wrongness')!;
 const timestamp = app.querySelector<HTMLDivElement>('.timestamp')!;
+const diegeticText = app.querySelector<HTMLDivElement>('.diegetic-text')!;
 const intensity = app.querySelector<HTMLInputElement>('.intensity')!;
 const captions = app.querySelector<HTMLInputElement>('.captions')!;
 const save = app.querySelector<HTMLButtonElement>('.save')!;
-const timeseekForm = app.querySelector<HTMLFormElement>('.timeseek-panel')!;
-const timeseekInput = app.querySelector<HTMLInputElement>('.timeseek')!;
+const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
 const timeseekHelp = app.querySelector<HTMLParagraphElement>('.timeseek-help')!;
 const journalList = app.querySelector<HTMLOListElement>('.journal-list')!;
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
+let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
+let dragState: { angle: number; time: number } | undefined;
 
 function render() {
   const snapshot = state.snapshot();
@@ -99,7 +102,11 @@ function render() {
   intensity.value = String(snapshot.vhsIntensity);
   captions.checked = snapshot.captionsEnabled;
   timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} TX-DPS`;
+  diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
+  diegeticText.hidden = diegeticText.textContent === '';
   timeseekHelp.textContent = `DISCOVERED: ${snapshot.discoveredTimecodes.join(' / ')} // LOCKED: ${graph.lockedWindows.join(' / ')}`;
+  jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
+  jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(undefined);
   compositor.setIntensity(snapshot.vhsIntensity);
 
@@ -165,13 +172,49 @@ function showCaption(text: string) {
 
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
-timeseekForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const requested = normalizeTimeSeek(timeseekInput.value);
-  if (!requested) {
-    timeseekHelp.textContent = 'TIMESEEK accepts discovered windows: 23:08-23:17, 23:17-23:26. Nine minutes remain locked.';
-    return;
+jogWheel.addEventListener('pointerdown', (event) => {
+  jogWheel.setPointerCapture(event.pointerId);
+  dragState = { angle: pointerAngle(event), time: event.timeStamp };
+});
+jogWheel.addEventListener('pointermove', (event) => {
+  if (!dragState) return;
+  const angle = pointerAngle(event);
+  const delta = unwrapAngle(angle - dragState.angle);
+  const seconds = Math.max(0.016, (event.timeStamp - dragState.time) / 1000);
+  const result = dragJogWheel(jogState, delta, seconds, jogOptions());
+  jogState = result.state;
+  if (result.event === 'hard-stop') announceHardStop();
+  dragState = { angle, time: event.timeStamp };
+  render();
+});
+jogWheel.addEventListener('pointerup', (event) => {
+  jogWheel.releasePointerCapture(event.pointerId);
+  dragState = undefined;
+  settleJogWheel();
+});
+jogWheel.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    event.preventDefault();
+    const delta = event.key === 'ArrowRight' ? 0.32 : -0.32;
+    const result = dragJogWheel(jogState, delta, 0.1, jogOptions());
+    jogState = result.state;
+    if (result.event === 'hard-stop') announceHardStop();
+    render();
   }
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    settleJogWheel();
+  }
+});
+save.addEventListener('click', () => {
+  saveSnapshot(state.snapshot());
+  save.textContent = 'BOOKMARK SAVED';
+  window.setTimeout(() => {
+    save.textContent = 'BOOKMARK TAPE STATE';
+  }, 1200);
+});
+
+function seekWindow(requested: TimeWindow) {
   const snapshot = state.snapshot();
   const timeseek = createTimeSeek(graph, snapshot.activeWindow, snapshot.discoveredTimecodes);
   const result = timeseek.seek(requested);
@@ -184,29 +227,49 @@ timeseekForm.addEventListener('submit', (event) => {
   void stage.offsetWidth;
   stage.classList.add('seek-glitch');
   window.setTimeout(() => stage.classList.remove('seek-glitch'), 900);
-  timeseekHelp.textContent = `WORLD RE-SEATED TO ${result.activeWindow}`;
-});
-save.addEventListener('click', () => {
-  saveSnapshot(state.snapshot());
-  save.textContent = 'BOOKMARK SAVED';
-  window.setTimeout(() => {
-    save.textContent = 'BOOKMARK TAPE STATE';
-  }, 1200);
-});
+  timeseekHelp.textContent = `CLUNK: WORLD RE-SEATED TO ${result.activeWindow}`;
+}
+
+function settleJogWheel() {
+  for (let i = 0; i < 24; i += 1) {
+    jogState = stepJogWheel(jogState, 1 / 30, jogOptions()).state;
+  }
+  const result = seatNearestDetent(jogState, jogOptions());
+  jogState = result.state;
+  if (result.event === 'detent' && result.state.seatedWindow) {
+    seekWindow(result.state.seatedWindow);
+  } else {
+    render();
+  }
+}
+
+function jogOptions() {
+  const snapshot = state.snapshot();
+  return { ...defaultJogWheelOptions, discovered: snapshot.discoveredTimecodes, locked: graph.lockedWindows };
+}
+
+function pointerAngle(event: PointerEvent): number {
+  const rect = jogWheel.getBoundingClientRect();
+  return Math.atan2(event.clientY - (rect.top + rect.height / 2), event.clientX - (rect.left + rect.width / 2));
+}
+
+function unwrapAngle(delta: number): number {
+  if (delta > Math.PI) return delta - Math.PI * 2;
+  if (delta < -Math.PI) return delta + Math.PI * 2;
+  return delta;
+}
+
+function announceHardStop() {
+  timeseekHelp.textContent = 'LOCKED 23:26-23:35: tape strains at the hard stop and kicks back.';
+}
+
+function diegeticOverlay(nodeId: string): string {
+  if (nodeId === 'field-gate') return 'PADLOCK // 2 7 1 3';
+  if (nodeId === 'field-tally') return 'GATE TALLY // II / VII / I / III';
+  return '';
+}
 
 state.subscribe(render);
 render();
 
-function normalizeTimeSeek(value: string): TimeWindow | undefined {
-  const compact = value.trim();
-  if (compact === '23:08' || compact === '23:08-23:17') {
-    return '23:08-23:17';
-  }
-  if (compact === '23:17' || compact === '23:17-23:26') {
-    return '23:17-23:26';
-  }
-  if (compact === '23:26' || compact === '23:26-23:35') {
-    return '23:26-23:35';
-  }
-  return undefined;
-}
+

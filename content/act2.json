@@ -1,0 +1,1495 @@
+{
+  "schemaVersion": 2,
+  "nodes": [
+    {
+      "id": "field-threshold",
+      "title": "Field Threshold",
+      "still": "stills/act2/field-threshold__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-threshold__2308-2317.jpg",
+          "caption": "Field Threshold: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-left-row",
+              "label": "Push deeper into the bluebonnets",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-mouth",
+              "label": "Return toward the cruiser lights",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-mouth",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-threshold__2317-2326.jpg",
+          "caption": "Field Threshold: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "petals lean back toward the highway and the path behind narrows",
+          "hotspots": [
+            {
+              "id": "to-field-left-row",
+              "label": "Push deeper into the bluebonnets",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-culvert-mouth",
+              "label": "Return toward the cruiser lights",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "culvert-mouth",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-left-row",
+      "title": "Left Row",
+      "still": "stills/act2/field-left-row__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-left-row__2308-2317.jpg",
+          "caption": "Left Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-right-row",
+              "label": "Take the right-hand row",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-two",
+              "label": "Study the two-lobed bloom clock",
+              "polygon": [
+                [
+                  35,
+                  35
+                ],
+                [
+                  62,
+                  35
+                ],
+                [
+                  62,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "field-clock-two",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-threshold",
+              "label": "Back to field threshold",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-left-row__2317-2326.jpg",
+          "caption": "Left Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the row bends into a clock-hand angle that was not there",
+          "hotspots": [
+            {
+              "id": "to-field-right-row",
+              "label": "Take the right-hand row",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-two",
+              "label": "Study the two-lobed bloom clock",
+              "polygon": [
+                [
+                  35,
+                  35
+                ],
+                [
+                  62,
+                  35
+                ],
+                [
+                  62,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "field-clock-two",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-threshold",
+              "label": "Back to field threshold",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-right-row",
+      "title": "Right Row",
+      "still": "stills/act2/field-right-row__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-right-row__2308-2317.jpg",
+          "caption": "Right Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-clock-seven",
+              "label": "Study the seven-step bloom clock",
+              "polygon": [
+                [
+                  35,
+                  35
+                ],
+                [
+                  62,
+                  35
+                ],
+                [
+                  62,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "field-clock-seven",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-one",
+              "label": "Follow the single bloom column",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-clock-one",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-left-row",
+              "label": "Back to the left row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-right-row__2317-2326.jpg",
+          "caption": "Right Row: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the flowers crowd into a second clock-hand angle",
+          "hotspots": [
+            {
+              "id": "to-field-clock-seven",
+              "label": "Study the seven-step bloom clock",
+              "polygon": [
+                [
+                  35,
+                  35
+                ],
+                [
+                  62,
+                  35
+                ],
+                [
+                  62,
+                  68
+                ],
+                [
+                  35,
+                  68
+                ]
+              ],
+              "target": "field-clock-seven",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-one",
+              "label": "Follow the single bloom column",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-clock-one",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-left-row",
+              "label": "Back to the left row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-clock-two",
+      "title": "Bloom Clock Two",
+      "still": "stills/act2/field-clock-two__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-clock-two__2308-2317.jpg",
+          "caption": "Bloom Clock Two: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-left-row",
+              "label": "Back to the left row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-two",
+              "label": "Log the two-lobed bloom pattern",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-two",
+              "journal": {
+                "id": "flower-digit-2",
+                "text": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2."
+              },
+              "caption": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2.",
+              "puzzleAction": "flower-digit-2",
+              "setFlag": "flower:2",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-clock-two__2317-2326.jpg",
+          "caption": "Bloom Clock Two: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the two lobes rotate toward the road like a timepiece",
+          "hotspots": [
+            {
+              "id": "to-field-left-row",
+              "label": "Back to the left row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-two",
+              "label": "Log the two-lobed bloom pattern",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-two",
+              "journal": {
+                "id": "flower-digit-2",
+                "text": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2."
+              },
+              "caption": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2.",
+              "puzzleAction": "flower-digit-2",
+              "setFlag": "flower:2",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-clock-seven",
+      "title": "Bloom Clock Seven",
+      "still": "stills/act2/field-clock-seven__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-clock-seven__2308-2317.jpg",
+          "caption": "Bloom Clock Seven: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-right-row",
+              "label": "Back to the right row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-seven",
+              "label": "Log the seven-step bloom trail",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-seven",
+              "journal": {
+                "id": "flower-digit-7",
+                "text": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7."
+              },
+              "caption": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7.",
+              "puzzleAction": "flower-digit-7",
+              "setFlag": "flower:7",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-clock-seven__2317-2326.jpg",
+          "caption": "Bloom Clock Seven: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the diagonal trail has moved three feet without footprints",
+          "hotspots": [
+            {
+              "id": "to-field-right-row",
+              "label": "Back to the right row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-seven",
+              "label": "Log the seven-step bloom trail",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-seven",
+              "journal": {
+                "id": "flower-digit-7",
+                "text": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7."
+              },
+              "caption": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7.",
+              "puzzleAction": "flower-digit-7",
+              "setFlag": "flower:7",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-clock-one",
+      "title": "Bloom Clock One",
+      "still": "stills/act2/field-clock-one__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-clock-one__2308-2317.jpg",
+          "caption": "Bloom Clock One: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-clock-three",
+              "label": "Study the three-crescent bloom clock",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-clock-three",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-right-row",
+              "label": "Back to the right row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-one",
+              "label": "Log the single bloom column",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-one",
+              "journal": {
+                "id": "flower-digit-1",
+                "text": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1."
+              },
+              "caption": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1.",
+              "puzzleAction": "flower-digit-1",
+              "setFlag": "flower:1",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-clock-one__2317-2326.jpg",
+          "caption": "Bloom Clock One: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the single column doubles in the tape shadow then settles",
+          "hotspots": [
+            {
+              "id": "to-field-clock-three",
+              "label": "Study the three-crescent bloom clock",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-clock-three",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-right-row",
+              "label": "Back to the right row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-right-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-one",
+              "label": "Log the single bloom column",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-one",
+              "journal": {
+                "id": "flower-digit-1",
+                "text": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1."
+              },
+              "caption": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1.",
+              "puzzleAction": "flower-digit-1",
+              "setFlag": "flower:1",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-clock-three",
+      "title": "Bloom Clock Three",
+      "still": "stills/act2/field-clock-three__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-clock-three__2308-2317.jpg",
+          "caption": "Bloom Clock Three: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Approach the cattle gate",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-one",
+              "label": "Back to the single bloom column",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-clock-one",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-three",
+              "label": "Log the three-crescent bloom clock",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-three",
+              "journal": {
+                "id": "flower-digit-3",
+                "text": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3."
+              },
+              "caption": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3.",
+              "puzzleAction": "flower-digit-3",
+              "setFlag": "flower:3",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-clock-three__2317-2326.jpg",
+          "caption": "Bloom Clock Three: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the crescents face inward toward an unseen gate",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Approach the cattle gate",
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-one",
+              "label": "Back to the single bloom column",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-clock-one",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "flower-three",
+              "label": "Log the three-crescent bloom clock",
+              "polygon": [
+                [
+                  30,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  70
+                ],
+                [
+                  30,
+                  70
+                ]
+              ],
+              "target": "field-clock-three",
+              "journal": {
+                "id": "flower-digit-3",
+                "text": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3."
+              },
+              "caption": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3.",
+              "puzzleAction": "flower-digit-3",
+              "setFlag": "flower:3",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-gate",
+      "title": "Field Gate",
+      "still": "stills/act2/field-gate__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-gate__2308-2317.jpg",
+          "caption": "Field Gate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-tally",
+              "label": "Read the composited gate tally",
+              "polygon": [
+                [
+                  30,
+                  25
+                ],
+                [
+                  55,
+                  25
+                ],
+                [
+                  55,
+                  60
+                ],
+                [
+                  30,
+                  60
+                ]
+              ],
+              "target": "field-tally",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-three",
+              "label": "Back into the bloom clocks",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-clock-three",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "unlock-field-gate",
+              "label": "Set the padlock to 2713",
+              "polygon": [
+                [
+                  58,
+                  30
+                ],
+                [
+                  82,
+                  30
+                ],
+                [
+                  82,
+                  68
+                ],
+                [
+                  58,
+                  68
+                ]
+              ],
+              "target": "act2-culvert-stub",
+              "requires": [
+                {
+                  "flag": "flower:2"
+                },
+                {
+                  "flag": "flower:7"
+                },
+                {
+                  "flag": "flower:1"
+                },
+                {
+                  "flag": "flower:3"
+                }
+              ],
+              "journal": {
+                "id": "field-gate-2713",
+                "text": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert."
+              },
+              "caption": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert.",
+              "puzzleAction": "field-gate",
+              "setFlag": "culvert-access",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-gate__2317-2326.jpg",
+          "caption": "Field Gate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the gate is closer and the padlock hangs at eye level",
+          "hotspots": [
+            {
+              "id": "to-field-tally",
+              "label": "Read the composited gate tally",
+              "polygon": [
+                [
+                  30,
+                  25
+                ],
+                [
+                  55,
+                  25
+                ],
+                [
+                  55,
+                  60
+                ],
+                [
+                  30,
+                  60
+                ]
+              ],
+              "target": "field-tally",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-clock-three",
+              "label": "Back into the bloom clocks",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-clock-three",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "unlock-field-gate",
+              "label": "Set the padlock to 2713",
+              "polygon": [
+                [
+                  58,
+                  30
+                ],
+                [
+                  82,
+                  30
+                ],
+                [
+                  82,
+                  68
+                ],
+                [
+                  58,
+                  68
+                ]
+              ],
+              "target": "act2-culvert-stub",
+              "requires": [
+                {
+                  "flag": "flower:2"
+                },
+                {
+                  "flag": "flower:7"
+                },
+                {
+                  "flag": "flower:1"
+                },
+                {
+                  "flag": "flower:3"
+                }
+              ],
+              "journal": {
+                "id": "field-gate-2713",
+                "text": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert."
+              },
+              "caption": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert.",
+              "puzzleAction": "field-gate",
+              "setFlag": "culvert-access",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field-tally",
+      "title": "Gate Tally Plate",
+      "still": "stills/act2/field-tally__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/field-tally__2308-2317.jpg",
+          "caption": "Gate Tally Plate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Back to the gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "gate-tally-2713",
+              "label": "Read the composited gate tally",
+              "polygon": [
+                [
+                  32,
+                  25
+                ],
+                [
+                  70,
+                  25
+                ],
+                [
+                  70,
+                  65
+                ],
+                [
+                  32,
+                  65
+                ]
+              ],
+              "target": "field-tally",
+              "journal": {
+                "id": "gate-tally-2713",
+                "text": "GATE TALLY: II / VII / I / III = 2713."
+              },
+              "caption": "GATE TALLY: II / VII / I / III = 2713.",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/field-tally__2317-2326.jpg",
+          "caption": "Gate Tally Plate: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the blank board tilts toward the padlock",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Back to the gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "gate-tally-2713",
+              "label": "Read the composited gate tally",
+              "polygon": [
+                [
+                  32,
+                  25
+                ],
+                [
+                  70,
+                  25
+                ],
+                [
+                  70,
+                  65
+                ],
+                [
+                  32,
+                  65
+                ]
+              ],
+              "target": "field-tally",
+              "journal": {
+                "id": "gate-tally-2713",
+                "text": "GATE TALLY: II / VII / I / III = 2713."
+              },
+              "caption": "GATE TALLY: II / VII / I / III = 2713.",
+              "shimmerThreshold": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "act2-culvert-stub",
+      "title": "Culvert Approach Stub",
+      "still": "stills/act2/act2-culvert-stub__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act2/act2-culvert-stub__2308-2317.jpg",
+          "caption": "Culvert Approach Stub: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Back to the opened gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act2/act2-culvert-stub__2317-2326.jpg",
+          "caption": "Culvert Approach Stub: the field plate carries no embedded text; evidence annotations remain on the deck layer.",
+          "wrongness": "the culvert mouth breathes black through the flowers",
+          "hotspots": [
+            {
+              "id": "to-field-gate",
+              "label": "Back to the opened gate",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-gate",
+              "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

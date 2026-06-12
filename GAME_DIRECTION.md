@@ -38,3 +38,16 @@ Fairness rules: every code appears in at least 2 in-world places; no pixel hunts
 - Nothing kills the player; dread is world-state, not fail-state.
 - Every puzzle solvable from in-world information alone.
 - The game must feel like a found object, not a website: no UI chrome that is not part of the deck fiction.
+
+## Canon amendments (director, 2026-06-12)
+
+### A1. Diegetic text accuracy (applies to ALL new assets; retrofit later)
+- Generative models may NEVER render readable text. Every Fal prompt must include 'no readable text, no lettering, no signage characters' and {subject} must avoid text-bearing closeups where possible.
+- ALL diegetic text - timestamp burns, dispatch printouts, flyer copy, radio LCD lines, mile-marker numerals, handwriting - is composited at runtime (or in post) as accurate text layers: DOM/canvas overlays styled as VHS OSD, dot-matrix print, or photographed paper. Pixel-accurate, art-directed, era-correct fonts.
+- If a still needs text embedded in the scene (e.g. a flyer on a seat), generate a clean text-free plate and composite the text in perspective programmatically (PIL/canvas transform). The words players read are story-critical; gibberish breaks the spell.
+- Add a shotlist lint: any prompt containing 'timestamp', 'text', 'sign', 'flyer', 'label' without the no-text clause fails review.
+
+### A2. TIMESEEK is a physical mechanic
+- Replace numeric entry with a tactile jog/shuttle wheel on the deck: pointer-drag to spin, real physics - angular velocity, flywheel inertia, friction decay, subtle wobble.
+- Tape-time scrubs with the wheel; discovered windows are detents the wheel clunks into (magnetic snap + glitch flash + transport sound stub). Locked spans are hard stops: the wheel strains, jitters, and kicks back - jammed tape feel.
+- Keyboard/AT fallback: arrow keys nudge, enter seats the nearest detent; captions announce positions. The physicality is the fiction: you are handling a machine, not a form.

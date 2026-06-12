@@ -177,3 +177,30 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T04:29:01+00:00 — Milestone 2 Act II field
+
+Changed:
+- Re-read GAME_DIRECTION.md and applied A1/A2 amendments to new Milestone 2 work without retrofitting Act I assets.
+- Replaced numeric TIMESEEK with a physical jog/shuttle wheel: pointer drag velocity, inertial decay, magnetic discovered-window detents, keyboard fallback, hard-stop kickback for 23:26-23:35.
+- Added pure jog wheel physics module with tests for inertia decay, detent capture, hard-stop rejection, and drag velocity.
+- Added Act II field content: 10 field-interior nodes across two windows, geography rearrangement wrongness, flower-clock clues, gate tally/padlock runtime text overlays, and culvert approach stub.
+- Generated 20 Act II clean-plate stills via Fal with the A1 no-text clause; masters live in assets/act2/ and runtime copies in public/stills/act2/.
+- Added A1 shotlist lint to the build pipeline and limited it to new Act II clean plates.
+- Added tests for A1 lint coverage, flower-clock progression, and field-gate unlock gating.
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ and deployed production Netlify.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 5 files, 15 tests.
+- `npm run build` passed, including `npm run lint:shotlist`.
+- Production 200 checks passed for index, current JS/CSS bundles, and sample Act II runtime stills.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Next:
+- Director playtest Act II field traversal and tune bloom-clock hotspot placements/copy.
+
+Blockers:
+- None.

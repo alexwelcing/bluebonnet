@@ -67,7 +67,7 @@ button, input { font: inherit; }
   transform: scale(calc(1 + var(--vhs-intensity) * 0.012));
 }
 
-.hotspot-layer, .scanlines, .tracking, .vhs-grain, .timestamp {
+.hotspot-layer, .scanlines, .tracking, .vhs-grain, .timestamp, .diegetic-text {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -130,6 +130,20 @@ button, input { font: inherit; }
   text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.22);
 }
 
+.diegetic-text {
+  inset: auto auto 18% 12%;
+  width: auto;
+  height: auto;
+  padding: 0.35rem 0.55rem;
+  color: rgba(232,255,236,0.88);
+  background: rgba(0,0,0,0.34);
+  border: 1px solid rgba(232,255,236,0.18);
+  font-size: clamp(0.72rem, 1.25vw, 1.05rem);
+  letter-spacing: 0.12em;
+  text-shadow: 2px 0 rgba(255,0,0,0.22), -2px 0 rgba(0,255,255,0.2);
+  transform: rotate(-1deg) skewX(-3deg);
+}
+
 .caption {
   min-height: 3rem;
   margin: 0.8rem 0 0;
@@ -152,8 +166,39 @@ h1 { margin: 0.25rem 0 0.7rem; font-size: clamp(1.25rem, 3vw, 2.2rem); }
 .wrongness, .timeseek-help { color: #cbeed6; line-height: 1.4; font-size: 0.9rem; }
 
 .timeseek-panel, .tracking-control, .caption-toggle { display: grid; gap: 0.35rem; margin: 1rem 0; }
-.timeseek-row { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; }
-.timeseek, .intensity {
+.timeseek-label { margin: 0; color: #9df2ad; letter-spacing: 0.12em; }
+.jog-wheel {
+  position: relative;
+  width: 8.6rem;
+  height: 8.6rem;
+  justify-self: center;
+  border-radius: 50%;
+  border: 2px solid rgba(164,255,197,0.42);
+  background: radial-gradient(circle at 42% 35%, #26352c, #07100b 58%, #020302);
+  box-shadow: inset 0 0 24px rgba(255,255,255,0.08), 0 0 28px rgba(67,255,120,0.08);
+  transform: rotate(var(--jog-angle, 0rad));
+  touch-action: none;
+}
+.jog-wheel::before {
+  content: '';
+  position: absolute;
+  inset: 1.1rem;
+  border-radius: 50%;
+  border: 1px dashed rgba(215,247,226,0.24);
+}
+.jog-marker {
+  position: absolute;
+  left: 50%;
+  top: 0.55rem;
+  width: 0.45rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: #d7f7e2;
+  box-shadow: 0 0 10px rgba(215,247,226,0.75);
+  transform: translateX(-50%);
+}
+.jog-strain { animation: jog-strain 90ms steps(2, end) 6; }
+.intensity {
   width: 100%;
   border: 1px solid rgba(164,255,197,0.28);
   color: #d7f7e2;
@@ -185,6 +230,11 @@ button, .save {
   44% { transform: translateX(12px) scale(1.01); }
   68% { transform: translateX(-4px) scale(1.02); filter: brightness(0.65) contrast(1.9) saturate(0.1); }
   100% { transform: translateX(0) scale(calc(1 + var(--vhs-intensity) * 0.012)); }
+}
+
+@keyframes jog-strain {
+  0% { filter: brightness(1.4); margin-left: -2px; }
+  100% { filter: brightness(0.75); margin-left: 2px; }
 }
 
 @media (max-width: 900px) {

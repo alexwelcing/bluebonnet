@@ -1,6 +1,7 @@
 import type { PuzzleAction, TimeWindow } from './types';
 
-const order: PuzzleAction[] = ['flyer-frequency', 'radio-tune', 'dispatch-log'];
+const actOneOrder: PuzzleAction[] = ['flyer-frequency', 'radio-tune', 'dispatch-log'];
+const flowerDigits: PuzzleAction[] = ['flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3'];
 
 export interface PuzzleResult {
   ok: boolean;
@@ -38,9 +39,15 @@ export function createPuzzleProgression(initial: PuzzleAction[] = []): PuzzlePro
 }
 
 function canComplete(action: PuzzleAction, completed: PuzzleAction[]): boolean {
-  const index = order.indexOf(action);
-  if (index === -1) {
-    return false;
+  const actOneIndex = actOneOrder.indexOf(action);
+  if (actOneIndex !== -1) {
+    return actOneOrder.slice(0, actOneIndex).every((required) => completed.includes(required));
   }
-  return order.slice(0, index).every((required) => completed.includes(required));
+  if (flowerDigits.includes(action)) {
+    return completed.includes('dispatch-log');
+  }
+  if (action === 'field-gate') {
+    return [...actOneOrder, ...flowerDigits].every((required) => completed.includes(required));
+  }
+  return false;
 }

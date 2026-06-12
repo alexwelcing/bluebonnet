@@ -18,14 +18,15 @@ function button(label: string): HTMLButtonElement {
   return found as HTMLButtonElement;
 }
 
-function submitTimeSeek(value: string) {
-  const input = document.querySelector<HTMLInputElement>('.timeseek');
-  const form = document.querySelector<HTMLFormElement>('.timeseek-panel');
-  if (!input || !form) {
-    throw new Error('Missing TIMESEEK controls');
+function keyboardSeekForward() {
+  const wheel = document.querySelector<HTMLButtonElement>('.jog-wheel');
+  if (!wheel) {
+    throw new Error('Missing jog wheel');
   }
-  input.value = value;
-  form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+  for (let index = 0; index < 16; index += 1) {
+    wheel.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'ArrowRight' }));
+  }
+  wheel.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }));
 }
 
 function realPointerClick(element: HTMLElement) {
@@ -82,7 +83,7 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.journal-list')?.textContent).toContain('DISPATCH 23:17: REYES, reset tape to 23:17');
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('23:17-23:26');
 
-    submitTimeSeek('23:17');
+    keyboardSeekForward();
 
     expect(document.querySelector('.timeseek-help')?.textContent).not.toContain('TIMESEEK rejects undiscovered tape-time');
     expect(document.querySelector<HTMLImageElement>('.scene-still')?.src).toContain('__2317-2326.jpg');
