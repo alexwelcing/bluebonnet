@@ -381,3 +381,23 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T06:32:42.239924+00:00 — B6 full playthrough QA
+
+Changed:
+- Ran a full live production playthrough from cleared save through Act I, Act II, Act III, Act IV, and EJECT ending.
+- Appended full route and final state transcript to .bridge/playthrough.md.
+- Marked B6 done in .bridge/backlog.md.
+
+Verification:
+- Live production URL: https://bluebonnet-tape.netlify.app
+- Deployed build under test: 6a2ba5e4856d6bbd817eb960.
+- Full BrowserUse/DOM playthrough passed: flyer -> radio -> dispatch -> TIMESEEK 23:17 -> flower clock 2713 -> field gate -> echo knocks -> recorder 23:26 -> TIMESEEK 23:26 -> Act IV -> final choice -> EJECT ending.
+- Final save snapshot records currentNodeId ending-eject and ending:eject true.
+
+Next:
+- Backlog B1-B6 is now done. Await new supervisor/director backlog items.
+
+Blockers:
+- None.

@@ -5,4 +5,4 @@ B7 IMMERSION EXPANSION (canon A4, HIGH PRIORITY - do immediately after current i
 DONE B3 AUDIO UPGRADE: replace synth ambient beds with richer generated loops (cruiser, field, culvert, threat static); seamless loop points; per-node mix levels.
 DONE B4 EXHIBIT ART PASS: flyer becomes a real photocopied MISSING poster (halftone photo block, tear-off phone tabs); dispatch sheet gets dot-matrix perforated-edge styling. Text still rendered by us, accurate.
 DONE B5 TITLE / BOOT: a cold-open "insert tape" boot screen and a quiet title, in-fiction; a credits/colophon reachable from the deck.
-B6 FULL PLAYTHROUGH QA: BrowserUse runs Act I→IV end to end on the live site, asserts every puzzle solvable from in-world info, logs a transcript to .bridge/playthrough.md.
+DONE B6 FULL PLAYTHROUGH QA: BrowserUse runs Act I→IV end to end on the live site, asserts every puzzle solvable from in-world info, logs a transcript to .bridge/playthrough.md.

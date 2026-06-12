@@ -86,3 +86,35 @@ Checks:
 - Browser console reported no JS errors.
 
 Result: PASS for B5 insert-tape boot/title and deck credits/colophon.
+
+
+## 2026-06-12T06:32:42.239465+00:00 — B6 full live playthrough QA
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2ba5e4856d6bbd817eb960
+
+Full route executed from a cleared save on the live production site:
+1. INSERT TAPE -> CRUISER INTERIOR.
+2. Flyer clue -> journal logged `MISSING: LENA ORTIZ — call 88.7 FM after sundown.`
+3. Patrol radio -> tuned 88.7 FM -> journal logged radio clue.
+4. Dispatch printer -> journal logged `DISPATCH 23:17: REYES, reset tape to 23:17...` and discovered 23:17-23:26.
+5. TIMESEEK jog wheel keyboard fallback -> seated 23:17-23:26.
+6. Cruiser exterior -> culvert mouth -> field threshold.
+7. Flower clock route logged digits 2, 7, 1, 3 from in-world bloom clues.
+8. Field gate padlock 2713 -> opened path toward culvert.
+9. Culvert pipe -> captioned radio-static knock pattern with visual fallback `|| _ | _ |||`.
+10. Repeated echo knocks -> opened recorder alcove.
+11. Recorder counter -> journal logged 23:26 and discovered 23:26-23:35.
+12. Missing-minutes gate -> TIMESEEK jog wheel seated final 23:26-23:35 detent.
+13. Entered Act IV and clicked through night field -> near car -> shrine -> car door -> final choice.
+14. Shrine warning and final dash reflection logged exact runtime-composited text.
+15. EJECT ending selected -> reached ENDING EJECT; localStorage save recorded `currentNodeId: ending-eject` and `ending:eject = true`.
+
+Final state:
+- Node: ENDING EJECT.
+- Caption: `ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.`
+- Journal entries: 15.
+- Completed puzzles: flyer-frequency, radio-tune, dispatch-log, flower digits 2/7/1/3, field-gate, echo-knocks, recorder-counter.
+- Discovered timecodes: 23:08-23:17, 23:17-23:26, 23:26-23:35.
+
+Result: PASS. Act I→IV is solvable on the live production site from in-world information only, with no timed fail state and with journal/caption fallbacks for all puzzle-critical evidence.
