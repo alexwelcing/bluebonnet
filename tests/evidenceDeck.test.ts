@@ -124,4 +124,25 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED: none');
   });
 
+
+  it('persists the chosen ending into the save snapshot', async () => {
+    await loadDeck({
+      currentNodeId: 'final-choice',
+      flags: { 'puzzle:field-gate': true, 'puzzle:recorder-counter': true, 'act4-gate': true },
+      vhsIntensity: 0.72,
+      activeWindow: '23:26-23:35',
+      discoveredTimecodes: ['23:08-23:17', '23:17-23:26', '23:26-23:35'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate', 'echo-knocks', 'recorder-counter'],
+      captionsEnabled: true,
+    });
+
+    realPointerClick(button('EJECT — seal the tape'));
+
+    const saved = JSON.parse(localStorage.getItem('bluebonnet.engine.snapshot.v1') ?? '{}');
+    expect(saved.currentNodeId).toBe('ending-eject');
+    expect(saved.flags['ending:eject']).toBe(true);
+    expect(saved.journal.map((entry: { text: string }) => entry.text).join('\n')).toContain('Evidence sealed');
+  });
+
 });

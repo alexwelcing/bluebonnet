@@ -17,7 +17,24 @@
             {
               "id": "to-nine-flower-path",
               "label": "Follow the luminous flower path",
-              "polygon": [[68, 25], [94, 25], [94, 75], [68, 75]],
+              "polygon": [
+                [
+                  68,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  68,
+                  75
+                ]
+              ],
               "target": "nine-flower-path",
               "caption": "The path accepts the jog wheel detent and pulls forward.",
               "shimmerThreshold": 0.35
@@ -25,7 +42,24 @@
             {
               "id": "back-to-gate",
               "label": "Back toward the culvert gate",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "missing-minutes-gate",
               "shimmerThreshold": 0.5
             }
@@ -49,7 +83,24 @@
             {
               "id": "to-near-car",
               "label": "Move toward the car lights",
-              "polygon": [[70, 25], [94, 25], [94, 75], [70, 75]],
+              "polygon": [
+                [
+                  70,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  70,
+                  75
+                ]
+              ],
               "target": "near-car",
               "caption": "The car is nearer between frames, never during one.",
               "shimmerThreshold": 0.35
@@ -57,7 +108,24 @@
             {
               "id": "to-nine-field-threshold",
               "label": "Back to the field threshold",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "nine-field-threshold",
               "shimmerThreshold": 0.5
             }
@@ -81,7 +149,24 @@
             {
               "id": "to-luminous-shrine",
               "label": "Check the shrine beside the car",
-              "polygon": [[30, 56], [62, 56], [62, 84], [30, 84]],
+              "polygon": [
+                [
+                  30,
+                  56
+                ],
+                [
+                  62,
+                  56
+                ],
+                [
+                  62,
+                  84
+                ],
+                [
+                  30,
+                  84
+                ]
+              ],
               "target": "luminous-shrine",
               "caption": "The shrine is fresh, wet, and older than the tape.",
               "shimmerThreshold": 0.35
@@ -89,7 +174,24 @@
             {
               "id": "to-nine-flower-path",
               "label": "Back down the flower path",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "nine-flower-path",
               "shimmerThreshold": 0.5
             }
@@ -113,7 +215,24 @@
             {
               "id": "shrine-nine-note",
               "label": "Log the composited shrine warning",
-              "polygon": [[34, 30], [66, 30], [66, 62], [34, 62]],
+              "polygon": [
+                [
+                  34,
+                  30
+                ],
+                [
+                  66,
+                  30
+                ],
+                [
+                  66,
+                  62
+                ],
+                [
+                  34,
+                  62
+                ]
+              ],
               "target": "luminous-shrine",
               "journal": {
                 "id": "nine-shrine-warning",
@@ -125,7 +244,24 @@
             {
               "id": "to-car-door",
               "label": "Approach the driver's door",
-              "polygon": [[72, 25], [94, 25], [94, 75], [72, 75]],
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
               "target": "car-door",
               "caption": "The driver's door is open exactly as the cruiser was.",
               "shimmerThreshold": 0.35
@@ -133,7 +269,24 @@
             {
               "id": "to-near-car",
               "label": "Back to the near car",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "near-car",
               "shimmerThreshold": 0.5
             }
@@ -157,7 +310,24 @@
             {
               "id": "car-door-readout",
               "label": "Log the final dash reflection",
-              "polygon": [[35, 28], [68, 28], [68, 62], [35, 62]],
+              "polygon": [
+                [
+                  35,
+                  28
+                ],
+                [
+                  68,
+                  28
+                ],
+                [
+                  68,
+                  62
+                ],
+                [
+                  35,
+                  62
+                ]
+              ],
               "target": "car-door",
               "journal": {
                 "id": "final-reflection",
@@ -169,7 +339,24 @@
             {
               "id": "to-final-choice",
               "label": "Reach for the deck controls",
-              "polygon": [[72, 25], [94, 25], [94, 75], [72, 75]],
+              "polygon": [
+                [
+                  72,
+                  25
+                ],
+                [
+                  94,
+                  25
+                ],
+                [
+                  94,
+                  75
+                ],
+                [
+                  72,
+                  75
+                ]
+              ],
               "target": "final-choice",
               "caption": "The deck is waiting for the same two physical choices.",
               "shimmerThreshold": 0.35
@@ -177,7 +364,24 @@
             {
               "id": "to-luminous-shrine",
               "label": "Back to the shrine",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "luminous-shrine",
               "shimmerThreshold": 0.5
             }
@@ -200,36 +404,179 @@
           "hotspots": [
             {
               "id": "choose-eject",
-              "label": "EJECT — seal the tape",
-              "polygon": [[20, 58], [45, 58], [45, 86], [20, 86]],
-              "target": "final-choice",
+              "label": "EJECT \u2014 seal the tape",
+              "polygon": [
+                [
+                  20,
+                  58
+                ],
+                [
+                  45,
+                  58
+                ],
+                [
+                  45,
+                  86
+                ],
+                [
+                  20,
+                  86
+                ]
+              ],
+              "target": "ending-eject",
               "setFlag": "ending:eject",
               "journal": {
-                "id": "ending-eject-armed",
-                "text": "ENDING CHOICE ARMED: EJECT will seal the tape with the missing minutes contained."
+                "id": "ending-eject",
+                "text": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
               },
-              "caption": "ENDING CHOICE ARMED: EJECT will seal the tape with the missing minutes contained.",
+              "caption": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
               "shimmerThreshold": 0.25
             },
             {
               "id": "choose-record",
-              "label": "RECORD — overwrite the evidence",
-              "polygon": [[55, 58], [82, 58], [82, 86], [55, 86]],
-              "target": "final-choice",
+              "label": "RECORD \u2014 overwrite the evidence",
+              "polygon": [
+                [
+                  55,
+                  58
+                ],
+                [
+                  82,
+                  58
+                ],
+                [
+                  82,
+                  86
+                ],
+                [
+                  55,
+                  86
+                ]
+              ],
+              "target": "ending-record",
               "setFlag": "ending:record",
               "journal": {
-                "id": "ending-record-armed",
-                "text": "ENDING CHOICE ARMED: RECORD will overwrite the evidence with the viewer inside the tape."
+                "id": "ending-record",
+                "text": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape."
               },
-              "caption": "ENDING CHOICE ARMED: RECORD will overwrite the evidence with the viewer inside the tape.",
+              "caption": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
               "shimmerThreshold": 0.25
             },
             {
               "id": "to-car-door",
               "label": "Back from the deck controls",
-              "polygon": [[0, 25], [20, 25], [20, 75], [0, 75]],
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  20,
+                  25
+                ],
+                [
+                  20,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
               "target": "car-door",
               "shimmerThreshold": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ending-eject",
+      "title": "Ending / Eject",
+      "still": "stills/act4/ending-eject__2326-2335.jpg",
+      "ambientAudio": "audio/ending-eject-seal.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/ending-eject__2326-2335.jpg",
+          "caption": "EJECT ENDING: the cassette releases. The field goes dark on the monitor. The evidence box can be sealed again.",
+          "wrongness": "containment holds because the tape is no longer playing",
+          "hotspots": [
+            {
+              "id": "ending-eject-log",
+              "label": "Read the sealed evidence tag",
+              "polygon": [
+                [
+                  34,
+                  34
+                ],
+                [
+                  66,
+                  34
+                ],
+                [
+                  66,
+                  68
+                ],
+                [
+                  34,
+                  68
+                ]
+              ],
+              "target": "ending-eject",
+              "journal": {
+                "id": "ending-eject-sealed",
+                "text": "SEALED EVIDENCE TAG: EJECT / BOX 271 / DO NOT REINSERT."
+              },
+              "caption": "SEALED EVIDENCE TAG: EJECT / BOX 271 / DO NOT REINSERT.",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ending-record",
+      "title": "Ending / Record",
+      "still": "stills/act4/ending-record__2326-2335.jpg",
+      "ambientAudio": "audio/ending-record-overwrite.wav",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/ending-record__2326-2335.jpg",
+          "caption": "RECORD ENDING: the red lamp comes on. The evidence deck records over Reyes with the viewer still inside the bluebonnets.",
+          "wrongness": "the tape now contains one more witness than it began with",
+          "hotspots": [
+            {
+              "id": "ending-record-log",
+              "label": "Read the overwrite counter",
+              "polygon": [
+                [
+                  34,
+                  34
+                ],
+                [
+                  66,
+                  34
+                ],
+                [
+                  66,
+                  68
+                ],
+                [
+                  34,
+                  68
+                ]
+              ],
+              "target": "ending-record",
+              "journal": {
+                "id": "ending-record-overwritten",
+                "text": "OVERWRITE COUNTER: RECORD / 23:26-23:35 / VIEWER TRACK ARMED."
+              },
+              "caption": "OVERWRITE COUNTER: RECORD / 23:26-23:35 / VIEWER TRACK ARMED.",
+              "shimmerThreshold": 0.25
             }
           ]
         }

@@ -595,6 +595,28 @@
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9df58b/SAJilIk5rGaFy7S0xAPSE_bKffVZmM.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "ending-eject",
+      "window": "23:26-23:35",
+      "filename": "ending-eject__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, EJECT ending sealed evidence box on quiet CRT deck, bluebonnet glow fading outside black screen reflection, blank tape label and blank case tag for runtime compositing, analog horror restraint, muted blue-black colors, no readable text, no lettering, no signage characters",
+      "seed": 440066,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df621/pDLMxK9j12EVBX5L7P_M2_6MBuOJbQ.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "ending-record",
+      "window": "23:26-23:35",
+      "filename": "ending-record__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, RECORD ending overwritten tape view from inside the evidence deck, field and CRT reflections layered together, luminous bluebonnets pressing against glass, blank tape label for runtime compositing, analog horror, muted blue-black colors, no readable text, no lettering, no signage characters",
+      "seed": 440077,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df61c/n6ueL4pQPaKhl1vnc1l2l_lwx2vC8m.png"
     }
   ],
   "a1Lint": {

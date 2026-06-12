@@ -280,3 +280,29 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T05:50:00.215542+00:00 — B2 endings
+
+Changed:
+- Added distinct EJECT and RECORD ending nodes with generated A1 clean-plate final frames and runtime overlays.
+- Added ending-specific audio assets: ending-eject-seal.wav and ending-record-overwrite.wav in assets/audio/ and public/audio/.
+- Changed final-choice buttons to route to ending-eject and ending-record instead of only arming flags in place.
+- Ending choices now auto-save the resulting snapshot so localStorage records currentNodeId plus ending:eject or ending:record.
+- Added DOM regression coverage for automatic ending save-state recording.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended live endings self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 8 files, 24 tests.
+- `npm run lint:shotlist` passed: 56 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, EJECT/RECORD ending stills, and EJECT/RECORD ending audio.
+- Browser live self-playtest passed at https://bluebonnet-tape.netlify.app after deploy 6a2b9dacb60dced7f912d3aa: both endings route correctly and save their ending flags.
+
+Next:
+- Continue with B3 AUDIO UPGRADE: richer generated loops, seamless loop points, per-node mix levels.
+
+Blockers:
+- None.

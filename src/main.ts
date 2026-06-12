@@ -172,6 +172,9 @@ function activateHotspot(hotspot: HotspotDefinition) {
   if (target) {
     state.setCurrentNode(target);
   }
+  if (hotspot.setFlag?.startsWith('ending:')) {
+    saveSnapshot(state.snapshot());
+  }
   if (hotspot.caption) {
     showCaption(hotspot.caption);
   }
@@ -291,6 +294,8 @@ function diegeticOverlay(nodeId: string): string {
   if (nodeId === 'patrol-radio') return 'LCD // 88.7 FM';
   if (nodeId === 'dispatch-printer') return 'DOT MATRIX // 23:17';
   if (nodeId === 'recorder-nest') return 'RECORDER COUNTER // 23:26';
+  if (nodeId === 'ending-eject') return 'EJECT // BOX 271 SEALED';
+  if (nodeId === 'ending-record') return 'RECORD // VIEWER TRACK ARMED';
   return '';
 }
 

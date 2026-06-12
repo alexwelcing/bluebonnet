@@ -22,3 +22,27 @@ Transcript:
 9. Clicked `EJECT — seal the tape`; journal logged `ENDING CHOICE ARMED: EJECT will seal the tape with the missing minutes contained.`
 
 Result: PASS for B1 Act IV route, final detent seekability, composited text/journal clues, and live runtime still/audio asset serving. B2 remains for fully distinct ending states/frames/audio.
+
+
+## 2026-06-12T05:50:00.215106+00:00 — B2 endings live self-playtest
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2b9dacb60dced7f912d3aa
+
+Setup: loaded a final-choice save at 23:26-23:35 with Act IV complete and both choices visible.
+
+EJECT path:
+- Clicked `EJECT — seal the tape`.
+- Arrived at `ENDING EJECT`.
+- Caption: `ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.`
+- Diegetic overlay: `EJECT // BOX 271 SEALED`.
+- Save snapshot automatically recorded `currentNodeId: ending-eject` and `flags[ending:eject] = true`.
+
+RECORD path:
+- Reset to final-choice and clicked `RECORD — overwrite the evidence`.
+- Arrived at `ENDING RECORD`.
+- Caption: `ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape.`
+- Diegetic overlay: `RECORD // VIEWER TRACK ARMED`.
+- Save snapshot automatically recorded `currentNodeId: ending-record` and `flags[ending:record] = true`.
+
+Result: PASS for distinct ending states, final composited frames/overlays, ending-specific audio assets served live, and save-state ending recording.

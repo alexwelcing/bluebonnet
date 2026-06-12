@@ -42,7 +42,7 @@ function activate(hotspot: HotspotDefinition, state: ReturnType<typeof createSta
 describe('Act IV nine minutes content', () => {
   it('keeps Act IV clean plates in whole-shotlist A1 lint coverage', () => {
     const act4Shots = shotlist.shots.filter((shot) => shot.act === 'act4');
-    expect(act4Shots).toHaveLength(6);
+    expect(act4Shots).toHaveLength(8);
     for (const shot of act4Shots) {
       expect(shot.window).toBe('23:26-23:35');
       expect(shot.prompt, shot.filename).toContain('no readable text, no lettering, no signage characters');
@@ -99,7 +99,14 @@ describe('Act IV nine minutes content', () => {
     }
 
     const final = getNodeState(graph, 'final-choice', '23:26-23:35');
-    expect(final.hotspots.some((hotspot) => hotspot.id === 'choose-eject')).toBe(true);
-    expect(final.hotspots.some((hotspot) => hotspot.id === 'choose-record')).toBe(true);
+    const eject = final.hotspots.find((hotspot) => hotspot.id === 'choose-eject')!;
+    const record = final.hotspots.find((hotspot) => hotspot.id === 'choose-record')!;
+    expect(eject.target).toBe('ending-eject');
+    expect(record.target).toBe('ending-record');
+    activate(eject, state);
+    expect(state.snapshot().currentNodeId).toBe('ending-eject');
+    expect(state.snapshot().flags['ending:eject']).toBe(true);
+    expect(getNodeState(graph, 'ending-eject', '23:26-23:35').caption).toContain('EJECT');
+    expect(getNodeState(graph, 'ending-record', '23:26-23:35').caption).toContain('RECORD');
   });
 });
