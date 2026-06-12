@@ -57,3 +57,18 @@ Fairness rules: every code appears in at least 2 in-world places; no pixel hunts
 - Candidate workflow: generate 3-4 candidates per shot, pick ONE, log picks and rejects with reasons in shotlist.json. Continuity (palette, geography, the wrongness rule) beats single-image beauty. Same prompt skeleton + seed discipline per location.
 - MOTION: the world must breathe. Composite seamless ambient video loops (Fal video models, 2-6s) as layers over stills: bluebonnets swaying, heat shimmer on asphalt, radio static, the distant car's headlights, culvert water. 3-6 loops per act. Loops obey A1: no readable text.
 - Generation budget is NOT a constraint - 5% spent so far, the director has opened the spend. Generate boldly, curate ruthlessly.
+
+## Canon amendment A4 (director, 2026-06-12) — DENSITY & MOTION (supersedes prior shot economy)
+The game has been too sparse. Myst had ~2,500 images, Riven ~5,000; immersion came from density, not plot. New mandate:
+- NODE DENSITY: every location is multiple nodes — forward/back PLUS turn-left/turn-right/look-down/look-up and at least one detail-zoom (examine an object up close). A "location" averages 5-8 viewpoints, not 1.
+- MOTION EVERYWHERE: every node ships at least one idle loop layer on top of the still — wind through bluebonnets, heat shimmer, the distant car, flickering cruiser lights, dripping culvert, drifting tape artifacts, insects. Use Fal/Veo video. A static frame is the exception, not the rule.
+- TRANSITIONS: node-to-node moves get short transition loops (the Myst move-forward push), not hard cuts.
+- TAPE-TIME VARIANTS: keep ≥2 windows per node; richer wrongness deltas between them.
+- SPATIAL CONSISTENCY: build coherent locations as Marble 3D worlds (Gaussian splats) and render consistent multi-angle node stills from them, so viewpoints of the same place actually match. Splats live in assets/worlds/, rendered stills in public/stills/.
+- BUDGET: generate liberally. Quality bar over frame economy. Target hundreds of shots across the four acts.
+
+## Asset toolchain (available to the autonomous loop)
+- FAL (FAL_API_KEY in .env): primary stills + video loops. Push it.
+- Marble (marble.worldlabs.ai): generate explorable 3D worlds → export splats (.spz/.splat/.ply) → render multi-angle consistent node views. Driven via Claude-in-Chrome with the marble-world-creator skill.
+- Gemini AI Studio writing-lab app (operator-driven): Nano Banana images + Veo video loops/flythroughs; also a writing tool for in-world documents/lore.
+- Envato (app.envato.com): licensed 2D textures, UI bits, and audio stems where generation isn't ideal. License before use; log source.
