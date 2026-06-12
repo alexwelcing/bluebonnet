@@ -1,11 +1,26 @@
-import type { EngineSnapshot, FlagCondition, HotspotDefinition, NodeGraph, SceneManifest, SceneNode } from './types';
+import type {
+  EngineSnapshot,
+  FlagCondition,
+  HotspotDefinition,
+  NodeGraph,
+  SceneManifest,
+  SceneNode,
+  TemporalNodeState,
+  TimeWindow,
+} from './types';
 
 export function loadNodeGraph(manifests: SceneManifest[]): NodeGraph {
   const nodes: Record<string, SceneNode> = {};
   let startNodeId: string | undefined;
+  let initialWindow: TimeWindow = '23:08-23:17';
+  const lockedWindows = new Set<TimeWindow>();
 
   for (const manifest of manifests) {
     startNodeId ??= manifest.startNodeId ?? manifest.nodes[0]?.id;
+    initialWindow = manifest.initialWindow ?? initialWindow;
+    for (const window of manifest.lockedWindows ?? []) {
+      lockedWindows.add(window);
+    }
     for (const node of manifest.nodes) {
       if (nodes[node.id]) {
         throw new Error(`Duplicate scene node id: ${node.id}`);
@@ -19,19 +34,26 @@ export function loadNodeGraph(manifests: SceneManifest[]): NodeGraph {
   }
 
   for (const node of Object.values(nodes)) {
-    for (const hotspot of node.hotspots) {
-      const targets = [hotspot.target, ...(hotspot.conditionalTargets ?? []).map((conditional) => conditional.target)].filter(
-        (target): target is string => typeof target === 'string',
-      );
-      for (const target of targets) {
-        if (!nodes[target]) {
-          throw new Error(`Hotspot ${node.id}.${hotspot.id} references missing target node: ${target}`);
-        }
+    for (const state of Object.values(node.temporalStates ?? {})) {
+      validateHotspotTargets(nodes, node.id, state.hotspots);
+    }
+    validateHotspotTargets(nodes, node.id, node.hotspots);
+  }
+
+  return { startNodeId, initialWindow, lockedWindows: [...lockedWindows], nodes };
+}
+
+function validateHotspotTargets(nodes: Record<string, SceneNode>, nodeId: string, hotspots: HotspotDefinition[]): void {
+  for (const hotspot of hotspots) {
+    const targets = [hotspot.target, ...(hotspot.conditionalTargets ?? []).map((conditional) => conditional.target)].filter(
+      (target): target is string => typeof target === 'string',
+    );
+    for (const target of targets) {
+      if (!nodes[target]) {
+        throw new Error(`Hotspot ${nodeId}.${hotspot.id} references missing target node: ${target}`);
       }
     }
   }
-
-  return { startNodeId, nodes };
 }
 
 export function getNode(graph: NodeGraph, id: string): SceneNode {
@@ -42,6 +64,17 @@ export function getNode(graph: NodeGraph, id: string): SceneNode {
   return node;
 }
 
+export function getNodeState(graph: NodeGraph, id: string, window: TimeWindow): TemporalNodeState {
+  const node = getNode(graph, id);
+  return (
+    node.temporalStates?.[window] ?? {
+      still: node.still,
+      caption: node.caption ?? '',
+      hotspots: node.hotspots,
+    }
+  );
+}
+
 export function conditionsMet(conditions: FlagCondition[] | undefined, snapshot: EngineSnapshot): boolean {
   return (conditions ?? []).every((condition) => {
     const expected = condition.equals ?? true;
@@ -49,8 +82,8 @@ export function conditionsMet(conditions: FlagCondition[] | undefined, snapshot:
   });
 }
 
-export function availableHotspots(node: SceneNode, snapshot: EngineSnapshot): HotspotDefinition[] {
-  return node.hotspots.filter((hotspot) => conditionsMet(hotspot.requires, snapshot));
+export function availableHotspots(nodeOrState: SceneNode | TemporalNodeState, snapshot: EngineSnapshot): HotspotDefinition[] {
+  return nodeOrState.hotspots.filter((hotspot) => conditionsMet(hotspot.requires, snapshot));
 }
 
 export function resolveHotspotTarget(hotspot: HotspotDefinition, snapshot: EngineSnapshot): string | undefined {

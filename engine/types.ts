@@ -1,4 +1,5 @@
 export type Point = readonly [number, number];
+export type TimeWindow = '23:08-23:17' | '23:17-23:26' | '23:26-23:35';
 
 export interface FlagCondition {
   flag: string;
@@ -11,6 +12,13 @@ export interface ConditionalTarget {
   label?: string;
 }
 
+export type PuzzleAction = 'flyer-frequency' | 'radio-tune' | 'dispatch-log';
+
+export interface JournalClue {
+  id: string;
+  text: string;
+}
+
 export interface HotspotDefinition {
   id: string;
   label: string;
@@ -21,6 +29,17 @@ export interface HotspotDefinition {
   requires?: FlagCondition[];
   conditionalTargets?: ConditionalTarget[];
   caption?: string;
+  journal?: JournalClue;
+  puzzleAction?: PuzzleAction;
+  discoverTimecode?: TimeWindow;
+  shimmerThreshold?: number;
+}
+
+export interface TemporalNodeState {
+  still: string;
+  caption: string;
+  wrongness?: string;
+  hotspots: HotspotDefinition[];
 }
 
 export interface SceneNode {
@@ -30,22 +49,38 @@ export interface SceneNode {
   ambientAudio?: string;
   caption?: string;
   hotspots: HotspotDefinition[];
+  temporalStates?: Partial<Record<TimeWindow, TemporalNodeState>>;
 }
 
 export interface SceneManifest {
   startNodeId?: string;
+  initialWindow?: TimeWindow;
+  lockedWindows?: TimeWindow[];
   nodes: SceneNode[];
 }
 
 export interface NodeGraph {
   startNodeId: string;
+  initialWindow: TimeWindow;
+  lockedWindows: TimeWindow[];
   nodes: Record<string, SceneNode>;
+}
+
+export interface JournalEntry {
+  id: string;
+  text: string;
+  loggedAt: string;
 }
 
 export interface EngineSnapshot {
   currentNodeId: string;
   flags: Record<string, boolean>;
   vhsIntensity: number;
+  activeWindow: TimeWindow;
+  discoveredTimecodes: TimeWindow[];
+  journal: JournalEntry[];
+  completedPuzzles: PuzzleAction[];
+  captionsEnabled: boolean;
   savedAt?: string;
 }
 

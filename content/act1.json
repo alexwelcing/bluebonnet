@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": 2,
+  "startNodeId": "cruiser-interior",
+  "initialWindow": "23:08-23:17",
+  "lockedWindows": [
+    "23:26-23:35"
+  ],
+  "nodes": [
+    {
+      "id": "cruiser-interior",
+      "title": "Cruiser Interior",
+      "still": "stills/act1/cruiser-interior__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/cruiser-interior__2308-2317.jpg",
+          "caption": "The passenger floor flyer reads: MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "out",
+              "label": "Step out to the shoulder",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "radio",
+              "label": "Inspect the patrol radio",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "patrol-radio",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "flyer-clue",
+              "label": "Read the missing-person flyer",
+              "polygon": [
+                [
+                  25,
+                  68
+                ],
+                [
+                  75,
+                  68
+                ],
+                [
+                  75,
+                  98
+                ],
+                [
+                  25,
+                  98
+                ]
+              ],
+              "target": "cruiser-interior",
+              "journal": {
+                "id": "flyer-frequency",
+                "text": "MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown."
+              },
+              "puzzleAction": "flyer-frequency",
+              "caption": "MISSING: LENA ORTIZ \u2014 call 88.7 FM after sundown.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/cruiser-interior__2317-2326.jpg",
+          "caption": "The flyer has curled toward the radio. 88.7 FM is also scratched into the sun visor.",
+          "wrongness": "The same flyer points at the radio now; nobody touched it.",
+          "hotspots": [
+            {
+              "id": "out",
+              "label": "Step out to the shoulder",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "radio",
+              "label": "Inspect the patrol radio",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "patrol-radio",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "visor-clue",
+              "label": "Read the scratched visor",
+              "polygon": [
+                [
+                  25,
+                  0
+                ],
+                [
+                  75,
+                  0
+                ],
+                [
+                  75,
+                  32
+                ],
+                [
+                  25,
+                  32
+                ]
+              ],
+              "target": "cruiser-interior",
+              "journal": {
+                "id": "visor-frequency",
+                "text": "VISOR SCRATCH: 88.7 FM / AFTER SUNDOWN."
+              },
+              "caption": "VISOR SCRATCH: 88.7 FM / AFTER SUNDOWN.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cruiser-exterior",
+      "title": "Shoulder / Cruiser Exterior",
+      "still": "stills/act1/cruiser-exterior__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/cruiser-exterior__2308-2317.jpg",
+          "caption": "Both cruiser doors hang open. Bluebonnets stop just short of the tires.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "inside",
+              "label": "Return to the cruiser interior",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "marker",
+              "label": "Walk to mile marker 271",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "mile-marker-271",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "shrine",
+              "label": "Check the roadside shrine",
+              "polygon": [
+                [
+                  25,
+                  68
+                ],
+                [
+                  75,
+                  68
+                ],
+                [
+                  75,
+                  98
+                ],
+                [
+                  25,
+                  98
+                ]
+              ],
+              "target": "roadside-shrine",
+              "shimmerThreshold": 0.55
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/cruiser-exterior__2317-2326.jpg",
+          "caption": "Both doors are still open, but the flowers now brush the tires.",
+          "wrongness": "The flowers stand nearer the asphalt; the distant car is closer but never moving.",
+          "hotspots": [
+            {
+              "id": "inside",
+              "label": "Return to the cruiser interior",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "marker",
+              "label": "Walk to mile marker 271",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "mile-marker-271",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "culvert",
+              "label": "Follow the flattened flowers toward the culvert",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "culvert-mouth",
+              "shimmerThreshold": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mile-marker-271",
+      "title": "Mile Marker 271",
+      "still": "stills/act1/mile-marker-271__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/mile-marker-271__2308-2317.jpg",
+          "caption": "Mile marker 271 catches the last rose light. A flyer scrap is wedged behind it.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "ditch",
+              "label": "Look in the ditch grass",
+              "polygon": [
+                [
+                  25,
+                  68
+                ],
+                [
+                  75,
+                  68
+                ],
+                [
+                  75,
+                  98
+                ],
+                [
+                  25,
+                  98
+                ]
+              ],
+              "target": "flyer-ditch",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "marker-time-hint",
+              "label": "Read the reflected timestamp",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "mile-marker-271",
+              "journal": {
+                "id": "marker-timecode",
+                "text": "MILE MARKER REFLECTION: 23:17 repeats under the 271 numerals."
+              },
+              "caption": "MILE MARKER REFLECTION: 23:17 repeats under the 271 numerals.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/mile-marker-271__2317-2326.jpg",
+          "caption": "The marker leans toward the field. 23:17 ghosts across the reflective numbers.",
+          "wrongness": "The pole leans; the numbers reflect a time that should already be gone.",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "ditch",
+              "label": "Look in the ditch grass",
+              "polygon": [
+                [
+                  25,
+                  68
+                ],
+                [
+                  75,
+                  68
+                ],
+                [
+                  75,
+                  98
+                ],
+                [
+                  25,
+                  98
+                ]
+              ],
+              "target": "flyer-ditch",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "marker-time-hint-late",
+              "label": "Read the doubled reflection",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "mile-marker-271",
+              "journal": {
+                "id": "marker-timecode-late",
+                "text": "MILE MARKER DOUBLE: 23:17 / 23:17 / 23:17."
+              },
+              "caption": "MILE MARKER DOUBLE: 23:17 / 23:17 / 23:17.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "flyer-ditch",
+      "title": "Ditch Flyer",
+      "still": "stills/act1/flyer-ditch__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/flyer-ditch__2308-2317.jpg",
+          "caption": "A damp flyer repeats the same instruction from the cruiser floor.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "marker",
+              "label": "Back to the mile marker",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "mile-marker-271",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "flyer-repeat",
+              "label": "Read the ditch flyer",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "flyer-ditch",
+              "journal": {
+                "id": "flyer-frequency-ditch",
+                "text": "DITCH FLYER: LENA ORTIZ \u2014 88.7 FM after sundown."
+              },
+              "puzzleAction": "flyer-frequency",
+              "caption": "DITCH FLYER: LENA ORTIZ \u2014 88.7 FM after sundown.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/flyer-ditch__2317-2326.jpg",
+          "caption": "The paper is dry now. The ink has crawled into the shape of antenna towers.",
+          "wrongness": "The ink moved; the ditch water is gone.",
+          "hotspots": [
+            {
+              "id": "marker",
+              "label": "Back to the mile marker",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "mile-marker-271",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "flyer-repeat-late",
+              "label": "Read the changed flyer",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "flyer-ditch",
+              "journal": {
+                "id": "flyer-frequency-late",
+                "text": "CHANGED FLYER: 88.7 FM IS WHERE SHE ANSWERS."
+              },
+              "caption": "CHANGED FLYER: 88.7 FM IS WHERE SHE ANSWERS.",
+              "shimmerThreshold": 0.35
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "patrol-radio",
+      "title": "Patrol Radio",
+      "still": "stills/act1/patrol-radio__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/patrol-radio__2308-2317.jpg",
+          "caption": "The patrol radio is dark except for a standby LED. The dial can still turn.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "interior",
+              "label": "Back to the cruiser interior",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "tune-887",
+              "label": "Tune 88.7 FM",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "patrol-radio",
+              "requires": [
+                {
+                  "flag": "puzzle:flyer-frequency"
+                }
+              ],
+              "journal": {
+                "id": "radio-tune",
+                "text": "RADIO TUNED: 88.7 FM \u2014 static clears long enough to say dispatch printed it."
+              },
+              "puzzleAction": "radio-tune",
+              "caption": "RADIO TUNED: 88.7 FM \u2014 static clears long enough to say dispatch printed it.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "dispatch",
+              "label": "Check the dispatch printer",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "dispatch-printer",
+              "shimmerThreshold": 0.55
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/patrol-radio__2317-2326.jpg",
+          "caption": "The radio backlight pulses in time with the tracking band.",
+          "wrongness": "The LED pulses even with the ignition key absent.",
+          "hotspots": [
+            {
+              "id": "interior",
+              "label": "Back to the cruiser interior",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "radio-repeat",
+              "label": "Listen to 88.7 again",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "patrol-radio",
+              "journal": {
+                "id": "radio-timecode-repeat",
+                "text": "RADIO VOICE: 23:17 is the hinge. 23:17 is where the shoulder changes."
+              },
+              "caption": "RADIO VOICE: 23:17 is the hinge. 23:17 is where the shoulder changes.",
+              "shimmerThreshold": 0.25
+            },
+            {
+              "id": "dispatch",
+              "label": "Check the dispatch printer",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "dispatch-printer",
+              "shimmerThreshold": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dispatch-printer",
+      "title": "Dispatch Log Printer",
+      "still": "stills/act1/dispatch-printer__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/dispatch-printer__2308-2317.jpg",
+          "caption": "A thermal dispatch strip curls from the printer, but most of it is black static.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "radio",
+              "label": "Back to the radio",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "patrol-radio",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "read-dispatch",
+              "label": "Read the clear dispatch line",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "dispatch-printer",
+              "requires": [
+                {
+                  "flag": "puzzle:radio-tune"
+                }
+              ],
+              "journal": {
+                "id": "dispatch-log",
+                "text": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet."
+              },
+              "puzzleAction": "dispatch-log",
+              "discoverTimecode": "23:17-23:26",
+              "caption": "DISPATCH 23:17: REYES, reset tape to 23:17. Do not enter the bluebonnets yet.",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/dispatch-printer__2317-2326.jpg",
+          "caption": "The same dispatch line has printed three times, each lower on the strip.",
+          "wrongness": "The fresh paper is warm though the printer is unplugged.",
+          "hotspots": [
+            {
+              "id": "radio",
+              "label": "Back to the radio",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "patrol-radio",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "read-dispatch-late",
+              "label": "Read the repeated dispatch line",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "dispatch-printer",
+              "journal": {
+                "id": "dispatch-log-repeat",
+                "text": "DISPATCH REPEAT: 23:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS."
+              },
+              "caption": "DISPATCH REPEAT: 23:17 / RESET TAPE / DO NOT ENTER THE BLUEBONNETS.",
+              "shimmerThreshold": 0.25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "roadside-shrine",
+      "title": "Roadside Shrine",
+      "still": "stills/act1/roadside-shrine__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/roadside-shrine__2308-2317.jpg",
+          "caption": "Plastic flowers, a rosary, and a photo with the face scratched out.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "cruiser",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  25,
+                  0
+                ],
+                [
+                  75,
+                  0
+                ],
+                [
+                  75,
+                  32
+                ],
+                [
+                  25,
+                  32
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "shrine-note",
+              "label": "Read the shrine note",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "roadside-shrine",
+              "journal": {
+                "id": "shrine-note",
+                "text": "SHRINE NOTE: If the radio says her name, write down the time."
+              },
+              "caption": "SHRINE NOTE: If the radio says her name, write down the time.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/roadside-shrine__2317-2326.jpg",
+          "caption": "The plastic flowers have been replaced by fresh bluebonnets, all facing the cruiser.",
+          "wrongness": "The offering changed without a cut in the tape.",
+          "hotspots": [
+            {
+              "id": "cruiser",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  25,
+                  0
+                ],
+                [
+                  75,
+                  0
+                ],
+                [
+                  75,
+                  32
+                ],
+                [
+                  25,
+                  32
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "shrine-note-late",
+              "label": "Read the new shrine note",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "roadside-shrine",
+              "journal": {
+                "id": "shrine-note-late",
+                "text": "NEW SHRINE NOTE: 23:17 was already on the tape before Reyes arrived."
+              },
+              "caption": "NEW SHRINE NOTE: 23:17 was already on the tape before Reyes arrived.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "culvert-mouth",
+      "title": "Culvert Mouth",
+      "still": "stills/act1/culvert-mouth__2308-2317.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:08-23:17": {
+          "still": "stills/act1/culvert-mouth__2308-2317.jpg",
+          "caption": "The culvert is visible from the shoulder, but the flowers make a hard border around it.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "cruiser",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            }
+          ]
+        },
+        "23:17-23:26": {
+          "still": "stills/act1/culvert-mouth__2317-2326.jpg",
+          "caption": "The culvert mouth is darker now. The flowers stop at the concrete like they were cut.",
+          "wrongness": "The darkness under the road has moved closer.",
+          "hotspots": [
+            {
+              "id": "cruiser",
+              "label": "Back to the cruiser",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "cruiser-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "locked-nine",
+              "label": "Look into the missing nine minutes",
+              "polygon": [
+                [
+                  35,
+                  30
+                ],
+                [
+                  65,
+                  30
+                ],
+                [
+                  65,
+                  70
+                ],
+                [
+                  35,
+                  70
+                ]
+              ],
+              "target": "culvert-mouth",
+              "journal": {
+                "id": "nine-locked",
+                "text": "The tape counter jumps at 23:26. The nine minutes are still locked."
+              },
+              "caption": "The tape counter jumps at 23:26. The nine minutes are still locked.",
+              "shimmerThreshold": 0.65
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

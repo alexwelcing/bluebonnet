@@ -15,3 +15,10 @@
 - Generated master stills remain archived under assets/ as source-of-truth files.
 - Runtime stills that must be served by the built game live under public/stills/ so Vite copies them into dist/stills/ without a custom plugin.
 - Content manifests reference runtime stills with subpath-safe relative URLs like stills/dashcam-test-01.png.
+
+## 2026-06-12T03:31:04+00:00 — Act I vertical slice schema
+- GAME_DIRECTION.md is creative canon and overrides improvisation; AGENTS.md points future sessions to it.
+- Engine schema v2 uses temporal node states keyed by tape windows 23:08-23:17 and 23:17-23:26; 23:26-23:35 exists as the locked nine minutes.
+- TIMESEEK only accepts discovered, unlocked time windows and re-seats the current node into that temporal state.
+- Journal entries record clue text verbatim and deduplicate by clue id.
+- Act I still masters live in assets/act1/ and runtime copies in public/stills/act1/.

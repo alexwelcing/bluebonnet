@@ -35,3 +35,6 @@ A horror puzzle-mystery game in the Myst/Riven lineage. Setting: a bluebonnet fi
 - Status/decision logging protocol: after each work block, append a dated entry to `.bridge/status.md` with what changed, what is next, and blockers; record durable choices that affect future sessions in `.bridge/decisions.md`.
 - Netlify production deploy: run `netlify deploy --prod --dir dist` once `NETLIFY_AUTH_TOKEN` is available in the environment or `netlify login` has been completed. Never store the Netlify token, or any secret, in the repo.
 - Session restart ritual: Hermes picks up `AGENTS.md` automatically at session start; read the tail of `.bridge/status.md` for current context before continuing work.
+
+## Canon pointer
+Creative authority lives in GAME_DIRECTION.md. Read it at session start; defer to it over improvisation.

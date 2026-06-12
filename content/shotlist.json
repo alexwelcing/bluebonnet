@@ -1,0 +1,166 @@
+{
+  "canon": "GAME_DIRECTION.md",
+  "promptTemplate": "degraded VHS still frame, 1990s Texas highway patrol {camera}, {subject}, {time-of-day}, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+  "shots": [
+    {
+      "nodeId": "cruiser-interior",
+      "window": "23:08-23:17",
+      "filename": "cruiser-interior__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, inside the idling DPS cruiser, cracked vinyl seat, missing-person flyer on passenger floor, radio stack dark, dusk amber over blue-violet shoulder, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187271,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e0/vcuskWmhtZ56-zRfppiWi_Q1oFL5cv.jpg"
+    },
+    {
+      "nodeId": "cruiser-interior",
+      "window": "23:17-23:26",
+      "filename": "cruiser-interior__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, inside the idling DPS cruiser, cracked vinyl seat, missing-person flyer on passenger floor, radio stack dark, dusk amber over blue-violet shoulder, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187288,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e1/_tGM2eG9K0beNECvv4R99_yVrwlL13.jpg"
+    },
+    {
+      "nodeId": "cruiser-exterior",
+      "window": "23:08-23:17",
+      "filename": "cruiser-exterior__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, open cruiser doors on FM 1187 shoulder, bluebonnets blooming hard against asphalt, no trooper visible, dusk amber over blue-violet field, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187305,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e1/j5RpydT6z03yKCb3Vn39R_iuxfdSsD.jpg"
+    },
+    {
+      "nodeId": "cruiser-exterior",
+      "window": "23:17-23:26",
+      "filename": "cruiser-exterior__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, open cruiser doors on FM 1187 shoulder, bluebonnets blooming hard against asphalt, no trooper visible, dusk amber over blue-violet field, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187322,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e2/VIlD_hRhyoqrlxCz1NWZ9_q5dfgY7g.jpg"
+    },
+    {
+      "nodeId": "mile-marker-271",
+      "window": "23:08-23:17",
+      "filename": "mile-marker-271__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, mile marker 271 leaning beside bluebonnets, reflective numerals too clean, empty highway behind, last rose dusk, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187339,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e3/9k0e7rlHT0O5oQE-zAMzb_rXMWTDZ7.jpg"
+    },
+    {
+      "nodeId": "mile-marker-271",
+      "window": "23:17-23:26",
+      "filename": "mile-marker-271__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, mile marker 271 leaning beside bluebonnets, reflective numerals too clean, empty highway behind, last rose dusk, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187356,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e4/6x3a-1U6W1KCuoChbyUq3_mMZFb38h.jpg"
+    },
+    {
+      "nodeId": "flyer-ditch",
+      "window": "23:08-23:17",
+      "filename": "flyer-ditch__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, missing-person flyer for Lena Ortiz pinned in roadside grass, handwritten 88.7 FM note, damp ditch flowers, dusk fading to violet, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187373,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e4/S6MYplkx2EDWsCJxNA42-_Dan6TKk8.jpg"
+    },
+    {
+      "nodeId": "flyer-ditch",
+      "window": "23:17-23:26",
+      "filename": "flyer-ditch__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, missing-person flyer for Lena Ortiz pinned in roadside grass, handwritten 88.7 FM note, damp ditch flowers, dusk fading to violet, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187390,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e5/W-0h3laUPqHndsBDhPefj_pr3WyZL1.jpg"
+    },
+    {
+      "nodeId": "patrol-radio",
+      "window": "23:08-23:17",
+      "filename": "patrol-radio__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close view of Texas DPS patrol radio and frequency dial, tape static crawling over display, inside cruiser at dusk, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187407,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e6/JOTw7IyZjz4fOXWA7MLdo_zTeBdBnK.jpg"
+    },
+    {
+      "nodeId": "patrol-radio",
+      "window": "23:17-23:26",
+      "filename": "patrol-radio__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, close view of Texas DPS patrol radio and frequency dial, tape static crawling over display, inside cruiser at dusk, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187424,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e7/zoL7xcxCu0wP5Nmcq1fmr_wySK9cbd.jpg"
+    },
+    {
+      "nodeId": "dispatch-printer",
+      "window": "23:08-23:17",
+      "filename": "dispatch-printer__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, thermal dispatch log paper curling from a small printer, timestamp 23:17 visible, evidence tag nearby, dim cruiser cabin, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187441,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e7/V9dkPyXlG-odKxBvFbsrL_lIHZcJOM.jpg"
+    },
+    {
+      "nodeId": "dispatch-printer",
+      "window": "23:17-23:26",
+      "filename": "dispatch-printer__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol crime-scene 35mm, thermal dispatch log paper curling from a small printer, timestamp 23:17 visible, evidence tag nearby, dim cruiser cabin, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187458,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e8/l0_Kcla5aI661KUDUVqw__ieNjM1Rj.jpg"
+    },
+    {
+      "nodeId": "roadside-shrine",
+      "window": "23:08-23:17",
+      "filename": "roadside-shrine__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, roadside shrine of plastic flowers and a rosary, bluebonnets pressing inward, photograph face scratched out, dusk blue roadside, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187475,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2e9/ImB6pMm6lCONlkAQMl8eq_VKZekiQC.jpg"
+    },
+    {
+      "nodeId": "roadside-shrine",
+      "window": "23:17-23:26",
+      "filename": "roadside-shrine__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol handheld, roadside shrine of plastic flowers and a rosary, bluebonnets pressing inward, photograph face scratched out, dusk blue roadside, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187492,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2ea/4rcB3ejsNVaWNXb-BZZYu_SPidUUpT.jpg"
+    },
+    {
+      "nodeId": "culvert-mouth",
+      "window": "23:08-23:17",
+      "filename": "culvert-mouth__2308-2317.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant cruiser lights, late dusk blue-black, before the wrongness fully wakes, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187509,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2ea/1maVdxjzTro-ITWZp8y7t_M8qPT0a5.jpg"
+    },
+    {
+      "nodeId": "culvert-mouth",
+      "window": "23:17-23:26",
+      "filename": "culvert-mouth__2317-2326.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, dark culvert mouth under Texas highway, bluebonnets stopping at concrete edge, distant cruiser lights, late dusk blue-black, same geography later, subtly wrong: flowers nearer asphalt, pole leaning, distant car closer but unmoving, timestamp burn-in lower right, tracking distortion bands, analog horror, muted colors",
+      "seed": 1187526,
+      "model": "fal-configured-image-generation",
+      "status": "generated",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9df2eb/08kfCiFTO3R0vby89BdKF_3snVepYM.jpg"
+    }
+  ]
+}

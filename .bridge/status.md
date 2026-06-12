@@ -87,3 +87,32 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-12T03:31:04+00:00 — Milestone 1 Act I vertical slice
+
+Changed:
+- Confirmed no active hanging `git push` process was present before starting; future push uses `GIT_TERMINAL_PROMPT=0` with a 60s timeout.
+- Read GAME_DIRECTION.md and implemented Act I to canon: Evidence Deck CRT/VCR fiction, TIMESEEK, TRACKING, captions, and JOURNAL.
+- Added engine schema v2 temporal states for 23:08-23:17 and 23:17-23:26 with the 23:26-23:35 nine minutes locked.
+- Added TIMESEEK gating, journal store, puzzle progression, and long-hover hotspot shimmer assist scaled by TRACKING.
+- Authored content/shotlist.json as the Act I shot bible and content/act1.json as the 8-node Shoulder vertical slice.
+- Generated 16 Act I stills via Fal; masters are in assets/act1/ and runtime copies are in public/stills/act1/.
+- Implemented puzzle chain flyer-frequency -> radio-tune -> dispatch-log -> first TIMESEEK unlock; key codes appear in multiple in-world clues.
+- Added Vitest coverage for TIMESEEK gating, journal dedupe/verbatim logging, and puzzle progression.
+- Refreshed /workspaces/bluebonnet/.bridge/preview/ from the green build and deployed production Netlify.
+
+Live URL:
+- https://bluebonnet-tape.netlify.app
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 2 files, 7 tests.
+- `npm run build` passed.
+- Production 200 checks passed for index, JS, CSS, and sample Act I stills.
+
+Next:
+- Playtest Milestone 1 end-to-end and tune hotspot polygons/clue copy if needed.
+- Push local commit 0279f50 once GitHub auth/transport stops timing out.
+
+Blockers:
+- GitHub push did not complete: `GIT_TERMINAL_PROMPT=0 git push origin main` timed out after 60s twice with no active git process left afterward; token-based HTTPS fallback failed with authentication error. Local commit is 0279f50.
