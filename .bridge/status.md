@@ -357,3 +357,27 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T06:25:20.592106+00:00 — B5 title / boot
+
+Changed:
+- Added an in-fiction `INSERT TAPE` boot/title overlay for BLUEBONNET before the deck is handled.
+- Added a `CREDITS / COLOPHON` deck control and colophon dialog describing the static found-footage node graph, A1 clean plates, physical TIMESEEK, captions, bookmarks, and no generated readable story text.
+- Added DOM regression coverage for boot/title and colophon behavior.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended B5 live self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- `npm run typecheck` passed.
+- `npm test` passed: 9 files, 27 tests.
+- `npm run lint:shotlist` passed: 56 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index and current JS/CSS bundles.
+- Browser live self-playtest passed at https://bluebonnet-tape.netlify.app after deploy 6a2ba5e4856d6bbd817eb960: boot screen appears, insert tape enters the deck, colophon opens, no JS errors.
+
+Next:
+- Continue with B6 FULL PLAYTHROUGH QA: live Act I→IV end-to-end solvability transcript.
+
+Blockers:
+- None.

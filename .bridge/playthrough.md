@@ -72,3 +72,17 @@ Checks:
 - Confirmed no story text came from generated images; it is all DOM-rendered exhibit text.
 
 Result: PASS for B4 flyer photocopy and dispatch dot-matrix exhibit art pass.
+
+
+## 2026-06-12T06:25:20.591624+00:00 — B5 boot/title live self-playtest
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2ba5e4856d6bbd817eb960
+
+Checks:
+- Loaded live site and confirmed the in-fiction boot dialog appears with `BLUEBONNET` and `INSERT TAPE`.
+- Clicked `INSERT TAPE`; boot screen hid and the evidence deck was reachable.
+- Opened the deck colophon and confirmed it contains `BLUEBONNET // COLOPHON`, `A1 clean plates`, physical TIMESEEK/captions/bookmark notes, and the no-generated-readable-text note.
+- Browser console reported no JS errors.
+
+Result: PASS for B5 insert-tape boot/title and deck credits/colophon.

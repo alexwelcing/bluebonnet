@@ -150,4 +150,23 @@ describe('Evidence Deck integration', () => {
     expect(saved.journal.map((entry: { text: string }) => entry.text).join('\n')).toContain('Evidence sealed');
   });
 
+
+  it('shows an in-fiction insert-tape boot screen and deck colophon', async () => {
+    await loadDeck();
+
+    const boot = document.querySelector<HTMLElement>('.boot-screen');
+    expect(boot?.hidden).toBe(false);
+    expect(boot?.textContent).toContain('INSERT TAPE');
+    expect(boot?.textContent).toContain('BLUEBONNET');
+
+    realPointerClick(button('INSERT TAPE'));
+    expect(boot?.hidden).toBe(true);
+
+    realPointerClick(button('CREDITS / COLOPHON'));
+    const colophon = document.querySelector<HTMLElement>('.colophon-panel');
+    expect(colophon?.hidden).toBe(false);
+    expect(colophon?.textContent).toContain('BLUEBONNET');
+    expect(colophon?.textContent).toContain('A1 clean plates');
+  });
+
 });

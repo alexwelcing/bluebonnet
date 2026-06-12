@@ -25,6 +25,34 @@ button, input { font: inherit; }
   background: linear-gradient(135deg, rgba(70, 45, 22, 0.35), rgba(0, 0, 0, 0.8));
 }
 
+
+
+.boot-screen,
+.colophon-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: radial-gradient(circle, rgba(36,55,43,0.94), rgba(0,0,0,0.96));
+}
+.boot-screen[hidden],
+.colophon-panel[hidden] { display: none; }
+.boot-card,
+.colophon-card {
+  width: min(680px, 92vw);
+  border: 1px solid rgba(164,255,197,0.35);
+  padding: 2rem;
+  background: rgba(2,8,5,0.92);
+  box-shadow: 0 0 80px rgba(67,255,120,0.12), inset 0 0 40px rgba(67,255,120,0.08);
+  text-align: center;
+}
+.boot-card h2,
+.colophon-card h2 { color: #d7f7e2; letter-spacing: 0.18em; }
+.boot-eyebrow { color: #9df2ad; letter-spacing: 0.2em; }
+.insert-tape, .credits, .close-colophon { margin-top: 1rem; }
+
 .deck-header {
   grid-column: 1 / -1;
   display: flex;

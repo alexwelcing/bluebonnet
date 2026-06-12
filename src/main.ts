@@ -27,6 +27,14 @@ if (!app) {
 
 app.innerHTML = `
   <section class="evidence-deck" aria-label="Evidence Deck CRT and VCR interface">
+    <div class="boot-screen" role="dialog" aria-label="Insert tape boot screen">
+      <div class="boot-card">
+        <p class="boot-eyebrow">TEXAS DPS EVIDENCE DECK</p>
+        <h2>BLUEBONNET</h2>
+        <p>BOX 271 // DASHCAM TAPE // APR 12 1998</p>
+        <button class="insert-tape" type="button">INSERT TAPE</button>
+      </div>
+    </div>
     <header class="deck-header">
       <div class="case-label">TEXAS DPS EVIDENCE DECK // BOX 271 // REYES, D.</div>
       <div class="tape-slot">VCR: DASHCAM TAPE INSERTED</div>
@@ -69,6 +77,7 @@ app.innerHTML = `
         CAPTIONS
       </label>
       <button class="save" type="button">BOOKMARK TAPE STATE</button>
+      <button class="credits" type="button">CREDITS / COLOPHON</button>
       <section class="journal-panel" aria-label="Annotation journal">
         <h2>JOURNAL</h2>
         <ol class="journal-list"></ol>
@@ -77,6 +86,14 @@ app.innerHTML = `
     <div class="exhibit-scan" hidden role="dialog" aria-modal="true" aria-label="Evidence exhibit scan">
       <article class="exhibit-paper"></article>
       <button class="close-exhibit" type="button">RETURN TO DECK</button>
+    </div>
+    <div class="colophon-panel" hidden role="dialog" aria-modal="true" aria-label="Credits and colophon">
+      <article class="colophon-card">
+        <h2>BLUEBONNET // COLOPHON</h2>
+        <p>Built as a static found-footage node graph: clean plates, runtime DOM text, A1 clean plates, physical TIMESEEK, captions, and local evidence bookmarks.</p>
+        <p>No generated still is trusted to carry readable story text.</p>
+      </article>
+      <button class="close-colophon" type="button">RETURN TO DECK</button>
     </div>
   </section>
 `;
@@ -93,12 +110,17 @@ const intensity = app.querySelector<HTMLInputElement>('.intensity')!;
 const volume = app.querySelector<HTMLInputElement>('.volume')!;
 const captions = app.querySelector<HTMLInputElement>('.captions')!;
 const save = app.querySelector<HTMLButtonElement>('.save')!;
+const credits = app.querySelector<HTMLButtonElement>('.credits')!;
+const bootScreen = app.querySelector<HTMLDivElement>('.boot-screen')!;
+const insertTape = app.querySelector<HTMLButtonElement>('.insert-tape')!;
 const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
 const timeseekHelp = app.querySelector<HTMLParagraphElement>('.timeseek-help')!;
 const journalList = app.querySelector<HTMLOListElement>('.journal-list')!;
 const exhibitScan = app.querySelector<HTMLDivElement>('.exhibit-scan')!;
 const exhibitPaper = app.querySelector<HTMLElement>('.exhibit-paper')!;
 const closeExhibit = app.querySelector<HTMLButtonElement>('.close-exhibit')!;
+const colophonPanel = app.querySelector<HTMLDivElement>('.colophon-panel')!;
+const closeColophon = app.querySelector<HTMLButtonElement>('.close-colophon')!;
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
@@ -195,6 +217,15 @@ volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
 closeExhibit.addEventListener('click', () => {
   exhibitScan.hidden = true;
+});
+insertTape.addEventListener('click', () => {
+  bootScreen.hidden = true;
+});
+credits.addEventListener('click', () => {
+  colophonPanel.hidden = false;
+});
+closeColophon.addEventListener('click', () => {
+  colophonPanel.hidden = true;
 });
 jogWheel.addEventListener('pointerdown', (event) => {
   jogWheel.setPointerCapture(event.pointerId);
