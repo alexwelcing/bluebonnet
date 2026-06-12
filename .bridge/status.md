@@ -557,3 +557,13 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-13T02:00:00+00:00 — Cinema layout + full playthrough (Claude, supervising)
+
+Changed:
+- LAYOUT: the game is no longer boxed. The picture takes the largest 16:9 the viewport allows on pure black (hotspot percent coordinates require the plate aspect); the deck panel is now a translucent slide-in drawer (DECK button or D key) and the picture yields the drawer's width when open so hotspots are never occluded — that occlusion was a real bug the playthrough caught in its first minute; captions moved onto the picture as a lower-third subtitle; the case label is a thin fade strip over the top.
+- FULL PLAYTHROUGH (live build, real input): boot → ending-record, all four acts, every puzzle solved from in-world information only, transitions settling correctly throughout, DUB COMPARE exercised mid-run, 18 journal entries, ending persisted, zero console errors. Transcript above in playthrough.md.
+
+Verification: typecheck, 39 tests, lint, build green; screenshots reviewed at every act under the new layout (panel open, tucked full-bleed, compare held).
+
+Blockers: none.

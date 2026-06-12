@@ -15,15 +15,21 @@ body {
 
 button, input { font: inherit; }
 
+/* Full-bleed cinema shell: the tape IS the screen. The picture takes the
+   largest 16:9 the viewport allows (hotspot percent coordinates require the
+   exact plate aspect); everything beyond is CRT black. Controls ride in a
+   translucent drawer; the case label fades over the top of the picture. */
 .evidence-deck {
-  min-height: 100vh;
+  position: fixed;
+  inset: 0;
   display: grid;
-  grid-template-columns: minmax(420px, 1fr) 360px;
-  grid-template-rows: auto 1fr;
-  gap: 1rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, rgba(70, 45, 22, 0.35), rgba(0, 0, 0, 0.8));
+  place-items: center;
+  background: #000;
+  overflow: hidden;
+  transition: padding-right 320ms ease;
 }
+/* Open drawer: the picture yields the drawer's width instead of being covered. */
+.evidence-deck.panel-open { padding-right: min(320px, 88vw); }
 
 
 
@@ -54,35 +60,33 @@ button, input { font: inherit; }
 .insert-tape, .credits, .close-colophon { margin-top: 1rem; }
 
 .deck-header {
-  grid-column: 1 / -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px solid rgba(161, 255, 184, 0.22);
-  padding: 0.75rem 1rem;
-  background: #10120d;
-  color: #9df2ad;
+  padding: 0.55rem 1rem 1.4rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent);
+  color: rgba(157, 242, 173, 0.8);
   letter-spacing: 0.12em;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
+  pointer-events: none;
 }
 
 .crt-bezel {
-  align-self: center;
-  padding: 1.15rem;
-  border-radius: 22px;
-  border: 3px solid #171a14;
-  background: linear-gradient(145deg, #1a1c16, #060705);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.04), 0 28px 70px rgba(0,0,0,0.55);
+  width: min(100%, calc(100vh * 16 / 9));
+  padding: 0;
 }
 
 .tape-stage {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  border: 1px solid rgba(164, 255, 197, 0.25);
   background: #020302;
-  box-shadow: 0 0 48px rgba(34, 255, 117, 0.1), inset 0 0 90px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.75);
 }
 
 .scene-still {
@@ -186,21 +190,55 @@ button, input { font: inherit; }
   transform: rotate(-1deg) skewX(-3deg);
 }
 
+/* Captions live on the picture, lower-third subtitle style. */
 .caption {
-  min-height: 3rem;
-  margin: 0.8rem 0 0;
-  padding: 0.7rem;
-  border: 1px solid rgba(164,255,197,0.16);
-  color: #d7f7e2;
-  background: rgba(0,0,0,0.38);
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: 62%;
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  color: #e9fbee;
+  background: rgba(0, 0, 0, 0.55);
   line-height: 1.45;
+  text-align: center;
+  font-size: clamp(0.8rem, 1.4vw, 1.05rem);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
 }
+.caption:empty { display: none; }
 
+/* The deck panel is a translucent drawer over the right edge. */
 .deck-controls {
-  border: 1px solid rgba(164,255,197,0.22);
-  padding: 1rem;
-  background: rgba(2,8,5,0.82);
-  box-shadow: inset 0 0 50px rgba(67,255,120,0.08);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  width: min(320px, 88vw);
+  padding: 2.6rem 1rem 1rem;
+  overflow-y: auto;
+  border-left: 1px solid rgba(164, 255, 197, 0.22);
+  background: rgba(2, 8, 5, 0.78);
+  backdrop-filter: blur(7px);
+  box-shadow: -18px 0 50px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(67, 255, 120, 0.06);
+  transform: translateX(100%);
+  transition: transform 320ms ease;
+}
+.deck-controls.open { transform: translateX(0); }
+
+.panel-toggle {
+  position: fixed;
+  top: 2.2rem;
+  right: 0.9rem;
+  z-index: 10;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  background: rgba(2, 8, 5, 0.72);
+  backdrop-filter: blur(4px);
 }
 
 .eyebrow { color: #7be69d; font-size: 0.74rem; letter-spacing: 0.18em; }
@@ -359,8 +397,9 @@ button, .save {
 }
 
 @media (max-width: 900px) {
-  .evidence-deck { grid-template-columns: 1fr; }
-  .deck-header { display: grid; }
+  .deck-header { display: grid; gap: 0.15rem; font-size: 0.62rem; }
+  .deck-controls { width: 100vw; border-left: 0; }
+  .caption { max-width: 86%; bottom: 8%; }
 }
 
 /* Clue-precise hotspots (canon A6.1): the segmented silhouette is the

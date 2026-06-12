@@ -35,7 +35,7 @@ if (!app) {
 }
 
 app.innerHTML = `
-  <section class="evidence-deck" aria-label="Evidence Deck CRT and VCR interface">
+  <section class="evidence-deck panel-open" aria-label="Evidence Deck CRT and VCR interface">
     <div class="boot-screen" role="dialog" aria-label="Insert tape boot screen">
       <div class="boot-card">
         <p class="boot-eyebrow">REYES ARCHIVE — MIRASOL, TX</p>
@@ -59,10 +59,11 @@ app.innerHTML = `
         <div class="tracking tracking-b" aria-hidden="true"></div>
         <div class="diegetic-text" aria-live="off"></div>
         <div class="timestamp" aria-live="off"></div>
+        <p class="caption" aria-live="polite"></p>
       </div>
-      <p class="caption" aria-live="polite"></p>
     </div>
-    <aside class="deck-controls">
+    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="deck-controls" title="Toggle the deck panel (D)">DECK ▤</button>
+    <aside class="deck-controls open" id="deck-controls">
       <div class="readout">
         <p class="eyebrow">CURRENT NODE</p>
         <h1></h1>
@@ -129,6 +130,8 @@ const insertTape = app.querySelector<HTMLButtonElement>('.insert-tape')!;
 const jogWheel = app.querySelector<HTMLButtonElement>('.jog-wheel')!;
 const compareButton = app.querySelector<HTMLButtonElement>('.compare')!;
 const compareLayer = app.querySelector<HTMLImageElement>('.compare-layer')!;
+const panelToggle = app.querySelector<HTMLButtonElement>('.panel-toggle')!;
+const deckControls = app.querySelector<HTMLElement>('.deck-controls')!;
 const timeseekHelp = app.querySelector<HTMLParagraphElement>('.timeseek-help')!;
 const journalList = app.querySelector<HTMLOListElement>('.journal-list')!;
 const exhibitScan = app.querySelector<HTMLDivElement>('.exhibit-scan')!;
@@ -475,6 +478,19 @@ function closeModal(panel: HTMLElement) {
   }
   modalReturnFocus = undefined;
 }
+
+function setPanelOpen(open: boolean) {
+  deckControls.classList.toggle('open', open);
+  // The picture yields space to the open drawer so hotspots are never occluded.
+  app!.querySelector('.evidence-deck')?.classList.toggle('panel-open', open);
+  panelToggle.setAttribute('aria-expanded', String(open));
+}
+panelToggle.addEventListener('click', () => setPanelOpen(!deckControls.classList.contains('open')));
+document.addEventListener('keydown', (event) => {
+  if ((event.key === 'd' || event.key === 'D') && !event.repeat) {
+    setPanelOpen(!deckControls.classList.contains('open'));
+  }
+});
 
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
 volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
