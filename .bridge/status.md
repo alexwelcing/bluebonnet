@@ -429,3 +429,31 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-12T12:35:26.777215+00:00 — B7/D1 Act IV threshold density slice
+
+Changed:
+- Added four Act IV threshold density clean plates: left-facing, right-facing, look-down, and culvert-lip detail.
+- Wired four new Act IV nodes from `nine-field-threshold`: `nine-threshold-left`, `nine-threshold-right`, `nine-threshold-look-down`, and `nine-culvert-detail`.
+- Added return hotspots from each new viewpoint to the threshold, preserving the main route into `nine-flower-path`.
+- Added per-node audio/motion metadata so the Act IV luminescence motion layer carries through the new viewpoints.
+- Added four Act IV shotlist entries with no-text prompts and curation notes; whole-shotlist clean plate count is now 60.
+- Added regression coverage for Act IV threshold density navigation and shotlist count.
+- Refreshed .bridge/preview/ from dist and deployed production Netlify.
+- Appended live density self-playtest transcript to .bridge/playthrough.md.
+
+Verification:
+- RED observed before implementation: `npm test -- tests/act4.test.ts` failed on Act IV shotlist length and missing threshold density targets.
+- `npm run typecheck` passed.
+- `npm test` passed: 9 files, 30 tests.
+- `npm run lint:shotlist` passed: 60 clean plates across all acts.
+- `npm run build` passed.
+- Production 200 checks passed for index, current JS/CSS bundles, all four new Act IV stills, and Act IV motion MP4.
+- Browser live self-playtest passed at https://bluebonnet-tape.netlify.app after deploy 6a2bfcafe2954b2517adfaf1: all four new threshold viewpoints route out and back; motion layer remains active; no JS errors.
+
+Next:
+- Continue B7/D1 by densifying the next Act IV location cluster (`nine-flower-path` and `near-car`) toward the 24-view A4 Act IV target, then backfill Acts I-III.
+
+Blockers:
+- None.

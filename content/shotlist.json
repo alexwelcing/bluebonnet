@@ -617,6 +617,66 @@
       "model": "fal-configured-image-generation",
       "status": "generated-clean",
       "sourceUrl": "https://v3b.fal.media/files/b/0a9df61c/n6ueL4pQPaKhl1vnc1l2l_lwx2vC8m.png"
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-threshold-left",
+      "window": "23:26-23:35",
+      "filename": "nine-threshold-left__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, left-facing view from the culvert mouth into a luminous bluebonnet field at night, blue-black palette, faint car headlight glow off-frame, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "seed": 450101,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff99/2TY1QyXntETKMKQgs3O8o_dUl5r7Bu.png",
+      "curation": {
+        "selected": true,
+        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      }
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-threshold-right",
+      "window": "23:26-23:35",
+      "filename": "nine-threshold-right__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, right-facing view from the culvert mouth across shoulder-high luminous bluebonnets at night, highway shoulder vanished behind flowers, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "seed": 450102,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/NpvFJccjFm4HuoYagdqIF_ITUJpCIp.png",
+      "curation": {
+        "selected": true,
+        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      }
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-threshold-look-down",
+      "window": "23:26-23:35",
+      "filename": "nine-threshold-look-down__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, look-down view at boots disappearing into bluebonnets and dark soil near culvert threshold, analog horror, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "seed": 450103,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9a/e1jbsjOeqVmWPFvhmAohH_QifjmrSM.png",
+      "curation": {
+        "selected": true,
+        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      }
+    },
+    {
+      "act": "act4",
+      "nodeId": "nine-culvert-detail",
+      "window": "23:26-23:35",
+      "filename": "nine-culvert-detail__2326-2335.jpg",
+      "prompt": "degraded VHS still frame, 1990s Texas highway patrol dashcam, Act IV missing nine minutes, close detail of wet concrete culvert lip with bluebonnet roots creeping over it, blank surfaces only, eerie night luminescence, clean plate for runtime compositing, no readable text, no lettering, no signage characters",
+      "seed": 450104,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dff9b/7GzaKHU-oG-mIBcbrwqWP_ZmRZ4iYE.png",
+      "curation": {
+        "selected": true,
+        "reason": "B7/D1 Act IV threshold density pass: adds lateral/look-down/detail viewpoint while preserving no-text A1 clean plate constraints."
+      }
     }
   ],
   "a1Lint": {

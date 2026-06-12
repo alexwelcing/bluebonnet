@@ -42,7 +42,7 @@ function activate(hotspot: HotspotDefinition, state: ReturnType<typeof createSta
 describe('Act IV nine minutes content', () => {
   it('keeps Act IV clean plates in whole-shotlist A1 lint coverage', () => {
     const act4Shots = shotlist.shots.filter((shot) => shot.act === 'act4');
-    expect(act4Shots).toHaveLength(8);
+    expect(act4Shots).toHaveLength(12);
     for (const shot of act4Shots) {
       expect(shot.window).toBe('23:26-23:35');
       expect(shot.prompt, shot.filename).toContain('no readable text, no lettering, no signage characters');
@@ -109,4 +109,16 @@ describe('Act IV nine minutes content', () => {
     expect(getNodeState(graph, 'ending-eject', '23:26-23:35').caption).toContain('EJECT');
     expect(getNodeState(graph, 'ending-record', '23:26-23:35').caption).toContain('RECORD');
   });
+
+  it('expands the Act IV threshold into lateral, look-down, and detail viewpoints', () => {
+    const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
+    const threshold = getNodeState(graph, 'nine-field-threshold', '23:26-23:35');
+    for (const target of ['nine-threshold-left', 'nine-threshold-right', 'nine-threshold-look-down', 'nine-culvert-detail']) {
+      expect(threshold.hotspots.some((hotspot) => hotspot.target === target), `threshold -> ${target}`).toBe(true);
+      const node = getNodeState(graph, target, '23:26-23:35');
+      expect(node.caption).toContain('23:26-23:35');
+      expect(node.hotspots.some((hotspot) => hotspot.target === 'nine-field-threshold'), `${target} -> threshold`).toBe(true);
+    }
+  });
+
 });

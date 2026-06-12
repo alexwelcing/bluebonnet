@@ -132,3 +132,24 @@ Checks:
 - Browser console reported no JS errors.
 
 Result: PASS for B7/D2 foundation: deployed shared idle motion layers render live over still clean plates while preserving hotspot/caption UI.
+
+
+## 2026-06-12T12:35:26.777215+00:00 — B7/D1 Act IV threshold density live self-playtest
+
+Live URL: https://bluebonnet-tape.netlify.app
+Deploy: 6a2bfcafe2954b2517adfaf1
+
+Setup: seeded a solved-through-Act-III save at `nine-field-threshold` in 23:26-23:35, then clicked only live DOM controls.
+
+Route transcript:
+- Start: NINE FIELD THRESHOLD / still `stills/act4/nine-field-threshold__2326-2335.jpg` / motion `video/act4-nine-luminescence.mp4`.
+- `Turn left into the bluebonnets` -> NINE THRESHOLD LEFT / still `nine-threshold-left__2326-2335.jpg` / caption: left side waits outside the dashcam cone.
+- `Turn back to the threshold` -> NINE FIELD THRESHOLD.
+- `Turn right along the vanished shoulder` -> NINE THRESHOLD RIGHT / still `nine-threshold-right__2326-2335.jpg` / caption: the right shoulder is gone.
+- `Turn back to the threshold` -> NINE FIELD THRESHOLD.
+- `Look down at the threshold` -> NINE THRESHOLD LOOK DOWN / still `nine-threshold-look-down__2326-2335.jpg` / caption: threshold underfoot and under tape-time.
+- `Lift your view back to the threshold` -> NINE FIELD THRESHOLD.
+- `Inspect the wet culvert lip` -> NINE CULVERT DETAIL / still `nine-culvert-detail__2326-2335.jpg` / caption: wet on the wrong side.
+- `Pull back from the culvert detail` -> NINE FIELD THRESHOLD.
+
+Result: PASS. The Act IV threshold now has lateral left/right views plus look-down and culvert-detail closeup, all with the Act IV motion layer preserved and no browser JS errors.

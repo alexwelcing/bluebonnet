@@ -26,7 +26,7 @@ function activate(hotspot: HotspotDefinition, state: ReturnType<typeof createSta
 
 describe('Act III culvert content', () => {
   it('keeps the whole shotlist under A1 clean-plate lint coverage', () => {
-    expect(shotlist.shots).toHaveLength(56);
+    expect(shotlist.shots).toHaveLength(60);
     for (const shot of shotlist.shots) {
       expect(shot.prompt, shot.filename).toContain('no readable text, no lettering, no signage characters');
     }

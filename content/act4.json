@@ -40,6 +40,106 @@
               "shimmerThreshold": 0.35
             },
             {
+              "id": "look-left-from-threshold",
+              "label": "Turn left into the bluebonnets",
+              "polygon": [
+                [
+                  20,
+                  18
+                ],
+                [
+                  38,
+                  18
+                ],
+                [
+                  38,
+                  74
+                ],
+                [
+                  20,
+                  74
+                ]
+              ],
+              "target": "nine-threshold-left",
+              "caption": "The left side of the field is not empty; it is waiting outside the dashcam cone.",
+              "shimmerThreshold": 0.38
+            },
+            {
+              "id": "look-right-from-threshold",
+              "label": "Turn right along the vanished shoulder",
+              "polygon": [
+                [
+                  42,
+                  18
+                ],
+                [
+                  60,
+                  18
+                ],
+                [
+                  60,
+                  74
+                ],
+                [
+                  42,
+                  74
+                ]
+              ],
+              "target": "nine-threshold-right",
+              "caption": "The right shoulder is gone; only luminous flowers remember where asphalt was.",
+              "shimmerThreshold": 0.38
+            },
+            {
+              "id": "look-down-threshold",
+              "label": "Look down at the threshold",
+              "polygon": [
+                [
+                  36,
+                  68
+                ],
+                [
+                  64,
+                  68
+                ],
+                [
+                  64,
+                  96
+                ],
+                [
+                  36,
+                  96
+                ]
+              ],
+              "target": "nine-threshold-look-down",
+              "caption": "The threshold is underfoot and under tape-time.",
+              "shimmerThreshold": 0.32
+            },
+            {
+              "id": "inspect-culvert-lip",
+              "label": "Inspect the wet culvert lip",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  28,
+                  70
+                ],
+                [
+                  28,
+                  96
+                ],
+                [
+                  0,
+                  96
+                ]
+              ],
+              "target": "nine-culvert-detail",
+              "caption": "The concrete lip is wet on the wrong side.",
+              "shimmerThreshold": 0.32
+            },
+            {
               "id": "back-to-gate",
               "label": "Back toward the culvert gate",
               "polygon": [
@@ -76,6 +176,214 @@
           "blendMode": "screen"
         }
       ]
+    },
+    {
+      "id": "nine-threshold-left",
+      "title": "Nine Threshold / Left Facing",
+      "still": "stills/act4/nine-threshold-left__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ],
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-threshold-left__2326-2335.jpg",
+          "caption": "23:26-23:35: left of the culvert, the field bends around the camera like a hallway made of flowers.",
+          "wrongness": "the lateral view proves the threshold has width, not just a forward path",
+          "hotspots": [
+            {
+              "id": "back-to-nine-field-threshold",
+              "label": "Turn back to the threshold",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  78
+                ],
+                [
+                  0,
+                  78
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "caption": "The original threshold view snaps back into the deck.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nine-threshold-right",
+      "title": "Nine Threshold / Right Facing",
+      "still": "stills/act4/nine-threshold-right__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ],
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-threshold-right__2326-2335.jpg",
+          "caption": "23:26-23:35: right of the culvert, the highway shoulder has been replaced by a dark bluebonnet wall.",
+          "wrongness": "the road exists only as a memory in the tape grain",
+          "hotspots": [
+            {
+              "id": "back-to-nine-field-threshold",
+              "label": "Turn back to the threshold",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  78
+                ],
+                [
+                  0,
+                  78
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "caption": "The original threshold view snaps back into the deck.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nine-threshold-look-down",
+      "title": "Nine Threshold / Look Down",
+      "still": "stills/act4/nine-threshold-look-down__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ],
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-threshold-look-down__2326-2335.jpg",
+          "caption": "23:26-23:35: the player footprint breaks the flowers, but the tape shows no arrival.",
+          "wrongness": "the ground is the cut between recorded and missing time",
+          "hotspots": [
+            {
+              "id": "back-to-nine-field-threshold",
+              "label": "Lift your view back to the threshold",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  78
+                ],
+                [
+                  0,
+                  78
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "caption": "The original threshold view snaps back into the deck.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nine-culvert-detail",
+      "title": "Nine Culvert Lip Detail",
+      "still": "stills/act4/nine-culvert-detail__2326-2335.jpg",
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      },
+      "motionLayers": [
+        {
+          "src": "video/act4-nine-luminescence.mp4",
+          "opacity": 0.36,
+          "blendMode": "screen"
+        }
+      ],
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "23:26-23:35": {
+          "still": "stills/act4/nine-culvert-detail__2326-2335.jpg",
+          "caption": "23:26-23:35: the wet concrete lip carries bluebonnet roots from inside the culvert outward.",
+          "wrongness": "the culvert is growing into the missing minutes",
+          "hotspots": [
+            {
+              "id": "back-to-nine-field-threshold",
+              "label": "Pull back from the culvert detail",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  78
+                ],
+                [
+                  0,
+                  78
+                ]
+              ],
+              "target": "nine-field-threshold",
+              "caption": "The original threshold view snaps back into the deck.",
+              "shimmerThreshold": 0.45
+            }
+          ]
+        }
+      }
     },
     {
       "id": "nine-flower-path",
