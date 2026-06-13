@@ -594,3 +594,14 @@ Verification:
 - Spend: ~$73 of $100 (ledger). ~$27 reserve remains.
 
 The tape is finished. EJECT or RECORD.
+
+## 2026-06-13T08:30:00+00:00 — THE LAST BROADCAST: prelude + real flyer artifacts (Claude, supervising)
+
+Changed:
+- PRELUDE (writing-led): the game now opens with Dana's final 88.7 KBLN sign-off — six beats, ~68s — over recovered images: the transmitter shack at dusk (live Veo loop, beacon blinking), Mirasol main street, a pole studded with five weeks of flyer staples, the field facing the road, the packed wagon under the porch light, the Hi8 on the dash. VO: ElevenLabs eleven-v3 ('Matilda'), radio-conditioned (250-3400Hz bandpass + compression) over a static bed that swells and swallows her sign-off ("Keep your porch lights on, Mirasol. This is Dana Reyes — going to the flowers."). Slide timings measured from the assembled track (content/prelude.json).
+- Engine: prelude player (fresh tapes only; Escape/skip button; captions are the content; ambient muted during broadcast; ⏮ REPLAY THE LAST BROADCAST in the deck drawer). Curation rejected smiling resolved faces twice and readable camcorder lettering (A1).
+- REAL FLYER: the exhibit is now photographed paper (rusted staples, toner streaks) with a tenth-generation halftone portrait whose face never resolves — Lena stays unresolvable, per motif — and all text still deck-composited (A1 holds). Tip-line exhibit gets a real thermal-paper plate.
+
+Verification: 47 tests green (prelude fresh/skip/replay + resumed-tape coverage); browser-verified slide sync at 34s, skip-to-game, flyer exhibit visuals; zero console errors. Spend ~$76 of $100.
+
+Blockers: none.

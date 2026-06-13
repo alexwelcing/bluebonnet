@@ -131,6 +131,38 @@ describe('Evidence Deck integration', () => {
   });
 
 
+  it('a fresh tape plays the last broadcast; Escape skips it', async () => {
+    await loadDeck();
+    expect(document.querySelector<HTMLElement>('.prelude')!.hidden).toBe(true);
+    realPointerClick(button('INSERT TAPE'));
+    const prelude = document.querySelector<HTMLElement>('.prelude')!;
+    expect(prelude.hidden).toBe(false);
+    expect(document.querySelector('.prelude-line')?.textContent).toContain("You're on 88.7 KBLN");
+    expect(document.querySelector('.prelude-eyebrow')?.textContent).toContain('FINAL BROADCAST');
+    document.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }));
+    expect(prelude.hidden).toBe(true);
+    expect(document.querySelector('h1')?.textContent).toBe('WAGON INTERIOR');
+  });
+
+  it('a resumed tape skips the broadcast but can replay it from the deck', async () => {
+    await loadDeck({
+      currentNodeId: 'field-gate',
+      flags: {},
+      vhsIntensity: 0.72,
+      activeWindow: '20:08-20:17',
+      discoveredTimecodes: ['20:08-20:17'],
+      journal: [],
+      completedPuzzles: [],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+    expect(document.querySelector<HTMLElement>('.prelude')!.hidden).toBe(true);
+    realPointerClick(button('⏮ REPLAY THE LAST BROADCAST'));
+    expect(document.querySelector<HTMLElement>('.prelude')!.hidden).toBe(false);
+    document.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }));
+    expect(document.querySelector<HTMLElement>('.prelude')!.hidden).toBe(true);
+  });
+
   it('locks refuse instead of vanishing: the padlock is visible and hints before the clocks', async () => {
     await loadDeck({
       currentNodeId: 'field-gate',

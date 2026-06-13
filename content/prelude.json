@@ -1,0 +1,49 @@
+{
+  "title": "DANA REYES — FINAL BROADCAST // 88.7 KBLN MIRASOL // APR 12 1998, 7:40 PM",
+  "audio": "audio/prelude-broadcast.m4a",
+  "totalSeconds": 68.17,
+  "slides": [
+    {
+      "id": "prelude-tower",
+      "type": "video",
+      "src": "video/prelude/prelude-tower.mp4",
+      "start": 1.25,
+      "line": "You're on 88.7 KBLN, Mirasol. It's seven-forty on April the twelfth — and this is the last Lena Ortiz hour I'm going to do from this chair."
+    },
+    {
+      "id": "prelude-town",
+      "type": "image",
+      "src": "stills/prelude/prelude-town.jpg",
+      "start": 11.97,
+      "line": "Five weeks ago, Lena walked out of the icehouse on Calle Segunda and never made it three blocks home. Y'all know it. You've seen my flyers on every pole from here to the county line."
+    },
+    {
+      "id": "prelude-flyer",
+      "type": "image",
+      "src": "stills/prelude/prelude-flyer.jpg",
+      "start": 23.74,
+      "line": "Eighty-eight point seven, after sundown. That's this number. That's this hour. And you called. Lord, you called."
+    },
+    {
+      "id": "prelude-field",
+      "type": "image",
+      "src": "stills/prelude/prelude-field.jpg",
+      "start": 33.19,
+      "line": "Every one of you, the same thing: the bluebonnets out at mile two-seventy-one. Blooming hard in April. Standing wrong. Facing the road — facing you, some of you said."
+    },
+    {
+      "id": "prelude-wagon",
+      "type": "image",
+      "src": "stills/prelude/prelude-wagon.jpg",
+      "start": 45.27,
+      "line": "DPS says a field can't be a lead. Fine. I've got Daddy's wagon, a full tank, the Hi8 on the dash, and tape enough for the whole night."
+    },
+    {
+      "id": "prelude-dash",
+      "type": "image",
+      "src": "stills/prelude/prelude-dash.jpg",
+      "start": 55.21,
+      "line": "If I'm not back for the morning sign-on... the tape will be. Keep your porch lights on, Mirasol. This is Dana Reyes — going to the flowers."
+    }
+  ]
+}

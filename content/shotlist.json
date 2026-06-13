@@ -1441,6 +1441,222 @@
         "c1": "https://v3b.fal.media/files/b/0a9e059b/Wm3ffeh2zAqm_H5CAcdSM_NccqpMxF.jpg",
         "c2": "https://v3b.fal.media/files/b/0a9e059b/7pjGnuKTCkx63981VCky3_hkXZJkxa.jpg"
       }
+    },
+    {
+      "nodeId": "prelude-tower",
+      "window": "prelude",
+      "filename": "prelude-tower.jpg",
+      "prompt": "35mm photograph, a small community radio transmitter shack with a guyed antenna tower against a flat Texas horizon at amber dusk, one red beacon light, gravel lot, power lines, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4137,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e1047/Zfgo0Cyp6rwXWh6YkOdRM_3IycT2b7.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1047/r4uK2hqDjhKKuE0Rhrg4r_96wiz08N.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e1048/8HtLoeE5hyouoz-m1L6w3_fV4pl0pO.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1047/r4uK2hqDjhKKuE0Rhrg4r_96wiz08N.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "iconic centered silhouette, beacon lit",
+        "rejected": [
+          "c2",
+          "c0"
+        ]
+      }
+    },
+    {
+      "nodeId": "prelude-town",
+      "window": "prelude",
+      "filename": "prelude-town.jpg",
+      "prompt": "35mm photograph, a small Texas town main street at dusk, empty sidewalks, brick storefronts with blank awnings, a water tower silhouetted beyond the rooflines, last amber light, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4154,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e1047/R_HwlfWBJ7tZ413I_36bq_npHRrrSZ.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e1048/TXYhjrvg8vgBJkuRj45IB_I1cXVrn9.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1048/li3YaLHC37wn4LYHvanDu_p62n5AxX.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1047/R_HwlfWBJ7tZ413I_36bq_npHRrrSZ.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "main street, water tower centered, A1-clean",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
+    },
+    {
+      "nodeId": "prelude-flyer",
+      "window": "prelude",
+      "filename": "prelude-flyer.jpg",
+      "prompt": "35mm photograph, a wooden telephone pole at dusk with weathered blank paper flyers stapled at eye level, more poles with pale flyers receding down the empty street, staples and torn corners, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4171,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e1049/6lhaHzrdaEr7Sak-9PmZH_8vg7tfJo.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e1049/BgBn4fdSQDPJtIhjBfGaS_RlDsX3rK.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1049/tsu3D5mi1xSADPoUaedHD_TnSb0Xf9.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1049/BgBn4fdSQDPJtIhjBfGaS_RlDsX3rK.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "pole studded with staples — five weeks of repostings",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "prelude-field",
+      "window": "prelude",
+      "filename": "prelude-field.jpg",
+      "prompt": "35mm photograph, an impossibly dense field of bluebonnets at deep dusk beside a two-lane highway, every bloom leaning toward the road, blue-violet twilight, unsettling stillness, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4188,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e1049/mRjP1MzTodJCaFTJ6OKpe_sjprUFGz.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1049/3tb9r3P5EvQIrHlHpvipk_zxQBoz8a.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e1049/_dYYX19xyYDFY7ZXbu1YC_onjveP1s.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1049/_dYYX19xyYDFY7ZXbu1YC_onjveP1s.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "blooms facing the road, deep violet",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "prelude-wagon",
+      "window": "prelude",
+      "filename": "prelude-wagon.jpg",
+      "prompt": "35mm photograph, a 1990s station wagon parked in a gravel driveway at dusk, tailgate open, packed with a duffel bag, boxes of cassette tapes and a thermos, house porch light glowing behind, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4205,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e104a/5r1JzOr62bTYFtb6SedN8_HdFPjsyr.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e104a/PaRqU-rAvVVzpf2GCmUzn_ZYAiQ9aR.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e104a/DUrlC4IqRsXbef4alwYzV_Tjb7rkMX.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e104a/5r1JzOr62bTYFtb6SedN8_HdFPjsyr.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "cassette boxes under porch light; c1 rejected for figure-like shadow",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "prelude-dash",
+      "window": "prelude",
+      "filename": "prelude-dash.jpg",
+      "prompt": "35mm photograph, close view of a Hi8 camcorder suction-mounted to a car dashboard at night, red record lamp off, dark two-lane road through the windshield ahead, analog horror, muted colors, 1998 period detail, no readable text, no lettering, no signage characters, no timestamp overlay, no people, no figures, no faces",
+      "seed": 4222,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "prelude",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e104a/MPceGTWGBC1UWUuLs2vRn_Gx1pKHaX.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e104a/OYqC7MQ0NreFTc9948xdk_Z96aYC3m.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e104a/OA8m1gyqJvMCh8-dpLBxQ_DeKdfytx.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e104a/MPceGTWGBC1UWUuLs2vRn_Gx1pKHaX.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "A1-clean camcorder; c1/c2 readable lettering",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "exhibit-flyer-portrait",
+      "window": "exhibit",
+      "filename": "exhibit-flyer-portrait.jpg",
+      "prompt": "abstract field of coarse photocopier halftone dots and toner noise, the very faintest ghost of a head-and-shoulders silhouette buried in the noise, ninety-five percent dissolved, tenth-generation photocopy of a photocopy, almost pure texture, no facial features, no eyes, no mouth, no recognizable face, no readable text, no lettering, no people, no readable text, no lettering, no signage characters",
+      "seed": 8908,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "exhibits",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e1085/Ecv_r_4mXl002UkO9Od7N_riPNNDsO.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e107f/yUJ5_bq9D3VoO3OVGSrag_7rrog6iX.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1085/jsA2xAs6ZAR9YdLmnuIYJ_C0f24lcn.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e107f/yUJ5_bq9D3VoO3OVGSrag_7rrog6iX.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "silhouette in pure toner noise, no features; c1/c2 rejected — faces resolved",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "exhibit-flyer-paper",
+      "window": "exhibit",
+      "filename": "exhibit-flyer-paper.jpg",
+      "prompt": "a blank weathered photocopied flyer page, off-white paper, toner streaks and roller marks, staple holes and one rusted staple at the top corners, slight diagonal skew, sun-faded, no readable text, no lettering, no signage characters, no numbers, no people",
+      "seed": 8932,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "exhibits",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e1078/tZ9unS5g2TLFQyKKRXGza_lNYAtZOK.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1078/Z62KBiAKVD3sNDwlNk6NV_e7qnsi4j.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1078/auE1DcckKz9H_CZ12SfXn_BbApt8gL.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1078/tZ9unS5g2TLFQyKKRXGza_lNYAtZOK.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "rusted staples, stains, curl; c1 rejected for ghost text",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "exhibit-thermal-paper",
+      "window": "exhibit",
+      "filename": "exhibit-thermal-paper.jpg",
+      "prompt": "flat top-down scan of a blank strip of 1990s thermal receipt paper filling the entire frame edge to edge, faint heat ghosting bands and roller streaks, pale gray-white, perforated edges, completely flat, no readable text, no lettering, no numbers, no people, no readable text, no lettering, no signage characters",
+      "seed": 8970,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "exhibits",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e1085/_iHL1WMgNbpWgRsp7_VZl_gA1FIqOu.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1085/98Kp40MZvKwVffBSfFAWZ_d5akhaoO.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e107f/TMjrugg5JI9j-2xs0hz5U_9GMbw2Np.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1085/98Kp40MZvKwVffBSfFAWZ_d5akhaoO.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "full-frame perforated thermal sheet with ghosting bands",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
     }
   ],
   "a1Lint": {

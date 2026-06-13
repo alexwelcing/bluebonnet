@@ -9,6 +9,7 @@ import { createTimeSeek } from '../engine/timeseek';
 import type { HotspotDefinition, SceneManifest, TimeWindow } from '../engine/types';
 import { installVhsCompositor } from '../engine/vhsCompositor';
 import transitionManifest from '../content/transitions.json';
+import preludeManifest from '../content/prelude.json';
 import './styles.css';
 
 // Only the act manifests: shotlist.json and motionLoops.json are internal
@@ -106,6 +107,7 @@ app.innerHTML = `
         CAPTIONS
       </label>
       <button class="save" type="button">BOOKMARK TAPE STATE</button>
+      <button class="replay-broadcast" type="button">⏮ REPLAY THE LAST BROADCAST</button>
       <button class="rewind" type="button" hidden>⏮ REWIND TAPE — START OVER</button>
       <button class="credits" type="button">CREDITS / COLOPHON</button>
       <section class="journal-panel" aria-label="Annotation journal">
@@ -113,6 +115,12 @@ app.innerHTML = `
         <ol class="journal-list"></ol>
       </section>
     </aside>
+    <div class="prelude" hidden role="dialog" aria-label="Recovered broadcast — Dana Reyes, final sign-off">
+      <div class="prelude-media" aria-hidden="true"></div>
+      <p class="prelude-eyebrow"></p>
+      <p class="prelude-line" aria-live="polite"></p>
+      <button class="prelude-skip" type="button">SKIP THE BROADCAST ⏭</button>
+    </div>
     <div class="exhibit-scan" hidden role="dialog" aria-modal="true" aria-label="Evidence exhibit scan">
       <article class="exhibit-paper"></article>
       <button class="close-exhibit" type="button">RETURN TO DECK</button>
@@ -592,10 +600,86 @@ intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity
 volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
 closeExhibit.addEventListener('click', () => closeModal(exhibitScan));
+// --- THE LAST BROADCAST (prelude) -------------------------------------------
+// On a fresh tape, INSERT plays Dana's final 88.7 sign-off over recovered
+// images: the why of everything, told before the first frame of gameplay.
+const preludeRoot = app.querySelector<HTMLDivElement>('.prelude')!;
+const preludeMedia = preludeRoot.querySelector<HTMLDivElement>('.prelude-media')!;
+const preludeEyebrow = preludeRoot.querySelector<HTMLParagraphElement>('.prelude-eyebrow')!;
+const preludeLine = preludeRoot.querySelector<HTMLParagraphElement>('.prelude-line')!;
+const preludeSkip = preludeRoot.querySelector<HTMLButtonElement>('.prelude-skip')!;
+const replayBroadcast = app.querySelector<HTMLButtonElement>('.replay-broadcast')!;
+let preludeActive = false;
+let endPrelude: (() => void) | undefined;
+
+function startPrelude(onDone: () => void) {
+  if (preludeActive) return;
+  preludeActive = true;
+  audio.setMuted(true); // the broadcast owns the soundscape
+  preludeRoot.hidden = false;
+  preludeEyebrow.textContent = preludeManifest.title;
+  preludeLine.textContent = '';
+  let slideIndex = -1;
+  const broadcast = new Audio(preludeManifest.audio);
+  broadcast.volume = 0.95;
+
+  const showSlide = (index: number) => {
+    slideIndex = index;
+    const slide = preludeManifest.slides[index];
+    preludeLine.textContent = slide.line;
+    const media =
+      slide.type === 'video'
+        ? Object.assign(document.createElement('video'), { src: slide.src, muted: true, loop: true, autoplay: true, playsInline: true })
+        : Object.assign(document.createElement('img'), { src: slide.src, alt: '' });
+    media.className = `prelude-frame ${index % 2 ? 'kb-b' : 'kb-a'}`;
+    preludeMedia.replaceChildren(media);
+    if (media instanceof HTMLVideoElement) {
+      const playResult = media.play();
+      if (playResult?.catch) void playResult.catch(() => undefined);
+    }
+  };
+
+  const onTime = () => {
+    const t = broadcast.currentTime;
+    const next = slideIndex + 1;
+    if (next < preludeManifest.slides.length && t >= preludeManifest.slides[next].start) showSlide(next);
+  };
+
+  const finish = () => {
+    if (!preludeActive) return;
+    preludeActive = false;
+    endPrelude = undefined;
+    broadcast.pause();
+    broadcast.removeEventListener('timeupdate', onTime);
+    broadcast.removeEventListener('ended', finish);
+    preludeMedia.replaceChildren();
+    preludeRoot.hidden = true;
+    audio.setMuted(false);
+    onDone();
+  };
+  endPrelude = finish;
+
+  broadcast.addEventListener('timeupdate', onTime);
+  broadcast.addEventListener('ended', finish);
+  broadcast.addEventListener('error', finish);
+  showSlide(0);
+  const playResult = broadcast.play();
+  if (playResult && typeof playResult.catch === 'function') {
+    playResult.catch(() => undefined); // stays skippable even if audio fails
+  }
+}
+
+preludeSkip.addEventListener('click', () => endPrelude?.());
+replayBroadcast.addEventListener('click', () => startPrelude(() => undefined));
+
+const freshTape = !initialSave;
 insertTape.addEventListener('click', () => {
   bootScreen.hidden = true;
   // First user gesture: browsers allow audio from here on.
   audio.unlock();
+  if (freshTape && !preludeActive) {
+    startPrelude(() => undefined);
+  }
 });
 credits.addEventListener('click', () => openModal(colophonPanel, closeColophon));
 closeColophon.addEventListener('click', () => closeModal(colophonPanel));
@@ -603,7 +687,9 @@ document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') {
     return;
   }
-  if (!exhibitScan.hidden) {
+  if (preludeActive) {
+    endPrelude?.();
+  } else if (!exhibitScan.hidden) {
     closeModal(exhibitScan);
   } else if (!colophonPanel.hidden) {
     closeModal(colophonPanel);
@@ -768,10 +854,15 @@ function openExhibit(hotspot: HotspotDefinition) {
   const sourceText = hotspot.journal?.text ?? hotspot.caption ?? hotspot.label;
   const title = document.createElement('h2');
   exhibitPaper.className = `exhibit-paper exhibit-${hotspot.exhibit}`;
+  exhibitPaper.style.background = ''; // reset between exhibit types
   if (hotspot.exhibit === 'flyer') {
+    // Real photographed paper under composited text (A1): the plate carries
+    // the staples and weathering; the deck carries every readable word.
+    exhibitPaper.style.background = "rgba(238,233,220,0.97) center/cover url('stills/exhibits/exhibit-flyer-paper.jpg')";
     title.textContent = 'MISSING: LENA ORTIZ';
     const photoBlock = document.createElement('div');
     photoBlock.className = 'flyer-photo-block';
+    photoBlock.style.background = "center/cover url('stills/exhibits/exhibit-flyer-portrait.jpg')";
     photoBlock.setAttribute('role', 'img');
     photoBlock.setAttribute('aria-label', 'Photocopied photograph, face lost in the halftone');
     const body = document.createElement('p');
@@ -786,6 +877,7 @@ function openExhibit(hotspot: HotspotDefinition) {
     }
     exhibitPaper.replaceChildren(title, photoBlock, body, tabs);
   } else if (hotspot.exhibit === 'dispatch') {
+    exhibitPaper.style.background = "rgba(240,238,230,0.97) center/cover url('stills/exhibits/exhibit-thermal-paper.jpg')";
     title.textContent = 'TIP-LINE THERMAL PRINTOUT';
     const leftFeed = document.createElement('div');
     leftFeed.className = 'tractor-feed-left';
