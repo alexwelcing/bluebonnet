@@ -24,3 +24,6 @@ tmux attach -t bluebonnet-smoke
 `kitty` is installed as the GUI terminal emulator. In Codespaces/headless shells,
 use tmux as the practical TUI control plane; launch kitty only from an environment
 with a graphical display.
+
+See `TEAM_OPERATIONS.md` for model routing, delegation, review, and handoff
+rules.

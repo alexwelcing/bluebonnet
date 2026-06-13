@@ -666,3 +666,16 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-13T02:30:15+00:00 — Team operations guide (Hermes)
+
+Changed:
+- Added `TEAM_OPERATIONS.md`, defining the multi-agent roster, command structure, routing rules, operating loop, handoff format, review expectations, and conflict resolution.
+- Captured Alex's current team map: Hermes on Nous with browser use; Codex, Claude, and Kimi usable in native harnesses or through Hermes; Minimax and GLM/Z.ai available only through Hermes.
+- Linked `tools/AGENT_TUI.md` to the team operations guide.
+
+Next:
+- Use `TEAM_OPERATIONS.md` as the default process guide when coordinating multi-model work.
+
+Blockers:
+- None.
