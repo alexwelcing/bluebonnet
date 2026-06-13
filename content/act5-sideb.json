@@ -1,0 +1,419 @@
+{
+  "nodes": [
+    {
+      "id": "side-room",
+      "title": "The Den",
+      "still": "stills/sideb/side-room.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "audioMix": {
+        "ambient": 0.3
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-room.jpg",
+          "caption": "Your den. The set has been on all night. In the carpet, where the cable runs: bluebonnets.",
+          "wrongness": "the tape is showing the room the deck is in",
+          "motionLayers": [
+            {
+              "src": "video/sideb/side-room.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/sideb/side-room.jpg"
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "to-window",
+              "label": "Part the blinds",
+              "polygon": [
+                [
+                  0,
+                  20
+                ],
+                [
+                  14,
+                  20
+                ],
+                [
+                  14,
+                  70
+                ],
+                [
+                  0,
+                  70
+                ]
+              ],
+              "target": "side-window"
+            },
+            {
+              "id": "to-tv",
+              "label": "Look closer at the set",
+              "polygon": [
+                [
+                  20,
+                  22
+                ],
+                [
+                  58,
+                  22
+                ],
+                [
+                  58,
+                  72
+                ],
+                [
+                  20,
+                  72
+                ]
+              ],
+              "target": "side-tv"
+            },
+            {
+              "id": "to-door",
+              "label": "Go to the front door",
+              "polygon": [
+                [
+                  78,
+                  10
+                ],
+                [
+                  100,
+                  10
+                ],
+                [
+                  100,
+                  80
+                ],
+                [
+                  78,
+                  80
+                ]
+              ],
+              "target": "side-door"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "side-window",
+      "title": "The Window",
+      "still": "stills/sideb/side-window.jpg",
+      "ambientAudio": "audio/field-wind-wrong.wav",
+      "audioMix": {
+        "ambient": 0.4
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-window.jpg",
+          "caption": "Across the street one porch light burns. The lawns have gone to flowers. The road keeps its shape, for now.",
+          "wrongness": "the neighborhood is becoming the field",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Step back from the window",
+              "polygon": [
+                [
+                  0,
+                  75
+                ],
+                [
+                  100,
+                  75
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "side-room"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "side-tv",
+      "title": "The Set",
+      "still": "stills/sideb/side-tv.jpg",
+      "ambientAudio": "audio/radio-static.wav",
+      "audioMix": {
+        "ambient": 0.45
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-tv.jpg",
+          "caption": "The set is showing the wagon. The timestamp is tonight.",
+          "wrongness": "something is crossing the static from the right",
+          "hotspots": [
+            {
+              "id": "sign-off",
+              "label": "Turn the set off",
+              "polygon": [
+                [
+                  30,
+                  25
+                ],
+                [
+                  72,
+                  25
+                ],
+                [
+                  72,
+                  75
+                ],
+                [
+                  30,
+                  75
+                ]
+              ],
+              "target": "ending-side-signoff",
+              "setFlag": "ending:side-signoff",
+              "caption": "SIGN-OFF: the static collapses to a point of light, and the point goes out.",
+              "journal": {
+                "id": "ending-side-signoff",
+                "text": "SIGN-OFF: You turned the set off. The room went dark except the line under the door. Containment, again. The porch light stays on."
+              }
+            },
+            {
+              "id": "back",
+              "label": "Step back",
+              "polygon": [
+                [
+                  0,
+                  80
+                ],
+                [
+                  100,
+                  80
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "side-room"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "side-door",
+      "title": "The Front Door",
+      "still": "stills/sideb/side-door.jpg",
+      "ambientAudio": "audio/field-wind-wrong.wav",
+      "audioMix": {
+        "ambient": 0.35
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-door.jpg",
+          "caption": "The chain is on. The light coming under the door is the wrong color for morning.",
+          "wrongness": "the threshold is already blooming",
+          "hotspots": [
+            {
+              "id": "chain",
+              "label": "Slip the chain off",
+              "polygon": [
+                [
+                  18,
+                  0
+                ],
+                [
+                  88,
+                  0
+                ],
+                [
+                  88,
+                  22
+                ],
+                [
+                  18,
+                  22
+                ]
+              ],
+              "setFlag": "side-chain-off",
+              "caption": "The chain swings loose against the wood. One sound in a quiet house."
+            },
+            {
+              "id": "open",
+              "label": "Open the door",
+              "polygon": [
+                [
+                  20,
+                  25
+                ],
+                [
+                  85,
+                  25
+                ],
+                [
+                  85,
+                  95
+                ],
+                [
+                  20,
+                  95
+                ]
+              ],
+              "target": "side-porch",
+              "requires": [
+                {
+                  "flag": "side-chain-off"
+                }
+              ],
+              "lockedHint": "The chain. Dana kept hers on too, right up until she did not."
+            },
+            {
+              "id": "back",
+              "label": "Back to the den",
+              "polygon": [
+                [
+                  0,
+                  80
+                ],
+                [
+                  16,
+                  80
+                ],
+                [
+                  16,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "side-room"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "side-porch",
+      "title": "The Porch",
+      "still": "stills/sideb/side-porch.jpg",
+      "ambientAudio": "audio/side-radio.wav",
+      "audioMix": {
+        "ambient": 0.7
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-porch.jpg",
+          "caption": "The radio on the step is tuned to 88.7. She kept the hour open.",
+          "wrongness": "the field begins where your steps end",
+          "motionLayers": [
+            {
+              "src": "video/sideb/side-porch.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/sideb/side-porch.jpg"
+            }
+          ],
+          "hotspots": [
+            {
+              "id": "answer",
+              "label": "Walk into the flowers",
+              "polygon": [
+                [
+                  25,
+                  30
+                ],
+                [
+                  100,
+                  30
+                ],
+                [
+                  100,
+                  80
+                ],
+                [
+                  25,
+                  80
+                ]
+              ],
+              "target": "ending-side-answer",
+              "setFlag": "ending:side-answer",
+              "caption": "WE ANSWER: you leave the door open behind you.",
+              "journal": {
+                "id": "ending-side-answer",
+                "text": "WE ANSWER: The flowers go to the horizon. Somewhere ahead, a porch light. The tip line never closed."
+              }
+            },
+            {
+              "id": "back-inside",
+              "label": "Step back inside",
+              "polygon": [
+                [
+                  0,
+                  60
+                ],
+                [
+                  18,
+                  60
+                ],
+                [
+                  18,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "side-room"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ending-side-signoff",
+      "title": "Sign-Off",
+      "still": "stills/sideb/side-dark.jpg",
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/sideb/side-dark.jpg",
+          "caption": "The room holds its dark. Under the door, the light stays on. Somebody should answer it. Maybe not tonight.",
+          "wrongness": "containment, again",
+          "hotspots": []
+        }
+      }
+    },
+    {
+      "id": "ending-side-answer",
+      "title": "We Answer",
+      "still": "stills/prelude/prelude-field.jpg",
+      "ambientAudio": "audio/nine-luminescence.wav",
+      "audioMix": {
+        "ambient": 0.6
+      },
+      "hotspots": [],
+      "temporalStates": {
+        "20:26-20:35": {
+          "still": "stills/prelude/prelude-field.jpg",
+          "caption": "Going to the flowers. Keep your porch light on.",
+          "wrongness": "the tip line never closed",
+          "hotspots": []
+        }
+      }
+    }
+  ]
+}

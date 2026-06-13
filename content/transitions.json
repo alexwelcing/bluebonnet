@@ -121,6 +121,13 @@
       "seed": 1187,
       "sourceUrl": "https://v3b.fal.media/files/b/0a9e08a2/obXOU1pDiC6hFDLOId7A8_21f2770d1abe48c9934e13e723fafa82.mp4",
       "curation": "first take: lamp lights, red floods the field, settles on room plate"
+    },
+    {
+      "from": "side-door",
+      "to": "side-porch",
+      "window": "20:26-20:35",
+      "src": "video/transitions/side-door__side-porch__side-b.mp4",
+      "curation": "chain slips, light floods, the field opens past the railing"
     }
   ]
 }

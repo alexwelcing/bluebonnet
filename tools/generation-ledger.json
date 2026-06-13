@@ -708,7 +708,145 @@
       "model": "fal-ai/elevenlabs/sound-effects/v2",
       "estimatedUsd": 0.1,
       "ok": true
+    },
+    {
+      "at": "2026-06-13T01:11:57.947Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:11:58.774Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:11:59.351Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:03.566Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:04.211Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:04.214Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:07.120Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:08.177Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:09.223Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:17.971Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:18.777Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:27.370Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:29.964Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:30.548Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:31.925Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:32.414Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:35.378Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:12:40.394Z",
+      "model": "fal-ai/flux-2-pro",
+      "estimatedUsd": 0.03,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:15:22.199Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:16:29.612Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:17:21.505Z",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "estimatedUsd": 1.3,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:19:03.286Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "estimatedUsd": 0,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:19:05.904Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "estimatedUsd": 0,
+      "ok": true
     }
   ],
-  "estimatedSpentUsd": 75.79
+  "estimatedSpentUsd": 80.23
 }

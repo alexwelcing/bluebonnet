@@ -26,7 +26,7 @@ function activate(hotspot: HotspotDefinition, state: ReturnType<typeof createSta
 
 describe('Act III culvert content', () => {
   it('keeps the whole shotlist under A1 clean-plate lint coverage', () => {
-    const gameShots = shotlist.shots.filter((shot: { act: string }) => !['prelude','exhibits'].includes(shot.act));
+    const gameShots = shotlist.shots.filter((shot: { act: string }) => !['prelude','exhibits','sideb'].includes(shot.act));
     expect(gameShots).toHaveLength(60);
     expect(shotlist.shots.filter((shot: { act: string }) => shot.act === 'prelude')).toHaveLength(6);
     for (const shot of shotlist.shots) {

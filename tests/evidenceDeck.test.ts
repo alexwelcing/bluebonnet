@@ -421,3 +421,54 @@ describe('Evidence Deck integration', () => {
   });
 
 });
+
+describe('Side B', () => {
+  async function loadDeckSideB() {
+    vi.resetModules();
+    localStorage.clear();
+    localStorage.setItem('bluebonnet.sideb', '1');
+    document.body.innerHTML = '<main id="app"></main>';
+    await import('../src/main');
+  }
+
+  it('appears on the boot screen only after an ending has been reached', async () => {
+    await loadDeck();
+    expect(document.querySelector<HTMLButtonElement>('.insert-side-b')!.hidden).toBe(true);
+
+    await loadDeckSideB();
+    const sideButton = document.querySelector<HTMLButtonElement>('.insert-side-b')!;
+    expect(sideButton.hidden).toBe(false);
+    realPointerClick(sideButton);
+    expect(document.querySelector('h1')?.textContent).toBe('THE DEN');
+    // the tape is live: timestamp on the player's clock, cues read NOW
+    expect(document.querySelector('.timestamp')?.textContent).toContain('LIVE');
+    expect(document.querySelector('.cue .cue-time')?.textContent).toBe('NOW');
+    expect(document.querySelector('.evidence-deck')?.classList.contains('side-b')).toBe(true);
+  });
+
+  it('the chain gates the door; the porch leads into the flowers', async () => {
+    await loadDeckSideB();
+    realPointerClick(document.querySelector<HTMLButtonElement>('.insert-side-b')!);
+    realPointerClick(button('Go to the front door'));
+    const open = button('Open the door');
+    expect(open.classList.contains('hotspot-locked')).toBe(true);
+    realPointerClick(open);
+    expect(document.querySelector('.caption')?.textContent).toContain('Dana kept hers on too');
+    realPointerClick(button('Slip the chain off'));
+    realPointerClick(button('Open the door'));
+    expect(document.querySelector('h1')?.textContent).toBe('THE PORCH');
+    realPointerClick(button('Walk into the flowers'));
+    expect(document.querySelector('h1')?.textContent).toBe('WE ANSWER');
+    expect(document.querySelector<HTMLButtonElement>('.rewind')!.hidden).toBe(false);
+  });
+
+  it('the set shows the wagon, tonight, and can be turned off', async () => {
+    await loadDeckSideB();
+    realPointerClick(document.querySelector<HTMLButtonElement>('.insert-side-b')!);
+    realPointerClick(button('Look closer at the set'));
+    expect(document.querySelector('.tv-inset')).toBeTruthy();
+    realPointerClick(button('Turn the set off'));
+    expect(document.querySelector('h1')?.textContent).toBe('SIGN-OFF');
+    expect(document.querySelector('.tv-inset')).toBeNull();
+  });
+});

@@ -45,6 +45,8 @@ app.innerHTML = `
         <p>BOX 271 // FM 1187 HI8 TAPE // APR 12 1998</p>
         <p class="boot-note">WEAR HEADPHONES — MOST OF THIS TAPE IS AIR.</p>
         <button class="insert-tape" type="button">INSERT TAPE</button>
+        <p class="side-b-note" hidden>THERE IS WRITING ON THE OTHER LABEL.</p>
+        <button class="insert-side-b" type="button" hidden>INSERT TAPE — SIDE B</button>
       </div>
     </div>
     <header class="deck-header">
@@ -242,21 +244,50 @@ function render() {
   wrongness.textContent = nodeState.wrongness ? `TAPE ANOMALY: ${nodeState.wrongness}` : 'TAPE ANOMALY: baseline window stable.';
   intensity.value = String(snapshot.vhsIntensity);
   captions.checked = snapshot.captionsEnabled;
-  timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} HI8`;
+  const sideMode = inSideB(snapshot.currentNodeId);
+  app!.querySelector('.evidence-deck')?.classList.toggle('side-b', sideMode);
+  if (sideMode) {
+    // Side B runs on the player's clock: the tape is live.
+    const now = new Date();
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    timestamp.textContent = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')} ${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} LIVE`;
+  } else {
+    timestamp.textContent = `APR 12 1998 ${snapshot.activeWindow} HI8`;
+  }
+  // The set on side-tv plays the wagon — tonight.
+  let inset = stage.querySelector<HTMLImageElement>('.tv-inset');
+  if (snapshot.currentNodeId === 'side-tv') {
+    if (!inset) {
+      inset = document.createElement('img');
+      inset.className = 'tv-inset';
+      inset.src = 'stills/act1/wagon-interior__2008-2017.jpg';
+      inset.alt = '';
+      inset.setAttribute('aria-hidden', 'true');
+      stage.append(inset);
+    }
+  } else {
+    inset?.remove();
+  }
   diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
   diegeticText.hidden = diegeticText.textContent === '';
   const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
   timeseekHelp.textContent =
-    helpOverride ?? `DRAG THE WHEEL OR PRESS A CUE // ${lockedWindows.length > 0 ? `${lockedWindows.join(' / ')} STILL LOCKED` : 'FULL TAPE OPEN'}`;
+    helpOverride ??
+    (sideMode
+      ? 'SIDE B // THE TAPE IS LIVE'
+      : `DRAG THE WHEEL OR PRESS A CUE // ${lockedWindows.length > 0 ? `${lockedWindows.join(' / ')} STILL LOCKED` : 'FULL TAPE OPEN'}`);
 
   // Tape ruler: cue states + live needle + scrub readout.
   for (const cue of cueButtons) {
     const window = cue.dataset.window as TimeWindow;
     const discovered = snapshot.discoveredTimecodes.includes(window);
     const locked = lockedWindows.includes(window);
-    cue.classList.toggle('current', window === snapshot.activeWindow);
-    cue.classList.toggle('locked', locked);
-    cue.classList.toggle('undiscovered', !discovered && !locked);
+    const cueTime = cue.querySelector<HTMLSpanElement>('.cue-time');
+    if (cueTime) cueTime.textContent = sideMode ? 'NOW' : window.slice(0, 5);
+    cue.classList.toggle('now', sideMode);
+    cue.classList.toggle('current', !sideMode && window === snapshot.activeWindow);
+    cue.classList.toggle('locked', !sideMode && locked);
+    cue.classList.toggle('undiscovered', !sideMode && !discovered && !locked);
     cue.classList.toggle('fresh', window === freshCueWindow);
     cue.setAttribute(
       'aria-label',
@@ -594,6 +625,7 @@ function proceedWithHotspot(hotspot: HotspotDefinition) {
     if (hotspot.setFlag?.startsWith('ending:')) {
       try {
         saveSnapshot(state.snapshot());
+        localStorage.setItem(SIDE_B_KEY, '1'); // the other label appears
       } catch {
         // storage full/unavailable — the ending still plays
       }
@@ -882,6 +914,30 @@ function startPrelude(onDone: () => void) {
 preludeSkip.addEventListener('click', () => endPrelude?.());
 replayBroadcast.addEventListener('click', () => startPrelude(() => undefined));
 
+// --- SIDE B: the tape that watches back (canon A9) ---------------------------
+const SIDE_B_KEY = 'bluebonnet.sideb';
+const sideBNote = app.querySelector<HTMLParagraphElement>('.side-b-note')!;
+const insertSideB = app.querySelector<HTMLButtonElement>('.insert-side-b')!;
+if (localStorage.getItem(SIDE_B_KEY) === '1') {
+  sideBNote.hidden = false;
+  insertSideB.hidden = false;
+}
+insertSideB.addEventListener('click', () => {
+  bootScreen.hidden = true;
+  audio.unlock();
+  state.setActiveWindow('20:26-20:35');
+  state.setCurrentNode('side-room');
+  jogState = createJogWheelState('20:26-20:35', jogOptions());
+});
+
+function inSideB(nodeId: string): boolean {
+  return nodeId.startsWith('side-') || nodeId.startsWith('ending-side');
+}
+// The live clock only matters on Side B; tick the render with it.
+window.setInterval(() => {
+  if (inSideB(state.snapshot().currentNodeId)) render();
+}, 30000);
+
 const freshTape = !initialSave;
 insertTape.addEventListener('click', () => {
   bootScreen.hidden = true;
@@ -910,6 +966,10 @@ document.addEventListener('keydown', (event) => {
 for (const cue of cueButtons) {
   cue.addEventListener('click', () => {
     const window = cue.dataset.window as TimeWindow;
+    if (cue.classList.contains('now')) {
+      setTransportMessage('THE TAPE IS LIVE. THERE IS ONLY NOW.');
+      return;
+    }
     if (cue.classList.contains('locked')) {
       // The locked span strains exactly like the wheel's hard stop.
       jogState = { ...jogState, strain: 1 };

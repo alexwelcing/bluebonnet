@@ -615,3 +615,14 @@ Changed:
 Verification: 47 tests rewritten-and-green for the knowledge model; browser-verified all three mechanisms including wrong-code strain and wrong-rhythm reset; full playthrough start→RECORD operating every mechanism; zero console errors.
 
 Blockers: none.
+
+## 2026-06-13T13:30:00+00:00 — SIDE B: the tape that watches back (Claude, supervising)
+
+Changed:
+- Canon A9 + full implementation. Finish either ending once and the boot screen grows a second label: INSERT TAPE — SIDE B. Side B inverts the lens: the DEN the deck sits in (CRT glow over carpet bluebonnets, live Veo loop), the WINDOW (one porch light across a colonized yard), the SET (showing the wagon interior — tonight: live inset), the chained FRONT DOOR, and the PORCH where a battery radio still carries 88.7 — Dana, present tense, surfacing out of the static: "There you are. I kept the hour open." Two terminals: SIGN-OFF (turn the set off; the dark room, the light under the door) and WE ANSWER (slip the chain — a generated door-opening transition where the field floods past the railing — and walk into the flowers, landing on the prelude's field plate: the bookend).
+- The deck itself is colonized on Side B: timestamp runs on the player's REAL clock (… LIVE), all cues read NOW and refuse ("THE TAPE IS LIVE. THERE IS ONLY NOW."), chrome shifts violet, transport line reads SIDE B // THE TAPE IS LIVE.
+- Foundation (Ambience II, committed earlier this session): bed-keyed ambient event pools w/ captions, wrongness beds for act2 20:17 / act3 20:26, DUB COMPARE warble, transition air bed, idle tracking slip, headphones note.
+
+Verification: 52 tests green (Side B boot gating, live clock, NOW cues, chain → porch → WE ANSWER, set-off → SIGN-OFF, tv inset lifecycle); full browser arc with screenshots; zero console errors. Spend ~$86 of $100.
+
+Blockers: none.

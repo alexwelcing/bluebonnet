@@ -1657,6 +1657,150 @@
           "c2"
         ]
       }
+    },
+    {
+      "nodeId": "side-room",
+      "window": "side-b",
+      "filename": "side-room.jpg",
+      "prompt": "a dim suburban den at night lit only by CRT television glow, an old VCR beneath the set, patches of bluebonnets growing impossibly out of the carpet, a hallway toward a front door barely visible, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9113,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c2": "https://v3b.fal.media/files/b/0a9e116f/ISTqqntw--kQ3Zu7NEzQ3_wVn6BJsR.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e116f/EDwbtahDJZ_dNH1ZRhPs2_zo5gbLGe.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e116f/0JWx3fp2Zhab6p2aO41Mt_KIfEsTCX.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e116f/EDwbtahDJZ_dNH1ZRhPs2_zo5gbLGe.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "fisheye vignette, CRT over carpet blooms; c2 rejected for figures on screen",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "side-window",
+      "window": "side-b",
+      "filename": "side-window.jpg",
+      "prompt": "view through parted window blinds at night from inside a dark house: a suburban street where the asphalt ends abruptly in an endless field of faintly glowing bluebonnets, a single porch light across the street, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9126,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e1175/UdS2db1HQMio6IwQ5Kjrp_LVQu53y5.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e116f/bTxKgZWJfpwi-WitnqEgH_RHhx2tLa.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e116f/DSqr0YNVw7tUxXMPjxJzY_7j2IGpoE.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1175/UdS2db1HQMio6IwQ5Kjrp_LVQu53y5.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "porch light framed in slats over colonized yard",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
+    },
+    {
+      "nodeId": "side-tv",
+      "window": "side-b",
+      "filename": "side-tv.jpg",
+      "prompt": "extreme close view of an old CRT television screen glowing pale static in a dark room, screen curvature and phosphor texture, faint reflection of flowers in the glass, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9139,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e1176/PmHr-A44KT6BzfuuIlFnG_t7VRojW5.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1176/Hzh8AKjyxthgd41eNjawN_V5sw8XjT.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1170/dhIN4mVJB9jNeuMlhwI9x_xBFg0dmW.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1176/Hzh8AKjyxthgd41eNjawN_V5sw8XjT.jpg",
+      "curation": {
+        "picked": "c2",
+        "reason": "dark mass creeping into the static",
+        "rejected": [
+          "c0",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "side-door",
+      "window": "side-b",
+      "filename": "side-door.jpg",
+      "prompt": "a front door at night photographed from inside a dark house, brass chain lock engaged, pale blue light leaking under the door, bluebonnets sprouting from the carpet at the threshold, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9152,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e1172/9GXzuK_UcDdZOXC9WTSOF_xRuBQJGc.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1172/PWp8-pjaqJSTNShX2yE-q_pgyPtqSl.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1173/h05qlcfekqa1J-u8tnkdY_wByg1kZF.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1172/9GXzuK_UcDdZOXC9WTSOF_xRuBQJGc.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "chain catching the underdoor light, blooms at threshold",
+        "rejected": [
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "nodeId": "side-porch",
+      "window": "side-b",
+      "filename": "side-porch.jpg",
+      "prompt": "a suburban front porch at night, a small battery radio sitting on the concrete step, the neighborhood gone, faintly glowing bluebonnets stretching to the horizon under a black sky, one distant porch light, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9165,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e1171/t1D9uzi3RcDDfDDNHj82g_laem5Bc3.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1171/T_UthHnKpwjEu9My28bev_BCXborI9.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e1173/dROIQz9rSY8imMQsFXr5v_IiTScJsh.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1173/dROIQz9rSY8imMQsFXr5v_IiTScJsh.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "radio on the step, neighborhood erased",
+        "rejected": [
+          "c0",
+          "c2"
+        ]
+      }
+    },
+    {
+      "nodeId": "side-dark",
+      "window": "side-b",
+      "filename": "side-dark.jpg",
+      "prompt": "a suburban den in near-total darkness, the television off, a thin line of warm porch light under the front door the only light, silhouettes of bluebonnets in the carpet, analog horror, muted colors, no readable text, no lettering, no signage characters, no people, no figures, no faces",
+      "seed": 9178,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "act": "sideb",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e1172/VNgacWVb5l2Kr79gVsePO_X9kZhOzW.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e1173/51mZff7ufB-kcJWFq6REs_dcDEj8Dn.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e1173/_4_OtBFicnLd4CVlYq5iP_jUAOypUm.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e1173/51mZff7ufB-kcJWFq6REs_dcDEj8Dn.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "dead set, light seeping around the chained door; c1 rejected for flat-screen era break",
+        "rejected": [
+          "c1",
+          "c2"
+        ]
+      }
     }
   ],
   "a1Lint": {
