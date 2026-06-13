@@ -218,3 +218,24 @@ Route:
    - Still: `stills/act2/field-threshold-look-up__2017-2026.jpg`.
 
 Result: ACT2-DENSITY-PLAYTEST-PASS. Baseline `npm run playtest:smoke` also passed.
+
+
+## 2026-06-13T16:21:23+00:00 — Act III density route smoke
+
+Route:
+1. Loaded a preview build with a seeded Act III save at `culvert-throat`, discovered windows `20:08-20:17`, `20:17-20:26`, and `20:26-20:35`, with echo/recorder gates solved.
+2. Inserted tape and skipped the broadcast.
+3. Clicked `to-throat-wall-closeup`.
+   - Title: THROAT WALL CLOSEUP.
+   - Caption: “Wet concrete at the throat. Mineral streaks run the direction gravity remembers.”
+   - Still: `stills/act3/culvert-throat-wall-closeup__2017-2026.jpg`.
+4. Returned, moved to `culvert-dripline`, clicked `to-dripline-closeup`.
+   - Title: DRIPLINE CLOSEUP.
+   - Caption: “Water beads under the concrete lip. Each drop waits its turn.”
+   - Still: `stills/act3/culvert-dripline-closeup__2017-2026.jpg`.
+5. Cued `20:26-20:35`, clicked `to-dripline-closeup` again.
+   - Title: DRIPLINE CLOSEUP.
+   - Caption: “Water beads under the concrete lip. The reflection below brightens before anything falls.”
+   - Still: `stills/act3/culvert-dripline-closeup__2026-2035.jpg`.
+
+Result: ACT3-DENSITY-PLAYTEST-PASS. Baseline `npm run playtest:smoke` also passed.

@@ -1166,3 +1166,34 @@ Next:
 
 Blockers:
 - None.
+
+
+## 2026-06-13T16:21:23+00:00 — B7 Act III density tranche verified
+
+Changed:
+- Implemented the first Act III viewpoint-density tranche: `culvert-throat-wall-closeup`, `culvert-dripline-closeup`, `culvert-pipe-rust-closeup`, and `recorder-counter-closeup`.
+- Added 8 curated Act III clean plates across the `20:17-20:26` and `20:26-20:35` windows.
+- Added 8 seamless/deployable motion loops and wired them into `content/motionLoops.json` and `content/act3.json`.
+- Wired source hotspots from `culvert-throat`, `culvert-dripline`, `culvert-pipe`, and `recorder-nest`, each with return routes and no new puzzle actions.
+- Added `tests/act3Density.test.ts` for tranche structure, navigation, atmosphere-only constraints, A7 provenance, and loop provenance.
+- Refreshed `.bridge/preview/` from the green build.
+
+Verified:
+- `npm test -- tests/act3Density.test.ts` — 6 passing.
+- `npm run typecheck`
+- `npm test` — 82 passing tests.
+- `npm run lint:shotlist` — 101 clean plates.
+- `npm run build`
+- `npm run gate -- --preview`
+- Route-specific Playwright check: seeded Act III, clicked throat wall and dripline closeups, cued `20:26-20:35`, verified temporal still/caption/motion wiring.
+- `npm run playtest:smoke`
+
+Notes:
+- FAL video generation exhausted account balance on the final `recorder-counter-closeup__2026-2035` loop. Used a local ffmpeg static seamless fallback from the exact curated plate, logged in `content/motionLoops.json` as `local-ffmpeg-still-loop`, and verified the strip for no text/figures/artifacts.
+
+Next:
+- Preview critic pass should inspect Act III density in context, especially the static fallback counter loop and whether the new closeups improve orientation rather than overfocusing on texture.
+- B7 can continue with any remaining Acts I-III density or move to a broader playthrough critic pass.
+
+Blockers:
+- FAL balance is exhausted for additional generated video loops until topped up; local static fallback remains available for non-motion-critical plates.

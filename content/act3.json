@@ -61,6 +61,30 @@
               ],
               "target": "field-gate",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-throat-wall-closeup",
+              "label": "Inspect the wet concrete wall",
+              "polygon": [
+                [
+                  18,
+                  18
+                ],
+                [
+                  55,
+                  18
+                ],
+                [
+                  55,
+                  70
+                ],
+                [
+                  18,
+                  70
+                ]
+              ],
+              "target": "culvert-throat-wall-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -123,6 +147,30 @@
                 ]
               ],
               "target": "field-gate",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-throat-wall-closeup",
+              "label": "Inspect the wet concrete wall",
+              "polygon": [
+                [
+                  18,
+                  18
+                ],
+                [
+                  55,
+                  18
+                ],
+                [
+                  55,
+                  70
+                ],
+                [
+                  18,
+                  70
+                ]
+              ],
+              "target": "culvert-throat-wall-closeup",
               "shimmerThreshold": 0.5
             }
           ],
@@ -217,6 +265,30 @@
               ],
               "target": "culvert-throat",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-dripline-closeup",
+              "label": "Lean into the dripline",
+              "polygon": [
+                [
+                  28,
+                  0
+                ],
+                [
+                  72,
+                  0
+                ],
+                [
+                  72,
+                  38
+                ],
+                [
+                  28,
+                  38
+                ]
+              ],
+              "target": "culvert-dripline-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -304,6 +376,30 @@
               ],
               "target": "culvert-throat",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-dripline-closeup",
+              "label": "Lean into the dripline",
+              "polygon": [
+                [
+                  28,
+                  0
+                ],
+                [
+                  72,
+                  0
+                ],
+                [
+                  72,
+                  38
+                ],
+                [
+                  28,
+                  38
+                ]
+              ],
+              "target": "culvert-dripline-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "ambientAudio": "audio/culvert-rumble-wrong.wav"
@@ -352,7 +448,7 @@
             },
             {
               "id": "radio-static-pattern",
-              "label": "Caption the radio-static knock pattern",
+              "label": "Read the knock in the static",
               "polygon": [
                 [
                   28,
@@ -374,9 +470,9 @@
               "target": "culvert-pipe",
               "journal": {
                 "id": "echo-pattern",
-                "text": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||."
+                "text": "STATIC KNOCK: || _ | _ ||| — two, then one, then three. The pipe answers back the same way."
               },
-              "caption": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||.",
+              "caption": "STATIC KNOCK: || _ | _ ||| — two, then one, then three. The pipe answers back the same way.",
               "setFlag": "echo-pattern-known",
               "shimmerThreshold": 0.3
             },
@@ -429,6 +525,30 @@
               "cluePrompt": "the rusted pipe",
               "clueHighlight": true,
               "mechanism": "knock"
+            },
+            {
+              "id": "to-pipe-rust-closeup",
+              "label": "Inspect the rust on the pipe",
+              "polygon": [
+                [
+                  20,
+                  25
+                ],
+                [
+                  88,
+                  25
+                ],
+                [
+                  88,
+                  55
+                ],
+                [
+                  20,
+                  55
+                ]
+              ],
+              "target": "culvert-pipe-rust-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -471,7 +591,7 @@
             },
             {
               "id": "radio-static-pattern",
-              "label": "Caption the radio-static knock pattern",
+              "label": "Read the knock in the static",
               "polygon": [
                 [
                   28,
@@ -493,9 +613,9 @@
               "target": "culvert-pipe",
               "journal": {
                 "id": "echo-pattern",
-                "text": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||."
+                "text": "STATIC KNOCK: || _ | _ ||| — two, then one, then three. The pipe answers back the same way."
               },
-              "caption": "RADIO STATIC PATTERN: knock knock / pause / knock / pause / knock knock knock. Visual fallback: || _ | _ |||.",
+              "caption": "STATIC KNOCK: || _ | _ ||| — two, then one, then three. The pipe answers back the same way.",
               "setFlag": "echo-pattern-known",
               "shimmerThreshold": 0.3
             },
@@ -580,6 +700,30 @@
               "cluePrompt": "the rusted pipe",
               "clueHighlight": true,
               "mechanism": "knock"
+            },
+            {
+              "id": "to-pipe-rust-closeup",
+              "label": "Inspect the rust on the pipe",
+              "polygon": [
+                [
+                  20,
+                  25
+                ],
+                [
+                  88,
+                  25
+                ],
+                [
+                  88,
+                  55
+                ],
+                [
+                  20,
+                  55
+                ]
+              ],
+              "target": "culvert-pipe-rust-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "ambientAudio": "audio/culvert-rumble-wrong.wav"
@@ -879,6 +1023,30 @@
                   "flag": "puzzle:recorder-counter"
                 }
               ]
+            },
+            {
+              "id": "to-recorder-counter-closeup",
+              "label": "Look closer at the counter window",
+              "polygon": [
+                [
+                  38,
+                  32
+                ],
+                [
+                  66,
+                  32
+                ],
+                [
+                  66,
+                  78
+                ],
+                [
+                  38,
+                  78
+                ]
+              ],
+              "target": "recorder-counter-closeup",
+              "shimmerThreshold": 0.5
             }
           ]
         },
@@ -1018,6 +1186,30 @@
                   "flag": "puzzle:recorder-counter"
                 }
               ]
+            },
+            {
+              "id": "to-recorder-counter-closeup",
+              "label": "Look closer at the counter window",
+              "polygon": [
+                [
+                  38,
+                  32
+                ],
+                [
+                  66,
+                  32
+                ],
+                [
+                  66,
+                  78
+                ],
+                [
+                  38,
+                  78
+                ]
+              ],
+              "target": "recorder-counter-closeup",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -1031,6 +1223,374 @@
           "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
+      "audioMix": {
+        "ambient": 0.82
+      }
+    },
+    {
+      "id": "culvert-throat-wall-closeup",
+      "title": "Throat Wall Closeup",
+      "still": "stills/act3/culvert-throat-wall-closeup__2017-2026.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-throat-wall-closeup__2017-2026.jpg",
+          "caption": "Wet concrete at the throat. Mineral streaks run the direction gravity remembers.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the concrete wall",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-throat-wall-closeup__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-throat-wall-closeup__2017-2026.jpg"
+            }
+          ]
+        },
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-throat-wall-closeup__2026-2035.jpg",
+          "caption": "The same wall in the missing minutes. The streaks bow toward the dark as if the tunnel is pulling them.",
+          "wrongness": "mineral streaks bow toward the dark tunnel",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the concrete wall",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-throat",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav",
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-throat-wall-closeup__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-throat-wall-closeup__2026-2035.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "audioMix": {
+        "ambient": 0.82
+      }
+    },
+    {
+      "id": "culvert-dripline-closeup",
+      "title": "Dripline Closeup",
+      "still": "stills/act3/culvert-dripline-closeup__2017-2026.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-dripline-closeup__2017-2026.jpg",
+          "caption": "Water beads under the concrete lip. Each drop waits its turn.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the dripline",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-dripline-closeup__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-dripline-closeup__2017-2026.jpg"
+            }
+          ]
+        },
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-dripline-closeup__2026-2035.jpg",
+          "caption": "Water beads under the concrete lip. The reflection below brightens before anything falls.",
+          "wrongness": "the reflection answers before the drop",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the dripline",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-dripline",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav",
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-dripline-closeup__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-dripline-closeup__2026-2035.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "audioMix": {
+        "ambient": 0.82
+      }
+    },
+    {
+      "id": "culvert-pipe-rust-closeup",
+      "title": "Pipe Rust Closeup",
+      "still": "stills/act3/culvert-pipe-rust-closeup__2017-2026.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:17-20:26": {
+          "still": "stills/act3/culvert-pipe-rust-closeup__2017-2026.jpg",
+          "caption": "Rust blooms under the pipe bracket. The static pattern has somewhere to live.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the pipe",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-pipe",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-pipe-rust-closeup__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-pipe-rust-closeup__2017-2026.jpg"
+            }
+          ]
+        },
+        "20:26-20:35": {
+          "still": "stills/act3/culvert-pipe-rust-closeup__2026-2035.jpg",
+          "caption": "The pipe is closer on the tape. Rust beads with cold blue condensation.",
+          "wrongness": "the pipe sits closer without sound",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the pipe",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "culvert-pipe",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav",
+          "motionLayers": [
+            {
+              "src": "video/act3/culvert-pipe-rust-closeup__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/culvert-pipe-rust-closeup__2026-2035.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/culvert-rumble.wav",
+      "audioMix": {
+        "ambient": 0.82
+      }
+    },
+    {
+      "id": "recorder-counter-closeup",
+      "title": "Recorder Counter Closeup",
+      "still": "stills/act3/recorder-counter-closeup__2017-2026.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:17-20:26": {
+          "still": "stills/act3/recorder-counter-closeup__2017-2026.jpg",
+          "caption": "The recorder counter window is blank green plastic. The deck supplies the number because the lens will not.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the recorder",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act3/recorder-counter-closeup__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/recorder-counter-closeup__2017-2026.jpg"
+            }
+          ]
+        },
+        "20:26-20:35": {
+          "still": "stills/act3/recorder-counter-closeup__2026-2035.jpg",
+          "caption": "The blank counter window glows harder in the missing minutes. It still refuses to print the time.",
+          "wrongness": "the counter glows while staying blank",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Pull back from the recorder",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "recorder-nest",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav",
+          "motionLayers": [
+            {
+              "src": "video/act3/recorder-counter-closeup__2026-2035.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act3/recorder-counter-closeup__2026-2035.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/culvert-rumble.wav",
       "audioMix": {
         "ambient": 0.82
       }

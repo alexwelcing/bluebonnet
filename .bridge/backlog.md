@@ -9,4 +9,6 @@ DONE B6 FULL PLAYTHROUGH QA: BrowserUse runs Act I→IV end to end on the live s
 
 B7 IMMERSION EXPANSION — reopened 2026-06-13 by director for Acts I-III A4 viewpoint density targets (see top entry); prior motion/transition/A7 work preserved as foundation. Viewpoint expansion now in progress.
 DONE B7 ACT I TRANCHE 1 — six new Act I baseline density nodes (lateral wagon facings + flyer/scanner/odometer/shrine closeups), 4-candidate still curation, seamless motion loops, manifest wiring, tests, green gates, preview refresh, and self-playtest transcript. B7 remains open for additional Acts I-III density tranches.
+DONE B7 ACT II TRANCHE 1 — six new Act II field density nodes (threshold up/down, row views, bloom/tally closeups), curated clean plates, seamless loops, manifest wiring, tests, green gates, preview refresh, and self-playtest transcript.
+DONE B7 ACT III TRANCHE 1 — four new Act III culvert/recorder closeup density nodes, curated clean plates, seamless/deployable loops with one local static fallback after FAL balance exhaustion, manifest wiring, tests, green gates, preview refresh, and self-playtest transcript.
 GAME COMPLETE v1.0.0: four acts, two endings, REWIND loop, full supervised playthroughs of both endings, deployed. B7 viewpoint phase active.

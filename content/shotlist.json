@@ -2269,6 +2269,214 @@
           "c3"
         ]
       }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-throat-wall-closeup",
+      "window": "20:17-20:26",
+      "filename": "culvert-throat-wall-closeup__2017-2026.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of wet under-highway culvert concrete wall at the throat, rain-slick aggregate, hairline cracks, mineral streaks, bluebonnet stems only at the far lower edge, no roadway signage, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted dusk colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 350000,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e2657/ht1v5euwJ-xPibiXHSX-K_uN7hHPjP.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e2657/KWD43PZDRaf4eQkDivm5y_9KKspiie.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e2657/eGMtZT5Xr9LS_s8EPX0AT_wZb1C5sC.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e2657/njvVhPRO6C4mzdf0JtDrr_3fWE4ErF.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e2657/ht1v5euwJ-xPibiXHSX-K_uN7hHPjP.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "c0 cleanest wet concrete wall closeup with no text or figures; c1/c2 less close and add stronger tunnel/prop drift, c3 too green and flower-like",
+        "rejected": [
+          "c1",
+          "c3",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-throat-wall-closeup",
+      "window": "20:26-20:35",
+      "filename": "culvert-throat-wall-closeup__2026-2035.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of wet under-highway culvert concrete wall at the throat in the missing minutes, hairline cracks appear slightly bowed toward the dark tunnel, mineral streaks bend like water running uphill, no symbols, no road signs, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted blue-black colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 350017,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e2657/eeFxKtjW4aF72788-EmTk_SgIv5TVL.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e2657/IBnnMY0XQHTD4lbz3AhZ4_tBV5hiAJ.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e265e/Jr1yQZR6NHuefQuGCOtUh_RTMaImY2.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e2658/_VUFNTHLeFg64nXwE-QfR_zL59AMwR.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e2658/_VUFNTHLeFg64nXwE-QfR_zL59AMwR.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "c3 best close wet wall/dark tunnel continuity with subtle bowed cracks; c0/c1 too road-like, c2 too wide/circular tunnel drift",
+        "rejected": [
+          "c1",
+          "c0",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-dripline-closeup",
+      "window": "20:17-20:26",
+      "filename": "culvert-dripline-closeup__2017-2026.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of a culvert ceiling dripline, water beads on concrete lip, dark puddle reflection below out of focus, no pipes shaped like writing, no signage, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted wet concrete colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 351000,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e2658/Nn61r64zU-poFIIMOawG7_mpTTHoDn.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e265e/UeMhdsunMv9wBRVPJ8EX2_I4Apqnnw.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e2659/Cf7DVuh1OzI_MhW4CM90u_2n5W95pG.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e265f/v2h450YxJVS78nkvxTW0n_rB7UV8N2.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e265e/UeMhdsunMv9wBRVPJ8EX2_I4Apqnnw.jpg",
+      "curation": {
+        "picked": "c2",
+        "reason": "c2 cleanest dripline/wet concrete ledge; c0 has bright opening artifacts, c1 less dripline, c3 too tunnel-wide",
+        "rejected": [
+          "c1",
+          "c3",
+          "c0"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-dripline-closeup",
+      "window": "20:26-20:35",
+      "filename": "culvert-dripline-closeup__2026-2035.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of the same culvert ceiling dripline in the missing minutes, water beads seem to cling upward to the concrete lip, puddle reflection below has bluebonnet-blue shimmer but no flower shapes forming words, no signage, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted blue-black concrete colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 351017,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c3": "https://v3b.fal.media/files/b/0a9e2659/HD7oIVsurw4B7r40p6qVS_37OkjjkD.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e265a/pDfu58pQ1YTXYlRWoiecx_lDi8VpfQ.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e265f/81atdzCgarIs4G3nikUz3_ZTIItKsY.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e265a/n86R2fWZwQA6SLea1gJrF_n8bLAtDM.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e265a/n86R2fWZwQA6SLea1gJrF_n8bLAtDM.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "c0 cleanest missing-minutes dripline and reflection; c1 has flower-like projection, c2/c3 overemphasize glowing marks",
+        "rejected": [
+          "c3",
+          "c2",
+          "c1"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-pipe-rust-closeup",
+      "window": "20:17-20:26",
+      "filename": "culvert-pipe-rust-closeup__2017-2026.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of rusted iron service pipe bolted to culvert wall, condensation beads and rust scale texture, blank corroded metal only, no markings, no labels, no gauge face, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted orange-brown rust and concrete, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 352000,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e265a/-AdNtiO8s2qF_gK0JMcdJ_RYZgC6nZ.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e2660/IJTsn_95zOJHnT9JNgGu-_YGGvqWZA.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e265b/xOvQvrhPJWwdHjB5-V5Rg_NZobUpGS.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e265b/0-90dZVY-unjhWRkOVHxF_9mPU5mSy.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e265a/-AdNtiO8s2qF_gK0JMcdJ_RYZgC6nZ.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "c0 clean rusted pipe bracket with no labels or figures; c1/c2/c3 less aligned or more prop-like",
+        "rejected": [
+          "c1",
+          "c2",
+          "c3"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "culvert-pipe-rust-closeup",
+      "window": "20:26-20:35",
+      "filename": "culvert-pipe-rust-closeup__2026-2035.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, close view of the same rusted iron service pipe in the missing minutes, pipe appears a few inches closer, condensation beads catch cold blue light, blank corroded metal only, no markings, no labels, no gauge face, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted blue rust and concrete, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 352017,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e265b/8dNz0VG31D518FqqYk5TH_8EVJBWpi.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e265b/tdRGvvx1w9_9SCDF6zhC6_DDNypj3Q.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e265b/eNpNE4PkbYbAzFdppHnRa_WL7Z6PXH.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e2661/yt2hD93JSEPIEakvf7jS9_5lQlDbAX.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e265b/tdRGvvx1w9_9SCDF6zhC6_DDNypj3Q.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "c1 cleanest close rusted pipe with blue missing-minutes light; c0 has horizontal tape artifacts, c2 too floor-like, c3 elbow drift",
+        "rejected": [
+          "c0",
+          "c2",
+          "c3"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "recorder-counter-closeup",
+      "window": "20:17-20:26",
+      "filename": "recorder-counter-closeup__2017-2026.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, extreme close view of a generic unbranded interview cassette recorder lying on a dry caliche ledge inside the culvert, crop tightly on a blank green counter window and scratched black plastic, no visible buttons, no logos, no labels, no brand marks, no readable numerals, no dashboard, no windshield, clean plate for runtime compositing, analog horror, muted concrete colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 353000,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e266b/4Sb87K-SwDzkM0T5_oCqR_8vBZ1FEa.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e266b/lu5iDaRPUwzt2xUROXWCq_EOaqv6KN.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e266c/TiVxptzmwYFNe_oVj4k2k_SKlVk42O.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e266c/zrMVxk4T5EfJmVAtKc51l_5GZSXkSM.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e266c/zrMVxk4T5EfJmVAtKc51l_5GZSXkSM.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "regenerated c3 safest blank green counter window on unbranded recorder face; c0 less close, c1 has colored button/label risk, c2 too stylized",
+        "rejected": [
+          "c0",
+          "c1",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act3",
+      "nodeId": "recorder-counter-closeup",
+      "window": "20:26-20:35",
+      "filename": "recorder-counter-closeup__2026-2035.jpg",
+      "prompt": "multi-reference plate-anchored edit, degraded VHS still frame, 1998 Hi8 camcorder, macro close crop of only a blank glowing green rectangular counter window set in scratched black plastic, generic unbranded interview recorder face, no surrounding controls visible, no buttons, no logos, no labels, no brand marks, no readable numerals, no device name, no cassette reels, wet caliche edge barely visible, clean plate for runtime compositing, analog horror, muted blue-black concrete colors, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no humans, no faces, no hands, no silhouettes, no car movement, no new props",
+      "seed": 353017,
+      "model": "fal-configured-image-generation",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e2679/dprO61XesMgepUmic3ctc_CLRJatzF.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e2673/Zr8MZ2J796sxQt4SFA4NS_JwYllXBy.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e2679/wdwj6xPVCqlheDRusDCo0_FlP8iQxD.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e2679/tpl4ZY4vD8l6ZxwHnrEMw_z5uU567r.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e2673/Zr8MZ2J796sxQt4SFA4NS_JwYllXBy.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "strict regenerated c3 safest blank glowing counter window with no readable marks; c0/c1 less centered, c2 has screw/control-edge distraction",
+        "rejected": [
+          "c0",
+          "c2",
+          "c1"
+        ]
+      }
     }
   ],
   "a1Lint": {
