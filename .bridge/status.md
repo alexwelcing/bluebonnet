@@ -655,3 +655,14 @@ Next:
 
 Blockers:
 - None. Kitty requires a graphical display; use tmux in Codespaces/headless terminals.
+
+## 2026-06-13T02:02:35+00:00 — Removed unfinished adversary tool stub (Hermes)
+
+Changed:
+- Deleted untracked `tools/adversary.mjs`, an unfinished idea explicitly discarded by Alex.
+
+Next:
+- Continue using `tools/agent-tui.sh` for coordinated terminal work.
+
+Blockers:
+- None.
