@@ -1087,3 +1087,82 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-13T14:41:10+00:00 — Preview-session QA lessons reviewed
+
+Changed:
+- Reviewed BLUEBONNET preview/live playthrough logs and recent Hermes sessions covering full-playthrough QA, endings, motion layers, density tranches, tooling gates, and the removed premature splat runtime.
+- Persisted reusable QA/game-feel lessons into the `static-narrative-game-development` skill reference `references/bluebonnet-preview-testing-lessons.md`.
+
+Next:
+- Apply the learned testing ladder on future slices: static/data gates, mechanics gates, DOM integration, preview smoke, live deploy asset 200 checks, and critic playthrough.
+
+Blockers:
+- None.
+
+## 2026-06-13T14:52:56+00:00 — Hermes model-swarm tmux launcher installed
+
+Changed:
+- Added `tools/hermes-swarm.sh`, a tmux launcher that spawns separate Hermes shells for OpenAI Codex/GPT-5.5, Grok 4.3 via xAI OAuth, MiniMax-M3, GLM 5.1, and Gemini 2.5 Pro plus a control dashboard.
+- Added `tools/HERMES_SWARM.md` documenting the lane map, safe one-writer strategy, provider smoke results, example sidecar assignments, and stop commands.
+- Updated `TEAM_OPERATIONS.md` to route model-maximized Hermes swarm work through the new launcher.
+- Launched live standby sessions with prefix `bb`: `bb-control`, `bb-hermes-xo`, `bb-grok-visual`, `bb-minimax-creative`, `bb-glm-qa`, and `bb-gemini-critic`.
+
+Verification:
+- Provider one-shot probes succeeded for OpenAI Codex/GPT-5.5, MiniMax-M3, GLM 5.1, xAI OAuth/Grok 4.3, and Gemini 2.5 Pro. API-key `xai` failed, so the launcher uses `xai-oauth` for Grok.
+- `bash -n tools/hermes-swarm.sh` passed.
+- `tools/hermes-swarm.sh --dry-run --prefix bb-dry ...` printed the expected tmux launch plan.
+- Captured tmux panes confirmed all five model lanes acknowledged readiness tokens and writer-lock closed/artifact-only posture.
+
+Next:
+- Use `tools/hermes-swarm.sh --prefix bb --task "<one concrete objective>"` for future parallel strategic work, then assign distinct `.bridge/director/` artifacts to sidecars while Hermes-XO integrates one verified slice.
+
+Blockers:
+- None.
+
+## 2026-06-13T15:03:05+00:00 — B7 Act II density tranche kicked off with swarm
+
+Changed:
+- Dispatched the live Hermes tmux swarm on B7 Act II density tranche 1:
+  - Grok visual lane wrote `.bridge/director/grok_act2_density_prompt_pack.md`.
+  - MiniMax creative lane wrote `.bridge/director/minimax_act2_density_player_feel.md`.
+  - Gemini critic lane wrote `.bridge/director/gemini_act2_density_critic_route.md` after a concise retry.
+  - GLM-QA hit a command-approval block before writing its artifact; Hermes-XO proceeded using existing B7 gate precedent plus MiniMax verification notes.
+- Wrote `.bridge/director/hermes_act2_density_synthesis.md` selecting the six-node Act II tranche: `field-threshold-look-up`, `field-threshold-look-down`, `field-wide-from-row`, `field-row-left-facing`, `bloom-clock-detail`, and `field-tally-look-up`.
+- Added RED gate `tests/act2Density.test.ts` for node existence, navigation wiring, atmosphere-only constraints, puzzle-action preservation, A7 shotlist provenance, and motion-loop provenance.
+
+Verification:
+- `npm test -- tests/act2Density.test.ts` is intentionally RED: 5 failures, starting with missing `field-threshold-look-up`, missing navigation edges, shotlist provenance, and motion-loop records. The existing Act II puzzle-action vocabulary assertion passes.
+
+Next:
+- Implement the tranche against the RED test: add pending A7 shotlist entries, generate/curate stills, wire Act II nodes, generate/install loops, then run targeted and full gates plus preview/browser smoke.
+
+Blockers:
+- None. The GLM sidecar artifact is missing due to command approval friction, but the test strategy is covered by existing Hermes/MiniMax precedent.
+
+
+
+## 2026-06-13T15:39:29+00:00 — B7 Act II density tranche verified
+
+Changed:
+- Implemented the first Act II viewpoint-density tranche: `field-threshold-look-up`, `field-threshold-look-down`, `field-wide-from-row`, `field-row-left-facing`, `bloom-clock-detail`, and `field-tally-look-up`.
+- Added 12 curated Act II clean plates and 12 seamless motion loops across the 20:08 and 20:17 windows.
+- Wired source hotspots from `field-threshold`, `field-left-row`, `field-clock-two`, and `field-tally` with return routes.
+- Added `tests/act2Density.test.ts` and made the existing Act II shotlist test resilient to density growth.
+- Refreshed `.bridge/preview/` from the green build.
+
+Verified:
+- `npm run typecheck`
+- `npm test` — 76 passing tests.
+- `npm run lint:shotlist` — 93 clean plates.
+- `npm run build`
+- `npm run gate -- --preview`
+- Route-specific Playwright check: seeded Act II, clicked threshold look-up/down, cued 20:17, verified temporal still/caption/motion wiring.
+- `npm run playtest:smoke`
+
+Next:
+- Optional critic pass should inspect whether any of the 20:17 threshold/row plates lean too dashboard-heavy despite passing canon gates.
+- Continue Act II density only after this tranche is reviewed in preview.
+
+Blockers:
+- None.

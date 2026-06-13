@@ -197,3 +197,24 @@ Result:
 - shrine-card: SHRINE NOTE: If the radio says her name, write down the time.
 - motion-layer-count-current-node: 1
 - journal-count: 4
+
+
+## 2026-06-13T15:39:29+00:00 — Act II density route smoke
+
+Route:
+1. Loaded a preview build with a seeded Act II save at `field-threshold`, discovered windows `20:08-20:17` and `20:17-20:26`.
+2. Inserted tape and skipped the broadcast.
+3. Clicked `to-threshold-look-up`.
+   - Title: THRESHOLD SKY.
+   - Caption: “A thin band of bluebonnet tops. The highway above them. One fixed pair of lights sits where the road keeps its distance.”
+   - Still: `stills/act2/field-threshold-look-up__2008-2017.jpg`.
+4. Returned, clicked `to-threshold-look-down`.
+   - Title: THRESHOLD UNDERFOOT.
+   - Caption: “Bare caliche between the stems. The path is narrow enough to remember your shoes.”
+   - Still: `stills/act2/field-threshold-look-down__2008-2017.jpg`.
+5. Cued `20:17-20:26`, clicked `to-threshold-look-up` again.
+   - Title: THRESHOLD SKY.
+   - Caption: “The sky has gone violet. The same fixed lights burn harder, but nothing on the road moves.”
+   - Still: `stills/act2/field-threshold-look-up__2017-2026.jpg`.
+
+Result: ACT2-DENSITY-PLAYTEST-PASS. Baseline `npm run playtest:smoke` also passed.

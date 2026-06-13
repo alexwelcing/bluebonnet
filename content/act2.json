@@ -60,6 +60,54 @@
               ],
               "target": "culvert-mouth",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-threshold-look-up",
+              "label": "Look up from the threshold",
+              "polygon": [
+                [
+                  35,
+                  0
+                ],
+                [
+                  65,
+                  0
+                ],
+                [
+                  65,
+                  25
+                ],
+                [
+                  35,
+                  25
+                ]
+              ],
+              "target": "field-threshold-look-up",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-threshold-look-down",
+              "label": "Look down at the path",
+              "polygon": [
+                [
+                  35,
+                  75
+                ],
+                [
+                  65,
+                  75
+                ],
+                [
+                  65,
+                  100
+                ],
+                [
+                  35,
+                  100
+                ]
+              ],
+              "target": "field-threshold-look-down",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -122,6 +170,54 @@
                 ]
               ],
               "target": "culvert-mouth",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-threshold-look-up",
+              "label": "Look up from the threshold",
+              "polygon": [
+                [
+                  35,
+                  0
+                ],
+                [
+                  65,
+                  0
+                ],
+                [
+                  65,
+                  25
+                ],
+                [
+                  35,
+                  25
+                ]
+              ],
+              "target": "field-threshold-look-up",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-threshold-look-down",
+              "label": "Look down at the path",
+              "polygon": [
+                [
+                  35,
+                  75
+                ],
+                [
+                  65,
+                  75
+                ],
+                [
+                  65,
+                  100
+                ],
+                [
+                  35,
+                  100
+                ]
+              ],
+              "target": "field-threshold-look-down",
               "shimmerThreshold": 0.5
             }
           ],
@@ -216,6 +312,54 @@
               ],
               "target": "field-threshold",
               "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-wide",
+              "label": "Look across the field rows",
+              "polygon": [
+                [
+                  38,
+                  18
+                ],
+                [
+                  64,
+                  18
+                ],
+                [
+                  64,
+                  45
+                ],
+                [
+                  38,
+                  45
+                ]
+              ],
+              "target": "field-wide-from-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-row-left-facing",
+              "label": "Turn left across the row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-row-left-facing",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -302,6 +446,54 @@
                 ]
               ],
               "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-field-wide",
+              "label": "Look across the field rows",
+              "polygon": [
+                [
+                  38,
+                  18
+                ],
+                [
+                  64,
+                  18
+                ],
+                [
+                  64,
+                  45
+                ],
+                [
+                  38,
+                  45
+                ]
+              ],
+              "target": "field-wide-from-row",
+              "shimmerThreshold": 0.5
+            },
+            {
+              "id": "to-row-left-facing",
+              "label": "Turn left across the row",
+              "polygon": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  75
+                ],
+                [
+                  0,
+                  75
+                ]
+              ],
+              "target": "field-row-left-facing",
               "shimmerThreshold": 0.5
             }
           ],
@@ -589,14 +781,38 @@
               "target": "field-clock-two",
               "journal": {
                 "id": "flower-digit-2",
-                "text": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2."
+                "text": "BLOOM CLOCK: two dense lobes."
               },
-              "caption": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2.",
+              "caption": "BLOOM CLOCK: two dense lobes.",
               "puzzleAction": "flower-digit-2",
               "setFlag": "flower:2",
               "shimmerThreshold": 0.3,
               "cluePrompt": "the rounded patches of bluebonnet flowers",
               "clueHighlight": true
+            },
+            {
+              "id": "to-bloom-detail",
+              "label": "Lean close to one bloom",
+              "polygon": [
+                [
+                  62,
+                  30
+                ],
+                [
+                  88,
+                  30
+                ],
+                [
+                  88,
+                  70
+                ],
+                [
+                  62,
+                  70
+                ]
+              ],
+              "target": "bloom-clock-detail",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -673,14 +889,38 @@
               "target": "field-clock-two",
               "journal": {
                 "id": "flower-digit-2",
-                "text": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2."
+                "text": "BLOOM CLOCK: two dense lobes."
               },
-              "caption": "BLOOM CLOCK: two dense lobes mark the first gate digit: 2.",
+              "caption": "BLOOM CLOCK: two dense lobes.",
               "puzzleAction": "flower-digit-2",
               "setFlag": "flower:2",
               "shimmerThreshold": 0.3,
               "cluePrompt": "the rounded patches of bluebonnet flowers",
               "clueHighlight": true
+            },
+            {
+              "id": "to-bloom-detail",
+              "label": "Lean close to one bloom",
+              "polygon": [
+                [
+                  62,
+                  30
+                ],
+                [
+                  88,
+                  30
+                ],
+                [
+                  88,
+                  70
+                ],
+                [
+                  62,
+                  70
+                ]
+              ],
+              "target": "bloom-clock-detail",
+              "shimmerThreshold": 0.5
             }
           ],
           "ambientAudio": "audio/field-wind-wrong.wav"
@@ -815,9 +1055,9 @@
               "target": "field-clock-seven",
               "journal": {
                 "id": "flower-digit-7",
-                "text": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7."
+                "text": "BLOOM CLOCK: seven stepped blooms."
               },
-              "caption": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7.",
+              "caption": "BLOOM CLOCK: seven stepped blooms.",
               "puzzleAction": "flower-digit-7",
               "setFlag": "flower:7",
               "shimmerThreshold": 0.3,
@@ -955,9 +1195,9 @@
               "target": "field-clock-seven",
               "journal": {
                 "id": "flower-digit-7",
-                "text": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7."
+                "text": "BLOOM CLOCK: seven stepped blooms."
               },
-              "caption": "BLOOM CLOCK: seven stepped blooms mark the second gate digit: 7.",
+              "caption": "BLOOM CLOCK: seven stepped blooms.",
               "puzzleAction": "flower-digit-7",
               "setFlag": "flower:7",
               "shimmerThreshold": 0.3,
@@ -1129,9 +1369,9 @@
               "target": "field-clock-one",
               "journal": {
                 "id": "flower-digit-1",
-                "text": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1."
+                "text": "BLOOM CLOCK: one tall bloom column."
               },
-              "caption": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1.",
+              "caption": "BLOOM CLOCK: one tall bloom column.",
               "puzzleAction": "flower-digit-1",
               "setFlag": "flower:1",
               "shimmerThreshold": 0.3,
@@ -1277,9 +1517,9 @@
               "target": "field-clock-one",
               "journal": {
                 "id": "flower-digit-1",
-                "text": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1."
+                "text": "BLOOM CLOCK: one tall bloom column."
               },
-              "caption": "BLOOM CLOCK: one tall bloom column marks the third gate digit: 1.",
+              "caption": "BLOOM CLOCK: one tall bloom column.",
               "puzzleAction": "flower-digit-1",
               "setFlag": "flower:1",
               "shimmerThreshold": 0.3,
@@ -1423,9 +1663,9 @@
               "target": "field-clock-three",
               "journal": {
                 "id": "flower-digit-3",
-                "text": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3."
+                "text": "BLOOM CLOCK: three crescent clusters."
               },
-              "caption": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3.",
+              "caption": "BLOOM CLOCK: three crescent clusters.",
               "puzzleAction": "flower-digit-3",
               "setFlag": "flower:3",
               "shimmerThreshold": 0.3,
@@ -1591,9 +1831,9 @@
               "target": "field-clock-three",
               "journal": {
                 "id": "flower-digit-3",
-                "text": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3."
+                "text": "BLOOM CLOCK: three crescent clusters."
               },
-              "caption": "BLOOM CLOCK: three crescent clusters mark the fourth gate digit: 3.",
+              "caption": "BLOOM CLOCK: three crescent clusters.",
               "puzzleAction": "flower-digit-3",
               "setFlag": "flower:3",
               "shimmerThreshold": 0.3,
@@ -1947,6 +2187,30 @@
               "shimmerThreshold": 0.3,
               "cluePrompt": "the blank pale notice board",
               "clueHighlight": true
+            },
+            {
+              "id": "to-tally-look-up",
+              "label": "Look up from the tally",
+              "polygon": [
+                [
+                  35,
+                  0
+                ],
+                [
+                  65,
+                  0
+                ],
+                [
+                  65,
+                  25
+                ],
+                [
+                  35,
+                  25
+                ]
+              ],
+              "target": "field-tally-look-up",
+              "shimmerThreshold": 0.5
             }
           ],
           "motionLayers": [
@@ -2029,9 +2293,579 @@
               "shimmerThreshold": 0.3,
               "cluePrompt": "the blank pale notice board",
               "clueHighlight": true
+            },
+            {
+              "id": "to-tally-look-up",
+              "label": "Look up from the tally",
+              "polygon": [
+                [
+                  35,
+                  0
+                ],
+                [
+                  65,
+                  0
+                ],
+                [
+                  65,
+                  25
+                ],
+                [
+                  35,
+                  25
+                ]
+              ],
+              "target": "field-tally-look-up",
+              "shimmerThreshold": 0.5
             }
           ],
           "ambientAudio": "audio/field-wind-wrong.wav"
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "field-threshold-look-up",
+      "title": "Threshold Sky",
+      "still": "stills/act2/field-threshold-look-up__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/field-threshold-look-up__2008-2017.jpg",
+          "caption": "A thin band of bluebonnet tops. The highway above them. One fixed pair of lights sits where the road keeps its distance.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Look back down at the threshold",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-threshold-look-up__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-threshold-look-up__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/field-threshold-look-up__2017-2026.jpg",
+          "caption": "The sky has gone violet. The same fixed lights burn harder, but nothing on the road moves.",
+          "wrongness": "the highway lights are brighter while the road stays still",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Look back down at the threshold",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-threshold-look-up__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-threshold-look-up__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "field-threshold-look-down",
+      "title": "Threshold Underfoot",
+      "still": "stills/act2/field-threshold-look-down__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/field-threshold-look-down__2008-2017.jpg",
+          "caption": "Bare caliche between the stems. The path is narrow enough to remember your shoes.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Lift your view back to the threshold",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-threshold-look-down__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-threshold-look-down__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/field-threshold-look-down__2017-2026.jpg",
+          "caption": "The same bare path, but the stems press closer to its edge than the tape allowed.",
+          "wrongness": "the bluebonnets crowd the path edge",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Lift your view back to the threshold",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-threshold",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-threshold-look-down__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-threshold-look-down__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "field-wide-from-row",
+      "title": "Field Wide From Row",
+      "still": "stills/act2/field-wide-from-row__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/field-wide-from-row__2008-2017.jpg",
+          "caption": "Both rows run south. The highway keeps its line at the edge of the field.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back to the left row",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-wide-from-row__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-wide-from-row__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/field-wide-from-row__2017-2026.jpg",
+          "caption": "Both rows run south, then lean inward as if the field is narrowing behind you.",
+          "wrongness": "the rows lean inward and tighten the path",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back to the left row",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-wide-from-row__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-wide-from-row__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "field-row-left-facing",
+      "title": "Left Row Facing",
+      "still": "stills/act2/field-row-left-facing__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/field-row-left-facing__2008-2017.jpg",
+          "caption": "Across the path, the right row holds its distance. Bluebonnets fill the gap without closing it.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back onto the left row",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-row-left-facing__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-row-left-facing__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/field-row-left-facing__2017-2026.jpg",
+          "caption": "Across the path, the right row stands taller. The gap is still there, just less willing.",
+          "wrongness": "the right row stands taller and crowds the path",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back onto the left row",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-left-row",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-row-left-facing__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-row-left-facing__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "bloom-clock-detail",
+      "title": "Bloom Detail",
+      "still": "stills/act2/bloom-clock-detail__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/bloom-clock-detail__2008-2017.jpg",
+          "caption": "One bluebonnet up close: stem, petals, the unit the field keeps counting.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back from the bloom",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-clock-two",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/bloom-clock-detail__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/bloom-clock-detail__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/bloom-clock-detail__2017-2026.jpg",
+          "caption": "One bluebonnet up close. A lower petal faces the lens when the others do not.",
+          "wrongness": "one petal faces the lens against the cluster",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Step back from the bloom",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-clock-two",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/bloom-clock-detail__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/bloom-clock-detail__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/field-wind.wav",
+      "audioMix": {
+        "ambient": 0.72
+      }
+    },
+    {
+      "id": "field-tally-look-up",
+      "title": "Tally Sky",
+      "still": "stills/act2/field-tally-look-up__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act2/field-tally-look-up__2008-2017.jpg",
+          "caption": "The tally sits low against the sky. Beyond it, the highway lights hold their place.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Look back at the tally",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-tally",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-tally-look-up__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-tally-look-up__2008-2017.jpg"
+            }
+          ]
+        },
+        "20:17-20:26": {
+          "still": "stills/act2/field-tally-look-up__2017-2026.jpg",
+          "caption": "The tally sits low against the violet sky. The fixed lights answer brighter from the highway.",
+          "wrongness": "the distant lights brighten without moving",
+          "hotspots": [
+            {
+              "id": "return",
+              "label": "Look back at the tally",
+              "polygon": [
+                [
+                  0,
+                  70
+                ],
+                [
+                  100,
+                  70
+                ],
+                [
+                  100,
+                  100
+                ],
+                [
+                  0,
+                  100
+                ]
+              ],
+              "target": "field-tally",
+              "shimmerThreshold": 0.5
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act2/field-tally-look-up__2017-2026.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act2/field-tally-look-up__2017-2026.jpg"
+            }
+          ]
         }
       },
       "ambientAudio": "audio/field-wind.wav",

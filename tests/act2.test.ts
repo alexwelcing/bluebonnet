@@ -26,10 +26,17 @@ function activate(hotspot: HotspotDefinition, state = createStateMachine({ curre
 describe('Act II field content', () => {
   it('keeps Act II shot prompts as clean plates with the A1 no-text clause', () => {
     const act2Shots = shotlist.shots.filter((shot) => shot.act === 'act2');
-    expect(act2Shots).toHaveLength(20);
+    expect(act2Shots.length).toBeGreaterThanOrEqual(20);
     for (const shot of act2Shots) {
       expect(shot.prompt).toContain('no readable text, no lettering, no signage characters');
     }
+  });
+
+  it('keeps the field-threshold in the still-frame node graph until the 360 world is ready', () => {
+    const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
+    const nodeState = getNodeState(graph, 'field-threshold', '20:08-20:17');
+    expect(nodeState.still).toBe('stills/act2/field-threshold__2008-2017.jpg');
+    expect(nodeState.hotspots.map((hotspot) => hotspot.id)).toContain('to-field-left-row');
   });
 
   it('the padlock is a knowledge-gated mechanism; the clocks remain its evidence', () => {
@@ -42,12 +49,12 @@ describe('Act II field content', () => {
     expect(unlock!.mechanism).toBe('padlock');
     expect(createPuzzleProgression(state.snapshot().completedPuzzles).canApply('field-gate')).toBe(true);
 
-    // The bloom clocks still teach the digits into the journal.
+    // The bloom clocks teach observations; the tally remains the ordered-code payoff.
     for (const [nodeId, hotspotId, digit] of [
-      ['field-clock-two', 'flower-two', 'digit: 2'],
-      ['field-clock-seven', 'flower-seven', 'digit: 7'],
-      ['field-clock-one', 'flower-one', 'digit: 1'],
-      ['field-clock-three', 'flower-three', 'digit: 3'],
+      ['field-clock-two', 'flower-two', 'two dense lobes'],
+      ['field-clock-seven', 'flower-seven', 'seven stepped blooms'],
+      ['field-clock-one', 'flower-one', 'one tall bloom column'],
+      ['field-clock-three', 'flower-three', 'three crescent clusters'],
     ] as const) {
       const nodeState = getNodeState(graph, nodeId, '20:17-20:26');
       const hotspot = nodeState.hotspots.find((candidate) => candidate.id === hotspotId);
@@ -55,6 +62,7 @@ describe('Act II field content', () => {
       activate(hotspot!, state);
       expect(state.snapshot().journal.map((entry) => entry.text).join('\n')).toContain(digit);
     }
+    expect(state.snapshot().journal.map((entry) => entry.text).join('\n')).not.toContain('gate digit');
 
     activate(unlock!, state);
     expect(state.snapshot().flags['culvert-access']).toBe(true);
