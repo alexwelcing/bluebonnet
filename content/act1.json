@@ -1009,7 +1009,8 @@
               "caption": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "car radio head unit in the dashboard",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "Static the whole way up the dial. Dana kept the frequency written down somewhere in this wagon."
             },
             {
               "id": "dispatch",
@@ -1046,7 +1047,8 @@
               "puzzleAction": "dispatch-log",
               "discoverTimecode": "20:17-20:26",
               "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
-              "exhibit": "dispatch"
+              "exhibit": "dispatch",
+              "lockedHint": "The printer holds its one line under black static. Wake the radio first."
             }
           ],
           "motionLayers": [
@@ -1173,7 +1175,8 @@
               "puzzleAction": "dispatch-log",
               "discoverTimecode": "20:17-20:26",
               "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
-              "exhibit": "dispatch"
+              "exhibit": "dispatch",
+              "lockedHint": "The printer holds its one line under black static. Wake the radio first."
             }
           ]
         }
@@ -1304,7 +1307,8 @@
               "shimmerThreshold": 0.25,
               "exhibit": "dispatch",
               "cluePrompt": "long white paper receipt",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "Black static rolls over the strip. The radio has to be tuned before the line will hold still."
             }
           ],
           "motionLayers": [

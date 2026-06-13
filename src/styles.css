@@ -606,3 +606,26 @@ input[type='range']::-moz-range-thumb {
   border: 1px solid rgba(164, 255, 197, 0.6);
   background: linear-gradient(180deg, #2c4a36, #0c1812 55%, #1d3a28);
 }
+
+/* Locks refuse, not vanish (playtest fix): a locked clue stays visible and
+   answers with a hint; its affordance reads amber instead of green. */
+.hotspot-locked { cursor: not-allowed; }
+.hotspot-locked::after {
+  background: rgba(255, 205, 130, 0.1);
+  outline-color: rgba(255, 210, 140, 0.55);
+}
+.hotspot-locked.hotspot-clue .clue-outline polygon {
+  stroke: rgba(255, 210, 140, 0.6);
+  fill: rgba(255, 205, 130, 0.05);
+}
+
+/* A newly discovered timecode pulses on the ruler until acknowledged. */
+.cue.fresh {
+  animation: cue-fresh 1.1s ease-in-out infinite;
+  border-color: #ffe9a8;
+  color: #ffe9a8;
+}
+@keyframes cue-fresh {
+  0%, 100% { box-shadow: inset 0 0 4px rgba(255, 233, 168, 0.25); }
+  50% { box-shadow: inset 0 0 16px rgba(255, 233, 168, 0.7), 0 0 10px rgba(255, 233, 168, 0.45); }
+}

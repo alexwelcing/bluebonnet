@@ -27,3 +27,13 @@ Full run, fresh-player lens, 39 screenshots reviewed (boot → all four acts →
 - Transitions carry the acts; the seam crossing and the gate's falling padlock are the standouts.
 - Act IV from the threshold to RECORD is an unbroken escalation; near-car (flowers growing out of the car, glow breathing) is the image of the game.
 - Captions as lower-thirds; anomaly line as TAPE ANOMALY; journal verbatim restating. The deck fiction holds everywhere.
+
+## Addendum 2026-06-13 — Stump audit (Alex got stuck beating the game)
+Gating-graph examination found the cause class: `requires` HIDES hotspots, so locks vanished instead of refusing. Worst case: at FIELD GATE every signpost says "enter the code" (caption, PADLOCK // 2 7 1 3 overlay, tally) but the padlock hotspot was invisible until all four bloom clocks were logged — answer in hand, nothing clickable, no message. Same pattern: radio tune hidden pre-flyer (dead room), pipe knock hidden pre-pattern. Fourth issue: timecode discoveries were silent ("reset tape to 20:17" never met the transport).
+
+Fixes (fairness rule: LOCKS REFUSE, NOT VANISH):
+- New engine behavior: hotspots with `lockedHint` stay visible when requires fail (amber affordance, not-allowed cursor); clicking speaks the hint + plays the refusal thunk. Applied to padlock, radio tune, tip-line (both), pipe knocks.
+- Padlock label de-spoilered: 'Set the padlock to 2713' → 'Work the padlock dials' (the code belongs to the tally/journal).
+- puzzle.ts refusals are now diegetic hints, not "X is gated by earlier evidence."
+- Timecode discovery announces on the transport ("NEW TIMECODE ON THE RULER…") and the new cue pulses amber for 12s.
+Verified: stuck-player scenario now speaks the hint at the gate; full solve path to RECORD unchanged; 45 tests green.

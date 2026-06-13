@@ -131,6 +131,49 @@ describe('Evidence Deck integration', () => {
   });
 
 
+  it('locks refuse instead of vanishing: the padlock is visible and hints before the clocks', async () => {
+    await loadDeck({
+      currentNodeId: 'field-gate',
+      flags: { 'puzzle:flyer-frequency': true, 'puzzle:radio-tune': true, 'puzzle:dispatch-log': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:08-20:17',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+
+    const padlock = button('Work the padlock dials');
+    expect(padlock.classList.contains('hotspot-locked')).toBe(true);
+    realPointerClick(padlock);
+    expect(document.querySelector('.caption')?.textContent).toContain('log all four bloom shapes');
+    expect(document.querySelector('h1')?.textContent).toBe('FIELD GATE'); // no navigation
+  });
+
+  it('the radio refuses with a hint before the flyer is read', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+    realPointerClick(button('Inspect the scanner radio'));
+    const tune = button('Tune 88.7 FM');
+    expect(tune.classList.contains('hotspot-locked')).toBe(true);
+    realPointerClick(tune);
+    expect(document.querySelector('.caption')?.textContent).toContain('frequency written down');
+  });
+
+  it('a new timecode announces itself and pulses its cue', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+    realPointerClick(button('Read the missing-person flyer'));
+    realPointerClick(button('RETURN TO DECK'));
+    realPointerClick(button('Inspect the scanner radio'));
+    realPointerClick(button('Tune 88.7 FM'));
+    realPointerClick(button('Check the tip-line printer'));
+
+    expect(document.querySelector('.timeseek-help')?.textContent).toContain('NEW TIMECODE ON THE RULER: 20:17-20:26');
+    expect(document.querySelector('.cue[data-window="20:17-20:26"]')?.classList.contains('fresh')).toBe(true);
+  });
+
   it('REWIND appears only on ending nodes and clears the save', async () => {
     await loadDeck({
       currentNodeId: 'ending-eject',

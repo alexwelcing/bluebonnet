@@ -1,7 +1,7 @@
 import { createAudioMixer } from '../engine/audioMixer';
 import { clipPathWithinBounds, polygonBounds, svgPointsWithinBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
-import { availableHotspots, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
+import { conditionsMet, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
 import { clearSnapshot, loadSnapshot, saveSnapshot } from '../engine/save';
 import { createStateMachine } from '../engine/stateMachine';
@@ -243,6 +243,7 @@ function render() {
     cue.classList.toggle('current', window === snapshot.activeWindow);
     cue.classList.toggle('locked', locked);
     cue.classList.toggle('undiscovered', !discovered && !locked);
+    cue.classList.toggle('fresh', window === freshCueWindow);
     cue.setAttribute(
       'aria-label',
       locked ? `Cue ${window}: locked` : discovered ? `Cue to ${window}` : `Cue ${window}: not yet discovered`,
@@ -286,11 +287,15 @@ function render() {
     lastInputWasKeyboard && document.activeElement instanceof HTMLElement && document.activeElement.classList.contains('hotspot')
       ? document.activeElement.dataset.hotspotId
       : undefined;
+  const renderableHotspots = nodeState.hotspots
+    .map((hotspot) => ({ hotspot, locked: !conditionsMet(hotspot.requires, snapshot) }))
+    .filter(({ hotspot, locked }) => !locked || hotspot.lockedHint);
   hotspotLayer.replaceChildren(
-    ...availableHotspots(nodeState, snapshot).map((hotspot) => {
+    ...renderableHotspots.map(({ hotspot, locked }) => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = hotspot.clueHighlight ? 'hotspot hotspot-clue' : 'hotspot';
+      if (locked) button.classList.add('hotspot-locked');
       button.dataset.hotspotId = hotspot.id;
       button.title = hotspot.label;
       const bounds = polygonBounds(hotspot.polygon);
@@ -319,7 +324,15 @@ function render() {
       } else {
         button.style.clipPath = clipPathWithinBounds(hotspot.polygon, bounds);
       }
-      button.addEventListener('click', () => activateHotspot(hotspot));
+      button.addEventListener('click', () => {
+        if (locked) {
+          // The lock refuses out loud instead of hiding.
+          showCaption(hotspot.lockedHint ?? 'It will not move yet.');
+          audio.playCue('audio/tape-hard-stop.wav', 'The deck refuses.');
+          return;
+        }
+        activateHotspot(hotspot);
+      });
       return button;
     }),
   );
@@ -335,7 +348,24 @@ function cssEscape(value: string): string {
   return typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape(value) : value.replace(/"/g, '\\"');
 }
 
+let freshCueWindow: TimeWindow | undefined;
+let freshCueTimer: number | undefined;
+
+// A new timecode is the biggest moment in the game's grammar; it must not
+// pass silently (playtest: "reset tape to 20:17" never met the transport).
+function announceDiscovery(discovered: TimeWindow) {
+  freshCueWindow = discovered;
+  if (freshCueTimer !== undefined) window.clearTimeout(freshCueTimer);
+  freshCueTimer = window.setTimeout(() => {
+    freshCueWindow = undefined;
+    freshCueTimer = undefined;
+    render();
+  }, 12000);
+  setTransportMessage(`NEW TIMECODE ON THE RULER: ${discovered} — PRESS THE CUE OR WIND THE WHEEL.`);
+}
+
 function activateHotspot(hotspot: HotspotDefinition) {
+  const before = state.snapshot().discoveredTimecodes;
   const puzzle = createPuzzleProgression(state.snapshot().completedPuzzles);
   if (hotspot.puzzleAction) {
     const result = puzzle.apply(hotspot.puzzleAction);
@@ -351,6 +381,11 @@ function activateHotspot(hotspot: HotspotDefinition) {
   }
 
   state.applyHotspot(hotspot);
+  const nowDiscovered = state.snapshot().discoveredTimecodes;
+  const fresh = nowDiscovered.find((window) => !before.includes(window));
+  if (fresh) {
+    announceDiscovery(fresh);
+  }
   const target = resolveHotspotTarget(hotspot, state.snapshot());
   const finishNavigation = () => {
     if (target) {

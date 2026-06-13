@@ -1664,7 +1664,7 @@
             },
             {
               "id": "unlock-field-gate",
-              "label": "Set the padlock to 2713",
+              "label": "Work the padlock dials",
               "polygon": [
                 [
                   50.4,
@@ -1727,7 +1727,8 @@
               "setFlag": "culvert-access",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the padlock",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "The dials spin loose and settle on nothing. Four digits. The field has been counting for you — log all four bloom shapes."
             }
           ]
         },
@@ -1786,7 +1787,7 @@
             },
             {
               "id": "unlock-field-gate",
-              "label": "Set the padlock to 2713",
+              "label": "Work the padlock dials",
               "polygon": [
                 [
                   48.4,
@@ -1873,7 +1874,8 @@
               "setFlag": "culvert-access",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the padlock",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "The dials spin loose and settle on nothing. Four digits. The field has been counting for you — log all four bloom shapes."
             }
           ],
           "motionLayers": [

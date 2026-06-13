@@ -16,11 +16,20 @@ export interface PuzzleProgression {
   snapshot(): { completed: PuzzleAction[] };
 }
 
+// Diegetic refusals: what the deck says when evidence is taken out of order.
+const REFUSALS: Partial<Record<PuzzleAction, string>> = {
+  'radio-tune': 'Static the whole way up the dial. The frequency is written down somewhere in this wagon.',
+  'dispatch-log': 'The strip will not hold still. Tune the radio first — 88.7 wakes the tip line.',
+  'field-gate': 'The dials spin loose and settle on nothing. Four digits — log all four bloom shapes in the field.',
+  'echo-knocks': 'The pipe rings wrong. Open the gate behind you first; the field is still counting.',
+  'recorder-counter': 'The counter window stays dark until the pipe has answered.',
+};
+
 export function createPuzzleProgression(initial: PuzzleAction[] = []): PuzzleProgression {
   const completed: PuzzleAction[] = [...initial];
   const complete = (action: PuzzleAction): PuzzleResult => {
     if (!canComplete(action, completed)) {
-      return { ok: false, reason: `${action} is gated by earlier evidence.` };
+      return { ok: false, reason: REFUSALS[action] ?? 'The deck refuses. Something earlier on the tape is still unplayed.' };
     }
     if (!completed.includes(action)) {
       completed.push(action);

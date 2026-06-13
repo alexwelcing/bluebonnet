@@ -430,7 +430,8 @@
               "setFlag": "echo-solved",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the rusted pipe",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "Your knuckles hover over cold iron. Listen first — the static has been knocking a pattern this whole time."
             }
           ],
           "motionLayers": [
@@ -585,7 +586,8 @@
               "setFlag": "echo-solved",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the rusted pipe",
-              "clueHighlight": true
+              "clueHighlight": true,
+              "lockedHint": "Your knuckles hover over cold iron. Listen first — the static has been knocking a pattern this whole time."
             }
           ]
         }
