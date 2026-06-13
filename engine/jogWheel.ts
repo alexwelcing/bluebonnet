@@ -1,4 +1,5 @@
 import type { TimeWindow } from './types';
+import { DEFAULT_TIME_WINDOW, lockedByDefaultWindows, timeWindowPositions } from './timeWindows';
 
 export interface JogWheelState {
   angle: number;
@@ -28,16 +29,12 @@ export const defaultJogWheelOptions: JogWheelOptions = {
   detentStrength: 0.42,
   detentRadius: 0.085,
   hardStopPosition: 2,
-  windows: {
-    '20:08-20:17': 0,
-    '20:17-20:26': 1,
-    '20:26-20:35': 2,
-  },
-  discovered: ['20:08-20:17'],
-  locked: ['20:26-20:35'],
+  windows: timeWindowPositions,
+  discovered: [DEFAULT_TIME_WINDOW],
+  locked: [...lockedByDefaultWindows],
 };
 
-export function createJogWheelState(window: TimeWindow = '20:08-20:17', options = defaultJogWheelOptions): JogWheelState {
+export function createJogWheelState(window: TimeWindow = DEFAULT_TIME_WINDOW, options = defaultJogWheelOptions): JogWheelState {
   return { angle: options.windows[window] * Math.PI * 1.5, velocity: 0, position: options.windows[window], seatedWindow: window, strain: 0 };
 }
 

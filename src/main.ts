@@ -6,6 +6,7 @@ import { createPuzzleProgression } from '../engine/puzzle';
 import { clearSnapshot, loadSnapshot, saveSnapshot } from '../engine/save';
 import { createStateMachine } from '../engine/stateMachine';
 import { createTimeSeek } from '../engine/timeseek';
+import { FINAL_TIME_WINDOW, TIME_WINDOWS, nearestTimeWindow } from '../engine/timeWindows';
 import type { HotspotDefinition, SceneManifest, TimeWindow } from '../engine/types';
 import { installVhsCompositor } from '../engine/vhsCompositor';
 import transitionManifest from '../content/transitions.json';
@@ -241,7 +242,7 @@ function render() {
   title.textContent = node.title.toUpperCase();
   caption.textContent = snapshot.captionsEnabled ? nodeState.caption : '';
   caption.hidden = !snapshot.captionsEnabled;
-  wrongness.textContent = nodeState.wrongness ? `TAPE ANOMALY: ${nodeState.wrongness}` : 'TAPE ANOMALY: baseline window stable.';
+  wrongness.textContent = nodeState.wrongness ? `TAPE ANOMALY: ${nodeState.wrongness}` : '';
   intensity.value = String(snapshot.vhsIntensity);
   captions.checked = snapshot.captionsEnabled;
   const sideMode = inSideB(snapshot.currentNodeId);
@@ -712,11 +713,10 @@ function compareCandidateWindow(): TimeWindow | undefined {
   const snapshot = state.snapshot();
   const states = getNode(graph, snapshot.currentNodeId).temporalStates;
   if (!states) return undefined;
-  const sequence: TimeWindow[] = ['20:08-20:17', '20:17-20:26', '20:26-20:35'];
-  const activeIndex = sequence.indexOf(snapshot.activeWindow);
-  return sequence
-    .filter((window) => window !== snapshot.activeWindow && states[window] && snapshot.discoveredTimecodes.includes(window))
-    .sort((a, b) => Math.abs(sequence.indexOf(a) - activeIndex) - Math.abs(sequence.indexOf(b) - activeIndex))[0];
+  return nearestTimeWindow(
+    TIME_WINDOWS.filter((window) => window !== snapshot.activeWindow && states[window] && snapshot.discoveredTimecodes.includes(window)),
+    snapshot.activeWindow,
+  );
 }
 
 function startCompare() {
@@ -928,9 +928,9 @@ if (localStorage.getItem(SIDE_B_KEY) === '1') {
 insertSideB.addEventListener('click', () => {
   bootScreen.hidden = true;
   audio.unlock();
-  state.setActiveWindow('20:26-20:35');
+  state.setActiveWindow(FINAL_TIME_WINDOW);
   state.setCurrentNode('side-room');
-  jogState = createJogWheelState('20:26-20:35', jogOptions());
+  jogState = createJogWheelState(FINAL_TIME_WINDOW, jogOptions());
 });
 
 function inSideB(nodeId: string): boolean {

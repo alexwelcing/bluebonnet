@@ -1197,3 +1197,23 @@ Next:
 
 Blockers:
 - FAL balance is exhausted for additional generated video loops until topped up; local static fallback remains available for non-motion-critical plates.
+
+
+## 2026-06-13T16:45:47+00:00 — Code-focused tape-window refactor
+
+Changed:
+- Paused asset generation work and improved engine code structure.
+- Added `engine/timeWindows.ts` as the canonical source for tape-window order, default/final windows, locked-by-default windows, jog-wheel positions, asset suffixes, deduplication, and nearest-window selection.
+- Refactored `engine/nodeGraph.ts`, `engine/stateMachine.ts`, `engine/jogWheel.ts`, `engine/timeseek.ts`, and `src/main.ts` to use the canonical helpers instead of local duplicated arrays/literals.
+- Added `tests/timeWindows.test.ts` using RED/GREEN TDD to pin the behavior before refactoring production code.
+
+Verified:
+- RED observed first: `npm test -- tests/timeWindows.test.ts` failed because `../engine/timeWindows` did not exist.
+- Targeted tests passed: `npm test -- tests/timeWindows.test.ts tests/engine.test.ts tests/jogWheel.test.ts tests/milestone1.test.ts tests/act4.test.ts tests/evidenceDeck.test.ts` — 47 passing.
+- Full code/content gates passed: `npm run typecheck && npm test && npm run lint:shotlist && npm run build` — 86 passing tests, 101 clean plates, production build green.
+
+Next:
+- Continue code-first improvements: likely candidates are extracting repeated DOM/pointer click helpers in tests or tightening manifest validation around temporal state/motion-layer consistency.
+
+Blockers:
+- None for code work. FAL balance remains exhausted for new generated video assets.

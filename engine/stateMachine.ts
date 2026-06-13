@@ -1,4 +1,5 @@
 import type { EngineSnapshot, HotspotDefinition, JournalEntry, PuzzleAction, TimeWindow } from './types';
+import { DEFAULT_TIME_WINDOW, uniqueTimeWindows } from './timeWindows';
 
 interface InitialState {
   currentNodeId: string;
@@ -27,13 +28,13 @@ export interface StateMachine {
 }
 
 export function createStateMachine(initial: InitialState): StateMachine {
-  const startingWindow = initial.activeWindow ?? '20:08-20:17';
+  const startingWindow = initial.activeWindow ?? DEFAULT_TIME_WINDOW;
   let snapshot: EngineSnapshot = {
     currentNodeId: initial.currentNodeId,
     flags: { ...(initial.flags ?? {}) },
-    vhsIntensity: clampIntensity(initial.vhsIntensity ?? 0.72),
+    vhsIntensity: clampIntensity(initial.vhsIntensity ?? 0.4),
     activeWindow: startingWindow,
-    discoveredTimecodes: uniqueWindows([startingWindow, ...(initial.discoveredTimecodes ?? [])]),
+    discoveredTimecodes: uniqueTimeWindows([startingWindow, ...(initial.discoveredTimecodes ?? [])]),
     journal: [...(initial.journal ?? [])],
     completedPuzzles: [...(initial.completedPuzzles ?? [])],
     captionsEnabled: initial.captionsEnabled ?? true,
@@ -67,7 +68,7 @@ export function createStateMachine(initial: InitialState): StateMachine {
       return publish();
     },
     discoverTimecode(window: TimeWindow) {
-      snapshot.discoveredTimecodes = uniqueWindows([...snapshot.discoveredTimecodes, window]);
+      snapshot.discoveredTimecodes = uniqueTimeWindows([...snapshot.discoveredTimecodes, window]);
       return publish();
     },
     logJournal(id: string, text: string) {
@@ -106,8 +107,8 @@ export function createStateMachine(initial: InitialState): StateMachine {
         currentNodeId: next.currentNodeId,
         flags: { ...next.flags },
         vhsIntensity: clampIntensity(next.vhsIntensity),
-        activeWindow: next.activeWindow ?? '20:08-20:17',
-        discoveredTimecodes: uniqueWindows(next.discoveredTimecodes ?? ['20:08-20:17']),
+        activeWindow: next.activeWindow ?? DEFAULT_TIME_WINDOW,
+        discoveredTimecodes: uniqueTimeWindows(next.discoveredTimecodes ?? [DEFAULT_TIME_WINDOW]),
         journal: [...(next.journal ?? [])],
         completedPuzzles: [...(next.completedPuzzles ?? [])],
         captionsEnabled: next.captionsEnabled ?? true,
@@ -132,13 +133,9 @@ function cloneSnapshot(snapshot: EngineSnapshot): EngineSnapshot {
   };
 }
 
-function uniqueWindows(windows: TimeWindow[]): TimeWindow[] {
-  return [...new Set(windows)];
-}
-
 function clampIntensity(value: number): number {
   if (Number.isNaN(value)) {
-    return 0.72;
+    return 0.4;
   }
   return Math.max(0, Math.min(1, value));
 }

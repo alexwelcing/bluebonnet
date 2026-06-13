@@ -8,11 +8,12 @@ import type {
   TemporalNodeState,
   TimeWindow,
 } from './types';
+import { DEFAULT_TIME_WINDOW, nearestTimeWindow } from './timeWindows';
 
 export function loadNodeGraph(manifests: SceneManifest[]): NodeGraph {
   const nodes: Record<string, SceneNode> = {};
   let startNodeId: string | undefined;
-  let initialWindow: TimeWindow = '20:08-20:17';
+  let initialWindow: TimeWindow = DEFAULT_TIME_WINDOW;
   const lockedWindows = new Set<TimeWindow>();
 
   for (const manifest of manifests) {
@@ -64,16 +65,11 @@ export function getNode(graph: NodeGraph, id: string): SceneNode {
   return node;
 }
 
-const WINDOW_SEQUENCE: TimeWindow[] = ['20:08-20:17', '20:17-20:26', '20:26-20:35'];
-
 export function nearestDefinedWindow(
   states: Partial<Record<TimeWindow, TemporalNodeState>>,
   window: TimeWindow,
 ): TimeWindow | undefined {
-  const index = WINDOW_SEQUENCE.indexOf(window);
-  return WINDOW_SEQUENCE.filter((candidate) => states[candidate]).sort(
-    (a, b) => Math.abs(WINDOW_SEQUENCE.indexOf(a) - index) - Math.abs(WINDOW_SEQUENCE.indexOf(b) - index),
-  )[0];
+  return nearestTimeWindow(Object.keys(states) as TimeWindow[], window);
 }
 
 export function getNodeState(graph: NodeGraph, id: string, window: TimeWindow): TemporalNodeState {
@@ -88,7 +84,8 @@ export function getNodeState(graph: NodeGraph, id: string, window: TimeWindow): 
   // node actually defines instead.
   const nearest = nearestDefinedWindow(states, window);
   if (nearest) {
-    return states[nearest]!;
+    const nearestState = states[nearest]!;
+    return nearestState;
   }
   return {
     still: node.still,

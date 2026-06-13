@@ -1,4 +1,5 @@
 import type { NodeGraph, TimeWindow } from './types';
+import { uniqueTimeWindows } from './timeWindows';
 
 export interface TimeSeekResult {
   ok: boolean;
@@ -33,7 +34,7 @@ export function createTimeSeek(graph: NodeGraph, activeWindow = graph.initialWin
       lockedSet.delete(window);
     },
     snapshot() {
-      return { activeWindow: current, discoveredTimecodes: [...discoveredSet] };
+      return { activeWindow: current, discoveredTimecodes: uniqueTimeWindows([...discoveredSet]) };
     },
   };
 }
