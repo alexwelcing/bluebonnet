@@ -1,0 +1,114 @@
+{
+  "schema": "ambient event pools keyed by bed; the sound-world follows the geography",
+  "minDelaySeconds": 25,
+  "maxDelaySeconds": 60,
+  "pools": {
+    "audio/wagon-idle.wav": [
+      {
+        "src": "audio/evt-truck-pass.wav",
+        "volume": 0.5,
+        "caption": "A truck passes on FM 1187, unseen."
+      },
+      {
+        "src": "audio/evt-wagon-settle.wav",
+        "volume": 0.45,
+        "caption": "The wagon settles on its springs."
+      },
+      {
+        "src": "audio/evt-radio-blip.wav",
+        "volume": 0.3,
+        "caption": "The scanner squelches once."
+      }
+    ],
+    "audio/field-wind.wav": [
+      {
+        "src": "audio/evt-wind-gust.wav",
+        "volume": 0.5,
+        "caption": "A long gust walks the field."
+      },
+      {
+        "src": "audio/evt-seed-rattle.wav",
+        "volume": 0.4,
+        "caption": "Seed pods rattle, close by."
+      },
+      {
+        "src": "audio/evt-truck-pass.wav",
+        "volume": 0.22,
+        "caption": "A truck passes, far off."
+      }
+    ],
+    "audio/field-wind-wrong.wav": [
+      {
+        "src": "audio/evt-wind-gust.wav",
+        "volume": 0.45,
+        "caption": "A gust moves through — nothing else answers it."
+      },
+      {
+        "src": "audio/evt-far-knock.wav",
+        "volume": 0.3,
+        "caption": "A single knock, from open air."
+      }
+    ],
+    "audio/culvert-rumble.wav": [
+      {
+        "src": "audio/evt-pipe-groan.wav",
+        "volume": 0.5,
+        "caption": "The pipe groans somewhere deeper in."
+      },
+      {
+        "src": "audio/evt-drip-cluster.wav",
+        "volume": 0.5,
+        "caption": "A cluster of drips echoes and stops."
+      }
+    ],
+    "audio/culvert-rumble-wrong.wav": [
+      {
+        "src": "audio/evt-pipe-groan.wav",
+        "volume": 0.4,
+        "caption": "The pipe groans — the echo arrives first."
+      },
+      {
+        "src": "audio/evt-far-knock.wav",
+        "volume": 0.35,
+        "caption": "One knock. Not the pipe."
+      }
+    ],
+    "audio/radio-static.wav": [
+      {
+        "src": "audio/evt-static-swell.wav",
+        "volume": 0.5,
+        "caption": "The static organizes, then lets go."
+      },
+      {
+        "src": "audio/evt-radio-blip.wav",
+        "volume": 0.4,
+        "caption": "A squelch, like a key-up with no voice."
+      }
+    ],
+    "audio/nine-luminescence.wav": [
+      {
+        "src": "audio/evt-bloom-pulse.wav",
+        "volume": 0.55,
+        "caption": "The glow swells once, like a slow heartbeat."
+      },
+      {
+        "src": "audio/evt-far-knock.wav",
+        "volume": 0.3,
+        "caption": "A knock, from nowhere in particular."
+      },
+      {
+        "src": "audio/evt-wind-gust.wav",
+        "volume": 0.25,
+        "caption": "Wind moves the luminous field."
+      }
+    ]
+  },
+  "compareLoop": {
+    "src": "audio/compare-warble.wav",
+    "volume": 0.28
+  },
+  "transitionBed": {
+    "src": "audio/transition-air.wav",
+    "volume": 0.3
+  }
+}

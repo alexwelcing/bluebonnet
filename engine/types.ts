@@ -63,6 +63,8 @@ export interface TemporalNodeState {
   hotspots: HotspotDefinition[];
   /** Per-window idle loops (seeded from this window's plate); falls back to node.motionLayers. */
   motionLayers?: MotionLayer[];
+  /** Per-window ambient bed override — the same place can sound wronger. */
+  ambientAudio?: string;
 }
 
 export interface MotionLayer {

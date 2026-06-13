@@ -1,6 +1,6 @@
 export interface AudioMixer {
   setAmbient(source: string | undefined, ambientLevel?: number): void;
-  playCue(source: string, caption?: string): void;
+  playCue(source: string, caption?: string, gain?: number): void;
   setMuted(muted: boolean): void;
   setVolume(volume: number): void;
   unlock(): void;
@@ -133,12 +133,12 @@ export function createAudioMixer(): AudioMixer {
         beginCrossfade();
       }
     },
-    playCue(source: string, caption?: string) {
+    playCue(source: string, caption?: string, gain = 1) {
       cues.push({ source, caption });
       if (typeof Audio !== 'undefined' && !muted) {
         try {
           const audio = new Audio(source);
-          audio.volume = volume;
+          audio.volume = clampUnit(volume * gain, 0.7);
           const playResult = audio.play();
           if (playResult && typeof playResult.catch === 'function') {
             void playResult.catch(() => undefined);

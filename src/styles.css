@@ -754,3 +754,17 @@ input[type='range']::-moz-range-thumb {
 }
 .knock-controls { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
 .knock-button { font-size: 1.05rem; padding: 0.8rem 1.6rem; }
+
+.boot-note { color: rgba(255, 233, 168, 0.7); font-size: 0.78rem; letter-spacing: 0.12em; }
+
+/* Idle slip: linger long enough and the tracking stutters once. */
+.idle-slip .scene-still,
+.idle-slip .motion-layer {
+  animation: idle-slip 360ms steps(3, end);
+}
+@keyframes idle-slip {
+  0% { transform: translateY(0); filter: none; }
+  34% { transform: translateY(-1.2%) skewX(0.6deg); filter: saturate(0.4) contrast(1.2); }
+  67% { transform: translateY(0.7%); filter: hue-rotate(8deg); }
+  100% { transform: translateY(0); }
+}

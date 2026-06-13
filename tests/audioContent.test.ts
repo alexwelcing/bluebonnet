@@ -56,3 +56,34 @@ describe('B7 motion layer content', () => {
     expect(state?.motionLayers?.length, 'wagon-interior 20:08 loop').toBeGreaterThan(0);
   });
 });
+
+describe('Ambience II', () => {
+  it('every ambient event, skin, and wrong-bed file is deployable', () => {
+    const ambience = JSON.parse(fs.readFileSync('content/ambience.json', 'utf8'));
+    const sources = new Set<string>();
+    for (const pool of Object.values(ambience.pools) as { src: string }[][]) {
+      for (const event of pool) sources.add(event.src);
+    }
+    sources.add(ambience.compareLoop.src);
+    sources.add(ambience.transitionBed.src);
+    expect(sources.size).toBeGreaterThanOrEqual(12);
+    for (const src of sources) {
+      expect(fs.existsSync(`public/${src}`), src).toBe(true);
+    }
+    // every pool key is a bed some node actually uses
+    for (const bed of Object.keys(ambience.pools)) {
+      expect(fs.existsSync(`public/${bed}`), bed).toBe(true);
+    }
+    // every event carries a caption (canon: captions for all audio)
+    for (const pool of Object.values(ambience.pools) as { caption?: string }[][]) {
+      for (const event of pool) expect(event.caption?.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('the same place sounds wronger in the later window', () => {
+    const act2 = JSON.parse(fs.readFileSync('content/act2.json', 'utf8'));
+    const threshold = act2.nodes.find((node: { id: string }) => node.id === 'field-threshold');
+    expect(threshold.temporalStates['20:17-20:26'].ambientAudio).toBe('audio/field-wind-wrong.wav');
+    expect(threshold.temporalStates['20:08-20:17'].ambientAudio).toBeUndefined();
+  });
+});

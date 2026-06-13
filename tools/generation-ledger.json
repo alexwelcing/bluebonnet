@@ -624,7 +624,91 @@
       "model": "fal-ai/flux-2-pro",
       "estimatedUsd": 0.03,
       "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:28.601Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:28.668Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:28.750Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:29.212Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:32.377Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:32.539Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:32.613Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:32.797Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:35.159Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:36.406Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:37.627Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:06:38.026Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:07:03.231Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-13T01:07:08.449Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
     }
   ],
-  "estimatedSpentUsd": 74.39
+  "estimatedSpentUsd": 75.79
 }

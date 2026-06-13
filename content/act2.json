@@ -124,7 +124,8 @@
               "target": "culvert-mouth",
               "shimmerThreshold": 0.5
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -303,7 +304,8 @@
               "target": "field-threshold",
               "shimmerThreshold": 0.5
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -482,7 +484,8 @@
               "target": "field-left-row",
               "shimmerThreshold": 0.5
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -679,7 +682,8 @@
               "cluePrompt": "the rounded patches of bluebonnet flowers",
               "clueHighlight": true
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -960,7 +964,8 @@
               "cluePrompt": "the clumps of blue flowers",
               "clueHighlight": true
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -1281,7 +1286,8 @@
               "cluePrompt": "the bluebonnet flower stalk in the center",
               "clueHighlight": true
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -1594,7 +1600,8 @@
               "cluePrompt": "the dirt circle surrounded by blue flowers",
               "clueHighlight": true
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -1857,7 +1864,8 @@
               "blendMode": "normal",
               "sourceStill": "stills/act2/field-gate__2017-2026.jpg"
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -2022,7 +2030,8 @@
               "cluePrompt": "the blank pale notice board",
               "clueHighlight": true
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",
@@ -2163,7 +2172,8 @@
               "blendMode": "normal",
               "sourceStill": "stills/act2/act2-culvert-stub__2017-2026.jpg"
             }
-          ]
+          ],
+          "ambientAudio": "audio/field-wind-wrong.wav"
         }
       },
       "ambientAudio": "audio/field-wind.wav",

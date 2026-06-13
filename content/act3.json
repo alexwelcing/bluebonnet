@@ -125,7 +125,8 @@
               "target": "field-gate",
               "shimmerThreshold": 0.5
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {
@@ -304,7 +305,8 @@
               "target": "culvert-throat",
               "shimmerThreshold": 0.5
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {
@@ -579,7 +581,8 @@
               "clueHighlight": true,
               "mechanism": "knock"
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {
@@ -720,7 +723,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {
@@ -1023,7 +1027,8 @@
               "blendMode": "normal",
               "sourceStill": "stills/act3/recorder-nest__2026-2035.jpg"
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {
@@ -1248,7 +1253,8 @@
               "caption": "MISSING NINE MINUTES: 20:26-20:35 seats as the final TIMESEEK detent.",
               "shimmerThreshold": 0.25
             }
-          ]
+          ],
+          "ambientAudio": "audio/culvert-rumble-wrong.wav"
         }
       },
       "audioMix": {

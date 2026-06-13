@@ -10,6 +10,7 @@ import type { HotspotDefinition, SceneManifest, TimeWindow } from '../engine/typ
 import { installVhsCompositor } from '../engine/vhsCompositor';
 import transitionManifest from '../content/transitions.json';
 import preludeManifest from '../content/prelude.json';
+import ambienceManifest from '../content/ambience.json';
 import './styles.css';
 
 // Only the act manifests: shotlist.json and motionLoops.json are internal
@@ -42,6 +43,7 @@ app.innerHTML = `
         <p class="boot-eyebrow">REYES ARCHIVE — MIRASOL, TX</p>
         <h2>BLUEBONNET</h2>
         <p>BOX 271 // FM 1187 HI8 TAPE // APR 12 1998</p>
+        <p class="boot-note">WEAR HEADPHONES — MOST OF THIS TAPE IS AIR.</p>
         <button class="insert-tape" type="button">INSERT TAPE</button>
       </div>
     </div>
@@ -280,7 +282,7 @@ function render() {
   }
   jogWheel.style.setProperty('--jog-angle', `${jogState.angle}rad`);
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
-  audio.setAmbient(node.ambientAudio, node.audioMix?.ambient ?? 1);
+  audio.setAmbient(nodeState.ambientAudio ?? node.ambientAudio, node.audioMix?.ambient ?? 1);
   compositor.setIntensity(snapshot.vhsIntensity);
   // The endings are terminal; the deck offers the way back.
   rewind.hidden = !snapshot.currentNodeId.startsWith('ending-');
@@ -654,6 +656,7 @@ function playTransition(fromNodeId: string, toNodeId: string, finish: () => void
   clip.addEventListener('error', conclude);
   window.setTimeout(conclude, 8000); // hard ceiling — never trap the player
   stage.append(clip);
+  audio.playCue(ambienceManifest.transitionBed.src, 'The tape moves.', ambienceManifest.transitionBed.volume);
   const playResult = clip.play();
   if (playResult && typeof playResult.catch === 'function') {
     playResult.catch(() => conclude());
@@ -692,6 +695,16 @@ function startCompare() {
   const otherState = getNodeState(graph, snapshot.currentNodeId, other);
   compareActive = true;
   compareContext = `${snapshot.currentNodeId}|${snapshot.activeWindow}`;
+  // The dub pass has its own tape: wow-and-flutter while held.
+  try {
+    compareWarble = new Audio(ambienceManifest.compareLoop.src);
+    compareWarble.loop = true;
+    compareWarble.volume = ambienceManifest.compareLoop.volume;
+    const warblePlay = compareWarble.play();
+    if (warblePlay?.catch) void warblePlay.catch(() => undefined);
+  } catch {
+    // no media pipeline
+  }
   compareLayer.src = otherState.still;
   compareLayer.hidden = false;
   compareButton.setAttribute('aria-pressed', 'true');
@@ -700,9 +713,17 @@ function startCompare() {
   audio.playCue('audio/jog-detent-clunk.wav', 'Dub compare engaged.');
 }
 
+let compareWarble: HTMLAudioElement | undefined;
+
 function endCompare() {
   if (!compareActive) return;
   compareActive = false;
+  try {
+    compareWarble?.pause();
+  } catch {
+    // best effort
+  }
+  compareWarble = undefined;
   compareLayer.hidden = true;
   compareLayer.removeAttribute('src');
   compareButton.setAttribute('aria-pressed', 'false');
@@ -1086,6 +1107,50 @@ function openExhibit(hotspot: HotspotDefinition) {
   }
   openModal(exhibitScan, closeExhibit);
 }
+
+// --- AMBIENT EVENTS: the world happens at the edge of hearing ----------------
+// A quiet one-shot every 25-60s, drawn from the current bed's sound-world.
+// Every event is captioned (canon: captions for all audio).
+const eventPools = ambienceManifest.pools as Record<string, { src: string; volume: number; caption: string }[]>;
+const ambienceFast = typeof localStorage !== 'undefined' && localStorage.getItem('bb-ambience-fast') === '1';
+
+function showTransientCaption(text: string) {
+  if (!state.snapshot().captionsEnabled) return;
+  caption.textContent = text;
+  window.setTimeout(() => render(), 4500);
+}
+
+function scheduleAmbientEvent() {
+  const { minDelaySeconds, maxDelaySeconds } = ambienceManifest;
+  const delay = ambienceFast ? 1500 : (minDelaySeconds + Math.random() * (maxDelaySeconds - minDelaySeconds)) * 1000;
+  window.setTimeout(() => {
+    const pool = eventPools[audio.currentSource() ?? ''];
+    if (pool?.length && !preludeActive && bootScreen.hidden) {
+      const event = pool[Math.floor(Math.random() * pool.length)];
+      audio.playCue(event.src, event.caption, event.volume);
+      showTransientCaption(event.caption);
+    }
+    scheduleAmbientEvent();
+  }, delay);
+}
+scheduleAmbientEvent();
+
+// IDLE SLIP: linger anywhere long enough and the tracking stutters once.
+let idleSlipTimer: number | undefined;
+function armIdleSlip() {
+  if (idleSlipTimer !== undefined) window.clearTimeout(idleSlipTimer);
+  idleSlipTimer = window.setTimeout(() => {
+    if (bootScreen.hidden && !preludeActive) {
+      stage.classList.remove('idle-slip');
+      void stage.offsetWidth;
+      stage.classList.add('idle-slip');
+      window.setTimeout(() => stage.classList.remove('idle-slip'), 700);
+    }
+    armIdleSlip();
+  }, (ambienceFast ? 4 : 45 + Math.random() * 45) * 1000);
+}
+state.subscribe(armIdleSlip);
+armIdleSlip();
 
 state.subscribe(render);
 render();
