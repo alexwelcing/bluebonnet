@@ -7,7 +7,9 @@
       {
         "src": "audio/evt-truck-pass.wav",
         "volume": 0.5,
-        "caption": "A truck passes on FM 1187, unseen."
+        "caption": "A truck passes on FM 1187, unseen.",
+        "pan": -1,
+        "panTo": 1
       },
       {
         "src": "audio/evt-wagon-settle.wav",
@@ -34,7 +36,9 @@
       {
         "src": "audio/evt-truck-pass.wav",
         "volume": 0.22,
-        "caption": "A truck passes, far off."
+        "caption": "A truck passes, far off.",
+        "pan": -1,
+        "panTo": 1
       }
     ],
     "audio/field-wind-wrong.wav": [
@@ -53,24 +57,28 @@
       {
         "src": "audio/evt-pipe-groan.wav",
         "volume": 0.5,
-        "caption": "The pipe groans somewhere deeper in."
+        "caption": "The pipe groans somewhere deeper in.",
+        "reverb": true
       },
       {
         "src": "audio/evt-drip-cluster.wav",
         "volume": 0.5,
-        "caption": "A cluster of drips echoes and stops."
+        "caption": "A cluster of drips echoes and stops.",
+        "reverb": true
       }
     ],
     "audio/culvert-rumble-wrong.wav": [
       {
         "src": "audio/evt-pipe-groan.wav",
         "volume": 0.4,
-        "caption": "The pipe groans — the echo arrives first."
+        "caption": "The pipe groans — the echo arrives first.",
+        "reverb": true
       },
       {
         "src": "audio/evt-far-knock.wav",
         "volume": 0.35,
-        "caption": "One knock. Not the pipe."
+        "caption": "One knock. Not the pipe.",
+        "reverb": true
       }
     ],
     "audio/radio-static.wav": [

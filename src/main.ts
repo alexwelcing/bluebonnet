@@ -315,6 +315,7 @@ function render() {
   jogWheel.classList.toggle('jog-strain', jogState.strain > 0.35);
   audio.setAmbient(nodeState.ambientAudio ?? node.ambientAudio, node.audioMix?.ambient ?? 1);
   compositor.setIntensity(snapshot.vhsIntensity);
+  audio.setTapeCondition(snapshot.vhsIntensity); // TRACKING governs ear and eye together
   // The endings are terminal; the deck offers the way back.
   rewind.hidden = !snapshot.currentNodeId.startsWith('ending-');
 
@@ -671,6 +672,7 @@ function playTransition(fromNodeId: string, toNodeId: string, finish: () => void
     if (done) return;
     done = true;
     transitionActive = false;
+    audio.duck(1, 0.5);
     finish();
     // The destination plate is the clip's final frame; remove after the swap
     // renders so there is no flash between them.
@@ -688,6 +690,7 @@ function playTransition(fromNodeId: string, toNodeId: string, finish: () => void
   clip.addEventListener('error', conclude);
   window.setTimeout(conclude, 8000); // hard ceiling — never trap the player
   stage.append(clip);
+  audio.duck(0.35, 0.3); // the world recedes while the camera moves
   audio.playCue(ambienceManifest.transitionBed.src, 'The tape moves.', ambienceManifest.transitionBed.volume);
   const playResult = clip.play();
   if (playResult && typeof playResult.catch === 'function') {
@@ -1186,8 +1189,8 @@ function scheduleAmbientEvent() {
   window.setTimeout(() => {
     const pool = eventPools[audio.currentSource() ?? ''];
     if (pool?.length && !preludeActive && bootScreen.hidden) {
-      const event = pool[Math.floor(Math.random() * pool.length)];
-      audio.playCue(event.src, event.caption, event.volume);
+      const event = pool[Math.floor(Math.random() * pool.length)] as { src: string; volume: number; caption: string; pan?: number; panTo?: number; reverb?: boolean };
+      audio.playEvent(event.src, { gain: event.volume, caption: event.caption, pan: event.pan, panTo: event.panTo, reverb: event.reverb });
       showTransientCaption(event.caption);
     }
     scheduleAmbientEvent();
@@ -1204,6 +1207,7 @@ function armIdleSlip() {
       stage.classList.remove('idle-slip');
       void stage.offsetWidth;
       stage.classList.add('idle-slip');
+      audio.dropout(); // the signal loses its grip with the picture
       window.setTimeout(() => stage.classList.remove('idle-slip'), 700);
     }
     armIdleSlip();

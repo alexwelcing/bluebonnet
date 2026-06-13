@@ -626,3 +626,15 @@ Changed:
 Verification: 52 tests green (Side B boot gating, live clock, NOW cues, chain → porch → WE ANSWER, set-off → SIGN-OFF, tv inset lifecycle); full browser arc with screenshots; zero console errors. Spend ~$86 of $100.
 
 Blockers: none.
+
+## 2026-06-13T15:00:00+00:00 — Audio engine: the tape is the signal chain (Claude, supervising)
+
+Changed:
+- audioMixer rewritten as a Web Audio engine (same API; element fallback for jsdom/old browsers keeps tests honest). Architecture: world sounds route through a TAPE BUS — lowpass band-limiting, synthesized hiss bed, wow & flutter (LFO on playbackRate) — all driven by the TRACKING knob via setTapeCondition(): one knob now governs ear and eye together (0 = clean dub at 16 kHz; 1 = dying tape at 3.5 kHz, audible hiss, ±0.7% flutter). Deck cues stay dry: the machine in the room, not the recording.
+- Gapless beds: ambient loops are AudioBufferSourceNodes (sample-accurate loop=true) with equal-power crossfades — the bed seam problem is structurally gone.
+- Space: ambient events get stereo position; the truck PASSES (pan -1 → +1 over its length); culvert events ring through a synthesized tunnel impulse (ConvolverNode, no asset). Transitions duck the world (the camera moves, the world recedes); the idle tracking slip now drops the audio with the picture (dropout()).
+- Verified with an instrumented browser run counting real node construction: context running, filter+convolver live, panner-routed events firing, crossfade sources spawning on navigation. 52 tests green.
+
+For human ears (cannot self-verify): hiss ceiling (0.045 at full TRACKING), flutter depth (0.7%), dropout feel, duck depth (0.35) — all single constants in audioMixer.ts, trivial to tune.
+
+Blockers: none.
