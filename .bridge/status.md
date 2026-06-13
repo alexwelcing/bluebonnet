@@ -605,3 +605,13 @@ Changed:
 Verification: 47 tests green (prelude fresh/skip/replay + resumed-tape coverage); browser-verified slide sync at 34s, skip-to-game, flyer exhibit visuals; zero console errors. Spend ~$76 of $100.
 
 Blockers: none.
+
+## 2026-06-13T11:00:00+00:00 — Performed puzzles: tuner, padlock, knock rhythm (Claude, supervising)
+
+Changed:
+- Canon A8: evidence teaches, the player performs, the performance is the gate. Three mechanisms replace click-through locks: WAGON RADIO manual tuner (drag 87.5-107.9, signal meter sharpens near 88.7, lock enables in the capture window — band-scanning works and is diegetic); FIELD GATE PADLOCK (four real digit wheels, PULL THE HASP; wrong codes strain and hold; 2713 opens with zero bloom-clock flags — knowledge is the key); SERVICE PIPE (compose the rhythm with KNOCK/REST, PLAY IT BACK; deterministic grouping, no timing windows, fully keyboard accessible; wrong rhythms ring wrong and wipe).
+- Engine: hotspot.mechanism field + mechanism modal (focus-managed, Escape abandons safely); success funnels into the existing consequence pipeline (puzzle flags, journal, timecode discovery, navigation/transitions). puzzle.ts relaxed to knowledge gating (dispatch still waits on the tuned radio; recorder on the opened alcove). Bloom clocks and the static pattern remain as evidence/journal, no longer mandatory switches.
+
+Verification: 47 tests rewritten-and-green for the knowledge model; browser-verified all three mechanisms including wrong-code strain and wrong-rhythm reset; full playthrough start→RECORD operating every mechanism; zero console errors.
+
+Blockers: none.

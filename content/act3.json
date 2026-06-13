@@ -380,7 +380,7 @@
             },
             {
               "id": "repeat-echo-knocks",
-              "label": "Repeat the pattern on the pipe",
+              "label": "Knock on the pipe",
               "polygon": [
                 [
                   0.4,
@@ -416,11 +416,6 @@
                 ]
               ],
               "target": "culvert-pipe",
-              "requires": [
-                {
-                  "flag": "echo-pattern-known"
-                }
-              ],
               "journal": {
                 "id": "echo-knocks",
                 "text": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove."
@@ -431,7 +426,7 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the rusted pipe",
               "clueHighlight": true,
-              "lockedHint": "Your knuckles hover over cold iron. Listen first — the static has been knocking a pattern this whole time."
+              "mechanism": "knock"
             }
           ],
           "motionLayers": [
@@ -504,7 +499,7 @@
             },
             {
               "id": "repeat-echo-knocks",
-              "label": "Repeat the pattern on the pipe",
+              "label": "Knock on the pipe",
               "polygon": [
                 [
                   57.4,
@@ -572,11 +567,6 @@
                 ]
               ],
               "target": "culvert-pipe",
-              "requires": [
-                {
-                  "flag": "echo-pattern-known"
-                }
-              ],
               "journal": {
                 "id": "echo-knocks",
                 "text": "ECHO KNOCKS ACCEPTED: || _ | _ ||| opens the recorder alcove."
@@ -587,7 +577,7 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the rusted pipe",
               "clueHighlight": true,
-              "lockedHint": "Your knuckles hover over cold iron. Listen first — the static has been knocking a pattern this whole time."
+              "mechanism": "knock"
             }
           ]
         }

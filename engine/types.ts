@@ -47,6 +47,9 @@ export interface HotspotDefinition {
   /** Locks refuse, not vanish: when requires fail and this is set, the hotspot
    * stays visible and clicking it speaks this hint instead of acting. */
   lockedHint?: string;
+  /** Interactive mechanism the player must operate; success then runs the
+   * hotspot's normal consequences (puzzleAction, flags, navigation). */
+  mechanism?: 'radio-dial' | 'padlock' | 'knock';
   /** Text prompt for the segmentation pipeline (tools/segmentClues.mjs). */
   cluePrompt?: string;
   /** Set by the pipeline when polygon is a model-derived clue silhouette. */

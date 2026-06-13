@@ -91,7 +91,11 @@ describe('Evidence Deck integration', () => {
     realPointerClick(button('Inspect the scanner radio'));
     expect(document.querySelector('h1')?.textContent).toBe('SCANNER RADIO');
 
-    realPointerClick(button('Tune 88.7 FM'));
+    realPointerClick(button('Work the tuning dial'));
+    const dial = document.querySelector<HTMLInputElement>('.dial-frequency')!;
+    dial.value = '88.7';
+    dial.dispatchEvent(new Event('input', { bubbles: true }));
+    realPointerClick(document.querySelector<HTMLButtonElement>('.dial-lock')!);
     expect(document.querySelector('.journal-list')?.textContent).toContain('RADIO TUNED: 88.7 FM');
 
     realPointerClick(button('Check the tip-line printer'));
@@ -163,7 +167,7 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector<HTMLElement>('.prelude')!.hidden).toBe(true);
   });
 
-  it('locks refuse instead of vanishing: the padlock is visible and hints before the clocks', async () => {
+  it('the padlock mechanism opens on the code alone and strains on a wrong code', async () => {
     await loadDeck({
       currentNodeId: 'field-gate',
       flags: { 'puzzle:flyer-frequency': true, 'puzzle:radio-tune': true, 'puzzle:dispatch-log': true },
@@ -176,21 +180,40 @@ describe('Evidence Deck integration', () => {
     });
     realPointerClick(button('INSERT TAPE'));
 
-    const padlock = button('Work the padlock dials');
-    expect(padlock.classList.contains('hotspot-locked')).toBe(true);
-    realPointerClick(padlock);
-    expect(document.querySelector('.caption')?.textContent).toContain('log all four bloom shapes');
-    expect(document.querySelector('h1')?.textContent).toBe('FIELD GATE'); // no navigation
+    realPointerClick(button('Work the padlock dials'));
+    const mechanism = document.querySelector<HTMLElement>('.mechanism')!;
+    expect(mechanism.hidden).toBe(false);
+
+    // wrong code: the hasp holds
+    realPointerClick(document.querySelector<HTMLButtonElement>('.padlock-try')!);
+    expect(document.querySelector('.mechanism-verdict')?.textContent).toContain('hasp holds');
+    expect(document.querySelector('h1')?.textContent).toBe('FIELD GATE');
+
+    // 2-7-1-3 — no bloom-clock flags required; knowledge is the key
+    const wheels = [...document.querySelectorAll('.padlock-wheel')];
+    const spins = [2, 7, 1, 3];
+    wheels.forEach((wheel, index) => {
+      const up = wheel.querySelector<HTMLButtonElement>('button')!;
+      for (let i = 0; i < spins[index]; i++) realPointerClick(up);
+    });
+    realPointerClick(document.querySelector<HTMLButtonElement>('.padlock-try')!);
+    expect(document.querySelector('h1')?.textContent).toBe('CULVERT APPROACH');
   });
 
-  it('the radio refuses with a hint before the flyer is read', async () => {
+  it('the tuning dial only locks at 88.7', async () => {
     await loadDeck();
     realPointerClick(button('INSERT TAPE'));
+    document.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' })); // skip broadcast
     realPointerClick(button('Inspect the scanner radio'));
-    const tune = button('Tune 88.7 FM');
-    expect(tune.classList.contains('hotspot-locked')).toBe(true);
-    realPointerClick(tune);
-    expect(document.querySelector('.caption')?.textContent).toContain('frequency written down');
+    realPointerClick(button('Work the tuning dial'));
+    const lock = document.querySelector<HTMLButtonElement>('.dial-lock')!;
+    expect(lock.disabled).toBe(true); // 98.1 = static
+    const dial = document.querySelector<HTMLInputElement>('.dial-frequency')!;
+    dial.value = '88.7';
+    dial.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(lock.disabled).toBe(false);
+    realPointerClick(lock);
+    expect(document.querySelector('.journal-list')?.textContent).toContain('RADIO TUNED');
   });
 
   it('a new timecode announces itself and pulses its cue', async () => {
@@ -199,7 +222,11 @@ describe('Evidence Deck integration', () => {
     realPointerClick(button('Read the missing-person flyer'));
     realPointerClick(button('RETURN TO DECK'));
     realPointerClick(button('Inspect the scanner radio'));
-    realPointerClick(button('Tune 88.7 FM'));
+    realPointerClick(button('Work the tuning dial'));
+    const announceDial = document.querySelector<HTMLInputElement>('.dial-frequency')!;
+    announceDial.value = '88.7';
+    announceDial.dispatchEvent(new Event('input', { bubbles: true }));
+    realPointerClick(document.querySelector<HTMLButtonElement>('.dial-lock')!);
     realPointerClick(button('Check the tip-line printer'));
 
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('NEW TIMECODE ON THE RULER: 20:17-20:26');

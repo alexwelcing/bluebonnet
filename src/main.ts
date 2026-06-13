@@ -115,6 +115,10 @@ app.innerHTML = `
         <ol class="journal-list"></ol>
       </section>
     </aside>
+    <div class="mechanism" hidden role="dialog" aria-modal="true" aria-label="Deck mechanism">
+      <div class="mechanism-panel"></div>
+      <button class="close-mechanism" type="button">STEP BACK</button>
+    </div>
     <div class="prelude" hidden role="dialog" aria-label="Recovered broadcast — Dana Reyes, final sign-off">
       <div class="prelude-media" aria-hidden="true"></div>
       <p class="prelude-eyebrow"></p>
@@ -372,7 +376,192 @@ function announceDiscovery(discovered: TimeWindow) {
   setTransportMessage(`NEW TIMECODE ON THE RULER: ${discovered} — PRESS THE CUE OR WIND THE WHEEL.`);
 }
 
+// --- MECHANISMS: puzzles the player operates, not clicks through -------------
+const mechanismRoot = app.querySelector<HTMLDivElement>('.mechanism')!;
+const mechanismPanel = mechanismRoot.querySelector<HTMLDivElement>('.mechanism-panel')!;
+const closeMechanism = mechanismRoot.querySelector<HTMLButtonElement>('.close-mechanism')!;
+
+function openMechanism(hotspot: HotspotDefinition) {
+  const succeed = () => {
+    closeModal(mechanismRoot);
+    proceedWithHotspot(hotspot);
+  };
+  if (hotspot.mechanism === 'radio-dial') buildRadioDial(succeed);
+  else if (hotspot.mechanism === 'padlock') buildPadlock(succeed);
+  else buildKnockPipe(succeed);
+  openModal(mechanismRoot, closeMechanism);
+}
+closeMechanism.addEventListener('click', () => closeModal(mechanismRoot));
+
+function mechanismFrame(title: string, hint: string): HTMLDivElement {
+  const head = document.createElement('h2');
+  head.textContent = title;
+  const sub = document.createElement('p');
+  sub.className = 'mechanism-hint';
+  sub.textContent = hint;
+  const body = document.createElement('div');
+  body.className = 'mechanism-body';
+  mechanismPanel.replaceChildren(head, sub, body);
+  return body;
+}
+
+function buildRadioDial(succeed: () => void) {
+  const body = mechanismFrame('WAGON RADIO — MANUAL TUNER', 'Drag the dial. Somewhere on the band, the static gives way.');
+  const readout = document.createElement('p');
+  readout.className = 'dial-readout';
+  const meter = document.createElement('div');
+  meter.className = 'dial-meter';
+  const meterFill = document.createElement('div');
+  meterFill.className = 'dial-meter-fill';
+  meter.append(meterFill);
+  const dial = document.createElement('input');
+  dial.type = 'range';
+  dial.className = 'dial-frequency';
+  dial.min = '87.5';
+  dial.max = '107.9';
+  dial.step = '0.1';
+  dial.value = '98.1';
+  dial.setAttribute('aria-label', 'Tuning dial, megahertz');
+  const lock = document.createElement('button');
+  lock.type = 'button';
+  lock.className = 'dial-lock';
+  lock.textContent = 'LOCK THE STATION';
+  const update = () => {
+    const frequency = Number(dial.value);
+    const strength = Math.max(0, 1 - Math.abs(frequency - 88.7) / 0.6);
+    readout.textContent = `${frequency.toFixed(1)} FM`;
+    meterFill.style.width = `${Math.round(strength * 100)}%`;
+    meter.classList.toggle('dial-signal', strength > 0.8);
+    lock.disabled = strength < 0.99;
+    lock.textContent = strength < 0.99 ? 'STATIC…' : 'LOCK THE STATION';
+  };
+  dial.addEventListener('input', update);
+  lock.addEventListener('click', () => {
+    audio.playCue('audio/jog-detent-clunk.wav', 'The tuner locks on.');
+    succeed();
+  });
+  body.append(readout, meter, dial, lock);
+  update();
+  dial.focus();
+}
+
+function buildPadlock(succeed: () => void) {
+  const body = mechanismFrame('FIELD GATE PADLOCK', 'Four digits. The field has been counting; the tally knows the order.');
+  const wheels = document.createElement('div');
+  wheels.className = 'padlock-wheels';
+  const digits = [0, 0, 0, 0];
+  const displays: HTMLSpanElement[] = [];
+  digits.forEach((_, index) => {
+    const wheel = document.createElement('div');
+    wheel.className = 'padlock-wheel';
+    const up = document.createElement('button');
+    up.type = 'button';
+    up.textContent = '▲';
+    up.setAttribute('aria-label', `Dial ${index + 1} up`);
+    const display = document.createElement('span');
+    display.textContent = '0';
+    const down = document.createElement('button');
+    down.type = 'button';
+    down.textContent = '▼';
+    down.setAttribute('aria-label', `Dial ${index + 1} down`);
+    up.addEventListener('click', () => {
+      digits[index] = (digits[index] + 1) % 10;
+      display.textContent = String(digits[index]);
+    });
+    down.addEventListener('click', () => {
+      digits[index] = (digits[index] + 9) % 10;
+      display.textContent = String(digits[index]);
+    });
+    displays.push(display);
+    wheel.append(up, display, down);
+    wheels.append(wheel);
+  });
+  const tryHasp = document.createElement('button');
+  tryHasp.type = 'button';
+  tryHasp.className = 'padlock-try';
+  tryHasp.textContent = 'PULL THE HASP';
+  const verdict = document.createElement('p');
+  verdict.className = 'mechanism-verdict';
+  tryHasp.addEventListener('click', () => {
+    if (digits.join('') === '2713') {
+      audio.playCue('audio/jog-detent-clunk.wav', 'The padlock falls open.');
+      succeed();
+    } else {
+      audio.playCue('audio/tape-hard-stop.wav', 'The hasp holds.');
+      verdict.textContent = 'The hasp holds. The blooms count it differently.';
+      wheels.classList.remove('padlock-strain');
+      void wheels.offsetWidth;
+      wheels.classList.add('padlock-strain');
+    }
+  });
+  body.append(wheels, tryHasp, verdict);
+}
+
+function buildKnockPipe(succeed: () => void) {
+  const body = mechanismFrame('SERVICE PIPE', 'Answer it the way the static asked. Knock, rest, knock.');
+  const pattern: number[] = [0]; // counts per group; REST starts a new group
+  const tape = document.createElement('p');
+  tape.className = 'knock-tape';
+  const renderTape = () => {
+    tape.textContent = pattern.map((count) => '|'.repeat(count)).join('  —  ') || '…';
+  };
+  const knock = document.createElement('button');
+  knock.type = 'button';
+  knock.className = 'knock-button';
+  knock.textContent = 'KNOCK';
+  const rest = document.createElement('button');
+  rest.type = 'button';
+  rest.textContent = 'REST';
+  const playBack = document.createElement('button');
+  playBack.type = 'button';
+  playBack.textContent = 'PLAY IT BACK';
+  const clear = document.createElement('button');
+  clear.type = 'button';
+  clear.textContent = 'WIPE';
+  const verdict = document.createElement('p');
+  verdict.className = 'mechanism-verdict';
+  knock.addEventListener('click', () => {
+    pattern[pattern.length - 1] += 1;
+    audio.playCue('audio/jog-detent-clunk.wav', 'Knock.');
+    renderTape();
+  });
+  rest.addEventListener('click', () => {
+    if (pattern[pattern.length - 1] > 0) pattern.push(0);
+    renderTape();
+  });
+  clear.addEventListener('click', () => {
+    pattern.splice(0, pattern.length, 0);
+    verdict.textContent = '';
+    renderTape();
+  });
+  playBack.addEventListener('click', () => {
+    const groups = pattern.filter((count) => count > 0);
+    if (groups.join(',') === '2,1,3') {
+      succeed();
+    } else {
+      audio.playCue('audio/tape-hard-stop.wav', 'The pipe rings wrong.');
+      verdict.textContent = 'The pipe rings wrong. Somewhere on the tape, the static knocks it right.';
+      pattern.splice(0, pattern.length, 0);
+      renderTape();
+    }
+  });
+  const controls = document.createElement('div');
+  controls.className = 'knock-controls';
+  controls.append(knock, rest, playBack, clear);
+  body.append(tape, controls, verdict);
+  renderTape();
+  knock.focus();
+}
+
 function activateHotspot(hotspot: HotspotDefinition) {
+  if (hotspot.mechanism && hotspot.puzzleAction && !state.snapshot().completedPuzzles.includes(hotspot.puzzleAction)) {
+    openMechanism(hotspot);
+    return;
+  }
+  proceedWithHotspot(hotspot);
+}
+
+function proceedWithHotspot(hotspot: HotspotDefinition) {
   const before = state.snapshot().discoveredTimecodes;
   const puzzle = createPuzzleProgression(state.snapshot().completedPuzzles);
   if (hotspot.puzzleAction) {
@@ -689,6 +878,8 @@ document.addEventListener('keydown', (event) => {
   }
   if (preludeActive) {
     endPrelude?.();
+  } else if (!mechanismRoot.hidden) {
+    closeModal(mechanismRoot);
   } else if (!exhibitScan.hidden) {
     closeModal(exhibitScan);
   } else if (!colophonPanel.hidden) {

@@ -1,8 +1,6 @@
 import type { PuzzleAction, TimeWindow } from './types';
 
-const actOneOrder: PuzzleAction[] = ['flyer-frequency', 'radio-tune', 'dispatch-log'];
 const flowerDigits: PuzzleAction[] = ['flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3'];
-const actThreeOrder: PuzzleAction[] = ['echo-knocks', 'recorder-counter'];
 
 export interface PuzzleResult {
   ok: boolean;
@@ -49,19 +47,20 @@ export function createPuzzleProgression(initial: PuzzleAction[] = []): PuzzlePro
 }
 
 function canComplete(action: PuzzleAction, completed: PuzzleAction[]): boolean {
-  const actOneIndex = actOneOrder.indexOf(action);
-  if (actOneIndex !== -1) {
-    return actOneOrder.slice(0, actOneIndex).every((required) => completed.includes(required));
+  // Knowledge-gated mechanisms (canon: the player performs the answer, the
+  // performance IS the gate): the tuner, the padlock, and the pipe accept a
+  // correct operation regardless of which evidence was read first.
+  if (action === 'flyer-frequency' || action === 'radio-tune' || action === 'field-gate' || action === 'echo-knocks') {
+    return true;
+  }
+  if (action === 'dispatch-log') {
+    return completed.includes('radio-tune'); // the broadcast wakes the printer
   }
   if (flowerDigits.includes(action)) {
     return completed.includes('dispatch-log');
   }
-  if (action === 'field-gate') {
-    return [...actOneOrder, ...flowerDigits].every((required) => completed.includes(required));
-  }
-  const actThreeIndex = actThreeOrder.indexOf(action);
-  if (actThreeIndex !== -1) {
-    return (['field-gate', ...actThreeOrder.slice(0, actThreeIndex)] as PuzzleAction[]).every((required) => completed.includes(required));
+  if (action === 'recorder-counter') {
+    return completed.includes('echo-knocks'); // the alcove opens onto it
   }
   return false;
 }

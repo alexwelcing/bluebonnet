@@ -63,16 +63,17 @@ describe('journal and puzzle progression', () => {
     ]);
   });
 
-  it('requires flyer-frequency before radio-tune before dispatch-log grants TIMESEEK-1', () => {
+  it('the tuner is knowledge-gated; the tip line still waits for the broadcast', () => {
     const puzzle = createPuzzleProgression();
 
-    expect(puzzle.apply('radio-tune').ok).toBe(false);
-    expect(puzzle.apply('flyer-frequency').ok).toBe(true);
+    // The dial can be worked cold (scanning the band is diegetic), but the
+    // printer only wakes once 88.7 is locked in.
+    expect(puzzle.apply('dispatch-log').ok).toBe(false);
     expect(puzzle.apply('radio-tune').ok).toBe(true);
     const dispatch = puzzle.apply('dispatch-log');
 
     expect(dispatch.ok).toBe(true);
     expect(dispatch.discoveredTimecode).toBe('20:17-20:26');
-    expect(puzzle.snapshot().completed).toEqual(['flyer-frequency', 'radio-tune', 'dispatch-log']);
+    expect(puzzle.snapshot().completed).toEqual(['radio-tune', 'dispatch-log']);
   });
 });

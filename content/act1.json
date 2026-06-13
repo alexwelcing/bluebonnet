@@ -928,7 +928,7 @@
             },
             {
               "id": "tune-887",
-              "label": "Tune 88.7 FM",
+              "label": "Work the tuning dial",
               "polygon": [
                 [
                   49.3,
@@ -996,11 +996,6 @@
                 ]
               ],
               "target": "scanner-radio",
-              "requires": [
-                {
-                  "flag": "puzzle:flyer-frequency"
-                }
-              ],
               "journal": {
                 "id": "radio-tune",
                 "text": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line."
@@ -1010,7 +1005,7 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "car radio head unit in the dashboard",
               "clueHighlight": true,
-              "lockedHint": "Static the whole way up the dial. Dana kept the frequency written down somewhere in this wagon."
+              "mechanism": "radio-dial"
             },
             {
               "id": "dispatch",

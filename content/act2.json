@@ -1704,20 +1704,6 @@
                 ]
               ],
               "target": "act2-culvert-stub",
-              "requires": [
-                {
-                  "flag": "flower:2"
-                },
-                {
-                  "flag": "flower:7"
-                },
-                {
-                  "flag": "flower:1"
-                },
-                {
-                  "flag": "flower:3"
-                }
-              ],
               "journal": {
                 "id": "field-gate-2713",
                 "text": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert."
@@ -1728,7 +1714,7 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the padlock",
               "clueHighlight": true,
-              "lockedHint": "The dials spin loose and settle on nothing. Four digits. The field has been counting for you — log all four bloom shapes."
+              "mechanism": "padlock"
             }
           ]
         },
@@ -1851,20 +1837,6 @@
                 ]
               ],
               "target": "act2-culvert-stub",
-              "requires": [
-                {
-                  "flag": "flower:2"
-                },
-                {
-                  "flag": "flower:7"
-                },
-                {
-                  "flag": "flower:1"
-                },
-                {
-                  "flag": "flower:3"
-                }
-              ],
               "journal": {
                 "id": "field-gate-2713",
                 "text": "FIELD GATE PADLOCK: 2713 opens the path toward the culvert."
@@ -1875,7 +1847,7 @@
               "shimmerThreshold": 0.25,
               "cluePrompt": "the padlock",
               "clueHighlight": true,
-              "lockedHint": "The dials spin loose and settle on nothing. Four digits. The field has been counting for you — log all four bloom shapes."
+              "mechanism": "padlock"
             }
           ],
           "motionLayers": [

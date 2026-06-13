@@ -32,30 +32,32 @@ describe('Act II field content', () => {
     }
   });
 
-  it('gates culvert access behind all four flower-clock digits', () => {
+  it('the padlock is a knowledge-gated mechanism; the clocks remain its evidence', () => {
     const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
     const state = createStateMachine({ currentNodeId: 'field-gate', activeWindow: '20:17-20:26', completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'] });
-    let gateState = getNodeState(graph, 'field-gate', '20:17-20:26');
-    expect(availableHotspots(gateState, state.snapshot()).some((hotspot) => hotspot.id === 'unlock-field-gate')).toBe(false);
+    const gateState = getNodeState(graph, 'field-gate', '20:17-20:26');
+    const unlock = availableHotspots(gateState, state.snapshot()).find((hotspot) => hotspot.id === 'unlock-field-gate');
+    // Visible and operable with zero clocks logged: the code is the key.
+    expect(unlock).toBeDefined();
+    expect(unlock!.mechanism).toBe('padlock');
+    expect(createPuzzleProgression(state.snapshot().completedPuzzles).canApply('field-gate')).toBe(true);
 
-    for (const [nodeId, hotspotId] of [
-      ['field-clock-two', 'flower-two'],
-      ['field-clock-seven', 'flower-seven'],
-      ['field-clock-one', 'flower-one'],
-      ['field-clock-three', 'flower-three'],
+    // The bloom clocks still teach the digits into the journal.
+    for (const [nodeId, hotspotId, digit] of [
+      ['field-clock-two', 'flower-two', 'digit: 2'],
+      ['field-clock-seven', 'flower-seven', 'digit: 7'],
+      ['field-clock-one', 'flower-one', 'digit: 1'],
+      ['field-clock-three', 'flower-three', 'digit: 3'],
     ] as const) {
       const nodeState = getNodeState(graph, nodeId, '20:17-20:26');
       const hotspot = nodeState.hotspots.find((candidate) => candidate.id === hotspotId);
       expect(hotspot).toBeDefined();
       activate(hotspot!, state);
+      expect(state.snapshot().journal.map((entry) => entry.text).join('\n')).toContain(digit);
     }
 
-    gateState = getNodeState(graph, 'field-gate', '20:17-20:26');
-    const unlock = availableHotspots(gateState, state.snapshot()).find((hotspot) => hotspot.id === 'unlock-field-gate');
-    expect(unlock).toBeDefined();
     activate(unlock!, state);
     expect(state.snapshot().flags['culvert-access']).toBe(true);
     expect(state.snapshot().currentNodeId).toBe('act2-culvert-stub');
-    expect(state.snapshot().journal.map((entry) => entry.text).join('\n')).toContain('2713 opens the path toward the culvert');
   });
 });

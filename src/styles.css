@@ -699,3 +699,58 @@ input[type='range']::-moz-range-thumb {
   letter-spacing: 0.1em;
   background: rgba(2, 8, 5, 0.7);
 }
+
+/* — Mechanisms: machines the player operates — */
+.mechanism {
+  position: fixed;
+  inset: 0;
+  z-index: 16;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.78);
+}
+.mechanism[hidden] { display: none; }
+.mechanism-panel {
+  width: min(560px, 92vw);
+  padding: 1.6rem;
+  border: 1px solid rgba(164, 255, 197, 0.4);
+  background: linear-gradient(160deg, rgba(10, 22, 14, 0.97), rgba(2, 8, 5, 0.97));
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(67, 255, 120, 0.07);
+}
+.mechanism-panel h2 { margin: 0 0 0.3rem; letter-spacing: 0.14em; font-size: 1.05rem; color: #d7f7e2; }
+.mechanism-hint { margin: 0 0 1.1rem; color: rgba(215, 247, 226, 0.6); font-size: 0.84rem; line-height: 1.5; }
+.mechanism-body { display: grid; gap: 0.9rem; justify-items: center; }
+.mechanism-verdict { min-height: 1.4rem; margin: 0; color: #ffcd82; font-size: 0.85rem; text-align: center; }
+.close-mechanism { position: absolute; bottom: 12vh; padding: 0.5rem 1rem; }
+
+.dial-readout { margin: 0; font-size: 1.6rem; letter-spacing: 0.2em; color: #ffe9a8; text-shadow: 0 0 12px rgba(255, 233, 168, 0.5); }
+.dial-meter { width: 100%; height: 8px; border: 1px solid rgba(164, 255, 197, 0.3); background: rgba(0, 0, 0, 0.5); }
+.dial-meter-fill { height: 100%; width: 0; background: rgba(125, 255, 174, 0.45); transition: width 120ms linear; }
+.dial-meter.dial-signal .dial-meter-fill { background: #9df2ad; box-shadow: 0 0 12px rgba(157, 242, 173, 0.8); }
+.dial-frequency { width: 100%; }
+.dial-lock:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.padlock-wheels { display: flex; gap: 0.9rem; }
+.padlock-wheel { display: grid; gap: 0.3rem; justify-items: center; }
+.padlock-wheel span {
+  width: 2.6rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffe9a8;
+  border: 1px solid rgba(255, 233, 168, 0.4);
+  background: rgba(0, 0, 0, 0.55);
+}
+.padlock-wheel button { padding: 0.25rem 0.8rem; }
+.padlock-strain { animation: jog-strain 90ms steps(2, end) 5; }
+
+.knock-tape {
+  min-height: 2rem;
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+  color: #ffe9a8;
+  text-shadow: 0 0 10px rgba(255, 233, 168, 0.45);
+}
+.knock-controls { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+.knock-button { font-size: 1.05rem; padding: 0.8rem 1.6rem; }
