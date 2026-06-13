@@ -114,6 +114,78 @@
               "exhibit": "flyer",
               "cluePrompt": "white notebook on the seat",
               "clueHighlight": true
+            },
+            {
+              "id": "look-left-door",
+              "label": "Look left through the open door",
+              "polygon": [
+                [
+                  0,
+                  20
+                ],
+                [
+                  24,
+                  20
+                ],
+                [
+                  24,
+                  76
+                ],
+                [
+                  0,
+                  76
+                ]
+              ],
+              "target": "wagon-left-facing",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "floor-closeup",
+              "label": "Lean closer to the passenger-floor flyer",
+              "polygon": [
+                [
+                  42,
+                  78
+                ],
+                [
+                  58,
+                  78
+                ],
+                [
+                  58,
+                  96
+                ],
+                [
+                  42,
+                  96
+                ]
+              ],
+              "target": "flyer-floor-closeup",
+              "shimmerThreshold": 0.45
+            },
+            {
+              "id": "scanner-side",
+              "label": "Crouch beside the scanner wiring",
+              "polygon": [
+                [
+                  24,
+                  30
+                ],
+                [
+                  34,
+                  30
+                ],
+                [
+                  34,
+                  70
+                ],
+                [
+                  24,
+                  70
+                ]
+              ],
+              "target": "scanner-side-closeup",
+              "shimmerThreshold": 0.45
             }
           ],
           "motionLayers": [
@@ -345,6 +417,54 @@
               ],
               "target": "roadside-shrine",
               "shimmerThreshold": 0.55
+            },
+            {
+              "id": "right-shoulder",
+              "label": "Turn right along the bluebonnet shoulder",
+              "polygon": [
+                [
+                  56,
+                  15
+                ],
+                [
+                  76,
+                  15
+                ],
+                [
+                  76,
+                  55
+                ],
+                [
+                  56,
+                  55
+                ]
+              ],
+              "target": "wagon-right-facing",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "odometer",
+              "label": "Lean into the driver instruments",
+              "polygon": [
+                [
+                  23,
+                  15
+                ],
+                [
+                  38,
+                  15
+                ],
+                [
+                  38,
+                  55
+                ],
+                [
+                  23,
+                  55
+                ]
+              ],
+              "target": "wagon-odometer-closeup",
+              "shimmerThreshold": 0.45
             }
           ],
           "motionLayers": [
@@ -1521,6 +1641,30 @@
               "shimmerThreshold": 0.45,
               "cluePrompt": "white card at the base of the wooden cross",
               "clueHighlight": true
+            },
+            {
+              "id": "shrine-detail",
+              "label": "Kneel at the shrine offerings",
+              "polygon": [
+                [
+                  58,
+                  48
+                ],
+                [
+                  82,
+                  48
+                ],
+                [
+                  82,
+                  66
+                ],
+                [
+                  58,
+                  66
+                ]
+              ],
+              "target": "shrine-detail-closeup",
+              "shimmerThreshold": 0.45
             }
           ],
           "motionLayers": [
@@ -1801,6 +1945,532 @@
               "opacity": 1,
               "blendMode": "normal",
               "sourceStill": "stills/act1/culvert-mouth__2017-2026.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/wagon-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
+    },
+    {
+      "id": "wagon-left-facing",
+      "title": "Wagon Left Facing",
+      "still": "stills/act1/wagon-left-facing__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/wagon-left-facing__2008-2017.jpg",
+          "caption": "From the driver seat, the open door frames the bluebonnets and the empty shoulder. Dana’s notes stay blank until the deck writes over them.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Face forward inside the wagon",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "wagon-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "out",
+              "label": "Step out through the open door",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "wagon-exterior",
+              "shimmerThreshold": 0.55
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/wagon-left-facing__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/wagon-left-facing__2008-2017.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/wagon-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
+    },
+    {
+      "id": "wagon-right-facing",
+      "title": "Right Shoulder Facing",
+      "still": "stills/act1/wagon-right-facing__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/wagon-right-facing__2008-2017.jpg",
+          "caption": "The highway runs empty past the parked wagon. The bluebonnets keep a ruler-straight edge beside the gravel.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Turn back to the wagon exterior",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "wagon-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "marker",
+              "label": "Walk toward the blank road marker",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "mile-marker-271",
+              "shimmerThreshold": 0.55
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/wagon-right-facing__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/wagon-right-facing__2008-2017.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/wagon-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
+    },
+    {
+      "id": "flyer-floor-closeup",
+      "title": "Passenger-Floor Flyer",
+      "still": "stills/act1/flyer-floor-closeup__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/flyer-floor-closeup__2008-2017.jpg",
+          "caption": "The paper is blank on the tape. The deck supplies the words Dana meant you to read.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Sit back from the passenger floor",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "wagon-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "read-flyer-close",
+              "label": "Read the flyer through the deck",
+              "polygon": [
+                [
+                  36,
+                  28
+                ],
+                [
+                  70,
+                  28
+                ],
+                [
+                  70,
+                  80
+                ],
+                [
+                  36,
+                  80
+                ]
+              ],
+              "target": "flyer-floor-closeup",
+              "shimmerThreshold": 0.35,
+              "journal": {
+                "id": "flyer-frequency",
+                "text": "MISSING: LENA ORTIZ — call 88.7 FM after sundown."
+              },
+              "puzzleAction": "flyer-frequency",
+              "caption": "MISSING: LENA ORTIZ — call 88.7 FM after sundown.",
+              "exhibit": "flyer",
+              "cluePrompt": "blank missing-person flyer sheet on the passenger floor",
+              "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/flyer-floor-closeup__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/flyer-floor-closeup__2008-2017.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/wagon-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
+    },
+    {
+      "id": "scanner-side-closeup",
+      "title": "Scanner Side Closeup",
+      "still": "stills/act1/scanner-side-closeup__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/scanner-side-closeup__2008-2017.jpg",
+          "caption": "Dana wired the scanner into the wagon like a second pulse. The FM dial waits under the dash.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Back away from the scanner wiring",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "wagon-interior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "tune-887-close",
+              "label": "Work the tuning dial from the side",
+              "polygon": [
+                [
+                  42,
+                  26
+                ],
+                [
+                  76,
+                  26
+                ],
+                [
+                  76,
+                  76
+                ],
+                [
+                  42,
+                  76
+                ]
+              ],
+              "target": "scanner-side-closeup",
+              "shimmerThreshold": 0.25,
+              "journal": {
+                "id": "radio-tune",
+                "text": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line."
+              },
+              "puzzleAction": "radio-tune",
+              "caption": "RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line.",
+              "cluePrompt": "side view of car radio tuning knob",
+              "clueHighlight": true,
+              "mechanism": "radio-dial"
+            },
+            {
+              "id": "printer",
+              "label": "Reach toward the tip-line printer",
+              "polygon": [
+                [
+                  78,
+                  15
+                ],
+                [
+                  100,
+                  15
+                ],
+                [
+                  100,
+                  85
+                ],
+                [
+                  78,
+                  85
+                ]
+              ],
+              "target": "tipline-printer",
+              "shimmerThreshold": 0.25,
+              "requires": [
+                {
+                  "flag": "puzzle:radio-tune"
+                }
+              ],
+              "journal": {
+                "id": "dispatch-log",
+                "text": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet."
+              },
+              "puzzleAction": "dispatch-log",
+              "discoverTimecode": "20:17-20:26",
+              "caption": "TIP LINE 20:17: FOR REYES — reset tape to 20:17. Do not enter the bluebonnets yet.",
+              "exhibit": "dispatch",
+              "lockedHint": "The printer holds its one line under black static. Wake the radio first."
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/scanner-side-closeup__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/scanner-side-closeup__2008-2017.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/radio-static.wav",
+      "audioMix": {
+        "ambient": 0.66
+      }
+    },
+    {
+      "id": "wagon-odometer-closeup",
+      "title": "Wagon Odometer Closeup",
+      "still": "stills/act1/wagon-odometer-closeup__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/wagon-odometer-closeup__2008-2017.jpg",
+          "caption": "The dash cluster is washed blank by the tape. The wagon is in park. It has not moved.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Back out of the driver door",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "wagon-exterior",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "odometer-clue",
+              "label": "Check the blank odometer window",
+              "polygon": [
+                [
+                  38,
+                  28
+                ],
+                [
+                  76,
+                  28
+                ],
+                [
+                  76,
+                  62
+                ],
+                [
+                  38,
+                  62
+                ]
+              ],
+              "target": "wagon-odometer-closeup",
+              "shimmerThreshold": 0.35,
+              "journal": {
+                "id": "odometer-mismatch",
+                "text": "ODOMETER WINDOW: blank on tape, but the engine idles in PARK. The wagon never moves."
+              },
+              "caption": "ODOMETER WINDOW: blank on tape, but the engine idles in PARK. The wagon never moves.",
+              "cluePrompt": "blank analog odometer window",
+              "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/wagon-odometer-closeup__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/wagon-odometer-closeup__2008-2017.jpg"
+            }
+          ]
+        }
+      },
+      "ambientAudio": "audio/wagon-idle.wav",
+      "audioMix": {
+        "ambient": 0.58
+      }
+    },
+    {
+      "id": "shrine-detail-closeup",
+      "title": "Shrine Detail Closeup",
+      "still": "stills/act1/shrine-detail-closeup__2008-2017.jpg",
+      "caption": "",
+      "hotspots": [],
+      "temporalStates": {
+        "20:08-20:17": {
+          "still": "stills/act1/shrine-detail-closeup__2008-2017.jpg",
+          "caption": "The photo and card are blank in the recovered image. The rosary clicks softly against the little cross.",
+          "wrongness": "",
+          "hotspots": [
+            {
+              "id": "back",
+              "label": "Stand up from the shrine",
+              "polygon": [
+                [
+                  0,
+                  15
+                ],
+                [
+                  22,
+                  15
+                ],
+                [
+                  22,
+                  85
+                ],
+                [
+                  0,
+                  85
+                ]
+              ],
+              "target": "roadside-shrine",
+              "shimmerThreshold": 0.55
+            },
+            {
+              "id": "read-shrine-card",
+              "label": "Read the shrine card through the deck",
+              "polygon": [
+                [
+                  36,
+                  42
+                ],
+                [
+                  76,
+                  42
+                ],
+                [
+                  76,
+                  82
+                ],
+                [
+                  36,
+                  82
+                ]
+              ],
+              "target": "shrine-detail-closeup",
+              "shimmerThreshold": 0.45,
+              "journal": {
+                "id": "shrine-note",
+                "text": "SHRINE NOTE: If the radio says her name, write down the time."
+              },
+              "caption": "SHRINE NOTE: If the radio says her name, write down the time.",
+              "cluePrompt": "blank white shrine note card at the cross base",
+              "clueHighlight": true
+            }
+          ],
+          "motionLayers": [
+            {
+              "src": "video/act1/shrine-detail-closeup__2008-2017.mp4",
+              "opacity": 1,
+              "blendMode": "normal",
+              "sourceStill": "stills/act1/shrine-detail-closeup__2008-2017.jpg"
             }
           ]
         }

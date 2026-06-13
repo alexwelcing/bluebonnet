@@ -428,6 +428,78 @@
       "sourceUrl": "https://v3b.fal.media/files/b/0a9e0ad0/VpxwnWQGf8-IrB-VebAcZ_f9185c664b354f86a3ab5bdc1c823481.mp4",
       "curation": "s2188: board rigid, camera locked; s1187 rejected for camera orbit",
       "status": "generated-clean-motion"
+    },
+    {
+      "id": "wagon-left-facing__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/wagon-left-facing__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: open door and nearby bluebonnets stirring in light wind, blank papers barely shifting on the seat, road horizon fixed, parked station wagon absolutely still. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e237a/PL1KBe3LZsKqn05jaEGWB_d92a3dcf596545d095bc29a584dbedb5.mp4",
+      "curation": "seamless loop accepted: open door/field hold registration, papers flutter only, no figures/text/car motion",
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "wagon-right-facing__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/wagon-right-facing__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: bluebonnets along the shoulder swaying in waves, distant heat shimmer over the empty road, parked station wagon and blank sign plates fixed. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e2381/z1GBz_TrXZ_h3J7cMFMwc_dd4e1e3dcbf14956930e1159f9eda052.mp4",
+      "curation": "seamless loop accepted: bluebonnets shimmer, wagon remains parked, no figures or text",
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "flyer-floor-closeup__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/flyer-floor-closeup__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: the blank flyer lies by itself, only one paper corner trembles from cabin vibration, staple gun and notebook remain fixed, absolutely no hands, no body parts, no object pickup, no duplicate paper. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 2188,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e23a3/3hxSvf0AQ45xqrdaMsjpH_d68b681f85c2468eb685e84a632f20a7.mp4",
+      "curation": "seamless loop accepted from s2188: blank flyer trembles without hand/body incursion; s1187 rejected for hand entering frame",
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "scanner-side-closeup__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/scanner-side-closeup__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: standby LED glow breathing faintly, dust motes drifting under the dash, wires and radio body completely still, no dial movement. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e238d/4Rbzy_faj3umWAO5JM29e_4164e85a3f9a47548f49cd4b9863501e.mp4",
+      "curation": "seamless loop accepted: LED/dust breathes, radio body fixed, no dial movement or figures",
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "wagon-odometer-closeup__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/wagon-odometer-closeup__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: dashboard dust and windshield reflections breathing subtly, hanging blank pass strap barely trembling, odometer cluster and steering wheel fixed. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e239a/yaadxQbAAETZb6aLRgF0R_e24ec1faf2614c1fa090016f22ef337e.mp4",
+      "curation": "seamless loop accepted: dashboard reflections breathe, cluster fixed, no hands or new objects",
+      "status": "generated-clean-motion"
+    },
+    {
+      "id": "shrine-detail-closeup__2008-2017",
+      "act": "act1",
+      "window": "20:08-20:17",
+      "runtime": "video/act1/shrine-detail-closeup__2008-2017.mp4",
+      "model": "fal-ai/veo3.1/first-last-frame-to-video",
+      "prompt": "Static locked-off camera, the exact same scene breathing in place: rosary beads and plastic flower petals swaying gently in the roadside wind, blank cards steady, bluebonnets stirring around the shrine. Subtle analog VHS idle loop, motion only, nothing enters or leaves frame, ends exactly where it began.",
+      "seed": 1187,
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e23a0/iAfCkiAQcUTgvIu90x0DK_84171232a74e4670a9db3bd674cb7aa6.mp4",
+      "curation": "seamless loop accepted: flowers/rosary breathe, blank cards remain blank, no portrait/face emergence",
+      "status": "generated-clean-motion"
     }
   ],
   "queue": [],

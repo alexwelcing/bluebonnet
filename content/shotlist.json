@@ -1801,6 +1801,162 @@
           "c2"
         ]
       }
+    },
+    {
+      "act": "act1",
+      "nodeId": "wagon-left-facing",
+      "window": "20:08-20:17",
+      "filename": "wagon-left-facing__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates wagon-interior__2008-2017 and wagon-exterior__2008-2017: degraded VHS still frame, 1998 dash-mounted Hi8 camcorder from the driver seat turned left toward the open driver door and bluebonnet shoulder, Dana Reyes independent journalist station wagon interior, spiral notebooks and blank map edges in foreground, lateral facing view for spatial density, dusk amber over blue-violet roadside, clean surfaces for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no faces, no silhouettes, no hands, parked car only, empty world",
+      "seed": 1187601,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c3": "https://v3b.fal.media/files/b/0a9e236a/zdourFjCB6vtph-FQRrJ4_L3eHZGUs.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e236a/LOmUtUmp1YRItgzClIo_z_wE1xDGvo.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e236b/blQgDVfS-P-8WyueIvcwz_vyEDbOgN.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236b/taNfDNJNW-Ne93rxPWTzO_AB345jLm.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236a/LOmUtUmp1YRItgzClIo_z_wE1xDGvo.jpg",
+      "curation": {
+        "picked": "c0",
+        "reason": "driver-seat lateral view with open door, bluebonnet shoulder and blank papers; c1 ghost-sheet artifact, c2 lacks journal clutter, c3 map/details risk visual busyness",
+        "rejected": [
+          "c3",
+          "c1",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act1",
+      "nodeId": "wagon-right-facing",
+      "window": "20:08-20:17",
+      "filename": "wagon-right-facing__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates wagon-exterior__2008-2017 and mile-marker-271__2008-2017: degraded VHS still frame, 1998 handheld Hi8 camcorder standing beside Dana Reyes independent journalist station wagon and looking right along the FM 1187 shoulder toward the bluebonnet field and blank road marker geometry, open wagon doors visible at edge, lateral facing view for spatial density, dusk amber over blue-violet roadside, clean empty plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no faces, no silhouettes, no moving car, parked station wagon only",
+      "seed": 1187618,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e236a/FkogMwncV30TLCTOATJxb_lCjSFmoH.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e236b/OfhjcyfK0XiOzijE6HJS5_wklDwFJL.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236b/QMm-gTkN4l9aCd10awXH__g5Yf81g3.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e236c/tIjE46KNv9Quzlwvkar_b_1YyIEIOr.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236a/FkogMwncV30TLCTOATJxb_lCjSFmoH.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "best shoulder lateral geography with parked wagon, open door, road and bluebonnet field; c0 too sparse, c2 extra sign geometry, c3 rear plate/road framing weaker",
+        "rejected": [
+          "c0",
+          "c2",
+          "c3"
+        ]
+      }
+    },
+    {
+      "act": "act1",
+      "nodeId": "flyer-floor-closeup",
+      "window": "20:08-20:17",
+      "filename": "flyer-floor-closeup__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates wagon-interior__2008-2017 and flyer-ditch__2008-2017: degraded VHS still frame, 1998 handheld Hi8 camcorder closeup of a blank missing-person flyer sheet on the passenger floor of Dana Reyes independent journalist station wagon, coffee-stained mat, staple gun and spiral notebook corner nearby, clean blank paper plate for runtime compositing, dusk amber over blue-violet cabin light, object closeup for spatial density, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no faces, no silhouettes, no hands",
+      "seed": 1187635,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e236c/QzN4mRlwsy4IQ3W1gOaBB_2qSLaNY4.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e236c/-N5tWmt5Vma7jo3uN9suK_8q5UwThW.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e236c/bgFfDH0PYCIikorJXFGk3_TjLpnwXn.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236c/u90dcaHuryFDI8Egz_gz-_akiesUid.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236c/bgFfDH0PYCIikorJXFGk3_TjLpnwXn.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "clean blank flyer sheet with staple gun, notebook, coffee stain and no readable text; c0/c1 rejected for readable flyer text/faces, c2 weaker flyer staging",
+        "rejected": [
+          "c0",
+          "c1",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act1",
+      "nodeId": "scanner-side-closeup",
+      "window": "20:08-20:17",
+      "filename": "scanner-side-closeup__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates scanner-radio__2008-2017 and wagon-interior__2008-2017: degraded VHS still frame, 1998 handheld Hi8 camcorder oblique side closeup of Dana Reyes independent journalist police scanner and FM radio stack under the dashboard, blank dark displays, tuning knob prominent, wires tucked under dash, cabin dust in dusk light, object closeup for performed radio puzzle, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, empty vehicle, no people, no faces, no silhouettes, no hands",
+      "seed": 1187652,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e236c/JLo8IqDFPmmsPJS0lFRJg_KEkzUpNE.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e236d/tRRdjUvEPBpIc6kcKHjvW_2sUkc4n9.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236d/M1UxtwWoKOWIqlOD8MAif_CJ7jSG6Z.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e236d/LnUYTuXr_Msk2TyqST0gA_TPotu39o.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236d/LnUYTuXr_Msk2TyqST0gA_TPotu39o.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "darkest clean scanner/radio side closeup with least legible markings and strong tuning knob; c0-c2 show more readable faceplate labels",
+        "rejected": [
+          "c0",
+          "c1",
+          "c2"
+        ]
+      }
+    },
+    {
+      "act": "act1",
+      "nodeId": "wagon-odometer-closeup",
+      "window": "20:08-20:17",
+      "filename": "wagon-odometer-closeup__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates wagon-interior__2008-2017 and wagon-exterior__2008-2017: degraded VHS still frame, 1998 handheld Hi8 camcorder closeup through the open station wagon driver door at a blank analog dashboard cluster and odometer window with no legible digits, dusty steering wheel, press-pass strap at edge but no words, object closeup for odometer/wagon clue space, clean plate for runtime compositing, dusk amber over blue-violet cabin, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no faces, no silhouettes, no hands",
+      "seed": 1187669,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c0": "https://v3b.fal.media/files/b/0a9e236d/ohxcGlYTeKleaOolZxiMQ_AL4piKFq.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236d/4-jcWgim6ZoUqf6taEJr5_RHVrkDs0.jpg",
+        "c1": "https://v3b.fal.media/files/b/0a9e236d/Fuw3_G3PhYrIlzbhoS0J7_O0lH1Qdf.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e236e/HmIKGMHxl4PcxRA_IDBbG_YY3zKK5M.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236d/Fuw3_G3PhYrIlzbhoS0J7_O0lH1Qdf.jpg",
+      "curation": {
+        "picked": "c1",
+        "reason": "best blank odometer/dashboard cluster through wagon door with no legible pass text; c0 readable pass/digits, c2 readable badge/barcode, c3 odometer digits risk A1",
+        "rejected": [
+          "c0",
+          "c2",
+          "c3"
+        ]
+      }
+    },
+    {
+      "act": "act1",
+      "nodeId": "shrine-detail-closeup",
+      "window": "20:08-20:17",
+      "filename": "shrine-detail-closeup__2008-2017.jpg",
+      "prompt": "multi-reference plate-anchored edit derived from curated plates roadside-shrine__2008-2017 and wagon-exterior__2008-2017: degraded VHS still frame, 1998 handheld Hi8 camcorder closeup of roadside shrine details, plastic flowers, rosary beads, small wooden cross, blank face-down photograph shape and blank white note card at base, bluebonnets pressing around the offering, object closeup for shrine clue, dusk amber over blue-violet shoulder, clean plate for runtime compositing, no readable text, no lettering, no signage characters, no timestamp overlay, no camcorder OSD, no burned-in characters, no people, no faces, no silhouettes, no hands",
+      "seed": 1187686,
+      "model": "fal-ai/flux-2-pro",
+      "status": "generated-clean",
+      "candidateUrls": {
+        "c1": "https://v3b.fal.media/files/b/0a9e236e/TwRzbs-93aa4WTfNLbeoY_zu81HudB.jpg",
+        "c2": "https://v3b.fal.media/files/b/0a9e236e/eHDk_xlSUFRq7hTwWk1mf_AjNw9X0L.jpg",
+        "c0": "https://v3b.fal.media/files/b/0a9e236e/I8LW9pq-3-i987ds1xee9_9ICHi3w1.jpg",
+        "c3": "https://v3b.fal.media/files/b/0a9e236e/ylzVVK09LQm8o9NUPHJvJ_sIg0Dq7P.jpg"
+      },
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9e236e/ylzVVK09LQm8o9NUPHJvJ_sIg0Dq7P.jpg",
+      "curation": {
+        "picked": "c3",
+        "reason": "best blank shrine detail with cross, plastic flowers, rosary and blank card/photo surfaces; c0 lacks cross/shrine structure, c1/c2 show portrait imagery",
+        "rejected": [
+          "c1",
+          "c2",
+          "c0"
+        ]
+      }
     }
   ],
   "a1Lint": {

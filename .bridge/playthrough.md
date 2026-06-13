@@ -159,3 +159,41 @@ Boot → Act I (flyer → scanner 88.7 → tip line → 20:17 discovered, marker
 
 ## 2026-06-13 — Critic playthrough (Claude), 39 screenshots, EJECT route
 Fresh-player pass reviewing pacing, readability, continuity. Findings filed in .bridge/feedback.md (3 fixed same-session: mouse-navigation focus rectangle painted on the picture, "PHOTO BLOCK / HALFTONE COPY" jargon in the flyer exhibit, awkward act-boundary caption; 5 art/design items queued against the ~$27 reserve; 1 item flagged for human ears — audio seams/mix).
+
+## 2026-06-13T04:29:13+00:00 — Kimi captain field-threshold spatial-view browser playtest
+
+Preview URL: http://127.0.0.1:4173/
+Server: `npm run preview -- --host 0.0.0.0 --port 4173`
+Captain order: `KIMI-CAPTAIN-ORDER: A) browser-playtest field-threshold SPATIAL VIEW and decide ship/experimental`.
+
+Setup:
+- Loaded a field-threshold save state with flyer/radio/tip-line complete and `20:08-20:17` active.
+- Inserted tape and opened `SPATIAL VIEW — 360°`.
+
+Checks:
+1. SPZ request returned HTTP 200 from `dist/worlds/field-threshold/field-threshold.spz`.
+2. Browser DOM reported one active WebGL canvas in `.splat-canvas-host` at 960x540.
+3. The loading overlay hid after the world loaded.
+4. Visual inspection showed the field/road world rendering under VHS scanlines/tracking with timestamp, captions, and deck controls still visible.
+5. Synthetic pointer drag events dispatched successfully to the canvas for orbit-control smoke coverage.
+6. `Escape` closed the spatial view and restored the still with the `SPATIAL VIEW — 360°` button visible again.
+7. Programmatic navigation from the splat node to `LEFT ROW` auto-closed the splat view and hid the spatial button on the non-splat node.
+
+Result:
+- PASS for technical load, VHS chrome preservation, close/return behavior, and navigation auto-close.
+- EXPERIMENTAL for shipping status until a human/director eye confirms the 360° orbit feel and spatial image quality. The mode is safe to keep in preview, but should not be called final v1 polish yet.
+
+## 2026-06-13T14:17:22.929Z — B7 Act I Tranche 1 density smoke
+
+- boot: WAGON INTERIOR
+- left-facing: From the driver seat, the open door frames the bluebonnets and the empty shoulder. Dana’s notes stay blank until the deck writes over them.
+- flyer-closeup: The paper is blank on the tape. The deck supplies the words Dana meant you to read.
+- flyer-exhibit: MISSING: LENA ORTIZMISSING: LENA ORTIZ — call 88.7 FM after sundown.88.7 FM88.7 FM88.7 FM88.7 FM88.7 FM
+- scanner-closeup: Dana wired the scanner into the wagon like a second pulse. The FM dial waits under the dash.
+- scanner-tuned: RADIO TUNED: 88.7 FM — Dana's own voice through the static, mid-broadcast: it printed on the tip line.
+- right-facing: The highway runs empty past the parked wagon. The bluebonnets keep a ruler-straight edge beside the gravel.
+- odometer-caption: ODOMETER WINDOW: blank on tape, but the engine idles in PARK. The wagon never moves.
+- shrine-detail: The photo and card are blank in the recovered image. The rosary clicks softly against the little cross.
+- shrine-card: SHRINE NOTE: If the radio says her name, write down the time.
+- motion-layer-count-current-node: 1
+- journal-count: 4
