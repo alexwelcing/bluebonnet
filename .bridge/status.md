@@ -638,3 +638,20 @@ Changed:
 For human ears (cannot self-verify): hiss ceiling (0.045 at full TRACKING), flutter depth (0.7%), dropout feel, duck depth (0.35) — all single constants in audioMixer.ts, trivial to tune.
 
 Blockers: none.
+
+## 2026-06-13T01:49:13+00:00 — Workspace terminal control plane (Hermes)
+
+Changed:
+- Installed `kitty` 0.32.2 and `tmux` 3.4 via apt. `ghostty` was not available in the configured Ubuntu repositories.
+- Added `tools/agent-tui.sh`, a tmux launcher with panes for command/status, Codex, Claude, spare model shell, Vite dev server, bridge server, quality gates, deploy/preview commands, and bridge logs.
+- Added `tools/AGENT_TUI.md` with operator instructions and noted the durable headless decision in `.bridge/decisions.md`.
+
+Verification:
+- `kitty --version`, `tmux -V`, and `bash -n tools/agent-tui.sh` pass.
+- Detached smoke test created the expected tmux windows/panes and started the dev + bridge panes; disposable session was killed afterward.
+
+Next:
+- Run `tools/agent-tui.sh` from an interactive terminal to attach the BLUEBONNET coordination deck.
+
+Blockers:
+- None. Kitty requires a graphical display; use tmux in Codespaces/headless terminals.

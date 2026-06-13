@@ -22,3 +22,8 @@
 - TIMESEEK only accepts discovered, unlocked time windows and re-seats the current node into that temporal state.
 - Journal entries record clue text verbatim and deduplicate by clue id.
 - Act I still masters live in assets/act1/ and runtime copies in public/stills/act1/.
+
+## 2026-06-13T01:49:13+00:00 — Multi-agent terminal setup
+- Install `kitty` as the available GUI terminal emulator in graphical environments.
+- Use `tmux` as the practical Codespaces/headless TUI control plane for multiple model/agent panes, live servers, quality gates, and bridge logs.
+- Repo launcher lives at `tools/agent-tui.sh`; operator notes live at `tools/AGENT_TUI.md`.
