@@ -1241,3 +1241,31 @@ Next:
 
 Blockers:
 - None for code/UI polish. FAL balance remains exhausted for new generated video assets.
+
+
+## 2026-06-14T06:28:35+00:00 — Control UI engine direction accepted and scaffolded
+
+Changed:
+- Corrected course from superficial UI polish to a dedicated Rive-like mechanical control UI engine as a BLUEBONNET signature pillar.
+- Added `engine/controlUiEngine.ts`: typed renderer-neutral control state engine for buttons, faders, and wheels, emitting animation/audio intents while keeping puzzle logic separate.
+- Added `tests/controlUiEngine.test.ts` using RED/GREEN TDD for momentary button actuation, fader detent crossings, and locked wheel refusal feedback.
+- Added canon amendment A11 to `GAME_DIRECTION.md`: control UI engine as signature, Rive as possible backend/adaptor rather than gameplay dependency.
+- Added durable decision in `.bridge/decisions.md` and architecture brief at `.bridge/director/control_ui_engine_architecture.md`.
+- Refreshed `.bridge/preview/` through the green gate.
+
+Verified:
+- RED observed first: `npm test -- tests/controlUiEngine.test.ts` failed because `../engine/controlUiEngine` did not exist.
+- `npm run typecheck` passed.
+- `npm test -- tests/controlUiEngine.test.ts` — 3 passing.
+- `npm test` — 90 passing tests.
+- `npm run build` — A1 shotlist lint passed for 101 clean plates; production bundle built.
+- `npm run gate -- --preview` passed and refreshed bridge preview.
+- `npm run playtest:smoke` passed.
+
+Next:
+- Build the DOM adapter and migrate the current ad-hoc deck button/fader feedback onto `controlUiEngine`.
+- Then migrate one performed mechanism at a time: TIMESEEK wheel/cues first, radio dial second, padlock third, knock pipe fourth.
+- Evaluate Rive only after a single `.riv` control asset exists; keep DOM/CSS fallback and testable core.
+
+Blockers:
+- None for the control UI engine scaffold. FAL balance remains exhausted for new generated video assets.
