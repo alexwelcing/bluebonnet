@@ -1,0 +1,35 @@
+# BLUEBONNET fast-search ignore profile for ripgrep/fd-style tools.
+# Bypass with `rg --no-ignore` when searching generated artifacts intentionally.
+
+.git/
+node_modules/
+dist/
+.netlify/
+
+# Bridge preview mirrors dist and dominates text search noise.
+.bridge/preview/
+
+# Generated/runtime media are not source text.
+assets/candidates/
+assets/worlds/
+public/stills/
+public/video/
+public/audio/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.mp4
+*.mov
+*.webm
+*.wav
+*.m4a
+*.mp3
+*.splat
+*.spz
+*.ply
+*.glb
+
+# Lockfile is available via --no-ignore, but should not drown code searches.
+package-lock.json

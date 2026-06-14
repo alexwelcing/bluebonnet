@@ -17,10 +17,12 @@ profile fits the work.
 
 ## Command Structure
 
-Hermes is the producer and traffic controller. It decides when to delegate,
-collects outputs, reconciles disagreements, and performs the final repo edits or
-handoff. No delegated agent is considered authoritative until Hermes integrates
-the result against `GAME_DIRECTION.md`, `AGENTS.md`, and the current repo state.
+Kimi swarm is the current strategic captain per Alex's 2026-06-13 directive.
+Hermes is the XO / build integrator: it operates tmux, translates Kimi's
+direction into one-writer slices, collects outputs, reconciles implementation
+risks, and performs final repo edits or handoff. No delegated agent is considered
+authoritative until Kimi's direction is integrated by Hermes against
+`GAME_DIRECTION.md`, `AGENTS.md`, and the current repo state.
 
 Codex is the default builder when the task is concrete code, tests, tooling, or
 git work. Claude is the default partner for canon, narrative, UX feel, and
@@ -52,9 +54,12 @@ when the blast radius justifies independent review.
 2. Pick one concrete objective. If it is parallelizable, assign specific
    questions to specialist agents instead of asking everyone to solve everything.
 3. Integrate in the repo through one owner, usually Codex or Hermes.
-4. Run the relevant gates. For gameplay changes, this means at least:
-   `npm run typecheck`, `npm test`, `npm run lint:shotlist`, and `npm run build`.
-5. Refresh `.bridge/preview/` from `dist/` after a green build.
+4. Run the relevant gates. For gameplay changes, prefer `npm run gate -- --preview`;
+   it runs `npm run typecheck`, `npm test`, `npm run lint:shotlist`, `npm run build`,
+   then refreshes `.bridge/preview/` from the green `dist/` artifact.
+5. Run `npm run doctor` when picking up a stale room or before generation spend;
+   it prints tool availability, content density, shotlist/motion status, and secret
+   presence by name only.
 6. For deployable milestones, Hermes deploys and self-playtests the live site.
 7. Append `.bridge/status.md`: what changed, what is next, blockers.
 8. Record durable process or architecture decisions in `.bridge/decisions.md`.
@@ -73,12 +78,24 @@ The launcher opens:
 - `command`: current status and git state.
 - `agents`: Codex, Claude, and spare model/shell panes.
 - `serve`: Vite dev server plus `.bridge` server on port 8123.
-- `quality`: gate and deploy command scratch space.
+- `quality`: gate and deploy command scratch space (`npm run gate -- --preview`).
 - `bridge`: live status, decisions, and bridge-server logs.
 
 Use tmux as the practical TUI control plane in Codespaces/headless sessions.
 Kitty is installed for graphical environments, but it is not the coordination
 primitive.
+
+For a model-maximized Hermes swarm, use the dedicated launcher:
+
+```sh
+tools/hermes-swarm.sh --probe --prefix bb --task "<one concrete objective>"
+tmux attach -t bb-control
+```
+
+It creates separate Hermes tmux sessions for OpenAI Codex/GPT-5.5, Grok 4.3,
+MiniMax-M3, GLM 5.1, and Gemini 2.5 Pro. The launch doctrine stays the same:
+Hermes-XO is the only writer-lock candidate, while Grok/MiniMax/GLM/Gemini are
+artifact-only sidecars under `.bridge/director/`. See `tools/HERMES_SWARM.md`.
 
 ## Handoff Format
 

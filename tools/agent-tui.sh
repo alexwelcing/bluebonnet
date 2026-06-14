@@ -40,7 +40,7 @@ tmux send-keys -t "$SESSION:serve.1" "python3 -m http.server 8123 --directory .b
 tmux select-layout -t "$SESSION:serve" even-horizontal
 
 tmux new-window -t "$SESSION" -c "$ROOT" -n quality
-tmux send-keys -t "$SESSION:quality.0" "clear; printf 'Quality gates\nnpm run typecheck\nnpm test\nnpm run lint:shotlist\nnpm run build\n\n'" C-m
+tmux send-keys -t "$SESSION:quality.0" "clear; printf 'Quality gates\nnpm run doctor\nnpm run gate -- --preview\nnpm run playtest:smoke\n\nFallback individual gates:\nnpm run typecheck\nnpm test\nnpm run lint:shotlist\nnpm run build\n\n'" C-m
 tmux split-window -h -t "$SESSION:quality" -c "$ROOT"
 tmux send-keys -t "$SESSION:quality.1" "clear; printf 'Deploy / preview pane\nRefresh preview: rm -rf .bridge/preview/* && cp -R dist/* .bridge/preview/\nDeploy: netlify deploy --prod --dir dist\n\n'" C-m
 tmux select-layout -t "$SESSION:quality" even-horizontal

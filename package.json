@@ -8,6 +8,10 @@
     "dev": "vite --host 0.0.0.0",
     "build": "npm run lint:shotlist && tsc --noEmit && vite build",
     "preview": "vite preview",
+    "bridge:serve": "python3 -m http.server 8123 --directory .bridge",
+    "doctor": "node tools/bluebonnetDoctor.mjs",
+    "gate": "node tools/bluebonnetGate.mjs",
+    "playtest:smoke": "node tools/playtestSmoke.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "lint:shotlist": "node tools/shotlistLint.mjs"
@@ -15,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^25.9.3",
     "jsdom": "^29.1.1",
+    "playwright": "^1.60.0",
     "pngjs": "^7.0.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.16",

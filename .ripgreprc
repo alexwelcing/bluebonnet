@@ -1,0 +1,16 @@
+# ripgrep defaults for BLUEBONNET terminals.
+# Loaded via RIPGREP_CONFIG_PATH from ~/.bashrc; bypass with `rg --no-config`.
+--smart-case
+--hidden
+--max-columns=300
+--max-columns-preview
+--glob=!.git/
+--glob=!node_modules/
+--glob=!dist/
+--glob=!.bridge/preview/
+--glob=!assets/candidates/
+--glob=!assets/worlds/
+--glob=!public/stills/
+--glob=!public/video/
+--glob=!public/audio/
+--glob=!package-lock.json

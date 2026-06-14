@@ -23,6 +23,10 @@ npm install
 npm run dev        # dev server
 npm test           # vitest suite
 npm run build      # shotlist lint + typecheck + production build
+npm run gate       # typecheck + tests + shotlist lint + build
+npm run gate -- --preview  # run the gate and refresh .bridge/preview from dist
+npm run doctor     # environment/content/tooling snapshot, no secret values printed
+npm run playtest:smoke     # local Playwright boot/TIMESEEK/flyer/radio smoke
 ```
 
 Zero-server static site: `npm run build` emits `dist/`, deployable to any static host.
