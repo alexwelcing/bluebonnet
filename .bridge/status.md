@@ -1320,3 +1320,27 @@ Next:
 
 Blockers:
 - None for production publish. FAL balance remains exhausted for new generated video assets.
+
+
+## 2026-06-14T15:35:18+00:00 — Uncommitted work concluded and preserved
+
+Changed:
+- Split the remaining working tree into focused commits instead of abandoning or squashing the work.
+- Preserved standard tooling (`npm run gate`, `npm run doctor`, `npm run playtest:smoke`), fast-search defaults, swarm/operator docs, and the bridge/director pickup plan.
+- Preserved field-tally solvability regression coverage.
+- Preserved Act IV copy polish and cleaner tape/audio baseline with tests.
+- Recorded 360-world and control-UI direction in canon/decision docs.
+- Preserved World Labs offline reference assets under Git LFS with provenance and kept them explicitly non-runtime per A10.
+- Removed the local `.hermes/` scratch plan after promoting its useful content to `.bridge/director/top_1_percent_codespace_plan.md`.
+
+Verified:
+- `npm run gate -- --preview` passed: typecheck, 94 Vitest tests, A1 shotlist lint for 101 clean plates, production build, and bridge-preview refresh.
+- `npm run playtest:smoke` passed.
+- `git status --short` was clean before this status entry.
+
+Next:
+- Push the preservation commits to `origin/main`.
+- Future 360 work should continue from the preserved offline assets/tools only after the A10 architecture gates are implemented.
+
+Blockers:
+- None.
