@@ -63,4 +63,10 @@ describe('engine foundation', () => {
     expect(state.snapshot().flags.radioTouched).toBe(true);
     expect(resolveHotspotTarget(radio, state.snapshot())).toBe('dashcam-shoulder');
   });
+
+  it('starts the deck as a readable archive instead of an already-dying tape', () => {
+    const state = createStateMachine({ currentNodeId: 'dashcam-shoulder' });
+
+    expect(state.snapshot().vhsIntensity).toBe(0.4);
+  });
 });

@@ -593,9 +593,9 @@
               "target": "luminous-shrine",
               "journal": {
                 "id": "nine-shrine-warning",
-                "text": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it."
+                "text": "NINE-MINUTE SHRINE: EJECT lets the tape go. RECORD holds the witness."
               },
-              "caption": "NINE-MINUTE SHRINE: EJECT seals the tape. RECORD overwrites the evidence with you inside it.",
+              "caption": "NINE-MINUTE SHRINE: EJECT lets the tape go. RECORD holds the witness.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the blank paper tags hanging by the wooden cross",
               "clueHighlight": true
@@ -838,12 +838,12 @@
       "temporalStates": {
         "20:26-20:35": {
           "still": "stills/act4/final-choice__2026-2035.jpg",
-          "caption": "20:26-20:35: the tape has no more geography. Only the deck remains: EJECT to seal it, RECORD to overwrite it.",
+          "caption": "20:26-20:35: the tape has no more geography. Only the deck is left \u2014 EJECT, and it ends here. RECORD, and you stay on it.",
           "wrongness": "the missing minutes wait for an ending choice",
           "hotspots": [
             {
               "id": "choose-eject",
-              "label": "EJECT — seal the tape",
+              "label": "EJECT \u2014 seal the tape",
               "polygon": [
                 [
                   32,
@@ -866,16 +866,16 @@
               "setFlag": "ending:eject",
               "journal": {
                 "id": "ending-eject",
-                "text": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
+                "text": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
               },
-              "caption": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
+              "caption": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the dark cassette slot opening on the video player (hand-authored from plate)",
               "clueHighlight": true
             },
             {
               "id": "choose-record",
-              "label": "RECORD — overwrite the evidence",
+              "label": "RECORD \u2014 overwrite the evidence",
               "polygon": [
                 [
                   50,
@@ -898,9 +898,9 @@
               "setFlag": "ending:record",
               "journal": {
                 "id": "ending-record",
-                "text": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape."
+                "text": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape."
               },
-              "caption": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
+              "caption": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the small red button on the video player (hand-authored from plate)",
               "clueHighlight": true

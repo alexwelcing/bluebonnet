@@ -56,7 +56,7 @@ export function createAudioMixer(): AudioMixer {
   let muted = false;
   let volume = 0.7;
   let ambientLevel = 1;
-  let tapeIntensity = 0.72;
+  let tapeIntensity = 0.4;
   const cues: { source: string; caption?: string }[] = [];
 
   const webAudio = typeof AudioContext !== 'undefined' ? createWebAudioBackend() : undefined;
@@ -115,7 +115,7 @@ export function createAudioMixer(): AudioMixer {
       webAudio?.setMasterGain(volume);
     },
     setTapeCondition(intensity: number) {
-      tapeIntensity = clampUnit(intensity, 0.72);
+      tapeIntensity = clampUnit(intensity, 0.4);
       webAudio?.setTapeCondition(tapeIntensity);
     },
     dropout() {
@@ -153,7 +153,7 @@ function createWebAudioBackend() {
   let activeSlot: AmbientSlot | undefined;
   let pendingAmbient: { src?: string; gain: number } | undefined;
   let unlocked = false;
-  let condition = 0.72;
+  let condition = 0.4;
   const buffers = new Map<string, Promise<AudioBuffer>>();
 
   function ensureContext(): AudioContext | undefined {
@@ -161,7 +161,7 @@ function createWebAudioBackend() {
     if (context) return context;
     context = new AudioContext();
     master = context.createGain();
-    master.gain.value = 0.7;
+    master.gain.value = 1;
     master.connect(context.destination);
     duckGain = context.createGain();
     duckGain.connect(master);

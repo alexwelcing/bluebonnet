@@ -37,4 +37,13 @@ describe('audio mixer', () => {
     expect(mixer.snapshot()).toMatchObject({ current: 'audio/radio-static.wav', previous: 'audio/field-wind.wav', ambientLevel: 1 });
   });
 
+  it('starts tape condition clean enough for decay to have somewhere to travel', () => {
+    const mixer = createAudioMixer();
+
+    expect(mixer.snapshot().tapeIntensity).toBe(0.4);
+
+    mixer.setTapeCondition(Number.NaN);
+    expect(mixer.snapshot().tapeIntensity).toBe(0.4);
+  });
+
 });

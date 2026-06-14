@@ -99,6 +99,7 @@ describe('Act IV nine minutes content', () => {
     }
 
     const final = getNodeState(graph, 'final-choice', '20:26-20:35');
+    expect(final.caption).toContain('EJECT, and it ends here. RECORD, and you stay on it.');
     const eject = final.hotspots.find((hotspot) => hotspot.id === 'choose-eject')!;
     const record = final.hotspots.find((hotspot) => hotspot.id === 'choose-record')!;
     expect(eject.target).toBe('ending-eject');
@@ -108,6 +109,15 @@ describe('Act IV nine minutes content', () => {
     expect(state.snapshot().flags['ending:eject']).toBe(true);
     expect(getNodeState(graph, 'ending-eject', '20:26-20:35').caption).toContain('EJECT');
     expect(getNodeState(graph, 'ending-record', '20:26-20:35').caption).toContain('RECORD');
+  });
+
+  it('keeps the shrine warning ominous instead of spelling out the menu consequences', () => {
+    const graph = loadNodeGraph([act1, act2, act3, act4] as unknown as SceneManifest[]);
+    const shrine = getNodeState(graph, 'luminous-shrine', '20:26-20:35');
+    const warning = shrine.hotspots.find((hotspot) => hotspot.id === 'shrine-nine-note')!;
+
+    expect(warning.journal?.text).toContain('EJECT lets the tape go. RECORD holds the witness.');
+    expect(warning.journal?.text).not.toContain('overwrites the evidence with you inside it');
   });
 
   it('expands the Act IV threshold into lateral, look-down, and detail viewpoints', () => {
