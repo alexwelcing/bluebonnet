@@ -1296,3 +1296,27 @@ Next:
 
 Blockers:
 - None for the control UI engine code path. FAL balance remains exhausted for new generated video assets.
+
+
+## 2026-06-14T15:26:15+00:00 — Mechanical control UI published to production
+
+Changed:
+- Ran the final production gate for the mechanical control UI engine work and refreshed `.bridge/preview/` from `dist/`.
+- Deployed the current green build to Netlify production.
+
+Production:
+- Live URL: https://bluebonnet-tape.netlify.app
+- Unique deploy URL: https://6a2ec7e10a1bf7575805eab9--bluebonnet-tape.netlify.app
+- Netlify deploy id: `6a2ec7e10a1bf7575805eab9`
+
+Verified:
+- `npm run gate -- --preview` passed: typecheck, 94 Vitest tests, A1 shotlist lint for 101 clean plates, production build, and bridge preview refresh.
+- `netlify deploy --prod --dir dist` completed and reported production live.
+- Production HTTP 200 checks passed for index, current JS/CSS bundles, and sample runtime still.
+- Production Playwright smoke passed: boot, insert/skip tape, flyer journal, scanner-radio path, and `radio.frequency` control-engine identity on the live site.
+
+Next:
+- Continue control UI engine hardening by extracting the DOM/audio intent adapter from `src/main.ts` into a reusable module and then trying the first Rive-backed prototype control behind that adapter.
+
+Blockers:
+- None for production publish. FAL balance remains exhausted for new generated video assets.
