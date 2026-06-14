@@ -182,6 +182,23 @@ let lastInputWasKeyboard = false;
 document.addEventListener('keydown', () => { lastInputWasKeyboard = true; }, { capture: true });
 document.addEventListener('pointerdown', () => { lastInputWasKeyboard = false; }, { capture: true });
 
+function installMomentaryActuation(root: ParentNode = document) {
+  for (const control of root.querySelectorAll<HTMLButtonElement>('button')) {
+    if (control.dataset.actuationInstalled === 'true') continue;
+    control.dataset.actuationInstalled = 'true';
+    const actuate = () => {
+      control.classList.remove('actuated');
+      void control.offsetWidth;
+      control.classList.add('actuated');
+      window.setTimeout(() => control.classList.remove('actuated'), 180);
+    };
+    control.addEventListener('pointerdown', actuate);
+    control.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') actuate();
+    });
+  }
+}
+
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
@@ -383,6 +400,7 @@ function render() {
       return button;
     }),
   );
+  installMomentaryActuation(hotspotLayer);
   // replaceChildren destroys the focused button; without this, every keyboard
   // activation dumps focus to <body> and tab order restarts from the top.
   if (focusedHotspotId) {
@@ -476,6 +494,7 @@ function buildRadioDial(succeed: () => void) {
     succeed();
   });
   body.append(readout, meter, dial, lock);
+  installMomentaryActuation(body);
   update();
   dial.focus();
 }
@@ -502,10 +521,12 @@ function buildPadlock(succeed: () => void) {
     up.addEventListener('click', () => {
       digits[index] = (digits[index] + 1) % 10;
       display.textContent = String(digits[index]);
+      tumblePadlockDigit(display);
     });
     down.addEventListener('click', () => {
       digits[index] = (digits[index] + 9) % 10;
       display.textContent = String(digits[index]);
+      tumblePadlockDigit(display);
     });
     displays.push(display);
     wheel.append(up, display, down);
@@ -530,6 +551,14 @@ function buildPadlock(succeed: () => void) {
     }
   });
   body.append(wheels, tryHasp, verdict);
+  installMomentaryActuation(body);
+}
+
+function tumblePadlockDigit(display: HTMLSpanElement) {
+  display.classList.remove('digit-tumble');
+  void display.offsetWidth;
+  display.classList.add('digit-tumble');
+  window.setTimeout(() => display.classList.remove('digit-tumble'), 180);
 }
 
 function buildKnockPipe(succeed: () => void) {
@@ -584,6 +613,7 @@ function buildKnockPipe(succeed: () => void) {
   controls.className = 'knock-controls';
   controls.append(knock, rest, playBack, clear);
   body.append(tape, controls, verdict);
+  installMomentaryActuation(body);
   renderTape();
   knock.focus();
 }
@@ -843,6 +873,14 @@ document.addEventListener('keydown', (event) => {
 
 intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity.value)));
 volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
+for (const fader of [intensity, volume]) {
+  let faderTimer: number | undefined;
+  fader.addEventListener('input', () => {
+    fader.classList.add('fader-moving');
+    if (faderTimer !== undefined) window.clearTimeout(faderTimer);
+    faderTimer = window.setTimeout(() => fader.classList.remove('fader-moving'), 260);
+  });
+}
 captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
 closeExhibit.addEventListener('click', () => closeModal(exhibitScan));
 // --- THE LAST BROADCAST (prelude) -------------------------------------------
@@ -1218,5 +1256,6 @@ armIdleSlip();
 
 state.subscribe(render);
 render();
+installMomentaryActuation(app);
 
 

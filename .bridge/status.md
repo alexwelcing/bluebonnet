@@ -1217,3 +1217,27 @@ Next:
 
 Blockers:
 - None for code work. FAL balance remains exhausted for new generated video assets.
+
+
+## 2026-06-14T06:19:57+00:00 — Mechanical analog UI polish
+
+Changed:
+- Added tactile actuation state for deck buttons, dynamic hotspot buttons, mechanism controls, and keyboard activation so controls visibly depress instead of feeling like flat web chrome.
+- Added fader movement state for TRACKING/VOLUME sliders and a padlock digit tumble animation for wheel turns.
+- Polished the evidence deck material treatment: brushed/bolted control drawer, recessed tape slot, concentric/brushed jog wheel, pressed-button shadows, and paper-like journal surface.
+- Added Evidence Deck integration coverage for tactile button/fader/padlock state.
+- Refreshed `.bridge/preview/` from the green build.
+
+Verified:
+- `npm run typecheck`
+- `npm test -- tests/evidenceDeck.test.ts` — 24 passing.
+- `npm run build` — A1 shotlist lint passed for 101 clean plates; production bundle built.
+- `npm test` — 87 passing tests.
+- `npm run gate -- --preview` — typecheck, tests, shotlist lint, build, and preview refresh passed.
+- `npm run playtest:smoke` — boot, insert tape, TIMESEEK deck, flyer journal, and first navigation passed.
+
+Next:
+- Continue this polish pass by adding diegetic audio/visual feedback for compare hold, cue buttons, and mechanism refusals where it improves machine feel without adding web chrome.
+
+Blockers:
+- None for code/UI polish. FAL balance remains exhausted for new generated video assets.

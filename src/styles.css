@@ -50,8 +50,11 @@ button, input { font: inherit; }
   width: min(680px, 92vw);
   border: 1px solid rgba(164,255,197,0.35);
   padding: 2rem;
-  background: rgba(2,8,5,0.92);
-  box-shadow: 0 0 80px rgba(67,255,120,0.12), inset 0 0 40px rgba(67,255,120,0.08);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.035), transparent 28%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 7px),
+    rgba(2,8,5,0.92);
+  box-shadow: 0 0 80px rgba(67,255,120,0.12), inset 0 0 40px rgba(67,255,120,0.08), inset 0 1px 0 rgba(255,255,255,0.08);
   text-align: center;
 }
 .boot-card h2,
@@ -74,6 +77,13 @@ button, input { font: inherit; }
   letter-spacing: 0.12em;
   font-size: 0.74rem;
   pointer-events: none;
+}
+
+.tape-slot {
+  padding: 0.15rem 0.45rem;
+  border: 1px solid rgba(157,242,173,0.2);
+  background: linear-gradient(180deg, rgba(0,0,0,0.62), rgba(255,255,255,0.035), rgba(0,0,0,0.72));
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.9), 0 0 18px rgba(67,255,120,0.08);
 }
 
 .crt-bezel {
@@ -221,7 +231,12 @@ button, input { font: inherit; }
   padding: 2.6rem 1rem 1rem;
   overflow-y: auto;
   border-left: 1px solid rgba(164, 255, 197, 0.22);
-  background: rgba(2, 8, 5, 0.78);
+  background:
+    radial-gradient(circle at 16px 16px, rgba(215,247,226,0.18) 0 2px, rgba(2,8,5,0.92) 2.5px 4px, transparent 4.5px),
+    radial-gradient(circle at calc(100% - 16px) 16px, rgba(215,247,226,0.18) 0 2px, rgba(2,8,5,0.92) 2.5px 4px, transparent 4.5px),
+    linear-gradient(110deg, rgba(255,255,255,0.045), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 6px),
+    rgba(2, 8, 5, 0.82);
   backdrop-filter: blur(7px);
   box-shadow: -18px 0 50px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(67, 255, 120, 0.06);
   transform: translateX(100%);
@@ -254,8 +269,11 @@ h1 { margin: 0.25rem 0 0.7rem; font-size: clamp(1.25rem, 3vw, 2.2rem); }
   justify-self: center;
   border-radius: 50%;
   border: 2px solid rgba(164,255,197,0.42);
-  background: radial-gradient(circle at 42% 35%, #26352c, #07100b 58%, #020302);
-  box-shadow: inset 0 0 24px rgba(255,255,255,0.08), 0 0 28px rgba(67,255,120,0.08);
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 18%, rgba(255,255,255,0.035) 18.5% 19%, transparent 19.5% 31%, rgba(255,255,255,0.03) 31.5% 32%, transparent 32.5% 46%, rgba(255,255,255,0.025) 46.5% 47%, transparent 47.5%),
+    conic-gradient(from 12deg, rgba(255,255,255,0.09), rgba(255,255,255,0.015) 18deg, rgba(0,0,0,0.2) 36deg, rgba(255,255,255,0.065) 54deg, rgba(0,0,0,0.22) 72deg),
+    radial-gradient(circle at 42% 35%, #314235, #07100b 58%, #020302);
+  box-shadow: inset 0 0 24px rgba(255,255,255,0.08), inset 0 -12px 26px rgba(0,0,0,0.55), 0 0 28px rgba(67,255,120,0.08), 0 5px 0 #010201;
   transform: rotate(var(--jog-angle, 0rad));
   touch-action: none;
 }
@@ -273,11 +291,14 @@ h1 { margin: 0.25rem 0 0.7rem; font-size: clamp(1.25rem, 3vw, 2.2rem); }
   width: 0.45rem;
   height: 2.5rem;
   border-radius: 999px;
-  background: #d7f7e2;
-  box-shadow: 0 0 10px rgba(215,247,226,0.75);
+  background: linear-gradient(90deg, #6e8f78, #f3fff5 45%, #6e8f78);
+  box-shadow: 0 0 10px rgba(215,247,226,0.75), inset 0 0 3px rgba(0,0,0,0.5);
   transform: translateX(-50%);
 }
 .jog-strain { animation: jog-strain 90ms steps(2, end) 6; }
+.jog-wheel:active, .jog-wheel.actuated {
+  transform: rotate(var(--jog-angle, 0rad)) translateY(1px);
+}
 .intensity {
   width: 100%;
   border: 1px solid rgba(164,255,197,0.28);
@@ -289,8 +310,18 @@ button, .save {
   border: 1px solid rgba(164,255,197,0.35);
   padding: 0.65rem;
   color: #d7f7e2;
-  background: #102216;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), transparent 42%),
+    linear-gradient(180deg, #17321f, #07120c);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -2px 0 rgba(0,0,0,0.55), 0 2px 0 rgba(0,0,0,0.75);
   cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease, filter 160ms ease;
+}
+
+button:hover, .save:hover { filter: brightness(1.08); }
+button:active, button.actuated, .save:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.65), inset 0 0 12px rgba(125,255,174,0.08), 0 0 0 rgba(0,0,0,0);
 }
 
 .journal-panel {
@@ -299,8 +330,19 @@ button, .save {
   padding-top: 0.75rem;
 }
 .journal-panel h2 { font-size: 1rem; letter-spacing: 0.14em; }
-.journal-list { padding-left: 1.3rem; max-height: 35vh; overflow: auto; }
-.journal-list li { margin: 0.55rem 0; color: #d7f7e2; line-height: 1.35; }
+.journal-list {
+  max-height: 35vh;
+  overflow: auto;
+  padding: 0.65rem 0.9rem 0.65rem 1.9rem;
+  color: #162014;
+  background:
+    repeating-linear-gradient(to bottom, rgba(20,18,14,0.055) 0 1px, transparent 1px 1.35rem),
+    linear-gradient(92deg, rgba(86,55,25,0.08), transparent 16%),
+    rgba(226, 217, 184, 0.88);
+  border: 1px solid rgba(255,233,168,0.18);
+  box-shadow: inset 0 0 24px rgba(66,45,20,0.12), 0 8px 22px rgba(0,0,0,0.24);
+}
+.journal-list li { margin: 0.55rem 0; color: #182114; line-height: 1.35; text-shadow: 0.35px 0 rgba(20,18,14,0.35); }
 
 .exhibit-scan {
   position: fixed;
@@ -489,6 +531,7 @@ button, .save {
   box-shadow: inset 0 0 18px rgba(125, 255, 174, 0.25);
 }
 
+
 /* — TIMESEEK transport: visible tape map + tactile wheel — */
 .tape-ruler {
   position: relative;
@@ -593,6 +636,7 @@ input[type='range']::-webkit-slider-thumb {
   background: linear-gradient(180deg, #2c4a36, #0c1812 55%, #1d3a28);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
+input[type='range'].fader-moving::-webkit-slider-thumb { box-shadow: 0 0 12px rgba(157, 242, 173, 0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
 input[type='range']:focus-visible::-webkit-slider-thumb { outline: 2px solid #9df2ad; }
 input[type='range']::-moz-range-track {
   height: 5px;
@@ -606,6 +650,7 @@ input[type='range']::-moz-range-thumb {
   border: 1px solid rgba(164, 255, 197, 0.6);
   background: linear-gradient(180deg, #2c4a36, #0c1812 55%, #1d3a28);
 }
+input[type='range'].fader-moving::-moz-range-thumb { box-shadow: 0 0 12px rgba(157, 242, 173, 0.5); }
 
 /* Locks refuse, not vanish (playtest fix): a locked clue stays visible and
    answers with a hint; its affordance reads amber instead of green. */
@@ -741,8 +786,15 @@ input[type='range']::-moz-range-thumb {
   border: 1px solid rgba(255, 233, 168, 0.4);
   background: rgba(0, 0, 0, 0.55);
 }
+.padlock-wheel span.digit-tumble { animation: digit-tumble 180ms steps(3, end); }
 .padlock-wheel button { padding: 0.25rem 0.8rem; }
 .padlock-strain { animation: jog-strain 90ms steps(2, end) 5; }
+
+@keyframes digit-tumble {
+  0% { transform: translateY(-3px); filter: blur(0.6px) brightness(1.35); }
+  60% { transform: translateY(2px); filter: blur(0.3px) brightness(0.8); }
+  100% { transform: translateY(0); filter: none; }
+}
 
 .knock-tape {
   min-height: 2rem;

@@ -116,6 +116,13 @@ describe('Evidence Deck integration', () => {
     expect(document.querySelector('.tape-stage')?.classList.contains('seek-glitch')).toBe(true);
   });
 
+  it('does not announce a fake anomaly on stable baseline windows', async () => {
+    await loadDeck();
+    realPointerClick(button('INSERT TAPE'));
+
+    expect(document.querySelector('.wrongness')?.textContent).toBe('');
+  });
+
   it('does not list the final nine-minutes detent as locked once it is discovered', async () => {
     await loadDeck({
       currentNodeId: 'missing-minutes-gate',
@@ -198,6 +205,34 @@ describe('Evidence Deck integration', () => {
     });
     realPointerClick(document.querySelector<HTMLButtonElement>('.padlock-try')!);
     expect(document.querySelector('h1')?.textContent).toBe('CULVERT APPROACH');
+  });
+
+  it('adds tactile control state for deck presses, faders, and mechanical wheels', async () => {
+    await loadDeck({
+      currentNodeId: 'field-gate',
+      flags: { 'puzzle:flyer-frequency': true, 'puzzle:radio-tune': true, 'puzzle:dispatch-log': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:08-20:17',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+
+    const deckButton = button('BOOKMARK TAPE STATE');
+    deckButton.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1, pointerType: 'mouse' }));
+    expect(deckButton.classList.contains('actuated')).toBe(true);
+
+    const tracking = document.querySelector<HTMLInputElement>('.intensity')!;
+    tracking.value = '0.9';
+    tracking.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(tracking.classList.contains('fader-moving')).toBe(true);
+
+    realPointerClick(button('Work the padlock dials'));
+    const firstWheelUp = document.querySelector<HTMLButtonElement>('.padlock-wheel button')!;
+    realPointerClick(firstWheelUp);
+    expect(document.querySelector('.padlock-wheel span')?.classList.contains('digit-tumble')).toBe(true);
   });
 
   it('the tuning dial only locks at 88.7', async () => {
