@@ -1269,3 +1269,30 @@ Next:
 
 Blockers:
 - None for the control UI engine scaffold. FAL balance remains exhausted for new generated video assets.
+
+
+## 2026-06-14T06:45:08+00:00 — TIMESEEK/radio/padlock/knock control-engine integration
+
+Changed:
+- Extended `engine/controlUiEngine.ts` beyond the initial scaffold into the mechanism vocabulary needed by BLUEBONNET's core deck: wheel seating, digit tumblers, and grouped knock/rest/playback sequences.
+- Migrated the WAGON RADIO manual tuner onto control-engine fader/button intents: radio frequency now carries `radio.frequency` control identity, detent-cross feedback, and lock-button actuation.
+- Migrated FIELD GATE PADLOCK wheel turns onto control-engine digit wheels with wraparound tumbler state and wheel-click/digit-tumble feedback.
+- Migrated SERVICE PIPE knock/rest/playback input onto control-engine grouped sequence state; pipe tape now receives control identity and pulse classes for knock/rest/playback/clear.
+- Wired TIMESEEK wheel seek, detent seating, and hard-stop refusal through renderer-neutral control intents while preserving the existing jog-wheel physics and tape-window logic.
+- Added CSS animation hooks for TIMESEEK seat/refusal, radio fader movement, padlock tumblers, and pipe knock/rest/playback pulses.
+- Expanded Vitest coverage for the control engine and Evidence Deck DOM integration.
+- Refreshed `.bridge/preview/` through the green gate.
+
+Verified:
+- `npm run typecheck` passed.
+- `npm test -- tests/controlUiEngine.test.ts tests/evidenceDeck.test.ts` — 31 passing targeted tests.
+- `npm test` — 94 passing tests.
+- `npm run build` — A1 shotlist lint passed for 101 clean plates; production bundle built.
+- `npm run gate -- --preview` passed and refreshed bridge preview.
+- `npm run playtest:smoke` passed.
+
+Next:
+- If we continue the UI-engine pillar, the next best slice is extracting the intent-to-DOM/audio bridge from `src/main.ts` into a reusable adapter module, then authoring the first Rive-backed prototype control behind that same adapter.
+
+Blockers:
+- None for the control UI engine code path. FAL balance remains exhausted for new generated video assets.

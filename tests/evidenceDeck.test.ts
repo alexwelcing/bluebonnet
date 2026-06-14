@@ -246,6 +246,8 @@ describe('Evidence Deck integration', () => {
     const dial = document.querySelector<HTMLInputElement>('.dial-frequency')!;
     dial.value = '88.7';
     dial.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(dial.dataset.controlId).toBe('radio.frequency');
+    expect(dial.classList.contains('fader-moving')).toBe(true);
     expect(lock.disabled).toBe(false);
     realPointerClick(lock);
     expect(document.querySelector('.journal-list')?.textContent).toContain('RADIO TUNED');
@@ -315,6 +317,39 @@ describe('Evidence Deck integration', () => {
     realPointerClick(document.querySelector<HTMLButtonElement>('.cue[data-window="20:26-20:35"]')!);
     expect(document.querySelector('.timestamp')?.textContent).toContain('20:08-20:17');
     expect(document.querySelector('.timeseek-help')?.textContent).toContain('LOCKED 20:26-20:35');
+    expect(document.querySelector('.jog-wheel')?.classList.contains('control-refusing')).toBe(true);
+  });
+
+  it('the knock pipe mechanism uses grouped mechanical control feedback', async () => {
+    await loadDeck({
+      currentNodeId: 'culvert-pipe',
+      flags: { 'puzzle:field-gate': true },
+      vhsIntensity: 0.72,
+      activeWindow: '20:17-20:26',
+      discoveredTimecodes: ['20:08-20:17', '20:17-20:26'],
+      journal: [],
+      completedPuzzles: ['flyer-frequency', 'radio-tune', 'dispatch-log', 'flower-digit-2', 'flower-digit-7', 'flower-digit-1', 'flower-digit-3', 'field-gate'],
+      captionsEnabled: true,
+    });
+    realPointerClick(button('INSERT TAPE'));
+    realPointerClick(button('Knock on the pipe'));
+
+    const knock = button('KNOCK');
+    const rest = button('REST');
+    const playback = button('PLAY IT BACK');
+    realPointerClick(knock);
+    realPointerClick(knock);
+    realPointerClick(rest);
+    realPointerClick(knock);
+
+    const tape = document.querySelector<HTMLElement>('.knock-tape')!;
+    expect(tape.dataset.controlId).toBe('pipe.echo');
+    expect(tape.textContent).toBe('||  —  |');
+    expect(tape.classList.contains('pipe-knock-pulse')).toBe(true);
+
+    realPointerClick(playback);
+    expect(tape.classList.contains('pipe-playback-pulse')).toBe(true);
+    expect(document.querySelector('.mechanism-verdict')?.textContent).toContain('pipe rings wrong');
   });
 
   it('persists the chosen ending into the save snapshot', async () => {

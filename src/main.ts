@@ -1,4 +1,6 @@
 import { createAudioMixer } from '../engine/audioMixer';
+import { createControlUiEngine } from '../engine/controlUiEngine';
+import type { ControlUiEngine, ControlUiEvent, ControlUiIntent } from '../engine/controlUiEngine';
 import { clipPathWithinBounds, polygonBounds, svgPointsWithinBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
 import { conditionsMet, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
@@ -178,6 +180,7 @@ const exhibitPaper = app.querySelector<HTMLElement>('.exhibit-paper')!;
 const closeExhibit = app.querySelector<HTMLButtonElement>('.close-exhibit')!;
 const colophonPanel = app.querySelector<HTMLDivElement>('.colophon-panel')!;
 const closeColophon = app.querySelector<HTMLButtonElement>('.close-colophon')!;
+jogWheel.dataset.controlId = 'deck.timeseek';
 let lastInputWasKeyboard = false;
 document.addEventListener('keydown', () => { lastInputWasKeyboard = true; }, { capture: true });
 document.addEventListener('pointerdown', () => { lastInputWasKeyboard = false; }, { capture: true });
@@ -197,6 +200,63 @@ function installMomentaryActuation(root: ParentNode = document) {
       if (event.key === 'Enter' || event.key === ' ') actuate();
     });
   }
+}
+
+function dispatchControl(engine: ControlUiEngine, event: ControlUiEvent, root: ParentNode = document) {
+  engine.dispatch(event);
+  applyControlIntents(engine.drainIntents(), root);
+}
+
+function applyControlIntents(intents: ControlUiIntent[], root: ParentNode) {
+  for (const intent of intents) {
+    const control = root.querySelector<HTMLElement>(`[data-control-id="${cssEscape(intent.controlId)}"]`);
+    if (intent.type === 'animation') {
+      applyAnimationIntent(intent, control, root);
+    } else {
+      playControlCue(intent.cue, intent.controlId);
+    }
+  }
+}
+
+function applyAnimationIntent(intent: Extract<ControlUiIntent, { type: 'animation' }>, control: HTMLElement | null, root: ParentNode) {
+  const pulse = (className: string, ms = 220) => {
+    const target = control ?? (root instanceof HTMLElement ? root : undefined);
+    if (!target) return;
+    target.classList.remove(className);
+    void target.offsetWidth;
+    target.classList.add(className);
+    window.setTimeout(() => target.classList.remove(className), ms);
+  };
+  if (intent.input === 'press') {
+    control?.classList.toggle('actuated', intent.value === true);
+    if (intent.value === false) window.setTimeout(() => control?.classList.remove('actuated'), 80);
+  }
+  if (intent.input === 'value' && typeof intent.value === 'number') {
+    control?.style.setProperty('--control-value', String(intent.value));
+    pulse('fader-moving', 260);
+  }
+  if (intent.input === 'position' && typeof intent.value === 'number') {
+    control?.style.setProperty('--control-position', String(intent.value));
+    pulse('control-seated', 260);
+  }
+  if (intent.input === 'strain') pulse('control-refusing', 420);
+  if (intent.input === 'step') pulse('digit-tumble', 180);
+  if (intent.input === 'knock') pulse('pipe-knock-pulse', 220);
+  if (intent.input === 'rest') pulse('pipe-rest-pulse', 260);
+  if (intent.input === 'play') pulse('pipe-playback-pulse', 420);
+  if (intent.input === 'clear') pulse('pipe-clear-pulse', 220);
+}
+
+function playControlCue(cue: string, controlId: string) {
+  const cueMap: Record<string, string> = {
+    'button-thunk': 'audio/jog-detent-clunk.wav',
+    'detent-cross': 'audio/jog-detent-clunk.wav',
+    'detent-clunk': 'audio/jog-detent-clunk.wav',
+    'wheel-click': 'audio/jog-detent-clunk.wav',
+    'pipe-knock': 'audio/jog-detent-clunk.wav',
+    'hard-stop': 'audio/tape-hard-stop.wav',
+  };
+  audio.playCue(cueMap[cue] ?? 'audio/jog-detent-clunk.wav', `${controlId}: ${cue}`);
 }
 
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
@@ -460,6 +520,12 @@ function mechanismFrame(title: string, hint: string): HTMLDivElement {
 
 function buildRadioDial(succeed: () => void) {
   const body = mechanismFrame('WAGON RADIO — MANUAL TUNER', 'Drag the dial. Somewhere on the band, the static gives way.');
+  const radioUi = createControlUiEngine({
+    controls: [
+      { id: 'radio.frequency', kind: 'fader', min: 87.5, max: 107.9, value: 98.1, detents: [88.7], animation: 'radio/frequency' },
+      { id: 'radio.lock', kind: 'button', releaseMs: 150, animation: 'radio/lock', audio: 'button-thunk' },
+    ],
+  });
   const readout = document.createElement('p');
   readout.className = 'dial-readout';
   const meter = document.createElement('div');
@@ -474,10 +540,12 @@ function buildRadioDial(succeed: () => void) {
   dial.max = '107.9';
   dial.step = '0.1';
   dial.value = '98.1';
+  dial.dataset.controlId = 'radio.frequency';
   dial.setAttribute('aria-label', 'Tuning dial, megahertz');
   const lock = document.createElement('button');
   lock.type = 'button';
   lock.className = 'dial-lock';
+  lock.dataset.controlId = 'radio.lock';
   lock.textContent = 'LOCK THE STATION';
   const update = () => {
     const frequency = Number(dial.value);
@@ -488,9 +556,12 @@ function buildRadioDial(succeed: () => void) {
     lock.disabled = strength < 0.99;
     lock.textContent = strength < 0.99 ? 'STATIC…' : 'LOCK THE STATION';
   };
-  dial.addEventListener('input', update);
+  dial.addEventListener('input', () => {
+    update();
+    dispatchControl(radioUi, { type: 'setValue', id: 'radio.frequency', value: Number(dial.value) }, body);
+  });
   lock.addEventListener('click', () => {
-    audio.playCue('audio/jog-detent-clunk.wav', 'The tuner locks on.');
+    dispatchControl(radioUi, { type: 'press', id: 'radio.lock' }, body);
     succeed();
   });
   body.append(readout, meter, dial, lock);
@@ -501,10 +572,12 @@ function buildRadioDial(succeed: () => void) {
 
 function buildPadlock(succeed: () => void) {
   const body = mechanismFrame('FIELD GATE PADLOCK', 'Four digits. The field has been counting; the tally knows the order.');
+  const padlockUi = createControlUiEngine({
+    controls: [0, 1, 2, 3].map((index) => ({ id: `padlock.${index}`, kind: 'digitWheel' as const, value: 0, min: 0, max: 9, animation: 'padlock/digit' })),
+  });
   const wheels = document.createElement('div');
   wheels.className = 'padlock-wheels';
   const digits = [0, 0, 0, 0];
-  const displays: HTMLSpanElement[] = [];
   digits.forEach((_, index) => {
     const wheel = document.createElement('div');
     wheel.className = 'padlock-wheel';
@@ -514,21 +587,23 @@ function buildPadlock(succeed: () => void) {
     up.setAttribute('aria-label', `Dial ${index + 1} up`);
     const display = document.createElement('span');
     display.textContent = '0';
+    display.dataset.controlId = `padlock.${index}`;
     const down = document.createElement('button');
     down.type = 'button';
     down.textContent = '▼';
     down.setAttribute('aria-label', `Dial ${index + 1} down`);
     up.addEventListener('click', () => {
-      digits[index] = (digits[index] + 1) % 10;
+      dispatchControl(padlockUi, { type: 'step', id: `padlock.${index}`, delta: 1 }, body);
+      const wheelState = padlockUi.snapshot().controls[`padlock.${index}`];
+      digits[index] = wheelState.kind === 'digitWheel' ? wheelState.value : digits[index];
       display.textContent = String(digits[index]);
-      tumblePadlockDigit(display);
     });
     down.addEventListener('click', () => {
-      digits[index] = (digits[index] + 9) % 10;
+      dispatchControl(padlockUi, { type: 'step', id: `padlock.${index}`, delta: -1 }, body);
+      const wheelState = padlockUi.snapshot().controls[`padlock.${index}`];
+      digits[index] = wheelState.kind === 'digitWheel' ? wheelState.value : digits[index];
       display.textContent = String(digits[index]);
-      tumblePadlockDigit(display);
     });
-    displays.push(display);
     wheel.append(up, display, down);
     wheels.append(wheel);
   });
@@ -554,18 +629,13 @@ function buildPadlock(succeed: () => void) {
   installMomentaryActuation(body);
 }
 
-function tumblePadlockDigit(display: HTMLSpanElement) {
-  display.classList.remove('digit-tumble');
-  void display.offsetWidth;
-  display.classList.add('digit-tumble');
-  window.setTimeout(() => display.classList.remove('digit-tumble'), 180);
-}
-
 function buildKnockPipe(succeed: () => void) {
   const body = mechanismFrame('SERVICE PIPE', 'Answer it the way the static asked. Knock, rest, knock.');
+  const knockUi = createControlUiEngine({ controls: [{ id: 'pipe.echo', kind: 'knockSequence', animation: 'pipe/knock' }] });
   const pattern: number[] = [0]; // counts per group; REST starts a new group
   const tape = document.createElement('p');
   tape.className = 'knock-tape';
+  tape.dataset.controlId = 'pipe.echo';
   const renderTape = () => {
     tape.textContent = pattern.map((count) => '|'.repeat(count)).join('  —  ') || '…';
   };
@@ -584,21 +654,30 @@ function buildKnockPipe(succeed: () => void) {
   clear.textContent = 'WIPE';
   const verdict = document.createElement('p');
   verdict.className = 'mechanism-verdict';
+  const syncPatternFromEngine = () => {
+    const pipeState = knockUi.snapshot().controls['pipe.echo'];
+    if (pipeState.kind !== 'knockSequence') return;
+    pattern.splice(0, pattern.length, ...pipeState.groups);
+  };
   knock.addEventListener('click', () => {
-    pattern[pattern.length - 1] += 1;
-    audio.playCue('audio/jog-detent-clunk.wav', 'Knock.');
+    dispatchControl(knockUi, { type: 'knock', id: 'pipe.echo' }, body);
+    syncPatternFromEngine();
     renderTape();
   });
   rest.addEventListener('click', () => {
-    if (pattern[pattern.length - 1] > 0) pattern.push(0);
+    dispatchControl(knockUi, { type: 'rest', id: 'pipe.echo' }, body);
+    syncPatternFromEngine();
     renderTape();
   });
   clear.addEventListener('click', () => {
-    pattern.splice(0, pattern.length, 0);
+    dispatchControl(knockUi, { type: 'clear', id: 'pipe.echo' }, body);
+    syncPatternFromEngine();
     verdict.textContent = '';
     renderTape();
   });
   playBack.addEventListener('click', () => {
+    dispatchControl(knockUi, { type: 'play', id: 'pipe.echo' }, body);
+    syncPatternFromEngine();
     const groups = pattern.filter((count) => count > 0);
     if (groups.join(',') === '2,1,3') {
       succeed();
@@ -1098,7 +1177,7 @@ function seekWindow(requested: TimeWindow) {
     setTransportMessage(result.reason ?? 'TIMESEEK rejected.');
     return;
   }
-  audio.playCue('audio/jog-detent-clunk.wav', `TIMESEEK detent clunk: ${result.activeWindow}`);
+  dispatchTimeseekControl({ type: 'seat', id: 'deck.timeseek' }, TIME_WINDOWS.indexOf(result.activeWindow));
   state.setActiveWindow(result.activeWindow);
   stage.classList.remove('seek-glitch');
   void stage.offsetWidth;
@@ -1116,6 +1195,7 @@ function settleJogWheel() {
   if (result.event === 'detent' && result.state.seatedWindow && result.state.seatedWindow !== state.snapshot().activeWindow) {
     seekWindow(result.state.seatedWindow);
   } else {
+    if (result.event === 'detent') dispatchTimeseekControl({ type: 'seat', id: 'deck.timeseek' }, result.state.position);
     render();
   }
 }
@@ -1123,6 +1203,24 @@ function settleJogWheel() {
 function jogOptions() {
   const snapshot = state.snapshot();
   return { ...defaultJogWheelOptions, discovered: snapshot.discoveredTimecodes, locked: graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window)) };
+}
+
+function dispatchTimeseekControl(event: ControlUiEvent, position = jogState.position) {
+  const locked = graph.lockedWindows.filter((window) => !state.snapshot().discoveredTimecodes.includes(window));
+  const engine = createControlUiEngine({
+    controls: [
+      {
+        id: 'deck.timeseek',
+        kind: 'wheel',
+        position,
+        min: 0,
+        max: 2,
+        detents: TIME_WINDOWS.map((window, index) => ({ id: window, position: index, locked: locked.includes(window) })),
+        animation: 'wheel/timeseek',
+      },
+    ],
+  });
+  dispatchControl(engine, event, deckControls);
 }
 
 function pointerAngle(event: PointerEvent): number {
@@ -1145,7 +1243,7 @@ function announceHardStop() {
   const now = Date.now();
   if (now - lastHardStopCueAt > 700) {
     lastHardStopCueAt = now;
-    audio.playCue('audio/tape-hard-stop.wav', 'Tape hard-stop kickback at locked 20:26-20:35.');
+    dispatchTimeseekControl({ type: 'rotate', id: 'deck.timeseek', delta: 1 }, 1);
   }
 }
 
