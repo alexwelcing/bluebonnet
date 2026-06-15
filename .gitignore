@@ -5,6 +5,9 @@ dist/
 # Local Netlify folder
 .netlify/
 
+# Claude Code harness scratch (agent worktrees, local session state)
+.claude/
+
 # Agent bridge: machine artifacts, caches, and recon stay local.
 # Production logs that are already tracked (status.md, decisions.md,
 # backlog.md, playthrough.md, AUTONOMOUS_DIRECTIVE.md) remain tracked.
