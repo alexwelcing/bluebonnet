@@ -14,21 +14,21 @@ Authored 2026-06-15 from a full progress review (status.md, backlog.md, feedback
 
 ---
 
-## A. Deck immersion polish (code-only, A1-safe — no generation) — [DISPATCHED → Agent A]
-- [ ] Per-window diegetic overlay wrongness (feedback #4): node-level overlays (VISOR PASS, mile count) become window-keyed so 20:17/20:26 can read mirror-flipped or wrong. Engine support + content + render.
-- [ ] DUB COMPARE discoverability (feedback #5): faint invitation pulse on the COMPARE control at nodes whose wrongness text is non-empty; ends on use.
-- [ ] Stacked lower-left text docking (feedback #7): when a node has both a diegetic overlay and a long caption, dock the overlay (upper-left) so the lower third doesn't crowd.
-- [ ] Tip-line printout enrichment (feedback #6, Side B priority): the thermal exhibit becomes a full night's record — faint, half-rolled-off earlier tips above the crisp line. Composited text only (A1 holds).
+## A. Deck immersion polish (code-only, A1-safe — no generation) — [DONE → merged]
+- [x] Per-window diegetic overlay wrongness (feedback #4): window-keyed overlays added; 3 non-clue instances in act1 (wagon-interior visor mirror-flip, mile-marker miscount, scanner LCD garble) so no puzzle code is affected. `engine/types.ts` + `nodeGraph.ts resolveDiegeticOverlay` + render.
+- [x] DUB COMPARE discoverability (feedback #5): faint pulse on COMPARE at nodes with non-empty wrongness + a second discovered pass; retires on use; captioned + reduced-motion fallback.
+- [x] Stacked lower-left text docking (feedback #7): overlay docks upper-left when a node has both an overlay and a long caption.
+- [x] Tip-line printout enrichment (feedback #6): half-rolled-off ghost tips above the crisp real line; real line stays pixel-accurate (A1 holds).
 
-## B. 360-world architecture gates (A10, code-only) — [DISPATCHED → Agent B]
-- [ ] World-manifest schema + validator (typed, tested): the data contract a real 360 world must satisfy before any viewer ships (authored controls, collision/proxy nav, interaction volumes, tape-window/day transitions).
-- [ ] Volumetric audio math module + tests: distance/falloff/pan/occlusion math the spatial layer needs, independent of any renderer.
-- [ ] No player-facing viewer button (A10 holds). Pure architecture + gates.
+## B. 360-world architecture gates (A10, code-only) — [DONE → merged]
+- [x] World-manifest schema + validator (`engine/worldManifest.ts`): gates navigation (≥2 facings/waypoint, reachability), collision proxies, interaction volumes (positive activation radius), audio emitters, effect zones, ≥2 tape windows. `canPromoteToRuntime()` = all gates pass. Never throws.
+- [x] Volumetric audio math (`engine/volumetricAudio.ts`): clamped distance attenuation (linear/inverse/exp), stereo pan, occlusion factor, `spatialize()`. Pure/deterministic, no Web Audio.
+- [x] No player-facing viewer button (A10 holds). 43 tests; modules importable but unwired.
 
-## C. B7 density production-prep (turn the GEN blocker into "ready to fire") — [DISPATCHED → Agent C]
-- [ ] Author the next Acts I–III density tranches as fully-specified PENDING shotlist entries (A7 multi-reference, plate-anchored, A1-safe prompts) toward A4 targets — without wiring un-backed nodes (keeps build green).
-- [ ] RED/pending test scaffolds describing the target nodes + a one-command runbook so generation + wiring executes the moment budget returns.
-- [ ] Density gap doc: exact node deltas needed per act to hit A4.
+## C. B7 density production-prep (turn the GEN blocker into "ready to fire") — [DONE → merged]
+- [x] 28 PENDING shotlist entries (status regen-pending) across Act I (+5 nodes), Act II (+5), Act III (+4), each with both tape windows, A7 plate-anchored, A1-safe. No un-backed nodes wired (build stays green).
+- [x] `tests/densityPrep.test.ts` (17 tests) gates the prep; `docs/density-prep.md` has the A4 deltas + step-by-step generation→wiring runbook.
+- [x] Node deltas to A4 documented: Act I 14→19 (+11 left), Act II 16→21 (+19 left), Act III 10→14 (+6 left).
 
 ## D. Blocked on generation budget — [BLOCKED:GEN]
 - [ ] Re-roll double-framed / CRT-vignette plates (feedback #1): mile-marker-271 20:17 worst; gate 20:26, field-tally 20:17 mild. Re-segment clue nodes.
