@@ -94,6 +94,19 @@ export function getNodeState(graph: NodeGraph, id: string, window: TimeWindow): 
   };
 }
 
+/**
+ * Per-window diegetic overlay text with node-level fallback — mirrors how
+ * motionLayers resolve (window state takes precedence, node default fills in).
+ * Lets a later tape pass show the readable OSD slightly wrong (mirror-flipped
+ * pass, miscounted mile) while earlier windows keep the canonical line.
+ */
+export function resolveDiegeticOverlay(
+  state: TemporalNodeState | undefined,
+  baseOverlay: string,
+): string {
+  return state?.diegeticOverlay ?? baseOverlay;
+}
+
 export function conditionsMet(conditions: FlagCondition[] | undefined, snapshot: EngineSnapshot): boolean {
   return (conditions ?? []).every((condition) => {
     const expected = condition.equals ?? true;

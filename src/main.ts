@@ -3,7 +3,7 @@ import { createControlUiEngine } from '../engine/controlUiEngine';
 import type { ControlUiEngine, ControlUiEvent, ControlUiIntent } from '../engine/controlUiEngine';
 import { clipPathWithinBounds, polygonBounds, svgPointsWithinBounds } from '../engine/hotspotGeometry';
 import { createJogWheelState, defaultJogWheelOptions, dragJogWheel, seatNearestDetent, stepJogWheel } from '../engine/jogWheel';
-import { conditionsMet, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveHotspotTarget } from '../engine/nodeGraph';
+import { conditionsMet, getNode, getNodeState, loadNodeGraph, nearestDefinedWindow, resolveDiegeticOverlay, resolveHotspotTarget } from '../engine/nodeGraph';
 import { createPuzzleProgression } from '../engine/puzzle';
 import { clearSnapshot, loadSnapshot, saveSnapshot } from '../engine/save';
 import { createStateMachine } from '../engine/stateMachine';
@@ -99,6 +99,7 @@ app.innerHTML = `
         <p class="timeseek-help"></p>
       </div>
       <button class="compare" type="button" aria-pressed="false" title="Hold to superimpose the other tape pass over this frame">DUB COMPARE — HOLD (C)</button>
+      <span id="compare-invite-note" class="sr-only">This frame has a second tape pass. Hold DUB COMPARE to see what moved.</span>
       <label class="tracking-control">
         <span class="control-title">TRACKING <em class="control-hint">noise up — evidence shimmers</em></span>
         <input class="intensity" type="range" min="0" max="1" step="0.01" />
@@ -346,8 +347,25 @@ function render() {
   } else {
     inset?.remove();
   }
-  diegeticText.textContent = diegeticOverlay(snapshot.currentNodeId);
+  // Per-window OSD: the wrongness rule reaches the readable text. A later pass
+  // can mirror-flip the visor pass or miscount the mile; earlier windows keep
+  // the canonical line (resolveDiegeticOverlay falls back to the node default).
+  diegeticText.textContent = resolveDiegeticOverlay(nodeState, diegeticOverlay(snapshot.currentNodeId));
   diegeticText.hidden = diegeticText.textContent === '';
+  // Stacked text relief (playtest #7): when a node carries BOTH an overlay and
+  // a long caption, the lower third crowds — dock the overlay to upper-left.
+  const longCaption = snapshot.captionsEnabled && nodeState.caption.length >= 82;
+  diegeticText.classList.toggle('diegetic-docked', !diegeticText.hidden && longCaption);
+
+  // DUB COMPARE invitation (playtest #5): pulse the control only where the two
+  // passes diverge (wrongness text present) so the mechanic teaches itself; the
+  // pulse stops the moment compare is used here, or anywhere reduced-motion asks.
+  const wrongnessHere = Boolean(nodeState.wrongness && nodeState.wrongness.trim() !== '');
+  const comparePassAvailable = Boolean(compareCandidateWindow());
+  const inviteCompare =
+    !sideMode && wrongnessHere && comparePassAvailable && !compareActive && !comparedNodes.has(snapshot.currentNodeId);
+  compareButton.classList.toggle('compare-invite', inviteCompare);
+  compareButton.setAttribute('aria-describedby', inviteCompare ? 'compare-invite-note' : '');
   const lockedWindows = graph.lockedWindows.filter((window) => !snapshot.discoveredTimecodes.includes(window));
   timeseekHelp.textContent =
     helpOverride ??
@@ -817,6 +835,9 @@ function playTransition(fromNodeId: string, toNodeId: string, finish: () => void
 // moved between passes glow while everything stable goes dark.
 let compareActive = false;
 let compareContext = '';
+// Nodes where the player has already used DUB COMPARE — the invitation pulse
+// retires here once it has taught its lesson.
+const comparedNodes = new Set<string>();
 
 function compareCandidateWindow(): TimeWindow | undefined {
   const snapshot = state.snapshot();
@@ -839,6 +860,9 @@ function startCompare() {
   const otherState = getNodeState(graph, snapshot.currentNodeId, other);
   compareActive = true;
   compareContext = `${snapshot.currentNodeId}|${snapshot.activeWindow}`;
+  // The invitation has been answered here; stop pulsing this node forever.
+  comparedNodes.add(snapshot.currentNodeId);
+  compareButton.classList.remove('compare-invite');
   // The dub pass has its own tape: wow-and-flutter while held.
   try {
     compareWarble = new Audio(ambienceManifest.compareLoop.src);
@@ -855,6 +879,7 @@ function startCompare() {
   stage.classList.add('comparing');
   setTransportMessage(`DUB COMPARE: ${snapshot.activeWindow} OVER ${other} — what moved glows.`);
   audio.playCue('audio/jog-detent-clunk.wav', 'Dub compare engaged.');
+  render(); // refresh the retired invitation (class + aria) for this node
 }
 
 let compareWarble: HTMLAudioElement | undefined;
@@ -872,6 +897,12 @@ function endCompare() {
   compareLayer.removeAttribute('src');
   compareButton.setAttribute('aria-pressed', 'false');
   stage.classList.remove('comparing');
+  // The invitation was answered on this node; keep it retired without a full
+  // re-render (render() may call endCompare(), so recursing would be unsafe).
+  if (comparedNodes.has(state.snapshot().currentNodeId)) {
+    compareButton.classList.remove('compare-invite');
+    compareButton.setAttribute('aria-describedby', '');
+  }
 }
 
 compareButton.addEventListener('pointerdown', startCompare);
@@ -1247,6 +1278,17 @@ function announceHardStop() {
   }
 }
 
+// The thermal tip-line ran all night before Dana's line printed. These faint,
+// half-rolled-off transcripts sit above the real line as printout texture
+// (playtest #6). Top-most is the most rolled off; the real line stays the only
+// crisp, pixel-accurate, story-critical text. A1: all DOM-composited.
+const EARLIER_TIPLINE_PRINTS = [
+  '…— SAW LIGHTS OUT BY THE OLD GIN — 19:4',
+  '19:51  CALLER WOULD NOT GIVE A NAME. SAID THE FIELD IS LOUDER AFTER DARK.',
+  '20:02  HUNG UP. STATIC ON THE LINE FOR 40 SECONDS, THEN NOTHING.',
+  '20:09  NO CALLER. THE TIP LINE PRINTED ANYWAY.',
+];
+
 function diegeticOverlay(nodeId: string): string {
   if (nodeId === 'wagon-interior') return 'VISOR PASS // PRESS — D. REYES — KBLN 88.7';
   if (nodeId === 'mile-marker-271') return 'FM 1187 // MILE 271 // MIRASOL 4';
@@ -1294,10 +1336,22 @@ function openExhibit(hotspot: HotspotDefinition) {
     leftFeed.className = 'tractor-feed-left';
     const rightFeed = document.createElement('div');
     rightFeed.className = 'tractor-feed-right';
+    // The line ran all night: faint, half-rolled-off earlier tips above the
+    // real one sell the long vigil without ever competing with the clue. All
+    // composited text (A1) — the runtime types every readable character.
+    const priorTips = document.createElement('div');
+    priorTips.className = 'tipline-prior';
+    priorTips.setAttribute('aria-hidden', 'true'); // ambience, not clue text
+    for (const line of EARLIER_TIPLINE_PRINTS) {
+      const ghost = document.createElement('pre');
+      ghost.className = 'tipline-ghost';
+      ghost.textContent = line;
+      priorTips.append(ghost);
+    }
     const body = document.createElement('pre');
     body.className = 'dot-matrix-line';
     body.textContent = sourceText;
-    exhibitPaper.replaceChildren(leftFeed, rightFeed, title, body);
+    exhibitPaper.replaceChildren(leftFeed, rightFeed, title, priorTips, body);
   } else {
     title.textContent = 'INTERVIEW RECORDER COUNTER';
     const body = document.createElement('pre');

@@ -201,6 +201,7 @@
           "still": "stills/act1/wagon-interior__2017-2026.jpg",
           "caption": "The flyer has curled toward the radio. 88.7 FM is also scratched into the sun visor.",
           "wrongness": "The same flyer points at the radio now; nobody touched it.",
+          "diegeticOverlay": "7.88 NLBK — SEYER .D — SSERP // SSAP ROSIV",
           "hotspots": [
             {
               "id": "out",
@@ -694,6 +695,7 @@
           "still": "stills/act1/mile-marker-271__2017-2026.jpg",
           "caption": "The marker leans toward the field. 20:17 ghosts across the reflective numbers.",
           "wrongness": "The pole leans; the numbers reflect a time that should already be gone.",
+          "diegeticOverlay": "FM 1187 // MILE 217 // MIRASOL 0",
           "hotspots": [
             {
               "id": "back",
@@ -1179,6 +1181,7 @@
           "still": "stills/act1/scanner-radio__2017-2026.jpg",
           "caption": "The radio backlight pulses in time with the tracking band.",
           "wrongness": "The LED pulses even with the ignition key absent.",
+          "diegeticOverlay": "LCD // MF 7.88",
           "hotspots": [
             {
               "id": "interior",
