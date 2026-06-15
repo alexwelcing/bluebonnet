@@ -65,6 +65,11 @@ export interface TemporalNodeState {
   motionLayers?: MotionLayer[];
   /** Per-window ambient bed override — the same place can sound wronger. */
   ambientAudio?: string;
+  /** Per-window diegetic OSD override (visor pass, mile count, LCD). When set,
+   * this window's overlay replaces the node-level default so the wrongness rule
+   * can reach the readable text — a later pass can mirror-flip or miscount it.
+   * A1: still DOM-composited text, never generated. */
+  diegeticOverlay?: string;
 }
 
 export interface MotionLayer {
