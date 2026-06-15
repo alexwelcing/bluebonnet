@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "An analog-horror puzzle mystery played through a recovered Texas DPS dashcam tape.",
+  "description": "An analog-horror puzzle mystery played through a vanished journalist's recovered Hi8 tape with nine missing minutes.",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "npm run lint:shotlist && tsc --noEmit && vite build",
