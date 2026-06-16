@@ -1344,3 +1344,188 @@ Next:
 
 Blockers:
 - None.
+
+## 2026-06-16T04:18:00+00:00 — Mega-hook vision + deck foley vocabulary (refinement loop slice 1)
+
+Direction:
+- Wrote `.bridge/director/mega_hook_vision.md` — editor's-pass diagnosis of why the
+  built-but-unrefined game lacks a viral hook, and a $20 execution order. Thesis: the
+  machine is done; nobody has performed it yet. Two latent postable moments (the
+  wrongness reveal; Side B "the tape is showing my room"); five things dulling them.
+
+Changed (slice 1 — the signature control UI was sonically mute):
+- `engine/audioMixer.ts`: added a synthesized deck-foley vocabulary (`playFoley`,
+  `FoleyKind`). Procedural Web Audio transients (band-passed tick + decaying body),
+  zero assets, dry to master: button / button-release / tick / detent / detent-heavy /
+  latch / latch-open / refuse. Honors the existing dry-deck vs wet-tape split.
+- `src/main.ts`: routed every deck control gesture through distinct foley instead of
+  one reused `jog-detent-clunk.wav`; padlock-open → `latch-open` (multi-stage
+  shackle→spring→fall), dub-compare → `latch`. Captions unchanged.
+- TDD: 2 new audioMixer tests (assetless foley cue logged; survives mute for captions).
+
+Verified:
+- `npm run gate` green: typecheck, 96 Vitest tests (was 94), A1 lint 101 plates, build.
+- Bridge preview refreshed from dist.
+
+Next (refinement loop slice 2): boot into the image, not the cockpit — deck drawer
+starts closed, first recovered frame breathes first, controls become a reward (fix #1).
+Then conducted cold-open transport foley (fix #2/#3), one hero beat per act (the spend),
+the ejected end-frame (fix #5).
+
+Blockers: none. FAL balance still the constraint for purchased audio; slice 1 spent $0.
+
+## 2026-06-16T04:30:00+00:00 — UX swarm board + Slice 1 "boot into the image" (refinement loop)
+
+Swarm:
+- Ran the bluebonnet-ux-swarm workflow: 8 parallel read-only UX observers (one per
+  player-experience surface) + integrator → `.bridge/director/ux_refinement_board.md`,
+  a deduped, leverage-ranked board of $0 and spend slices mapped to the mega-hook vision.
+  Caught real dead code (unused button-release path, unreachable REFUSALS copy in
+  puzzle.ts, Side B reveal gated behind captions, .hotspot-label never painting).
+
+Changed (Slice 1 — highest-leverage, flagged by 6/8 observers):
+- Deck now boots CLOSED: dropped `panel-open`/`open` initial classes, `aria-expanded=false`
+  (`src/main.ts`). First recovered frame breathes alone; the cockpit is a reward.
+- One-time `hintPanelToggle()` pulse teaches the DECK toggle exists after the prelude
+  (fresh tape) or immediately (returning player); cleared on first open; reduced-motion
+  falls back to a static glow.
+- Tightened the boot card to title + spine + WEAR HEADPHONES + INSERT TAPE; cut "MOST OF
+  THIS TAPE IS AIR" from first contact (lowered a stranger's expectation). New CSS for
+  `.boot-spine`/`.boot-note`/`.panel-toggle.hint`.
+- TDD: new evidenceDeck test asserts boot-closed + toggle-opens-on-reach.
+
+Verified: `npm run gate` green — typecheck, 97 tests (was 96), A1 lint 101 plates, build.
+Preview refreshed.
+
+Next (loop): Slice 2 — wire the already-shipped foley vocabulary into the rest of the
+deck (refusal swap off legacy wav, button foley on all deck buttons, fader notch ticks,
+DUB COMPARE release, jog scrub). All $0 wiring.
+
+Blockers: none. $0 spent so far; hero-beat audio stems remain the only director-approval spend.
+
+## 2026-06-16T04:36:00+00:00 — Slice 2 "deck feel & sound" foley wiring (refinement loop)
+
+Changed (all $0 — wiring the already-shipped synthesis, no new assets):
+- All three refusals now synthesized `refuse` (damped non-event) instead of the shared
+  `tape-hard-stop.wav`: jog-wheel locked-window kickback, padlock wrong code, knock-pipe
+  wrong rhythm. `tape-hard-stop.wav` is no longer referenced anywhere.
+- Every plain deck button now sounds a `button` press via `installMomentaryActuation`
+  (BOOKMARK, REPLAY, CREDITS, REWIND, cue buttons, close/step-back); controls that own a
+  more specific foley (jog detent, compare latch, drawer, tape transport) are excluded so
+  nothing double-fires.
+- The drawer is a mechanism: `setPanelOpen` seats open (`detent`) and eases shut
+  (`button-release`).
+- DUB COMPARE now has a release (`button-release`) to match its engage latch.
+- Faders (TRACKING/VOLUME) tick across each notch (`tick`), throttled to value steps so
+  it's a row of detents, not a buzz.
+- CAPTIONS toggle snaps as a `latch`.
+
+Verified: `npm run gate` green — typecheck, 97 tests, A1 lint 101 plates, build. The
+evidenceDeck integration tests exercise these button paths, so the wiring is proven
+non-throwing end to end. Preview refreshed.
+
+Next (loop): Slice 3 — spatial legibility (always-on nav affordance not gated on TRACKING,
+$0 CSS fallback transitions for uncovered edges, "you are here" tag, persistent back-
+chevron). Then Slice 4/5 hero-beat staging ($0) before any spend.
+
+Blockers: none. $0 spent; hero-beat audio stems remain the only director-approval spend.
+
+## 2026-06-16T04:50:00+00:00 — Slice "found-object frame polish" + spatial swarm in flight (refinement loop)
+
+In flight:
+- bluebonnet-spatial-continuity workflow running: 7 visual observers actually READ the
+  102 stills cluster-by-cluster, cross-referenced against the node adjacency I extracted
+  to `.bridge/spatial_context.json`, judging edge coherence (does "turn left -> X" match?),
+  window-pair continuity, and the Act I hub / Act II maze orientation risk. Integrator will
+  write `.bridge/director/spatial_continuity_priority.md` (ranked realign/reshoot list).
+
+Changed (slice — $0 CSS, the board's "single biggest stops-a-thumb touch"):
+- Live `.tape-stage` now has a real CRT vignette (`::after`, corners fall to black, center
+  clean, strength rides `--vhs-intensity`) + subtle bulge `border-radius`. The prelude had
+  this; the game didn't. Every postable frame renders through it now.
+- Diegetic story text is burned into the tape instead of a bordered tooltip: dropped the
+  box/border, bare phosphor type, stronger chroma split, faint OSD flicker (reduced-motion
+  disables the flicker). Timestamp + diegetic text raised above the vignette so they stay
+  readable.
+
+Verified: `npm run gate` green — typecheck, 97 tests, A1 lint, build. Preview refreshed.
+(Visual-only change; gate proves no regression — a true look needs a browser screenshot.)
+
+Next (loop): integrate the spatial-continuity board when it lands → surface the orientation-
+critical "do-first" shots and the ~$20 regeneration shortlist for director approval before
+generating. Meanwhile remaining $0 slices: spatial legibility affordances, hero-beat staging.
+
+Blockers: none. $0 spent.
+
+## 2026-06-16T05:05:00+00:00 — Spatial continuity board landed (visual swarm)
+
+- `.bridge/director/spatial_continuity_priority.md` written: 7 visual observers read all
+  102 stills, 67 verdicts. Tally: 5 reshoot, 21 realign, 18 window-pair breaks, 41 keep.
+- SYSTEMIC ROOT CAUSE: the 2017-2026 (c2) second-window layer repeatedly drifts
+  cool/wide/hilly/desert/fisheye away from the warm-flat-dusk c1 canon. A batch c2→c1
+  realign across the Act I shoulder + Act II spine clears most window-pair breaks.
+- Real defects caught: readable blue TX plate on wagon-exterior (A1 violation), Pacific-NW
+  mountains/forest (field-threshold-look-up, prelude-dash), pink cosmos in the bluebonnet
+  culvert (echo-chamber), the climax car facing 180° wrong (near-car vs nine-field-threshold),
+  prelude-field reading as a Side B night view.
+- ECONOMICS: image gen = $0.03/candidate (flux-2-pro); full fix ≈ $3-5 of the $20. The
+  exhausted balance only blocks $1.30 Veo video, not stills. Generation pipeline:
+  tools/generateStills.mjs gen <act> → curate → install <filename> <candidateIndex>.
+- Awaiting director decision on regeneration scope before any paid generation (canon A7:
+  supervised, no blind batches).
+
+## 2026-06-16T05:20:00+00:00 — Spatial regeneration underway (image-to-image, director-approved all-26)
+
+Approach (per Alex: "you can do image to image / image as inspiration"):
+- Confirmed fal-ai/flux-2-pro/edit works ($0.04/img) and PRESERVES the reference
+  composition while shifting only the prompted wrongness (validated on wagon-exterior:
+  twin's exact framing kept, dusk deepened to blue-violet). Far stronger continuity than
+  text-to-image — the whole point of the fix.
+- Prompt-rewrite swarm (4 agents) drafted 31 corrected, continuity-safe prompts for the
+  26 flagged nodes (both windows where needed) → /tmp/spatial_drafts.json.
+- New tool tools/regenSpatial.mjs: regenerates each flagged shot via image-to-image
+  CONDITIONED on its correct twin (c2-from-twin) or a correct neighbour anchor
+  (both/reshoot) — every anchor is a stable correct plate, never a shot being regen'd.
+  Writes assets/candidates/ + contact sheets (anchor | candidates), stamps corrected
+  prompts into shotlist.json. Runtime stills untouched until supervised install.
+- Running: 31 shots x 4 candidates (~$5 of $20). Smoke tests so far ~$0.11.
+
+Next: curate best candidate per shot (continuity-first), install via
+`generateStills.mjs install <file> <i>`, gate (A1 lint + tests + build), refresh preview;
+Alex reviews at the browser surface before any deploy (supervision rule).
+
+Blockers: none. Image gen funded; video still the only exhausted lane.
+
+## 2026-06-16T05:40:00+00:00 — Spatial regen candidates complete; curation swarm running
+
+- All 31 flagged shots regenerated via image-to-image (flux-2-pro/edit) conditioned on
+  their correct twin/anchor: 30 have 4 fresh candidates, culvert-pipe has 2 (content
+  checker probabilistically rejects that culvert/pipe combo ~50% regardless of wording).
+- Caught + fixed a resume bug that reused stale June-13 candidates; purged 93, regenerated.
+- Spatial spend so far ≈ $4.9 of $20 (ledger $124.36).
+- Curation swarm (7 vision agents) live: pick best candidate per shot, continuity-first
+  (match anchor geography/horizon/light, intended change present, canon-clean).
+- Next: install picks (generateStills install), A1 lint + gate, refresh preview, present
+  before/after for Alex to review at the browser surface before deploy.
+
+## 2026-06-16T05:55:00+00:00 — Spatial continuity pass COMPLETE (31 plates realigned, gated)
+
+- Curation swarm (7 vision agents) picked the best image-to-image candidate per shot,
+  continuity-first; 31/31 acceptable (avg confidence 0.76, zero "none"). Good canon catches:
+  rejected candidates with readable scanner displays, a stray camera body, fisheye warp,
+  literal clock faces, an embedded figure-photo.
+- Installed all 31 picks into runtime (public/stills + assets masters) via generateStills
+  install; provenance + curation logged in shotlist.json.
+- Fixed 2 B7 density-provenance test regressions (re-added 'multi-reference plate-anchored
+  edit' marker to field-threshold-look-up + culvert-throat-wall-closeup 2017-2026 prompts).
+- GATE GREEN: typecheck, 97 tests, A1 lint 101 clean plates, build. Preview refreshed.
+- Visually reviewed hero plates: wagon-exterior c2 (deeper dusk, same composition, blank
+  plate — teleport fixed), near-car (rear 3/4, red lamps facing away, biased left — the
+  180deg climax flip fixed). Both canon-clean.
+- Spatial spend total: $124.44 - $119.49 = ~$4.95 of the $20. Video lane still untouched.
+
+Status: NOT yet deployed. Awaiting Alex's browser-surface review of the 31 new plates
+before `netlify deploy --prod` (supervision rule). Working tree has 31 plate changes +
+shotlist provenance + the foley/boot/frame-polish code from earlier slices, all uncommitted.
+
+Next (loop): more $0 UX slices, or deploy on Alex's go.
