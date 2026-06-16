@@ -197,6 +197,51 @@ button, input { font: inherit; }
   opacity: max(calc((var(--vhs-intensity) - var(--assist-threshold)) * 2.2), 0.45);
 }
 
+/* Navigation legibility (Myst "you can go here"): nav hotspots carry a faint
+   resting chevron — NOT gated on TRACKING — that brightens on hover/focus so the
+   world reads as navigable before the player touches anything. */
+.hotspot-nav::before {
+  position: absolute;
+  pointer-events: none;
+  color: rgba(175, 255, 205, 0.9);
+  font-size: clamp(14px, 1.6vw, 20px);
+  line-height: 1;
+  opacity: 0.16;
+  text-shadow: 0 0 6px rgba(125, 255, 174, 0.6);
+  transition: opacity 320ms ease;
+}
+.hotspot-nav:hover::before,
+.hotspot-nav:focus-visible::before { opacity: 0.9; }
+.nav-left::before    { content: '\2039'; left: 5%; top: 50%; transform: translateY(-50%); }
+.nav-right::before   { content: '\203A'; right: 5%; top: 50%; transform: translateY(-50%); }
+.nav-up::before      { content: '\2303'; top: 7%; left: 50%; transform: translateX(-50%); }
+.nav-down::before    { content: '\2304'; bottom: 7%; left: 50%; transform: translateX(-50%); }
+.nav-forward::before { content: '\25C7'; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.nav-back::before    { content: '\21A9'; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.85em; }
+
+/* One elegant destination readout (a single overlay, not per-hotspot, to dodge
+   the clip-path that hides labels inside the silhouette). */
+.hotspot-hint {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 5;
+  max-width: 70%;
+  padding: 0.2rem 0.7rem;
+  font-size: clamp(0.66rem, 1.05vw, 0.9rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(212, 247, 226, 0.95);
+  background: rgba(2, 8, 5, 0.42);
+  text-shadow: 1.5px 0 rgba(255, 0, 40, 0.32), -1.5px 0 rgba(0, 225, 255, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+.hotspot-hint.show { opacity: 1; }
+
 .scanlines {
   background: repeating-linear-gradient(to bottom, rgba(255,255,255,calc(var(--vhs-intensity) * 0.08)) 0, rgba(255,255,255,calc(var(--vhs-intensity) * 0.08)) 1px, rgba(0,0,0,calc(var(--vhs-intensity) * 0.18)) 2px, rgba(0,0,0,calc(var(--vhs-intensity) * 0.18)) 4px);
   mix-blend-mode: overlay;

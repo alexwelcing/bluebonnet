@@ -2,7 +2,7 @@
 
 An analog-horror puzzle mystery in the Myst/Riven lineage, played entirely through a recovered evidence deck: a CRT, a VCR, and one Hi8 tape with nine missing minutes.
 
-**Play it:** https://bluebonnet-tape.netlify.app
+**Play it:** https://bluebonnet.netlify.app
 
 > April 12, 1998. Dana Reyes — independent journalist, sole voice of the late-night tip line on 88.7 KBLN, community radio for Mirasol, Texas — has spent five weeks investigating the disappearance of Lena Ortiz. Tonight her station wagon is found idling on the shoulder of FM 1187 at mile marker 271: doors open, dash-mounted camcorder running, bluebonnets blooming hard out of season. Dana is never found. The tape has nine missing minutes. Decades later her evidence box lands on your desk with a VCR and a note in her handwriting: the tape is not just footage.
 

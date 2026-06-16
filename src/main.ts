@@ -68,6 +68,7 @@ app.innerHTML = `
         <div class="diegetic-text" aria-live="off"></div>
         <div class="timestamp" aria-live="off"></div>
         <p class="caption" aria-live="polite"></p>
+        <p class="hotspot-hint" aria-hidden="true"></p>
       </div>
     </div>
     <button class="panel-toggle" type="button" aria-expanded="false" aria-controls="deck-controls" title="Toggle the deck panel (D)">DECK ▤</button>
@@ -151,6 +152,7 @@ const stage = app.querySelector<HTMLDivElement>('.tape-stage')!;
 const still = app.querySelector<HTMLImageElement>('.scene-still')!;
 const motionLayerStack = app.querySelector<HTMLDivElement>('.motion-layer-stack')!;
 const hotspotLayer = app.querySelector<HTMLDivElement>('.hotspot-layer')!;
+const hotspotHint = app.querySelector<HTMLParagraphElement>('.hotspot-hint')!;
 const title = app.querySelector<HTMLHeadingElement>('h1')!;
 const caption = app.querySelector<HTMLParagraphElement>('.caption')!;
 const wrongness = app.querySelector<HTMLParagraphElement>('.wrongness')!;
@@ -429,6 +431,18 @@ function render() {
       if (locked) button.classList.add('hotspot-locked');
       button.dataset.hotspotId = hotspot.id;
       button.title = hotspot.label;
+      // Navigation legibility (Myst "you can go here"): a faint resting chevron
+      // in the move direction, and the destination label on hover/focus.
+      const isNav = Boolean(hotspot.target) && !hotspot.clueHighlight && !locked;
+      if (isNav) {
+        button.classList.add('hotspot-nav', `nav-${directionFromLabel(hotspot.label)}`);
+        const showHint = () => { hotspotHint.textContent = hotspot.label; hotspotHint.classList.add('show'); };
+        const hideHint = () => { hotspotHint.classList.remove('show'); };
+        button.addEventListener('pointerenter', showHint);
+        button.addEventListener('pointerleave', hideHint);
+        button.addEventListener('focus', showHint);
+        button.addEventListener('blur', hideHint);
+      }
       const bounds = polygonBounds(hotspot.polygon);
       button.style.left = `${bounds.minX}%`;
       button.style.top = `${bounds.minY}%`;
