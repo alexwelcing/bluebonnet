@@ -46,4 +46,17 @@ describe('audio mixer', () => {
     expect(mixer.snapshot().tapeIntensity).toBe(0.4);
   });
 
+  it('records synthesized deck foley as an assetless cue', () => {
+    const mixer = createAudioMixer();
+    mixer.playFoley('latch-open', 'The padlock falls open.');
+    expect(mixer.snapshot().cues).toContainEqual({ source: 'foley:latch-open', caption: 'The padlock falls open.' });
+  });
+
+  it('still logs foley while muted so captions survive without sound', () => {
+    const mixer = createAudioMixer();
+    mixer.setMuted(true);
+    mixer.playFoley('button', 'DECK: press');
+    expect(mixer.snapshot().cues).toContainEqual({ source: 'foley:button', caption: 'DECK: press' });
+  });
+
 });

@@ -7,6 +7,22 @@
 // the recording. Where Web Audio is unavailable (jsdom, ancient browsers)
 // the engine falls back to plain media elements with identical bookkeeping.
 
+/**
+ * Synthesized deck foley — the machine in the room, not the recording. Each kind
+ * is a procedurally generated transient (no asset fetch), so the signature control
+ * UI has a real tactile vocabulary: a button press is not a fader detent is not a
+ * padlock falling open. Deck foley is dry (→ master); world sound stays on the tape.
+ */
+export type FoleyKind =
+  | 'button'
+  | 'button-release'
+  | 'tick'
+  | 'detent'
+  | 'detent-heavy'
+  | 'latch'
+  | 'latch-open'
+  | 'refuse';
+
 export interface EventOptions {
   gain?: number;
   /** Static stereo position -1..1; when panTo is set, sweeps pan → panTo. */
@@ -20,6 +36,8 @@ export interface EventOptions {
 export interface AudioMixer {
   setAmbient(source: string | undefined, ambientLevel?: number): void;
   playCue(source: string, caption?: string, gain?: number): void;
+  /** Synthesized deck control foley — no asset, dry, distinct per gesture. */
+  playFoley(kind: FoleyKind, caption?: string, gain?: number): void;
   playEvent(source: string, options?: EventOptions): void;
   setMuted(muted: boolean): void;
   setVolume(volume: number): void;
@@ -97,6 +115,13 @@ export function createAudioMixer(): AudioMixer {
       cues.push({ source, caption });
       if (muted) return;
       (webAudio ?? fallback)?.playCue(source, clampUnit(volume * gain, 0.7));
+    },
+    playFoley(kind: FoleyKind, caption?: string, gain = 1) {
+      cues.push({ source: `foley:${kind}`, caption });
+      if (muted) return;
+      // Synthesis needs Web Audio; the element fallback (jsdom) keeps the deck
+      // quiet but the cue is already logged for captions and the test contract.
+      webAudio?.playFoley(kind, clampUnit(volume * gain, 0.7));
     },
     playEvent(source: string, options: EventOptions = {}) {
       cues.push({ source, caption: options.caption });
@@ -302,6 +327,10 @@ function createWebAudioBackend() {
         source.start();
       });
     },
+    playFoley(kind: FoleyKind, gain: number) {
+      if (!ensureContext()) return;
+      synthFoley(context!, master, kind, gain);
+    },
     playEvent(src: string, gain: number, options: EventOptions) {
       if (!ensureContext()) return;
       void load(src).then((buffer) => {
@@ -334,6 +363,111 @@ function createWebAudioBackend() {
       duckGain.gain.setTargetAtTime(level, context.currentTime, seconds);
     },
   };
+}
+
+// --- deck foley synthesis -----------------------------------------------------
+//
+// Every deck control gets its own transient instead of one shared clunk. A foley
+// hit is built from two ingredients scheduled against a dry destination: a
+// band-passed noise *tick* (the contact transient) and a fast-decaying *body*
+// (the mass behind it). Composing them differently is the whole vocabulary.
+
+let foleyNoiseBuffer: AudioBuffer | undefined;
+function foleyNoise(context: AudioContext): AudioBuffer {
+  if (!foleyNoiseBuffer || foleyNoiseBuffer.sampleRate !== context.sampleRate) {
+    foleyNoiseBuffer = makeNoise(context, 0.3);
+  }
+  return foleyNoiseBuffer;
+}
+
+function foleyTick(
+  context: AudioContext,
+  dest: AudioNode,
+  when: number,
+  freq: number,
+  q: number,
+  dur: number,
+  level: number,
+): void {
+  const src = context.createBufferSource();
+  src.buffer = foleyNoise(context);
+  const bp = context.createBiquadFilter();
+  bp.type = 'bandpass';
+  bp.frequency.value = freq;
+  bp.Q.value = q;
+  const g = context.createGain();
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.exponentialRampToValueAtTime(Math.max(level, 0.0002), when + 0.001);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+  src.connect(bp);
+  bp.connect(g);
+  g.connect(dest);
+  src.start(when);
+  src.stop(when + dur + 0.02);
+}
+
+function foleyBody(
+  context: AudioContext,
+  dest: AudioNode,
+  when: number,
+  freq: number,
+  dur: number,
+  level: number,
+  type: OscillatorType = 'triangle',
+): void {
+  const osc = context.createOscillator();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, when);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(freq * 0.55, 20), when + dur);
+  const g = context.createGain();
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.exponentialRampToValueAtTime(Math.max(level, 0.0002), when + 0.004);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+  osc.connect(g);
+  g.connect(dest);
+  osc.start(when);
+  osc.stop(when + dur + 0.02);
+}
+
+function synthFoley(context: AudioContext, dest: AudioNode, kind: FoleyKind, gain: number): void {
+  const t = context.currentTime + 0.001;
+  const v = Math.max(0, Math.min(1, gain));
+  switch (kind) {
+    case 'button': // a switch pressed: bright contact + a little mass
+      foleyTick(context, dest, t, 2200, 6, 0.05, 0.5 * v);
+      foleyBody(context, dest, t, 150, 0.09, 0.5 * v);
+      break;
+    case 'button-release': // the spring returns: higher, quieter, shorter
+      foleyTick(context, dest, t, 3000, 8, 0.03, 0.28 * v);
+      foleyBody(context, dest, t, 190, 0.05, 0.22 * v);
+      break;
+    case 'tick': // a fader notch / wheel cross: a single light grain
+      foleyTick(context, dest, t, 2600, 9, 0.025, 0.35 * v);
+      break;
+    case 'detent': // a knock seated solidly
+      foleyTick(context, dest, t, 1800, 5, 0.04, 0.5 * v);
+      foleyBody(context, dest, t, 130, 0.07, 0.45 * v);
+      break;
+    case 'detent-heavy': // the jog wheel clunks home: low and weighty
+      foleyTick(context, dest, t, 1400, 4, 0.06, 0.6 * v);
+      foleyBody(context, dest, t, 95, 0.13, 0.6 * v, 'sine');
+      break;
+    case 'latch': // an over-centre toggle: two clicks snapping past each other
+      foleyTick(context, dest, t, 2400, 7, 0.02, 0.4 * v);
+      foleyTick(context, dest, t + 0.028, 3200, 9, 0.02, 0.5 * v);
+      foleyBody(context, dest, t + 0.028, 170, 0.06, 0.3 * v);
+      break;
+    case 'latch-open': // a padlock giving way: shackle ting → spring → body fall
+      foleyTick(context, dest, t, 4200, 12, 0.05, 0.45 * v);
+      foleyBody(context, dest, t, 900, 0.12, 0.18 * v, 'sine');
+      foleyTick(context, dest, t + 0.06, 1600, 3, 0.12, 0.3 * v);
+      foleyBody(context, dest, t + 0.16, 110, 0.18, 0.5 * v, 'sine');
+      break;
+    case 'refuse': // it will not move: a dead, damped non-event, no bright contact
+      foleyTick(context, dest, t, 300, 1.2, 0.05, 0.18 * v);
+      foleyBody(context, dest, t, 78, 0.16, 0.5 * v, 'sine');
+      break;
+  }
 }
 
 function makeNoise(context: AudioContext, seconds: number): AudioBuffer {

@@ -1,4 +1,4 @@
-import { createAudioMixer } from '../engine/audioMixer';
+import { createAudioMixer, type FoleyKind } from '../engine/audioMixer';
 import { createControlUiEngine } from '../engine/controlUiEngine';
 import type { ControlUiEngine, ControlUiEvent, ControlUiIntent } from '../engine/controlUiEngine';
 import { clipPathWithinBounds, polygonBounds, svgPointsWithinBounds } from '../engine/hotspotGeometry';
@@ -40,13 +40,13 @@ if (!app) {
 }
 
 app.innerHTML = `
-  <section class="evidence-deck panel-open" aria-label="Evidence Deck CRT and VCR interface">
+  <section class="evidence-deck" aria-label="Evidence Deck CRT and VCR interface">
     <div class="boot-screen" role="dialog" aria-label="Insert tape boot screen">
       <div class="boot-card">
         <p class="boot-eyebrow">REYES ARCHIVE — MIRASOL, TX</p>
         <h2>BLUEBONNET</h2>
-        <p>BOX 271 // FM 1187 HI8 TAPE // APR 12 1998</p>
-        <p class="boot-note">WEAR HEADPHONES — MOST OF THIS TAPE IS AIR.</p>
+        <p class="boot-spine">BOX 271 · FM 1187 · HI8</p>
+        <p class="boot-note">WEAR HEADPHONES</p>
         <button class="insert-tape" type="button">INSERT TAPE</button>
         <p class="side-b-note" hidden>THERE IS WRITING ON THE OTHER LABEL.</p>
         <button class="insert-side-b" type="button" hidden>INSERT TAPE — SIDE B</button>
@@ -70,8 +70,8 @@ app.innerHTML = `
         <p class="caption" aria-live="polite"></p>
       </div>
     </div>
-    <button class="panel-toggle" type="button" aria-expanded="true" aria-controls="deck-controls" title="Toggle the deck panel (D)">DECK ▤</button>
-    <aside class="deck-controls open" id="deck-controls">
+    <button class="panel-toggle" type="button" aria-expanded="false" aria-controls="deck-controls" title="Toggle the deck panel (D)">DECK ▤</button>
+    <aside class="deck-controls" id="deck-controls">
       <div class="readout">
         <p class="eyebrow">CURRENT NODE</p>
         <h1></h1>
@@ -189,11 +189,15 @@ function installMomentaryActuation(root: ParentNode = document) {
   for (const control of root.querySelectorAll<HTMLButtonElement>('button')) {
     if (control.dataset.actuationInstalled === 'true') continue;
     control.dataset.actuationInstalled = 'true';
+    // Controls that own a more specific foley (jog detent, compare latch, the
+    // drawer mechanism, tape transport) are excluded so they don't double up.
+    const ownsFoley = control.matches('.jog-wheel, .compare, .panel-toggle, .insert-tape, .insert-side-b');
     const actuate = () => {
       control.classList.remove('actuated');
       void control.offsetWidth;
       control.classList.add('actuated');
       window.setTimeout(() => control.classList.remove('actuated'), 180);
+      if (!ownsFoley) audio.playFoley('button', 'Deck control.');
     };
     control.addEventListener('pointerdown', actuate);
     control.addEventListener('keydown', (event) => {
@@ -248,15 +252,18 @@ function applyAnimationIntent(intent: Extract<ControlUiIntent, { type: 'animatio
 }
 
 function playControlCue(cue: string, controlId: string) {
-  const cueMap: Record<string, string> = {
-    'button-thunk': 'audio/jog-detent-clunk.wav',
-    'detent-cross': 'audio/jog-detent-clunk.wav',
-    'detent-clunk': 'audio/jog-detent-clunk.wav',
-    'wheel-click': 'audio/jog-detent-clunk.wav',
-    'pipe-knock': 'audio/jog-detent-clunk.wav',
-    'hard-stop': 'audio/tape-hard-stop.wav',
+  // Each control gesture gets its own synthesized foley so the deck has a real
+  // tactile vocabulary instead of one reused clunk (canon A11: the control UI is
+  // the signature). Captions are unchanged.
+  const foleyMap: Record<string, FoleyKind> = {
+    'button-thunk': 'button',
+    'detent-cross': 'tick',
+    'detent-clunk': 'detent-heavy',
+    'wheel-click': 'tick',
+    'pipe-knock': 'detent',
+    'hard-stop': 'refuse',
   };
-  audio.playCue(cueMap[cue] ?? 'audio/jog-detent-clunk.wav', `${controlId}: ${cue}`);
+  audio.playFoley(foleyMap[cue] ?? 'button', `${controlId}: ${cue}`);
 }
 
 const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
@@ -452,7 +459,7 @@ function render() {
         if (locked) {
           // The lock refuses out loud instead of hiding.
           showCaption(hotspot.lockedHint ?? 'It will not move yet.');
-          audio.playCue('audio/tape-hard-stop.wav', 'The deck refuses.');
+          audio.playFoley('refuse', 'The deck refuses.');
           return;
         }
         activateHotspot(hotspot);
@@ -615,10 +622,10 @@ function buildPadlock(succeed: () => void) {
   verdict.className = 'mechanism-verdict';
   tryHasp.addEventListener('click', () => {
     if (digits.join('') === '2713') {
-      audio.playCue('audio/jog-detent-clunk.wav', 'The padlock falls open.');
+      audio.playFoley('latch-open', 'The padlock falls open.');
       succeed();
     } else {
-      audio.playCue('audio/tape-hard-stop.wav', 'The hasp holds.');
+      audio.playFoley('refuse', 'The hasp holds.');
       verdict.textContent = 'The hasp holds. The blooms count it differently.';
       wheels.classList.remove('padlock-strain');
       void wheels.offsetWidth;
@@ -682,7 +689,7 @@ function buildKnockPipe(succeed: () => void) {
     if (groups.join(',') === '2,1,3') {
       succeed();
     } else {
-      audio.playCue('audio/tape-hard-stop.wav', 'The pipe rings wrong.');
+      audio.playFoley('refuse', 'The pipe rings wrong.');
       verdict.textContent = 'The pipe rings wrong. Somewhere on the tape, the static knocks it right.';
       pattern.splice(0, pattern.length, 0);
       renderTape();
@@ -854,7 +861,7 @@ function startCompare() {
   compareButton.setAttribute('aria-pressed', 'true');
   stage.classList.add('comparing');
   setTransportMessage(`DUB COMPARE: ${snapshot.activeWindow} OVER ${other} — what moved glows.`);
-  audio.playCue('audio/jog-detent-clunk.wav', 'Dub compare engaged.');
+  audio.playFoley('latch', 'Dub compare engaged.');
 }
 
 let compareWarble: HTMLAudioElement | undefined;
@@ -862,6 +869,7 @@ let compareWarble: HTMLAudioElement | undefined;
 function endCompare() {
   if (!compareActive) return;
   compareActive = false;
+  audio.playFoley('button-release', 'Dub compare released.');
   try {
     compareWarble?.pause();
   } catch {
@@ -937,11 +945,27 @@ function closeModal(panel: HTMLElement) {
   modalReturnFocus = undefined;
 }
 
+let panelHinted = false;
 function setPanelOpen(open: boolean) {
   deckControls.classList.toggle('open', open);
   // The picture yields space to the open drawer so hotspots are never occluded.
   app!.querySelector('.evidence-deck')?.classList.toggle('panel-open', open);
   panelToggle.setAttribute('aria-expanded', String(open));
+  // The drawer is a mechanism: it seats open, it eases shut.
+  audio.playFoley(open ? 'detent' : 'button-release', open ? 'Deck drawer slides open.' : 'Deck drawer eases shut.');
+  if (open) {
+    panelHinted = true;
+    panelToggle.classList.remove('hint');
+  }
+}
+// The deck boots closed so the first recovered frame breathes alone; once the
+// player is looking at the picture, pulse the toggle once so the cockpit is a
+// discoverable reward rather than a hidden control.
+function hintPanelToggle() {
+  if (panelHinted || deckControls.classList.contains('open')) return;
+  panelHinted = true;
+  panelToggle.classList.add('hint');
+  window.setTimeout(() => panelToggle.classList.remove('hint'), 4200);
 }
 panelToggle.addEventListener('click', () => setPanelOpen(!deckControls.classList.contains('open')));
 document.addEventListener('keydown', (event) => {
@@ -954,13 +978,24 @@ intensity.addEventListener('input', () => state.setVhsIntensity(Number(intensity
 volume.addEventListener('input', () => audio.setVolume(Number(volume.value)));
 for (const fader of [intensity, volume]) {
   let faderTimer: number | undefined;
+  // A fader is a row of detents: tick as the value crosses each notch, not a
+  // continuous buzz on every input event.
+  let lastNotch = Math.round(Number(fader.value) * 10);
   fader.addEventListener('input', () => {
     fader.classList.add('fader-moving');
     if (faderTimer !== undefined) window.clearTimeout(faderTimer);
     faderTimer = window.setTimeout(() => fader.classList.remove('fader-moving'), 260);
+    const notch = Math.round(Number(fader.value) * 10);
+    if (notch !== lastNotch) {
+      lastNotch = notch;
+      audio.playFoley('tick', 'Fader notch.');
+    }
   });
 }
-captions.addEventListener('change', () => state.setCaptionsEnabled(captions.checked));
+captions.addEventListener('change', () => {
+  state.setCaptionsEnabled(captions.checked);
+  audio.playFoley('latch', captions.checked ? 'Captions on.' : 'Captions off.');
+});
 closeExhibit.addEventListener('click', () => closeModal(exhibitScan));
 // --- THE LAST BROADCAST (prelude) -------------------------------------------
 // On a fresh tape, INSERT plays Dana's final 88.7 sign-off over recovered
@@ -1064,7 +1099,9 @@ insertTape.addEventListener('click', () => {
   // First user gesture: browsers allow audio from here on.
   audio.unlock();
   if (freshTape && !preludeActive) {
-    startPrelude(() => undefined);
+    startPrelude(() => hintPanelToggle());
+  } else {
+    hintPanelToggle();
   }
 });
 credits.addEventListener('click', () => openModal(colophonPanel, closeColophon));

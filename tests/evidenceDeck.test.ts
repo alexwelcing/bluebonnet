@@ -56,6 +56,20 @@ describe('Evidence Deck integration', () => {
     } as unknown as CanvasRenderingContext2D);
   });
 
+  it('boots into the image: the deck drawer starts closed so the first frame breathes', async () => {
+    await loadDeck();
+    const deck = document.querySelector('.evidence-deck')!;
+    const controls = document.querySelector('.deck-controls')!;
+    const toggle = document.querySelector<HTMLButtonElement>('.panel-toggle')!;
+    expect(deck.classList.contains('panel-open')).toBe(false);
+    expect(controls.classList.contains('open')).toBe(false);
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    // The cockpit is a reward, not a greeting: reaching for the deck opens it.
+    realPointerClick(toggle);
+    expect(controls.classList.contains('open')).toBe(true);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  });
+
   it('keeps hotspot geometry bounded and non-overlapping inside each temporal state', () => {
     const manifest = act1 as unknown as SceneManifest;
     for (const node of manifest.nodes) {

@@ -60,7 +60,21 @@ button, input { font: inherit; }
 .boot-card h2,
 .colophon-card h2 { color: #d7f7e2; letter-spacing: 0.18em; }
 .boot-eyebrow { color: #9df2ad; letter-spacing: 0.2em; }
+.boot-spine { color: rgba(157,242,173,0.5); letter-spacing: 0.22em; font-size: 0.78rem; }
+.boot-note { color: rgba(215,247,226,0.6); letter-spacing: 0.16em; font-size: 0.74rem; }
 .insert-tape, .credits, .close-colophon { margin-top: 1rem; }
+
+/* The deck boots closed; this one-time pulse teaches that the cockpit is there. */
+.panel-toggle.hint {
+  animation: panel-hint 1.1s ease-in-out 0s 4;
+}
+@keyframes panel-hint {
+  0%, 100% { box-shadow: 0 0 0 rgba(125,255,174,0); color: inherit; }
+  50% { box-shadow: 0 0 18px rgba(125,255,174,0.55); color: #d7f7e2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-toggle.hint { animation: none; box-shadow: 0 0 14px rgba(125,255,174,0.4); }
+}
 
 .deck-header {
   position: fixed;
@@ -96,7 +110,23 @@ button, input { font: inherit; }
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: #020302;
+  border-radius: 10px; /* subtle CRT bulge; overflow:hidden rounds the picture */
   box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.75);
+}
+/* CRT vignette on the live picture (the prelude had one; the game didn't). Every
+   postable frame is rendered through this — corners fall to black, center stays
+   clean. Strength rides the TRACKING knob. Sits above the degraded picture but
+   below the readable text layers. */
+.tape-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(118% 118% at 50% 47%, transparent 55%, rgba(0,0,0,0.4) 84%, rgba(0,0,0,0.78) 100%);
+  mix-blend-mode: multiply;
+  opacity: calc(0.62 + var(--vhs-intensity) * 0.38);
 }
 
 .scene-still {
@@ -181,23 +211,33 @@ button, input { font: inherit; }
   inset: auto 1rem 1rem auto;
   width: auto;
   height: auto;
+  z-index: 5; /* readable text rides above the vignette */
   color: rgba(230,255,235,0.82);
   font-size: clamp(0.72rem, 1.2vw, 1rem);
   text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.22);
 }
 
+/* Composited story text is burned into the tape, not boxed like a tooltip:
+   bare phosphor type, stronger chroma split, a faint OSD flicker. */
 .diegetic-text {
   inset: auto auto 18% 12%;
   width: auto;
   height: auto;
-  padding: 0.35rem 0.55rem;
-  color: rgba(232,255,236,0.88);
-  background: rgba(0,0,0,0.34);
-  border: 1px solid rgba(232,255,236,0.18);
+  z-index: 5;
+  color: rgba(198,255,212,0.92);
   font-size: clamp(0.72rem, 1.25vw, 1.05rem);
-  letter-spacing: 0.12em;
-  text-shadow: 2px 0 rgba(255,0,0,0.22), -2px 0 rgba(0,255,255,0.2);
+  letter-spacing: 0.14em;
+  text-shadow: 2.5px 0 rgba(255,0,40,0.4), -2.5px 0 rgba(0,225,255,0.36), 0 0 8px rgba(120,255,170,0.32);
   transform: rotate(-1deg) skewX(-3deg);
+  animation: osd-flicker 3.2s steps(1) infinite;
+}
+@keyframes osd-flicker {
+  0%, 96%, 100% { opacity: 1; }
+  97% { opacity: 0.7; }
+  98.5% { opacity: 0.9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .diegetic-text { animation: none; }
 }
 
 /* Captions live on the picture, lower-third subtitle style. */
