@@ -221,7 +221,12 @@
               "shimmerThreshold": 0.5
             }
           ],
-          "ambientAudio": "audio/field-wind-wrong.wav"
+          "ambientAudio": "audio/field-wind-wrong.wav",
+          "heroBeat": {
+            "src": "audio/hero-act2-turn.wav",
+            "caption": "The bluebonnets turn — all of them — to face the road.",
+            "volume": 0.7
+          }
         }
       },
       "ambientAudio": "audio/field-wind.wav",

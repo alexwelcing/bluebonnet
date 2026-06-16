@@ -2547,7 +2547,79 @@
       "model": "fal-ai/flux-2-pro/edit",
       "estimatedUsd": 0.04,
       "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:07.526Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:07.634Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:07.637Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:08.342Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:12.795Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:12.930Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:13.232Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:13.421Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:16.288Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:16.485Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:16.906Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
+    },
+    {
+      "at": "2026-06-16T05:56:17.018Z",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "estimatedUsd": 0.1,
+      "ok": true
     }
   ],
-  "estimatedSpentUsd": 124.44
+  "estimatedSpentUsd": 125.64
 }

@@ -272,6 +272,7 @@ const compositor = installVhsCompositor(stage, state.snapshot().vhsIntensity);
 let jogState = createJogWheelState(state.snapshot().activeWindow, jogOptions());
 let dragState: { angle: number; time: number } | undefined;
 let renderedMotionKey: string | undefined;
+const heroFired = new Set<string>();
 let helpOverride: string | undefined;
 let helpOverrideTimer: number | undefined;
 
@@ -299,6 +300,15 @@ function render() {
   const nodeState = getNodeState(graph, snapshot.currentNodeId, snapshot.activeWindow);
   still.src = nodeState.still;
   const node = getNode(graph, snapshot.currentNodeId);
+  // Hero beat: the composed wrongness swell lands once on entering the reveal
+  // window — wet on the tape bus (TRACKING degrades it), centred, captioned.
+  const heroKey = `${snapshot.currentNodeId}|${snapshot.activeWindow}`;
+  if (nodeState.heroBeat && !heroFired.has(heroKey) && bootScreen.hidden && !preludeActive) {
+    heroFired.add(heroKey);
+    const hb = nodeState.heroBeat;
+    audio.playEvent(hb.src, { gain: hb.volume ?? 0.7, caption: hb.caption, pan: 0 });
+    showTransientCaption(hb.caption);
+  }
   // Rebuilding the <video> elements restarts the loops and flashes black, so
   // only do it when the layer set actually changes (state publishes several
   // times per click). Window-specific loops take precedence; the still

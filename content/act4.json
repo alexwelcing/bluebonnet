@@ -537,7 +537,12 @@
               "blendMode": "normal",
               "sourceStill": "stills/act4/near-car__2026-2035.jpg"
             }
-          ]
+          ],
+          "heroBeat": {
+            "src": "audio/hero-act4-near.wav",
+            "caption": "The car is near now. The field holds its breath.",
+            "volume": 0.62
+          }
         }
       },
       "audioMix": {
@@ -838,12 +843,12 @@
       "temporalStates": {
         "20:26-20:35": {
           "still": "stills/act4/final-choice__2026-2035.jpg",
-          "caption": "20:26-20:35: the tape has no more geography. Only the deck is left \u2014 EJECT, and it ends here. RECORD, and you stay on it.",
+          "caption": "20:26-20:35: the tape has no more geography. Only the deck is left — EJECT, and it ends here. RECORD, and you stay on it.",
           "wrongness": "the missing minutes wait for an ending choice",
           "hotspots": [
             {
               "id": "choose-eject",
-              "label": "EJECT \u2014 seal the tape",
+              "label": "EJECT — seal the tape",
               "polygon": [
                 [
                   32,
@@ -866,16 +871,16 @@
               "setFlag": "ending:eject",
               "journal": {
                 "id": "ending-eject",
-                "text": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
+                "text": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed."
               },
-              "caption": "ENDING \u2014 EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
+              "caption": "ENDING — EJECT: the tape ejects cleanly. The bluebonnets go dark. Evidence sealed.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the dark cassette slot opening on the video player (hand-authored from plate)",
               "clueHighlight": true
             },
             {
               "id": "choose-record",
-              "label": "RECORD \u2014 overwrite the evidence",
+              "label": "RECORD — overwrite the evidence",
               "polygon": [
                 [
                   50,
@@ -898,9 +903,9 @@
               "setFlag": "ending:record",
               "journal": {
                 "id": "ending-record",
-                "text": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape."
+                "text": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape."
               },
-              "caption": "ENDING \u2014 RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
+              "caption": "ENDING — RECORD: the deck overwrites the evidence. The viewer is now on the tape.",
               "shimmerThreshold": 0.25,
               "cluePrompt": "the small red button on the video player (hand-authored from plate)",
               "clueHighlight": true

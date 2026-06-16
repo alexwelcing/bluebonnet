@@ -65,6 +65,13 @@ export interface TemporalNodeState {
   motionLayers?: MotionLayer[];
   /** Per-window ambient bed override — the same place can sound wronger. */
   ambientAudio?: string;
+  /**
+   * A composed one-shot "hero beat" that fires once when the player enters this
+   * window — the wrongness reveal lands on the picture (the flowers turn, the car
+   * is near). Played wet on the tape bus so TRACKING degrades it; always a swell,
+   * never a jump scare. Captioned.
+   */
+  heroBeat?: { src: string; caption: string; volume?: number };
 }
 
 export interface MotionLayer {

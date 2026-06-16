@@ -92,7 +92,12 @@
               ],
               "target": "side-door"
             }
-          ]
+          ],
+          "heroBeat": {
+            "src": "audio/hero-sideb-room.wav",
+            "caption": "The room hums. The tape is filming the room you are in.",
+            "volume": 0.6
+          }
         }
       }
     },
