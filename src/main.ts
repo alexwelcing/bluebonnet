@@ -756,7 +756,7 @@ function proceedWithHotspot(hotspot: HotspotDefinition) {
     }
   };
   if (target && target !== state.snapshot().currentNodeId) {
-    playTransition(state.snapshot().currentNodeId, target, finishNavigation);
+    playTransition(state.snapshot().currentNodeId, target, finishNavigation, hotspot.label ?? '');
   } else {
     finishNavigation();
   }
@@ -770,11 +770,81 @@ const transitionIndex = new Map<string, string>(
 );
 let transitionActive = false;
 
-function playTransition(fromNodeId: string, toNodeId: string, finish: () => void) {
+type MoveDir = 'forward' | 'back' | 'left' | 'right' | 'down' | 'up';
+function directionFromLabel(label: string): MoveDir {
+  const l = label.toLowerCase();
+  if (/\bback\b|return|behind|retreat|step back|away|back to|back inside|climb out/.test(l)) return 'back';
+  if (/left/.test(l)) return 'left';
+  if (/right/.test(l)) return 'right';
+  if (/down|floor|ground|lower|crouch|kneel|beneath/.test(l)) return 'down';
+  if (/\bup\b|sky|above|overhead|ceiling|look up|stand/.test(l)) return 'up';
+  return 'forward';
+}
+
+// $0 move-through-world fallback for edges without an authored video clip: a
+// short directional dolly + crossfade so navigation is a camera move, not a hard
+// cut (the Myst push). Robustly guarded so jsdom navigation still lands.
+function playMoveTransition(finish: () => void, hotspotLabel: string) {
+  let finished = false;
+  const land = () => { if (!finished) { finished = true; finish(); } };
+  if (typeof still.animate !== 'function') { land(); return; }
+  try {
+    transitionActive = true;
+    const dir = directionFromLabel(hotspotLabel);
+    const depart = document.createElement('img');
+    depart.className = 'nav-depart';
+    depart.src = still.currentSrc || still.src;
+    depart.setAttribute('aria-hidden', 'true');
+    stage.append(depart);
+    land(); // render the destination plate underneath the departing frame
+    const departTo: Record<MoveDir, Keyframe> = {
+      forward: { transform: 'scale(1.16)', opacity: 0 },
+      back: { transform: 'scale(0.86)', opacity: 0 },
+      left: { transform: 'translateX(9%) scale(1.05)', opacity: 0 },
+      right: { transform: 'translateX(-9%) scale(1.05)', opacity: 0 },
+      down: { transform: 'translateY(-7%) scale(1.05)', opacity: 0 },
+      up: { transform: 'translateY(7%) scale(1.05)', opacity: 0 },
+    };
+    const enterFrom: Record<MoveDir, string> = {
+      forward: 'scale(0.94)', back: 'scale(1.1)',
+      left: 'translateX(-6%)', right: 'translateX(6%)',
+      down: 'translateY(5%)', up: 'translateY(-5%)',
+    };
+    const DURATION = 360;
+    const ease = 'cubic-bezier(.33,0,.2,1)';
+    audio.duck(0.45, 0.22);
+    audio.playCue(ambienceManifest.transitionBed.src, 'The tape moves.', ambienceManifest.transitionBed.volume * 0.7);
+    let done = false;
+    const conclude = () => {
+      if (done) return;
+      done = true;
+      transitionActive = false;
+      audio.duck(1, 0.4);
+      depart.remove();
+      stage.removeEventListener('pointerdown', conclude);
+      document.removeEventListener('keydown', conclude);
+    };
+    const anim = depart.animate([{ transform: 'scale(1)', opacity: 1 }, departTo[dir]], { duration: DURATION, easing: ease, fill: 'forwards' });
+    still.animate([{ transform: enterFrom[dir], opacity: 0.55 }, { transform: 'none', opacity: 1 }], { duration: DURATION, easing: ease });
+    anim.addEventListener('finish', conclude);
+    stage.addEventListener('pointerdown', conclude); // skippable
+    document.addEventListener('keydown', conclude);
+    window.setTimeout(conclude, DURATION + 400); // safety ceiling
+  } catch {
+    transitionActive = false;
+    land();
+  }
+}
+
+function playTransition(fromNodeId: string, toNodeId: string, finish: () => void, hotspotLabel = '') {
   const src = transitionIndex.get(`${fromNodeId}|${toNodeId}|${state.snapshot().activeWindow}`);
   const reducedMotion = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!src || reducedMotion || transitionActive) {
+  if (reducedMotion || transitionActive) {
     finish();
+    return;
+  }
+  if (!src) {
+    playMoveTransition(finish, hotspotLabel);
     return;
   }
   transitionActive = true;
